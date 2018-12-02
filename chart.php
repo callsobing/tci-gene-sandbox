@@ -444,7 +444,9 @@
                     <div class="container-fluid">
                         <div class="card">
                             <div class="card-header">
-                            <?php echo '<strong>12345'; ?>
+                            <?php
+                            echo "<input type='text' value='文字輸入欄位'><br>";
+                            ?>
                             </div>
                             <div class="card-body card-block">
                                 <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
