@@ -445,11 +445,10 @@
 
                         <div class="card">
                             <div class="card-header">
-                                <strong>資料處理</strong> 專區　
+                                <?php
+                                    echo "<strong>資料處理</strong> 專區";
+                                ?>
                             </div>
-                            <?php
-                                echo "Hello world!";
-                            ?>
                             <div class="card-body card-block">
                                 <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
                                     <div class="row form-group">
