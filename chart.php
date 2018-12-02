@@ -445,7 +445,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <?php
-                                    echo "<strong>資料處理</strong> 專區";
+                                   echo '<strong>資料處理</strong> 專區';
                                 ?>
                             </div>
                             <div class="card-body card-block">
