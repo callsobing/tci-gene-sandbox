@@ -444,7 +444,7 @@
                     <div class="container-fluid">
                         <div class="card">
                             <div class="card-header">
-                            <?php echo '12345'; ?>
+                            <?php echo '<strong>12345'; ?>
                             </div>
                             <div class="card-body card-block">
                                 <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
