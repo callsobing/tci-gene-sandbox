@@ -439,12 +439,12 @@
             <!-- END HEADER DESKTOP-->
 
             <!-- MAIN CONTENT-->
-            <?php
-                echo "<input type='text' value='文字輸入欄位'><br>";
-            ?>
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
+                        <?php
+                            echo '<strong>Test Test Test test</strong>';
+                        ?>
                         <div class="card">
                             <div class="card-header">
                                 <strong>資料處理</strong> 專區　
