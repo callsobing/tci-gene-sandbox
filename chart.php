@@ -75,7 +75,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="chart.php">
+                            <a href="chart.html">
                                 <i class="fas fa-chart-bar"></i>Charts</a>
                         </li>
                         <li>
@@ -183,7 +183,7 @@
                             </ul>
                         </li>
                         <li class="active">
-                            <a href="chart.php">
+                            <a href="chart.html">
                                 <i class="fas fa-chart-bar"></i>Charts</a>
                         </li>
                         <li>
@@ -439,14 +439,15 @@
             <!-- END HEADER DESKTOP-->
 
             <!-- MAIN CONTENT-->
+            <?php
+                echo "<input type='text' value='文字輸入欄位'><br>";
+            ?>
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="card">
                             <div class="card-header">
-                            <?php
-                            echo "<input type='text' value='文字輸入欄位'><br>";
-                            ?>
+                                <strong>資料處理</strong> 專區　
                             </div>
                             <div class="card-body card-block">
                                 <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
