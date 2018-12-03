@@ -1,6 +1,6 @@
 /* poppins-100 - latin */
 @font-face {
-  font-family: 'Poppins';
+  font-family: 'Noto Sans TC', 'Poppins';
   font-style: normal;
   font-weight: 100;
   src: url('../fonts/poppins/poppins-v5-latin-100.eot'); /* IE9 Compat Modes */
@@ -13,7 +13,7 @@
 }
 /* poppins-200 - latin */
 @font-face {
-  font-family: 'Poppins';
+  font-family: 'Noto Sans TC', 'Poppins';
   font-style: normal;
   font-weight: 200;
   src: url('../fonts/poppins/poppins-v5-latin-200.eot'); /* IE9 Compat Modes */
@@ -26,7 +26,7 @@
 }
 /* poppins-200italic - latin */
 @font-face {
-  font-family: 'Poppins';
+  font-family: 'Noto Sans TC', 'Poppins';
   font-style: italic;
   font-weight: 200;
   src: url('../fonts/poppins/poppins-v5-latin-200italic.eot'); /* IE9 Compat Modes */
@@ -39,7 +39,7 @@
 }
 /* poppins-100italic - latin */
 @font-face {
-  font-family: 'Poppins';
+  font-family: 'Noto Sans TC', 'Poppins';
   font-style: italic;
   font-weight: 100;
   src: url('../fonts/poppins/poppins-v5-latin-100italic.eot'); /* IE9 Compat Modes */
@@ -52,7 +52,7 @@
 }
 /* poppins-300 - latin */
 @font-face {
-  font-family: 'Poppins';
+  font-family: 'Noto Sans TC', 'Poppins';
   font-style: normal;
   font-weight: 300;
   src: url('../fonts/poppins/poppins-v5-latin-300.eot'); /* IE9 Compat Modes */
@@ -65,7 +65,7 @@
 }
 /* poppins-300italic - latin */
 @font-face {
-  font-family: 'Poppins';
+  font-family: 'Noto Sans TC', 'Poppins';
   font-style: italic;
   font-weight: 300;
   src: url('../fonts/poppins/poppins-v5-latin-300italic.eot'); /* IE9 Compat Modes */
@@ -78,7 +78,7 @@
 }
 /* poppins-regular - latin */
 @font-face {
-  font-family: 'Poppins';
+  font-family: 'Noto Sans TC', 'Poppins';
   font-style: normal;
   font-weight: 400;
   src: url('../fonts/poppins/poppins-v5-latin-regular.eot'); /* IE9 Compat Modes */
@@ -91,7 +91,7 @@
 }
 /* poppins-italic - latin */
 @font-face {
-  font-family: 'Poppins';
+  font-family: 'Noto Sans TC', 'Poppins';
   font-style: italic;
   font-weight: 400;
   src: url('../fonts/poppins/poppins-v5-latin-italic.eot'); /* IE9 Compat Modes */
@@ -104,7 +104,7 @@
 }
 /* poppins-500 - latin */
 @font-face {
-  font-family: 'Poppins';
+  font-family: 'Noto Sans TC', 'Poppins';
   font-style: normal;
   font-weight: 500;
   src: url('../fonts/poppins/poppins-v5-latin-500.eot'); /* IE9 Compat Modes */
@@ -117,7 +117,7 @@
 }
 /* poppins-500italic - latin */
 @font-face {
-  font-family: 'Poppins';
+  font-family: 'Noto Sans TC', 'Poppins';
   font-style: italic;
   font-weight: 500;
   src: url('../fonts/poppins/poppins-v5-latin-500italic.eot'); /* IE9 Compat Modes */
@@ -130,7 +130,7 @@
 }
 /* poppins-600 - latin */
 @font-face {
-  font-family: 'Poppins';
+  font-family: 'Noto Sans TC', 'Poppins';
   font-style: normal;
   font-weight: 600;
   src: url('../fonts/poppins/poppins-v5-latin-600.eot'); /* IE9 Compat Modes */
@@ -143,7 +143,7 @@
 }
 /* poppins-600italic - latin */
 @font-face {
-  font-family: 'Poppins';
+  font-family: 'Noto Sans TC', 'Poppins';
   font-style: italic;
   font-weight: 600;
   src: url('../fonts/poppins/poppins-v5-latin-600italic.eot'); /* IE9 Compat Modes */
@@ -156,7 +156,7 @@
 }
 /* poppins-700 - latin */
 @font-face {
-  font-family: 'Poppins';
+  font-family: 'Noto Sans TC', 'Poppins';
   font-style: normal;
   font-weight: 700;
   src: url('../fonts/poppins/poppins-v5-latin-700.eot'); /* IE9 Compat Modes */
@@ -169,7 +169,7 @@
 }
 /* poppins-700italic - latin */
 @font-face {
-  font-family: 'Poppins';
+  font-family: 'Noto Sans TC', 'Poppins';
   font-style: italic;
   font-weight: 700;
   src: url('../fonts/poppins/poppins-v5-latin-700italic.eot'); /* IE9 Compat Modes */
@@ -182,7 +182,7 @@
 }
 /* poppins-800 - latin */
 @font-face {
-  font-family: 'Poppins';
+  font-family: 'Noto Sans TC', 'Poppins';
   font-style: normal;
   font-weight: 800;
   src: url('../fonts/poppins/poppins-v5-latin-800.eot'); /* IE9 Compat Modes */
@@ -195,7 +195,7 @@
 }
 /* poppins-800italic - latin */
 @font-face {
-  font-family: 'Poppins';
+  font-family: 'Noto Sans TC', 'Poppins';
   font-style: italic;
   font-weight: 800;
   src: url('../fonts/poppins/poppins-v5-latin-800italic.eot'); /* IE9 Compat Modes */
@@ -208,7 +208,7 @@
 }
 /* poppins-900 - latin */
 @font-face {
-  font-family: 'Poppins';
+  font-family: 'Noto Sans TC', 'Poppins';
   font-style: normal;
   font-weight: 900;
   src: url('../fonts/poppins/poppins-v5-latin-900.eot'); /* IE9 Compat Modes */
@@ -221,7 +221,7 @@
 }
 /* poppins-900italic - latin */
 @font-face {
-  font-family: 'Poppins';
+  font-family: 'Noto Sans TC', 'Poppins';
   font-style: italic;
   font-weight: 900;
   src: url('../fonts/poppins/poppins-v5-latin-900italic.eot'); /* IE9 Compat Modes */

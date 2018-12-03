@@ -99,7 +99,7 @@ p {
 
 /* ----- Typography ----- */
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: 'Noto Sans TC', "Poppins", sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.625;
@@ -1422,7 +1422,7 @@ section {
 }
 
 .account-item > .content > a:after {
-    font-family: "Material-Design-Iconic-Font";
+    font-family: 'Noto Sans TC', "Material-Design-Iconic-Font";
     font-weight: 500;
     content: '\f2f9';
     display: inline-block;
@@ -1757,7 +1757,7 @@ section {
 
 .header-mobile .navbar-mobile .navbar-mobile__list li.has-dropdown > a:after {
     content: '\f105';
-    font-family: FontAwesome, cursive;
+    font-family: 'Noto Sans TC', FontAwesome, cursive;
     float: right;
     font-size: 16px;
     line-height: 22px;
@@ -5433,7 +5433,7 @@ section {
     position: relative;
     display: block;
     height: inherit;
-    font-family: FontAwesome;
+    font-family: 'Noto Sans TC', FontAwesome;
     font-size: 10px;
     font-weight: 600;
     text-transform: uppercase;
