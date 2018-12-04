@@ -32,11 +32,11 @@ $file_name = $_FILES["file_input"]["name"];
 $command_inline = 'sudo -u www-data python3.4 scripts/parse_nCounter_general.py ' .  $file_name;
 $command = exec($command_inline);
 
-echo($command);
-//
-//$url = "nCounter_result.php?file=$file_name";
-//echo "<script type='text/javascript'>";
-//echo "window.location.href='$url'";
-//echo "</script>";
+//echo($command);
+
+$url = "nCounter_result.php?file=$file_name";
+echo "<script type='text/javascript'>";
+echo "window.location.href='$url'";
+echo "</script>";
 
 ?>
