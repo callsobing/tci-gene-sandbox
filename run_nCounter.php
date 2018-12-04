@@ -8,8 +8,14 @@
 
 //$command = escapeshellcmd('python script/parse_nCounter_general.py');
 echo("<img src='images/waiting.jpg'/>");
-$command = exec('sudo -u www-data python3.4 scripts/parse_nCounter_general.py');
 
+$file_name = $_GET['file_name'];
+$command_inline = 'sudo -u www-data python3.4 scripts/parse_nCounter_general.py' .  $file_name;
+$command = exec('sudo -u www-data python3.4 scripts/parse_nCounter_general.py $file_name');
 
+$url = "nCounter_result.php?file=$file_name";
+echo "<script type='text/javascript'>";
+echo "window.location.href='$url'";
+echo "</script>";
 
 ?>
