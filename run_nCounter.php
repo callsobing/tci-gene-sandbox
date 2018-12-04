@@ -11,13 +11,27 @@ echo("<img src='images/waiting.jpg'/>");
 ob_flush();
 flush();
 
-$file_name = "test.xlsx";
-$command_inline = 'sudo -u www-data python3.4 scripts/parse_nCounter_general.py' .  $file_name;
-$command = exec('sudo -u www-data python3.4 scripts/parse_nCounter_general.py');
+# 上傳使用者資料到uploaded_files
+$target_dir = "uploaded_files/";
+$target_file = $target_dir . basename($_FILES["file_input"]["name"]);
+$uploadOk = 1;
 
-$url = "nCounter_result.php?file=$file_name";
-echo "<script type='text/javascript'>";
-echo "window.location.href='$url'";
-echo "</script>";
+if (move_uploaded_file($_FILES['file_input']['tmp_name'], $target_file)) {
+    echo "File is valid, and was successfully uploaded.\\\\n";
+} else {
+    echo "Possible file upload attack!\\\\n";
+}
+
+ob_flush();
+flush();
+//
+//$file_name = $_FILES["file_input"]["name"];
+//$command_inline = 'sudo -u www-data python3.4 scripts/parse_nCounter_general.py' .  $file_name;
+//$command = exec('sudo -u www-data python3.4 scripts/parse_nCounter_general.py');
+//
+//$url = "nCounter_result.php?file=$file_name";
+//echo "<script type='text/javascript'>";
+//echo "window.location.href='$url'";
+//echo "</script>";
 
 ?>
