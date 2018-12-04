@@ -492,17 +492,17 @@
                                                     <table class="table table-data2">
                                                         <thead>
                                                         <tr>
-                                                            <th>
+                                                            <th width="8%">
                                                                 <label class="au-checkbox">
                                                                     <input type="checkbox">
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </th>
-                                                            <th>表現量圖表</th>
-                                                            <th>基因</th>
-                                                            <th>期待方向</th>
-                                                            <th>實際表現量</th>
-                                                            <th>顯著性</th>
+                                                            <th width="52%">表現量圖表</th>
+                                                            <th width="13%">基因</th>
+                                                            <th width="13%">期待方向</th>
+                                                            <th width="13%">實際表現量</th>
+                                                            <th width="13%">顯著性</th>
                                                         </tr>
                                                         </thead>
                                                         <tbody>
@@ -513,7 +513,7 @@
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </td>
-                                                            <td><img src="figures/<?php echo($file_name) ?>/SOD1.png" width="20%"></td>
+                                                            <td><img src="figures/<?php echo($file_name) ?>/SOD1.png" width="100%"></td>
                                                             <td>SOD1</td>
                                                             <td>
                                                                 <span class="block-email">提高</span>
@@ -529,7 +529,7 @@
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </td>
-                                                            <td><img src="figures/<?php echo($file_name) ?>/SOD2.png " width="20%"></td>
+                                                            <td><img src="figures/<?php echo($file_name) ?>/SOD2.png " width="100%"></td>
                                                             <td>SOD2</td>
                                                             <td>
                                                                 <span class="block-email">提高</span>
@@ -545,7 +545,7 @@
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </td>
-                                                            <td><img src="figures/<?php echo($file_name) ?>/GPX1.png " width="20%"></td>
+                                                            <td><img src="figures/<?php echo($file_name) ?>/GPX1.png " width="100%"></td>
                                                             <td>GPX1</td>
                                                             <td>
                                                                 <span class="block-email">提高</span>
@@ -561,7 +561,7 @@
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </td>
-                                                            <td><img src="figures/<?php echo($file_name) ?>/CAT.png " width="20%"></td>
+                                                            <td><img src="figures/<?php echo($file_name) ?>/CAT.png " width="100%"></td>
                                                             <td>CAT</td>
                                                             <td>
                                                                 <span class="block-email">提高</span>
