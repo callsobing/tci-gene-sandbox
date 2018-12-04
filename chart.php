@@ -447,7 +447,7 @@
                                 <strong>資料處理</strong> 專區　
                             </div>
                             <div class="card-body card-block">
-                                <form action="run_nCounter.php" method="get" enctype="multipart/form-data" class="form-horizontal">
+                                <form action="./run_nCounter.php" method="get" enctype="multipart/form-data" class="form-horizontal">
                                     <div class="row form-group">
                                         <div class="col col-md-3">
                                             <label for="file-input" class=" form-control-label">檔案上傳</label>
