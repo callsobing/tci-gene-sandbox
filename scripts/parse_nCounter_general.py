@@ -107,6 +107,7 @@ for exp_idx in range(len(exp_identifiers)):
 
 gene_details_map = {}
 for gene_idx in range(len(gene_names)):
+    print(gene_names[gene_idx])
     mock_avg = average([uht_list[gene_idx][0], uht_list[gene_idx][1], uht_list[gene_idx][2]])
     gene_details_map[gene_names[gene_idx]] = \
         {
