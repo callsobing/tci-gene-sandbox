@@ -9,7 +9,7 @@ import numpy as np
 from scipy import stats
 import os
 import sys
-
+plt.rcParams['font.sans-serif'] = ['SimHei']
 
 # file_name = sys.argv[1]
 file_name = "test.xlsx"
@@ -72,7 +72,6 @@ def plot_gene(gene_details_map, gene, file_name):
     plt.close(fig)
 
 
-plt.rcParams['font.sans-serif'] = ['SimHei']
 platforms = {"抗氧化": {"up": ["SOD1","SOD2","GPX1","CAT"], "down": []},
             "抗老": {"up": ["CCT2","CCT5","CCT6A","CCT7","CCT8","Pink1","Parkin","Atg1","Atg8","SIRT1","FOXO","NADSYN","MRPS5","Ubl-5","SOD3"], "down": ["PARP1","PARP2"]},
             "DNA修復": {"up": ["UNG","OGG1","MPG","APEX1","ERCC1","ERCC6","XPA","XRCC1","XRCC5","MSH2","MLH1","MSH6"], "down": []},
