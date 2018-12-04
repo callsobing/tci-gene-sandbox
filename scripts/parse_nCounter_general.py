@@ -67,7 +67,7 @@ def plot_gene(gene_details_map, gene, file_name):
 
     label_significance(1, means[1], errors[1], ymax)
     label_significance(2, means[2], errors[2], ymax)
-    plt.savefig("../figures/%s/%s.png" % (file_name, gene))
+    plt.savefig("figures/%s/%s.png" % (file_name, gene))
     plt.cla()
     plt.close(fig)
 
