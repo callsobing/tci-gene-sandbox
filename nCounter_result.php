@@ -487,7 +487,7 @@
                                         <div class="tab-content pl-3 pt-2" id="nav-tabContent">
                                             <div class="tab-pane fade show active" id="custom-nav-1" role="tabpanel" aria-labelledby="custom-nav-1-tab">
                                                 <!-- DATA TABLE -->
-                                                <h3 class="title-5 m-b-35">基因表現圖表</h3>
+                                                <h3 class="title-5 m-b-35">抗氧化 - 基因表現圖表</h3>
                                                 <div class="table-responsive table-responsive-data2">
                                                     <table class="table table-data2">
                                                         <thead>
@@ -513,7 +513,7 @@
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </td>
-                                                            <td><img src="figures/<?php echo($file_name) ?>/SOD1.png "></td>
+                                                            <td><img src="figures/<?php echo($file_name) ?>/SOD1.png width=20% "></td>
                                                             <td>SOD1</td>
                                                             <td>
                                                                 <span class="block-email">提高</span>
