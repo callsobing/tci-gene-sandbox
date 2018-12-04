@@ -489,7 +489,7 @@
                                                 <!-- DATA TABLE -->
                                                 <h3 class="title-5 m-b-35">抗氧化 - 基因表現圖表</h3>
                                                 <div class="table-responsive table-responsive-data2">
-                                                    <table class="table table-data2">
+                                                    <table class="table table-data2" style="font-size:x-large;">
                                                         <thead>
                                                         <tr>
                                                             <th width="8%">
@@ -498,11 +498,11 @@
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </th>
-                                                            <th width="40%" style="font-size:medium;">表現量圖表</th>
-                                                            <th width="13%" style="font-size:medium;">基因</th>
-                                                            <th width="13%" style="font-size:medium;">期待方向</th>
-                                                            <th width="13%" style="font-size:medium;">實際表現量</th>
-                                                            <th width="13%" style="font-size:medium;">顯著性</th>
+                                                            <th width="40%" style="font-size:small;">表現量圖表</th>
+                                                            <th width="13%" style="font-size:small;">基因</th>
+                                                            <th width="13%" style="font-size:small;">期待方向</th>
+                                                            <th width="13%" style="font-size:small;">實際表現量</th>
+                                                            <th width="13%" style="font-size:small;">顯著性</th>
                                                         </tr>
                                                         </thead>
                                                         <tbody>
