@@ -11,8 +11,8 @@ import os
 import sys
 # plt.rcParams['font.sans-serif'] = ['SimHei']
 
-# file_name = sys.argv[1]
-file_name = "test.xlsx"
+file_name = sys.argv[1]
+# file_name = "test.xlsx"
 
 def create_directory(directory_path):
     if not os.path.exists(directory_path):
