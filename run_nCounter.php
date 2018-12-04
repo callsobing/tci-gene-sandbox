@@ -7,7 +7,7 @@
  */
 
 //$command = escapeshellcmd('python script/parse_nCounter_general.py');
-$command = exec('sudo -u www-data python script/test.py');
+$command = exec('sudo -u www-data python scripts/test.py');
 echo($command)
 
 ?>
