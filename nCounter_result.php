@@ -492,17 +492,17 @@
                                                     <table class="table table-data2">
                                                         <thead>
                                                         <tr>
-                                                            <th width="8%">
+                                                            <th width="10%">
                                                                 <label class="au-checkbox">
                                                                     <input type="checkbox">
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </th>
-                                                            <th width="52%">表現量圖表</th>
-                                                            <th width="13%">基因</th>
-                                                            <th width="13%">期待方向</th>
-                                                            <th width="13%">實際表現量</th>
-                                                            <th width="13%">顯著性</th>
+                                                            <th width="30%">表現量圖表</th>
+                                                            <th width="15%">基因</th>
+                                                            <th width="15%">期待方向</th>
+                                                            <th width="15%">實際表現量</th>
+                                                            <th width="15%">顯著性</th>
                                                         </tr>
                                                         </thead>
                                                         <tbody>
@@ -614,7 +614,9 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="copyright">
-                                    <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                                    <p>Copyright © 2018 Colorlib. All rights reserved. </p>
+                                    <p>Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                                    <p>Modified by Yian.Tung / TCI Gene.</p>
                                 </div>
                             </div>
                         </div>
