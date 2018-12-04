@@ -449,36 +449,271 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="custom-tab">
-
                                         <nav>
+                                            <?php
+                                            $file_name = "test"
+                                            ?>
                                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                                <a class="nav-item nav-link active" id="custom-nav-home-tab" data-toggle="tab" href="#custom-nav-home" role="tab" aria-controls="custom-nav-home"
-                                                   aria-selected="true">Home</a>
-                                                <a class="nav-item nav-link" id="custom-nav-profile-tab" data-toggle="tab" href="#custom-nav-profile" role="tab" aria-controls="custom-nav-profile"
-                                                   aria-selected="false">Profile</a>
-                                                <a class="nav-item nav-link" id="custom-nav-contact-tab" data-toggle="tab" href="#custom-nav-contact" role="tab" aria-controls="custom-nav-contact"
-                                                   aria-selected="false">Contact</a>
+                                                <a class="nav-item nav-link active" id="custom-nav-1-tab" data-toggle="tab" href="#custom-nav-1" role="tab" aria-controls="custom-nav-1"
+                                                   aria-selected="true">抗氧化</a>
+                                                <a class="nav-item nav-link" id="custom-nav-2-tab" data-toggle="tab" href="#custom-nav-2" role="tab" aria-controls="custom-nav-2"
+                                                   aria-selected="false">抗老</a>
+                                                <a class="nav-item nav-link" id="custom-nav-3-tab" data-toggle="tab" href="#custom-nav-3" role="tab" aria-controls="custom-nav-3"
+                                                   aria-selected="false">DNA修復</a>
+                                                <a class="nav-item nav-link" id="custom-nav-4-tab" data-toggle="tab" href="#custom-nav-4" role="tab" aria-controls="custom-nav-4"
+                                                   aria-selected="true">免疫</a>
+                                                <a class="nav-item nav-link" id="custom-nav-5-tab" data-toggle="tab" href="#custom-nav-5" role="tab" aria-controls="custom-nav-5"
+                                                   aria-selected="false">護胃</a>
+                                                <a class="nav-item nav-link" id="custom-nav-6-tab" data-toggle="tab" href="#custom-nav-6" role="tab" aria-controls="custom-nav-6"
+                                                   aria-selected="false">護眼</a>
+                                                <a class="nav-item nav-link" id="custom-nav-7-tab" data-toggle="tab" href="#custom-nav-7" role="tab" aria-controls="custom-nav-7"
+                                                   aria-selected="false">美白</a>
+                                                <a class="nav-item nav-link" id="custom-nav-8-tab" data-toggle="tab" href="#custom-nav-8" role="tab" aria-controls="custom-nav-8"
+                                                   aria-selected="true">膠原蛋白合成</a>
+                                                <a class="nav-item nav-link" id="custom-nav-9-tab" data-toggle="tab" href="#custom-nav-9" role="tab" aria-controls="custom-nav-9"
+                                                   aria-selected="false">抗發炎</a>
+                                                <a class="nav-item nav-link" id="custom-nav-10-tab" data-toggle="tab" href="#custom-nav-10" role="tab" aria-controls="custom-nav-10"
+                                                   aria-selected="false">細胞凋亡</a>
+                                                <a class="nav-item nav-link " id="custom-nav-11-tab" data-toggle="tab" href="#custom-nav-11" role="tab" aria-controls="custom-nav-11"
+                                                   aria-selected="true">心血管保健</a>
+                                                <a class="nav-item nav-link" id="custom-nav-12-tab" data-toggle="tab" href="#custom-nav-12" role="tab" aria-controls="custom-nav-12"
+                                                   aria-selected="false">晝夜節律</a>
+                                                <a class="nav-item nav-link" id="custom-nav-13-tab" data-toggle="tab" href="#custom-nav-13" role="tab" aria-controls="custom-nav-13"
+                                                   aria-selected="false">非酒精性肝損傷</a>
+                                                <a class="nav-item nav-link" id="custom-nav-14-tab" data-toggle="tab" href="#custom-nav-14" role="tab" aria-controls="custom-nav-14"
+                                                   aria-selected="false">皮膚角質保濕</a>
                                             </div>
                                         </nav>
                                         <div class="tab-content pl-3 pt-2" id="nav-tabContent">
-                                            <div class="tab-pane fade show active" id="custom-nav-home" role="tabpanel" aria-labelledby="custom-nav-home-tab">
-                                                <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
-                                                    master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
-                                                    dreamcatcher synth. Cosby sweater eu banh mi, irure terry richardson ex sd. Alip placeat salvia cillum iphone.
-                                                    Seitan alip s cardigan american apparel, butcher voluptate nisi .</p>
+                                            <div class="tab-pane fade show active" id="custom-nav-1" role="tabpanel" aria-labelledby="custom-nav-1-tab">
+                                                <!-- DATA TABLE -->
+                                                <h3 class="title-5 m-b-35">data table</h3>
+                                                <div class="table-data__tool">
+                                                    <div class="table-data__tool-left">
+                                                        <div class="rs-select2--light rs-select2--md">
+                                                            <select class="js-select2" name="property">
+                                                                <option selected="selected">All Properties</option>
+                                                                <option value="">Option 1</option>
+                                                                <option value="">Option 2</option>
+                                                            </select>
+                                                            <div class="dropDownSelect2"></div>
+                                                        </div>
+                                                        <div class="rs-select2--light rs-select2--sm">
+                                                            <select class="js-select2" name="time">
+                                                                <option selected="selected">Today</option>
+                                                                <option value="">3 Days</option>
+                                                                <option value="">1 Week</option>
+                                                            </select>
+                                                            <div class="dropDownSelect2"></div>
+                                                        </div>
+                                                        <button class="au-btn-filter">
+                                                            <i class="zmdi zmdi-filter-list"></i>filters</button>
+                                                    </div>
+                                                    <div class="table-data__tool-right">
+                                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                                            <i class="zmdi zmdi-plus"></i>add item</button>
+                                                        <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
+                                                            <select class="js-select2" name="type">
+                                                                <option selected="selected">Export</option>
+                                                                <option value="">Option 1</option>
+                                                                <option value="">Option 2</option>
+                                                            </select>
+                                                            <div class="dropDownSelect2"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="table-responsive table-responsive-data2">
+                                                    <table class="table table-data2">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>
+                                                                <label class="au-checkbox">
+                                                                    <input type="checkbox">
+                                                                    <span class="au-checkmark"></span>
+                                                                </label>
+                                                            </th>
+                                                            <th>name</th>
+                                                            <th>email</th>
+                                                            <th>description</th>
+                                                            <th>date</th>
+                                                            <th>status</th>
+                                                            <th>price</th>
+                                                            <th></th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr class="tr-shadow">
+                                                            <td>
+                                                                <label class="au-checkbox">
+                                                                    <input type="checkbox">
+                                                                    <span class="au-checkmark"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td>Lori Lynch</td>
+                                                            <td>
+                                                                <span class="block-email">lori@example.com</span>
+                                                            </td>
+                                                            <td class="desc">Samsung S8 Black</td>
+                                                            <td>2018-09-27 02:12</td>
+                                                            <td>
+                                                                <span class="status--process">Processed</span>
+                                                            </td>
+                                                            <td>$679.00</td>
+                                                            <td>
+                                                                <div class="table-data-feature">
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                                                        <i class="zmdi zmdi-mail-send"></i>
+                                                                    </button>
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                                        <i class="zmdi zmdi-edit"></i>
+                                                                    </button>
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                                        <i class="zmdi zmdi-delete"></i>
+                                                                    </button>
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                                                        <i class="zmdi zmdi-more"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="spacer"></tr>
+                                                        <tr class="tr-shadow">
+                                                            <td>
+                                                                <label class="au-checkbox">
+                                                                    <input type="checkbox">
+                                                                    <span class="au-checkmark"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td>Lori Lynch</td>
+                                                            <td>
+                                                                <span class="block-email">john@example.com</span>
+                                                            </td>
+                                                            <td class="desc">iPhone X 64Gb Grey</td>
+                                                            <td>2018-09-29 05:57</td>
+                                                            <td>
+                                                                <span class="status--process">Processed</span>
+                                                            </td>
+                                                            <td>$999.00</td>
+                                                            <td>
+                                                                <div class="table-data-feature">
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                                                        <i class="zmdi zmdi-mail-send"></i>
+                                                                    </button>
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                                        <i class="zmdi zmdi-edit"></i>
+                                                                    </button>
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                                        <i class="zmdi zmdi-delete"></i>
+                                                                    </button>
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                                                        <i class="zmdi zmdi-more"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="spacer"></tr>
+                                                        <tr class="tr-shadow">
+                                                            <td>
+                                                                <label class="au-checkbox">
+                                                                    <input type="checkbox">
+                                                                    <span class="au-checkmark"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td>Lori Lynch</td>
+                                                            <td>
+                                                                <span class="block-email">lyn@example.com</span>
+                                                            </td>
+                                                            <td class="desc">iPhone X 256Gb Black</td>
+                                                            <td>2018-09-25 19:03</td>
+                                                            <td>
+                                                                <span class="status--denied">Denied</span>
+                                                            </td>
+                                                            <td>$1199.00</td>
+                                                            <td>
+                                                                <div class="table-data-feature">
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                                                        <i class="zmdi zmdi-mail-send"></i>
+                                                                    </button>
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                                        <i class="zmdi zmdi-edit"></i>
+                                                                    </button>
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                                        <i class="zmdi zmdi-delete"></i>
+                                                                    </button>
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                                                        <i class="zmdi zmdi-more"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="spacer"></tr>
+                                                        <tr class="tr-shadow">
+                                                            <td>
+                                                                <label class="au-checkbox">
+                                                                    <input type="checkbox">
+                                                                    <span class="au-checkmark"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td>Lori Lynch</td>
+                                                            <td>
+                                                                <span class="block-email">doe@example.com</span>
+                                                            </td>
+                                                            <td class="desc">Camera C430W 4k</td>
+                                                            <td>2018-09-24 19:10</td>
+                                                            <td>
+                                                                <span class="status--process">Processed</span>
+                                                            </td>
+                                                            <td>$699.00</td>
+                                                            <td>
+                                                                <div class="table-data-feature">
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                                                        <i class="zmdi zmdi-mail-send"></i>
+                                                                    </button>
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                                        <i class="zmdi zmdi-edit"></i>
+                                                                    </button>
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                                        <i class="zmdi zmdi-delete"></i>
+                                                                    </button>
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                                                        <i class="zmdi zmdi-more"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!-- END DATA TABLE -->
                                             </div>
-                                            <div class="tab-pane fade" id="custom-nav-profile" role="tabpanel" aria-labelledby="custom-nav-profile-tab">
-                                                <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
-                                                    master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
-                                                    dreamcatcher synth. Cosby sweater eu banh mi, irure terry richardson ex sd. Alip placeat salvia cillum iphone.
-                                                    Seitan alip s cardigan american apparel, butcher voluptate nisi .</p>
+                                            <div class="tab-pane fade" id="custom-nav-2" role="tabpanel" aria-labelledby="custom-nav-2-tab">
+
                                             </div>
-                                            <div class="tab-pane fade" id="custom-nav-contact" role="tabpanel" aria-labelledby="custom-nav-contact-tab">
-                                                <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
-                                                    master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
-                                                    dreamcatcher synth. Cosby sweater eu banh mi, irure terry richardson ex sd. Alip placeat salvia cillum iphone.
-                                                    Seitan alip s cardigan american apparel, butcher voluptate nisi .</p>
+                                            <div class="tab-pane fade" id="custom-nav-3" role="tabpanel" aria-labelledby="custom-nav-3-tab">
                                             </div>
+                                            <div class="tab-pane fade" id="custom-nav-4" role="tabpanel" aria-labelledby="custom-nav-4-tab">
+                                            </div>
+                                            <div class="tab-pane fade" id="custom-nav-5" role="tabpanel" aria-labelledby="custom-nav-5-tab">
+                                            </div>
+                                            <div class="tab-pane fade" id="custom-nav-6" role="tabpanel" aria-labelledby="custom-nav-6-tab">
+                                            </div>
+                                            <div class="tab-pane fade" id="custom-nav-7" role="tabpanel" aria-labelledby="custom-nav-7-tab">
+                                            </div>
+                                            <div class="tab-pane fade" id="custom-nav-8" role="tabpanel" aria-labelledby="custom-nav-8-tab">
+                                            </div>
+                                            <div class="tab-pane fade" id="custom-nav-9" role="tabpanel" aria-labelledby="custom-nav-9-tab">
+                                            </div>
+                                            <div class="tab-pane fade" id="custom-nav-10" role="tabpanel" aria-labelledby="custom-nav-10-tab">
+                                            </div>
+                                            <div class="tab-pane fade" id="custom-nav-11" role="tabpanel" aria-labelledby="custom-nav-11-tab">
+                                            </div>
+                                            <div class="tab-pane fade" id="custom-nav-12" role="tabpanel" aria-labelledby="custom-nav-12-tab">
+                                            </div>
+                                            <div class="tab-pane fade" id="custom-nav-13" role="tabpanel" aria-labelledby="custom-nav-13-tab">
+                                            </div>
+                                            <div class="tab-pane fade" id="custom-nav-14" role="tabpanel" aria-labelledby="custom-nav-14-tab">
+                                            </div>
+
                                         </div>
 
                                     </div>
