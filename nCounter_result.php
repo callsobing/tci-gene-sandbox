@@ -575,11 +575,271 @@
                                                 <!-- END DATA TABLE -->
                                             </div>
                                             <div class="tab-pane fade" id="custom-nav-2" role="tabpanel" aria-labelledby="custom-nav-2-tab">
-
+                                                <!-- DATA TABLE -->
+                                                <h3 class="title-5 m-b-35">抗老 - 基因表現圖表</h3>
+                                                <div class="table-responsive table-responsive-data2">
+                                                    <table class="table table-data2" style="font-size:x-large;">
+                                                        <thead>
+                                                        <tr>
+                                                            <th width="5%">
+                                                                <label class="au-checkbox">
+                                                                    <input type="checkbox">
+                                                                    <span class="au-checkmark"></span>
+                                                                </label>
+                                                            </th>
+                                                            <th width="35%" style="font-size:medium;">表現量圖表</th>
+                                                            <th width="15%" style="font-size:medium;">基因</th>
+                                                            <th width="15%" style="font-size:medium;">期待方向</th>
+                                                            <th width="15%" style="font-size:medium;">實際表現量</th>
+                                                            <th width="15%" style="font-size:medium;">顯著性</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr class="tr-shadow">
+                                                            <td>
+                                                                <label class="au-checkbox">
+                                                                    <input type="checkbox">
+                                                                    <span class="au-checkmark"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td><img src="figures/<?php echo($file_name) ?>/CCT2.png" width="100%"></td>
+                                                            <td>CCT2</td>
+                                                            <td>
+                                                                <span class="block-email">提高</span>
+                                                            </td>
+                                                            <td class="desc">1.92</td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr class="spacer"></tr>
+                                                        <tr class="tr-shadow">
+                                                            <td>
+                                                                <label class="au-checkbox">
+                                                                    <input type="checkbox">
+                                                                    <span class="au-checkmark"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td><img src="figures/<?php echo($file_name) ?>/CCT5.png " width="100%"></td>
+                                                            <td>CCT5</td>
+                                                            <td>
+                                                                <span class="block-email">提高</span>
+                                                            </td>
+                                                            <td class="desc">1.13</td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr class="spacer"></tr>
+                                                        <tr class="tr-shadow">
+                                                            <td>
+                                                                <label class="au-checkbox">
+                                                                    <input type="checkbox">
+                                                                    <span class="au-checkmark"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td><img src="figures/<?php echo($file_name) ?>/CCT6A.png " width="100%"></td>
+                                                            <td>CCT6A</td>
+                                                            <td>
+                                                                <span class="block-email">提高</span>
+                                                            </td>
+                                                            <td class="desc">1.01</td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr class="spacer"></tr>
+                                                        <tr class="tr-shadow">
+                                                            <td>
+                                                                <label class="au-checkbox">
+                                                                    <input type="checkbox">
+                                                                    <span class="au-checkmark"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td><img src="figures/<?php echo($file_name) ?>/CCT7.png " width="100%"></td>
+                                                            <td>CCT7</td>
+                                                            <td>
+                                                                <span class="block-email">提高</span>
+                                                            </td>
+                                                            <td class="desc">1.92</td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!-- END DATA TABLE -->
                                             </div>
                                             <div class="tab-pane fade" id="custom-nav-3" role="tabpanel" aria-labelledby="custom-nav-3-tab">
+                                                <!-- DATA TABLE -->
+                                                <h3 class="title-5 m-b-35">DNA修復 - 基因表現圖表</h3>
+                                                <div class="table-responsive table-responsive-data2">
+                                                    <table class="table table-data2" style="font-size:x-large;">
+                                                        <thead>
+                                                        <tr>
+                                                            <th width="5%">
+                                                                <label class="au-checkbox">
+                                                                    <input type="checkbox">
+                                                                    <span class="au-checkmark"></span>
+                                                                </label>
+                                                            </th>
+                                                            <th width="35%" style="font-size:medium;">表現量圖表</th>
+                                                            <th width="15%" style="font-size:medium;">基因</th>
+                                                            <th width="15%" style="font-size:medium;">期待方向</th>
+                                                            <th width="15%" style="font-size:medium;">實際表現量</th>
+                                                            <th width="15%" style="font-size:medium;">顯著性</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr class="tr-shadow">
+                                                            <td>
+                                                                <label class="au-checkbox">
+                                                                    <input type="checkbox">
+                                                                    <span class="au-checkmark"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td><img src="figures/<?php echo($file_name) ?>/UNG.png" width="100%"></td>
+                                                            <td>UNG</td>
+                                                            <td>
+                                                                <span class="block-email">提高</span>
+                                                            </td>
+                                                            <td class="desc">1.92</td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr class="spacer"></tr>
+                                                        <tr class="tr-shadow">
+                                                            <td>
+                                                                <label class="au-checkbox">
+                                                                    <input type="checkbox">
+                                                                    <span class="au-checkmark"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td><img src="figures/<?php echo($file_name) ?>/OGG1.png " width="100%"></td>
+                                                            <td>OGG1</td>
+                                                            <td>
+                                                                <span class="block-email">提高</span>
+                                                            </td>
+                                                            <td class="desc">1.13</td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr class="spacer"></tr>
+                                                        <tr class="tr-shadow">
+                                                            <td>
+                                                                <label class="au-checkbox">
+                                                                    <input type="checkbox">
+                                                                    <span class="au-checkmark"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td><img src="figures/<?php echo($file_name) ?>/MPG.png " width="100%"></td>
+                                                            <td>MPG</td>
+                                                            <td>
+                                                                <span class="block-email">提高</span>
+                                                            </td>
+                                                            <td class="desc">1.01</td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr class="spacer"></tr>
+                                                        <tr class="tr-shadow">
+                                                            <td>
+                                                                <label class="au-checkbox">
+                                                                    <input type="checkbox">
+                                                                    <span class="au-checkmark"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td><img src="figures/<?php echo($file_name) ?>/APEX1.png " width="100%"></td>
+                                                            <td>APEX1</td>
+                                                            <td>
+                                                                <span class="block-email">提高</span>
+                                                            </td>
+                                                            <td class="desc">1.92</td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!-- END DATA TABLE -->
                                             </div>
                                             <div class="tab-pane fade" id="custom-nav-4" role="tabpanel" aria-labelledby="custom-nav-4-tab">
+                                                <!-- DATA TABLE -->
+                                                <h3 class="title-5 m-b-35">免疫 - 基因表現圖表</h3>
+                                                <div class="table-responsive table-responsive-data2">
+                                                    <table class="table table-data2" style="font-size:x-large;">
+                                                        <thead>
+                                                        <tr>
+                                                            <th width="5%">
+                                                                <label class="au-checkbox">
+                                                                    <input type="checkbox">
+                                                                    <span class="au-checkmark"></span>
+                                                                </label>
+                                                            </th>
+                                                            <th width="35%" style="font-size:medium;">表現量圖表</th>
+                                                            <th width="15%" style="font-size:medium;">基因</th>
+                                                            <th width="15%" style="font-size:medium;">期待方向</th>
+                                                            <th width="15%" style="font-size:medium;">實際表現量</th>
+                                                            <th width="15%" style="font-size:medium;">顯著性</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr class="tr-shadow">
+                                                            <td>
+                                                                <label class="au-checkbox">
+                                                                    <input type="checkbox">
+                                                                    <span class="au-checkmark"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td><img src="figures/<?php echo($file_name) ?>/IL-1B.png" width="100%"></td>
+                                                            <td>IL-1B</td>
+                                                            <td>
+                                                                <span class="block-email">提高</span>
+                                                            </td>
+                                                            <td class="desc">1.92</td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr class="spacer"></tr>
+                                                        <tr class="tr-shadow">
+                                                            <td>
+                                                                <label class="au-checkbox">
+                                                                    <input type="checkbox">
+                                                                    <span class="au-checkmark"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td><img src="figures/<?php echo($file_name) ?>/IL-8.png " width="100%"></td>
+                                                            <td>IL-8</td>
+                                                            <td>
+                                                                <span class="block-email">提高</span>
+                                                            </td>
+                                                            <td class="desc">1.13</td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr class="spacer"></tr>
+                                                        <tr class="tr-shadow">
+                                                            <td>
+                                                                <label class="au-checkbox">
+                                                                    <input type="checkbox">
+                                                                    <span class="au-checkmark"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td><img src="figures/<?php echo($file_name) ?>/IL-6.png " width="100%"></td>
+                                                            <td>IL-6</td>
+                                                            <td>
+                                                                <span class="block-email">提高</span>
+                                                            </td>
+                                                            <td class="desc">1.01</td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr class="spacer"></tr>
+                                                        <tr class="tr-shadow">
+                                                            <td>
+                                                                <label class="au-checkbox">
+                                                                    <input type="checkbox">
+                                                                    <span class="au-checkmark"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td><img src="figures/<?php echo($file_name) ?>/IL-10.png " width="100%"></td>
+                                                            <td>IL-10</td>
+                                                            <td>
+                                                                <span class="block-email">提高</span>
+                                                            </td>
+                                                            <td class="desc">1.92</td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!-- END DATA TABLE -->
                                             </div>
                                             <div class="tab-pane fade" id="custom-nav-5" role="tabpanel" aria-labelledby="custom-nav-5-tab">
                                             </div>
