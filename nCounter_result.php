@@ -498,11 +498,11 @@
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </th>
-                                                            <th width="40%" style="font-size:x-large;">表現量圖表</th>
-                                                            <th width="13%" style="font-size:x-large;">基因</th>
-                                                            <th width="13%" style="font-size:x-large;">期待方向</th>
-                                                            <th width="13%" style="font-size:x-large;">實際表現量</th>
-                                                            <th width="13%" style="font-size:x-large;">顯著性</th>
+                                                            <th width="40%" style="font-size:medium;">表現量圖表</th>
+                                                            <th width="13%" style="font-size:medium;">基因</th>
+                                                            <th width="13%" style="font-size:medium;">期待方向</th>
+                                                            <th width="13%" style="font-size:medium;">實際表現量</th>
+                                                            <th width="13%" style="font-size:medium;">顯著性</th>
                                                         </tr>
                                                         </thead>
                                                         <tbody>
