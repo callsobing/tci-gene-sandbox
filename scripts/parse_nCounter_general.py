@@ -43,7 +43,7 @@ def label_significance(pos_in_fig, mean1, mean2, std, ymax):
 
 def plot_gene(gene_details_map, gene, file_name):
     fig, ax = plt.subplots()
-    plt.figure(figsize=(5.5, 7))
+    plt.figure(figsize=(6, 7))
     mock_mean = average(gene_details_map[gene]["mock"]["fold_change"])
     mean_6h1 = average(gene_details_map[gene]["6h_1"]["fold_change"])
     mean_6h2 = average(gene_details_map[gene]["6h_2"]["fold_change"])
