@@ -489,7 +489,7 @@
                                                 <!-- DATA TABLE -->
                                                 <h3 class="title-5 m-b-35">抗氧化 - 基因表現圖表</h3>
                                                 <div class="table-responsive table-responsive-data2">
-                                                    <table class="table table-data2" style="font-size:x-large;">
+                                                    <table class="table table-data2">
                                                         <thead>
                                                         <tr>
                                                             <th width="8%">
@@ -498,11 +498,11 @@
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </th>
-                                                            <th width="40%">表現量圖表</th>
-                                                            <th width="13%">基因</th>
-                                                            <th width="13%">期待方向</th>
-                                                            <th width="13%">實際表現量</th>
-                                                            <th width="13%">顯著性</th>
+                                                            <th width="40%" style="font-size:x-large;">表現量圖表</th>
+                                                            <th width="13%" style="font-size:x-large;">基因</th>
+                                                            <th width="13%" style="font-size:x-large;">期待方向</th>
+                                                            <th width="13%" style="font-size:x-large;">實際表現量</th>
+                                                            <th width="13%" style="font-size:x-large;">顯著性</th>
                                                         </tr>
                                                         </thead>
                                                         <tbody>
