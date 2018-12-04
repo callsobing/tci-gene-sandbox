@@ -453,7 +453,7 @@
                                             <label for="file-input" class=" form-control-label">檔案上傳</label>
                                         </div>
                                         <div class="col-12 col-md-9">
-                                            <input type="file" id="file-input" name="file_input" class="form-control-file">
+                                            <input type="file" id="file_input" name="file_input" class="form-control-file">
                                         </div>
                                     </div>
                                     <div class="card-footer">

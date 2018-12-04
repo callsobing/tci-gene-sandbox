@@ -13,8 +13,9 @@ flush();
 
 # 上傳使用者資料到uploaded_files
 $target_dir = "uploaded_files/";
-$target_file = $target_dir . basename($_FILES["file_input"]["name"]);
-$uploadOk = 1;
+$target_file = $target_dir.$_FILES["file_input"]["name"];
+echo($target_file);
+echo($_FILES['file_input']['tmp_name']);
 
 if (move_uploaded_file($_FILES['file_input']['tmp_name'], $target_file)) {
     echo "File is valid, and was successfully uploaded.\\\\n";
