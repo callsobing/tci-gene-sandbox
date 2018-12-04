@@ -448,10 +448,10 @@
                             </div>
                             <div class="card-body card-block">
                                 <form action="./run_nCounter.php" method="post" enctype="multipart/form-data" class="form-horizontal">
-                                    檔案名稱:<input type="file" name="file_input" id="file_input" /><br />
+                                    檔案名稱:<input type="file" name="file_input" id="file_input" /><p> </p>
+                                    <p> </p>
                                     <button type="submit" class="btn btn-primary btn-sm">Submit</button>
                                     <button type="reset" class="btn btn-danger btn-sm">Reset</button>
-
                                 </form>
                             </div>
 
