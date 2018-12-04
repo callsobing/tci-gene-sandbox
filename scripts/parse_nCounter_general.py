@@ -8,6 +8,7 @@ import numpy as np
 import scipy.stats as stats
 import os
 import sys
+matplotlib.use('Agg')
 
 # file_name = sys.argv[1]
 file_name = "test.xlsx"
