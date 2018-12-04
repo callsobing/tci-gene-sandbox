@@ -442,21 +442,18 @@
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
-                        <?php
-                            echo '<strong>Test Test Test test</strong>';
-                        ?>
                         <div class="card">
                             <div class="card-header">
                                 <strong>資料處理</strong> 專區　
                             </div>
                             <div class="card-body card-block">
-                                <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                <form action="" method="get" enctype="multipart/form-data" class="form-horizontal">
                                     <div class="row form-group">
                                         <div class="col col-md-3">
                                             <label for="file-input" class=" form-control-label">檔案上傳</label>
                                         </div>
                                         <div class="col-12 col-md-9">
-                                            <input type="file" id="file-input" name="file-input" class="form-control-file">
+                                            <input type="file" id="file-input" name="file_input" class="form-control-file">
                                         </div>
                                     </div>
                                 </form>
