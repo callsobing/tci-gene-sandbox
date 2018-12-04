@@ -538,7 +538,6 @@
                                                             <th>date</th>
                                                             <th>status</th>
                                                             <th>price</th>
-                                                            <th></th>
                                                         </tr>
                                                         </thead>
                                                         <tbody>
@@ -559,22 +558,6 @@
                                                                 <span class="status--process">Processed</span>
                                                             </td>
                                                             <td>$679.00</td>
-                                                            <td>
-                                                                <div class="table-data-feature">
-                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                                        <i class="zmdi zmdi-mail-send"></i>
-                                                                    </button>
-                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                                        <i class="zmdi zmdi-edit"></i>
-                                                                    </button>
-                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                                        <i class="zmdi zmdi-delete"></i>
-                                                                    </button>
-                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                                        <i class="zmdi zmdi-more"></i>
-                                                                    </button>
-                                                                </div>
-                                                            </td>
                                                         </tr>
                                                         <tr class="spacer"></tr>
                                                         <tr class="tr-shadow">
@@ -594,22 +577,6 @@
                                                                 <span class="status--process">Processed</span>
                                                             </td>
                                                             <td>$999.00</td>
-                                                            <td>
-                                                                <div class="table-data-feature">
-                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                                        <i class="zmdi zmdi-mail-send"></i>
-                                                                    </button>
-                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                                        <i class="zmdi zmdi-edit"></i>
-                                                                    </button>
-                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                                        <i class="zmdi zmdi-delete"></i>
-                                                                    </button>
-                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                                        <i class="zmdi zmdi-more"></i>
-                                                                    </button>
-                                                                </div>
-                                                            </td>
                                                         </tr>
                                                         <tr class="spacer"></tr>
                                                         <tr class="tr-shadow">
@@ -629,22 +596,6 @@
                                                                 <span class="status--denied">Denied</span>
                                                             </td>
                                                             <td>$1199.00</td>
-                                                            <td>
-                                                                <div class="table-data-feature">
-                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                                        <i class="zmdi zmdi-mail-send"></i>
-                                                                    </button>
-                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                                        <i class="zmdi zmdi-edit"></i>
-                                                                    </button>
-                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                                        <i class="zmdi zmdi-delete"></i>
-                                                                    </button>
-                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                                        <i class="zmdi zmdi-more"></i>
-                                                                    </button>
-                                                                </div>
-                                                            </td>
                                                         </tr>
                                                         <tr class="spacer"></tr>
                                                         <tr class="tr-shadow">
@@ -664,22 +615,6 @@
                                                                 <span class="status--process">Processed</span>
                                                             </td>
                                                             <td>$699.00</td>
-                                                            <td>
-                                                                <div class="table-data-feature">
-                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                                        <i class="zmdi zmdi-mail-send"></i>
-                                                                    </button>
-                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                                        <i class="zmdi zmdi-edit"></i>
-                                                                    </button>
-                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                                        <i class="zmdi zmdi-delete"></i>
-                                                                    </button>
-                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                                        <i class="zmdi zmdi-more"></i>
-                                                                    </button>
-                                                                </div>
-                                                            </td>
                                                         </tr>
                                                         </tbody>
                                                     </table>
