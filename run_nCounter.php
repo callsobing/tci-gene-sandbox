@@ -16,8 +16,8 @@ $target_dir = "uploaded_files/";
 $target_file = $target_dir.$_FILES["file_input"]["name"];
 
 # Debug區域
-echo($target_file);
-echo($_FILES['file_input']['tmp_name']);
+//echo($target_file);
+//echo($_FILES['file_input']['tmp_name']);
 
 if (move_uploaded_file($_FILES['file_input']['tmp_name'], $target_file)) {
 //    echo "File is valid, and was successfully uploaded.\\\\n";
