@@ -9,7 +9,7 @@ import numpy as np
 from scipy import stats
 import os
 import sys
-plt.rcParams['font.sans-serif'] = ['SimHei']
+# plt.rcParams['font.sans-serif'] = ['SimHei']
 
 # file_name = sys.argv[1]
 file_name = "test.xlsx"
