@@ -487,41 +487,7 @@
                                         <div class="tab-content pl-3 pt-2" id="nav-tabContent">
                                             <div class="tab-pane fade show active" id="custom-nav-1" role="tabpanel" aria-labelledby="custom-nav-1-tab">
                                                 <!-- DATA TABLE -->
-                                                <h3 class="title-5 m-b-35">data table</h3>
-                                                <div class="table-data__tool">
-                                                    <div class="table-data__tool-left">
-                                                        <div class="rs-select2--light rs-select2--md">
-                                                            <select class="js-select2" name="property">
-                                                                <option selected="selected">All Properties</option>
-                                                                <option value="">Option 1</option>
-                                                                <option value="">Option 2</option>
-                                                            </select>
-                                                            <div class="dropDownSelect2"></div>
-                                                        </div>
-                                                        <div class="rs-select2--light rs-select2--sm">
-                                                            <select class="js-select2" name="time">
-                                                                <option selected="selected">Today</option>
-                                                                <option value="">3 Days</option>
-                                                                <option value="">1 Week</option>
-                                                            </select>
-                                                            <div class="dropDownSelect2"></div>
-                                                        </div>
-                                                        <button class="au-btn-filter">
-                                                            <i class="zmdi zmdi-filter-list"></i>filters</button>
-                                                    </div>
-                                                    <div class="table-data__tool-right">
-                                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                                            <i class="zmdi zmdi-plus"></i>add item</button>
-                                                        <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
-                                                            <select class="js-select2" name="type">
-                                                                <option selected="selected">Export</option>
-                                                                <option value="">Option 1</option>
-                                                                <option value="">Option 2</option>
-                                                            </select>
-                                                            <div class="dropDownSelect2"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                <h3 class="title-5 m-b-35">基因表現圖表</h3>
                                                 <div class="table-responsive table-responsive-data2">
                                                     <table class="table table-data2">
                                                         <thead>
@@ -532,12 +498,11 @@
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </th>
-                                                            <th>name</th>
-                                                            <th>email</th>
-                                                            <th>description</th>
-                                                            <th>date</th>
-                                                            <th>status</th>
-                                                            <th>price</th>
+                                                            <th>表現量圖表</th>
+                                                            <th>基因</th>
+                                                            <th>期待方向</th>
+                                                            <th>實際表現量</th>
+                                                            <th>顯著性</th>
                                                         </tr>
                                                         </thead>
                                                         <tbody>
@@ -548,16 +513,13 @@
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </td>
-                                                            <td>Lori Lynch</td>
+                                                            <td><img src="figures/<?php echo($file_name) ?>/SOD1.png "></td>
+                                                            <td>SOD1</td>
                                                             <td>
-                                                                <span class="block-email">lori@example.com</span>
+                                                                <span class="block-email">提高</span>
                                                             </td>
-                                                            <td class="desc">Samsung S8 Black</td>
-                                                            <td>2018-09-27 02:12</td>
-                                                            <td>
-                                                                <span class="status--process">Processed</span>
-                                                            </td>
-                                                            <td>$679.00</td>
+                                                            <td class="desc">1.92</td>
+                                                            <td>-</td>
                                                         </tr>
                                                         <tr class="spacer"></tr>
                                                         <tr class="tr-shadow">
@@ -567,16 +529,13 @@
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </td>
-                                                            <td>Lori Lynch</td>
+                                                            <td><img src="figures/<?php echo($file_name) ?>/SOD2.png "></td>
+                                                            <td>SOD2</td>
                                                             <td>
-                                                                <span class="block-email">john@example.com</span>
+                                                                <span class="block-email">提高</span>
                                                             </td>
-                                                            <td class="desc">iPhone X 64Gb Grey</td>
-                                                            <td>2018-09-29 05:57</td>
-                                                            <td>
-                                                                <span class="status--process">Processed</span>
-                                                            </td>
-                                                            <td>$999.00</td>
+                                                            <td class="desc">1.13</td>
+                                                            <td>-</td>
                                                         </tr>
                                                         <tr class="spacer"></tr>
                                                         <tr class="tr-shadow">
@@ -586,16 +545,13 @@
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </td>
-                                                            <td>Lori Lynch</td>
+                                                            <td><img src="figures/<?php echo($file_name) ?>/GPX1.png "></td>
+                                                            <td>GPX1</td>
                                                             <td>
-                                                                <span class="block-email">lyn@example.com</span>
+                                                                <span class="block-email">提高</span>
                                                             </td>
-                                                            <td class="desc">iPhone X 256Gb Black</td>
-                                                            <td>2018-09-25 19:03</td>
-                                                            <td>
-                                                                <span class="status--denied">Denied</span>
-                                                            </td>
-                                                            <td>$1199.00</td>
+                                                            <td class="desc">1.01</td>
+                                                            <td>-</td>
                                                         </tr>
                                                         <tr class="spacer"></tr>
                                                         <tr class="tr-shadow">
@@ -605,16 +561,13 @@
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </td>
-                                                            <td>Lori Lynch</td>
+                                                            <td><img src="figures/<?php echo($file_name) ?>/CAT.png "></td>
+                                                            <td>CAT</td>
                                                             <td>
-                                                                <span class="block-email">doe@example.com</span>
+                                                                <span class="block-email">提高</span>
                                                             </td>
-                                                            <td class="desc">Camera C430W 4k</td>
-                                                            <td>2018-09-24 19:10</td>
-                                                            <td>
-                                                                <span class="status--process">Processed</span>
-                                                            </td>
-                                                            <td>$699.00</td>
+                                                            <td class="desc">1.92</td>
+                                                            <td>-</td>
                                                         </tr>
                                                         </tbody>
                                                     </table>
