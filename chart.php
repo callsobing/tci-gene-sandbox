@@ -447,23 +447,11 @@
                                 <strong>資料處理</strong> 專區　
                             </div>
                             <div class="card-body card-block">
-                                <form action="./run_nCounter.php" method="get" enctype="multipart/form-data" class="form-horizontal">
-                                    <div class="row form-group">
-                                        <div class="col col-md-3">
-                                            <label for="file-input" class=" form-control-label">檔案上傳</label>
-                                        </div>
-                                        <div class="col-12 col-md-9">
-                                            <input type="file" id="file_input" name="file_input" class="form-control-file">
-                                        </div>
-                                    </div>
-                                    <div class="card-footer">
-                                        <button type="submit" class="btn btn-primary btn-sm">
-                                            <i class="fa fa-dot-circle-o"></i> Submit
-                                        </button>
-                                        <button type="reset" class="btn btn-danger btn-sm">
-                                            <i class="fa fa-ban"></i> Reset
-                                        </button>
-                                    </div>
+                                <form action="./run_nCounter.php" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                    檔案名稱:<input type="file" name="file_input" id="file_input" /><br />
+                                    <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                                    <button type="reset" class="btn btn-danger btn-sm">Reset</button>
+
                                 </form>
                             </div>
 
