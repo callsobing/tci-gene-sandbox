@@ -6,7 +6,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from pylab import *
 import numpy as np
-from scipy.stats import ttest_ind_from_stats
+from scipy import stats
 import os
 import sys
 
@@ -22,8 +22,8 @@ def create_directory(directory_path):
         return False
 
 
-def label_significance(pos_in_fig, mean, std, ymax):
-    (statistic, pvalue) = ttest_ind_from_stats(mean1=mean, std1=std, nobs1=3, mean2=1, std2=0, nobs2=3)
+def label_significance(pos_in_fig, mean1, mean2, std, ymax):
+    (statistic, pvalue) = stats.ttest_ind(mean1, mean2)
     text = ""
     if pvalue < 0.001:
         # text = "p-value: %s\n***" % "{:.4f}".format(pvalue)
@@ -36,9 +36,9 @@ def label_significance(pos_in_fig, mean, std, ymax):
         text = "*"
     if text:
         # Annotate significance level
-        plt.annotate(text, xy=(pos_in_fig - 0.05, mean + std + ymax * 0.005), fontsize="xx-large")
+        plt.annotate(text, xy=(pos_in_fig - 0.05, average(mean2) + std + ymax * 0.005), fontsize="xx-large")
         # Annotate Relative Expression ratio
-        plt.annotate("{:.2f}".format(mean), xy=(pos_in_fig - 0.12, mean - ymax * 0.05), fontsize="x-large")
+        plt.annotate("{:.2f}".format(average(mean2)), xy=(pos_in_fig - 0.12, average(mean2) - ymax * 0.05), fontsize="x-large")
 
 
 def plot_gene(gene_details_map, gene, file_name):
@@ -65,8 +65,8 @@ def plot_gene(gene_details_map, gene, file_name):
     plt.gca().spines['right'].set_color('none')
     plt.gca().spines['top'].set_color('none')
 
-    label_significance(1, means[1], errors[1], ymax)
-    label_significance(2, means[2], errors[2], ymax)
+    label_significance(1, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["6h_1"]["fold_change"], errors[1], ymax)
+    label_significance(2, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["6h_2"]["fold_change"], errors[2], ymax)
     plt.savefig("figures/%s/%s.png" % (file_name, gene))
     plt.cla()
     plt.close(fig)
