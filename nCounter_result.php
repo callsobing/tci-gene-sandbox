@@ -451,7 +451,7 @@
                                     <div class="custom-tab">
                                         <nav>
                                             <?php
-                                            $file_name = "test"
+                                            $file_name = "test.xlsx"
                                             ?>
                                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                                 <a class="nav-item nav-link active" id="custom-nav-1-tab" data-toggle="tab" href="#custom-nav-1" role="tab" aria-controls="custom-nav-1"
