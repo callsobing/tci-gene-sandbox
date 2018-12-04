@@ -7,7 +7,9 @@
  */
 
 //$command = escapeshellcmd('python script/parse_nCounter_general.py');
+echo("<img src='images/waiting.jpg'/>");
 $command = exec('sudo -u www-data python3.4 scripts/parse_nCounter_general.py');
+
 
 
 ?>
