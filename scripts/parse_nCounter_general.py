@@ -93,7 +93,7 @@ platforms = {"抗氧化": {"up": ["SOD1","SOD2","GPX1","CAT"], "down": []},
             "促進免疫活化與分化": {"up": [], "down": ["CD40","ERBB2","LIF","MALT1","NCK1","PAF1","DYNLL2","GRK5","PSMD4","RDH10","RELB","SCARF1","TNFSF14","ABR","IL13","IL4R","IL5RA","RELA"]}
             }
 
-df_uht = pd.read_excel(io="../uploaded_files/%s" % file_name, sheet_name="Sheet1")
+df_uht = pd.read_excel(io="../uploaded_files/%s" % file_name, sheetname="Sheet1")
 uht_list = df_uht.values.tolist()[1:]
 exp_identifiers = list(df_uht)
 gene_names = df_uht.index.values[1:]
