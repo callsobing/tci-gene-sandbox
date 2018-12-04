@@ -6,7 +6,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from pylab import *
 import numpy as np
-from scipy import stats
+from scipy.stats import ttest_ind_from_stats
 import os
 import sys
 
@@ -23,7 +23,7 @@ def create_directory(directory_path):
 
 
 def label_significance(pos_in_fig, mean, std, ymax):
-    (statistic, pvalue) = stats.ttest_ind_from_stats(mean1=mean, std1=std, nobs1=3, mean2=1, std2=0, nobs2=3)
+    (statistic, pvalue) = ttest_ind_from_stats(mean1=mean, std1=std, nobs1=3, mean2=1, std2=0, nobs2=3)
     text = ""
     if pvalue < 0.001:
         # text = "p-value: %s\n***" % "{:.4f}".format(pvalue)
