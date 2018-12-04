@@ -529,7 +529,7 @@
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </td>
-                                                            <td><img src="figures/<?php echo($file_name) ?>/SOD2.png "></td>
+                                                            <td><img src="figures/<?php echo($file_name) ?>/SOD2.png " width="20%"></td>
                                                             <td>SOD2</td>
                                                             <td>
                                                                 <span class="block-email">提高</span>
@@ -545,7 +545,7 @@
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </td>
-                                                            <td><img src="figures/<?php echo($file_name) ?>/GPX1.png "></td>
+                                                            <td><img src="figures/<?php echo($file_name) ?>/GPX1.png " width="20%"></td>
                                                             <td>GPX1</td>
                                                             <td>
                                                                 <span class="block-email">提高</span>
@@ -561,7 +561,7 @@
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </td>
-                                                            <td><img src="figures/<?php echo($file_name) ?>/CAT.png "></td>
+                                                            <td><img src="figures/<?php echo($file_name) ?>/CAT.png " width="20%"></td>
                                                             <td>CAT</td>
                                                             <td>
                                                                 <span class="block-email">提高</span>
