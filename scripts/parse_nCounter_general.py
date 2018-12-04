@@ -6,7 +6,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from pylab import *
 import numpy as np
-import scipy
+import scipy.stats
 import os
 import sys
 
