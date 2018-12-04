@@ -513,7 +513,7 @@
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </td>
-                                                            <td><img src="figures/<?php echo($file_name) ?>/SOD1.png width=20% "></td>
+                                                            <td><img src="figures/<?php echo($file_name) ?>/SOD1.png" width="20%"></td>
                                                             <td>SOD1</td>
                                                             <td>
                                                                 <span class="block-email">提高</span>
