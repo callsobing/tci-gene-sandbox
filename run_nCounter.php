@@ -8,5 +8,6 @@
 
 //$command = escapeshellcmd('python script/parse_nCounter_general.py');
 $command = escapeshellcmd('python script/test.py');
+echo($command)
 
 ?>
