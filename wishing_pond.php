@@ -1,3 +1,12 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Yian.Tung
+ * Date: 2018/12/6
+ * Time: 下午 05:21
+ */
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,12 +19,12 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Card</title>
+    <title>TCI Gene - Charts</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
 
     <!-- Bootstrap CSS-->
@@ -75,7 +84,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="chart.php">
+                            <a href="chart.html">
                                 <i class="fas fa-chart-bar"></i>Charts</a>
                         </li>
                         <li>
@@ -182,8 +191,8 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="chart.php">
+                        <li class="active">
+                            <a href="chart.html">
                                 <i class="fas fa-chart-bar"></i>Charts</a>
                         </li>
                         <li>
@@ -217,7 +226,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="active has-sub">
+                        <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-desktop"></i>UI Elements</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
@@ -436,368 +445,134 @@
                     </div>
                 </div>
             </header>
-            <!-- HEADER DESKTOP-->
+            <!-- END HEADER DESKTOP-->
 
             <!-- MAIN CONTENT-->
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <strong class="card-title mb-3">Profile Card</strong>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="mx-auto d-block">
-                                            <img class="rounded-circle mx-auto d-block" src="images/icon/avatar-01.jpg" alt="Card image cap">
-                                            <h5 class="text-sm-center mt-2 mb-1">Steven Lee</h5>
-                                            <div class="location text-sm-center">
-                                                <i class="fa fa-map-marker"></i> California, United States</div>
-                                        </div>
-                                        <hr>
-                                        <div class="card-text text-sm-center">
-                                            <a href="#">
-                                                <i class="fa fa-facebook pr-1"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="fa fa-twitter pr-1"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="fa fa-linkedin pr-1"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="fa fa-pinterest pr-1"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <strong>資訊上傳</strong>
                             </div>
-
-
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="mx-auto d-block">
-                                            <img class="rounded-circle mx-auto d-block" src="images/icon/avatar-01.jpg" alt="Card image cap">
-                                            <h5 class="text-sm-center mt-2 mb-1">Steven Lee</h5>
-                                            <div class="location text-sm-center">
-                                                <i class="fa fa-map-marker"></i> California, United States</div>
+                            <div class="card-body card-block">
+                                <form action="./run_nCounter.php" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="select" class=" form-control-label">操作人員</label>
                                         </div>
-                                        <hr>
-                                        <div class="card-text text-sm-center">
-                                            <a href="#">
-                                                <i class="fa fa-facebook pr-1"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="fa fa-twitter pr-1"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="fa fa-linkedin pr-1"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="fa fa-pinterest pr-1"></i>
-                                            </a>
+                                        <div class="col-12 col-md-9">
+                                            <select name="select" id="select" class="form-control">
+                                                <option value="Austin">Austin</option>
+                                                <option value="Chelsea">Chelsea</option>
+                                                <option value="Elaine">Elaine</option>
+                                                <option value="Karen">Karen</option>
+                                                <option value="Lauren">Lauren</option>
+                                                <option value="Nick">Nick</option>
+                                                <option value="Ray">Ray</option>
+                                                <option value="Summer">Summer</option>
+                                                <option value="Yian">Yian</option>
+                                            </select>
                                         </div>
                                     </div>
-                                    <div class="card-footer">
-                                        <strong class="card-title mb-3">Profile Card</strong>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <i class="fa fa-user"></i>
-                                        <strong class="card-title pl-2">Profile Card</strong>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="mx-auto d-block">
-                                            <img class="rounded-circle mx-auto d-block" src="images/icon/avatar-01.jpg" alt="Card image cap">
-                                            <h5 class="text-sm-center mt-2 mb-1">Steven Lee</h5>
-                                            <div class="location text-sm-center">
-                                                <i class="fa fa-map-marker"></i> California, United States</div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="select" class=" form-control-label">分析類別</label>
                                         </div>
-                                        <hr>
-                                        <div class="card-text text-sm-center">
-                                            <a href="#">
-                                                <i class="fa fa-facebook pr-1"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="fa fa-twitter pr-1"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="fa fa-linkedin pr-1"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="fa fa-pinterest pr-1"></i>
-                                            </a>
+                                        <div class="col-12 col-md-9">
+                                            <select name="select" id="select" class="form-control">
+                                                <option value="nCounter">nCounter資料分析</option>
+                                                <option value="qpcr">qPCR數據分析</option>
+                                                <option value="g2">G2報告生成</option>
+                                                <option value="r1">R1報告生成</option>
+                                            </select>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-4">
-                                <aside class="profile-nav alt">
-                                    <section class="card">
-                                        <div class="card-header user-header alt bg-dark">
-                                            <div class="media">
-                                                <a href="#">
-                                                    <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="images/icon/avatar-01.jpg">
-                                                </a>
-                                                <div class="media-body">
-                                                    <h2 class="text-light display-6">Jim Doe</h2>
-                                                    <p>Project Manager</p>
-                                                </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label class=" form-control-label">樣本數</label>
+                                        </div>
+                                        <div class="col col-md-9">
+                                            <div class="form-check-inline form-check">
+                                                <label for="inline-radio1" class="form-check-label ">
+                                                    <input type="radio" id="inline-radio1" name="inline-radios" value="option1" class="form-check-input"> 1
+                                                </label>
+                                                <label for="inline-radio2" class="form-check-label ">
+                                                    <input type="radio" id="inline-radio2" name="inline-radios" value="option2" class="form-check-input"> 2
+                                                </label>
+                                                <label for="inline-radio3" class="form-check-label ">
+                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option3" class="form-check-input"> 3
+                                                </label>
+                                                <label for="inline-radio3" class="form-check-label ">
+                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option4" class="form-check-input"> 4
+                                                </label>
+                                                <label for="inline-radio3" class="form-check-label ">
+                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option5" class="form-check-input"> 5
+                                                </label>
+                                                <label for="inline-radio3" class="form-check-label ">
+                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option6" class="form-check-input"> 6
+                                                </label>
+                                                <label for="inline-radio3" class="form-check-label ">
+                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option7" class="form-check-input"> 7
+                                                </label>
                                             </div>
                                         </div>
-
-
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item">
-                                                <a href="#">
-                                                    <i class="fa fa-envelope-o"></i> Mail Inbox
-                                                    <span class="badge badge-primary pull-right">10</span>
-                                                </a>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <a href="#">
-                                                    <i class="fa fa-tasks"></i> Recent Activity
-                                                    <span class="badge badge-danger pull-right">15</span>
-                                                </a>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <a href="#">
-                                                    <i class="fa fa-bell-o"></i> Notification
-                                                    <span class="badge badge-success pull-right">11</span>
-                                                </a>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <a href="#">
-                                                    <i class="fa fa-comments-o"></i> Message
-                                                    <span class="badge badge-warning pull-right r-activity">03</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-
-                                    </section>
-                                </aside>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label class=" form-control-label">時間點</label>
+                                        </div>
+                                        <div class="col col-md-9">
+                                            <div class="form-check-inline form-check">
+                                                <label for="inline-radio1" class="form-check-label ">
+                                                    <input type="radio" id="inline-radio1" name="inline-radios" value="option1" class="form-check-input">1
+                                                </label>
+                                                <label for="inline-radio2" class="form-check-label ">
+                                                    <input type="radio" id="inline-radio2" name="inline-radios" value="option2" class="form-check-input">2
+                                                </label>
+                                                <label for="inline-radio3" class="form-check-label ">
+                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option3" class="form-check-input">3
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col col-md-9">
+檔案名稱:<input type="file" name="file_input" id="file_input" />
+                                    </div>
+                                    <div class="col col-md-9">
+                                    <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                                    <button type="reset" class="btn btn-danger btn-sm">Reset</button>
+                                    </div>
+                                </form>
                             </div>
+                        </div>
 
+                        <!-- 提交表格的 Working version -->
+<!--                        <div class="card">-->
+<!--                            <div class="card-header">-->
+<!--                                <strong>資料處理</strong> 專區　-->
+<!--                            </div>-->
+<!--                            <div class="card-body card-block">-->
+<!--                                <form action="./run_nCounter.php" method="post" enctype="multipart/form-data" class="form-horizontal">-->
+<!--                                    檔案名稱:<input type="file" name="file_input" id="file_input" />-->
+<!--                                    <button type="submit" class="btn btn-primary btn-sm">Submit</button>-->
+<!--                                    <button type="reset" class="btn btn-danger btn-sm">Reset</button>-->
+<!--                                </form>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <!-- End of 提交表格的 Working version -->
 
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <strong class="card-title">Card with switch</strong>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                                            content.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <strong class="card-title">Card with Label
-                                            <small>
-                                                <span class="badge badge-success float-right mt-1">Success</span>
-                                            </small>
-                                        </strong>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                                            content.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <strong class="card-title">Card with Label
-                                            <small>
-                                                <span class="badge badge-danger float-right mt-1">49</span>
-                                            </small>
-                                        </strong>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                                            content.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                            <div class="col-md-4">
-                                <div class="card border border-primary">
-                                    <div class="card-header">
-                                        <strong class="card-title">Card Outline</strong>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                                            content.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-4">
-                                <div class="card border border-secondary">
-                                    <div class="card-header">
-                                        <strong class="card-title">Card Outline</strong>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                                            content.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-4">
-                                <div class="card border border-success">
-                                    <div class="card-header">
-                                        <strong class="card-title">Card Outline</strong>
-                                    </div>
-                                    <div class="card-body">
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                                            content.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                            <div class="col-md-4">
-                                <div class="card bg-danger">
-                                    <div class="card-body">
-                                        <blockquote class="blockquote mb-0">
-                                            <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                                                a ante.</p>
-                                            <footer class="blockquote-footer text-light">Someone famous in
-                                                <cite title="Source Title">Source Title</cite>
-                                            </footer>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="card bg-warning">
-                                    <div class="card-body">
-                                        <blockquote class="blockquote mb-0 text-light">
-                                            <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                                                a ante.</p>
-                                            <footer class="blockquote-footer text-light">Someone famous in
-                                                <cite title="Source Title">Source Title</cite>
-                                            </footer>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="card bg-primary">
-                                    <div class="card-body">
-                                        <blockquote class="blockquote mb-0 text-light">
-                                            <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
-                                                a ante.</p>
-                                            <footer class="blockquote-footer text-light">Someone famous in
-                                                <cite title="Source Title">Source Title</cite>
-                                            </footer>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-header bg-secondary">
-                                        <strong class="card-title text-light">Card Header</strong>
-                                    </div>
-                                    <div class="card-body text-white bg-primary">
-                                        <p class="card-text text-light">Some quick example text to build on the card title and make up the bulk of the card's
-                                            content.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-header bg-dark">
-                                        <strong class="card-title text-light">Card Header</strong>
-                                    </div>
-                                    <div class="card-body text-white bg-danger">
-                                        <p class="card-text text-light">Some quick example text to build on the card title and make up the bulk of the card's
-                                            content.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-header bg-success">
-                                        <strong class="card-title text-light">Card Header</strong>
-                                    </div>
-                                    <div class="card-body text-white bg-warning">
-                                        <p class="card-text text-light">Some quick example text to build on the card title and make up the bulk of the card's
-                                            content.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <img class="card-img-top" src="images/bg-title-01.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h4 class="card-title mb-3">Card Image Title</h4>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                                            content.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <img class="card-img-top" src="images/bg-title-01.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h4 class="card-title mb-3">Card Image Title</h4>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                                            content.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <img class="card-img-top" src="images/bg-title-01.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h4 class="card-title mb-3">Card Image Title</h4>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                                            content.
-                                        </p>
-                                    </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="copyright">
+                                    <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- END MAIN CONTENT-->
         </div>
         <!-- END PAGE CONTAINER-->
 
