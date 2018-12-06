@@ -389,14 +389,14 @@
                                         </div>
                                     </div>
                                     <div class="row form-group">
-                                        <div class="col col-md-3">
+                                        <div class="col col-md-6">
                                             附加檔案: <input type="file" name="file_input" id="file_input" />
                                         </div>
-                                        <div class="col col-md-3"></div>
-                                        <div class="col col-md-3"></div>
+                                    </div>
+                                    <div class="row form-group">
                                         <div class="col col-md-3">
-                                        <button type="submit" class="btn btn-primary btn-sm">Submit</button>
-                                        <button type="reset" class="btn btn-danger btn-sm">Reset</button>
+                                            <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                                            <button type="reset" class="btn btn-danger btn-sm">Reset</button>
                                         </div>
                                     </div>
                                 </form>
