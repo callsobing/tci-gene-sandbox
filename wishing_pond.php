@@ -22,15 +22,6 @@ $file_path = "";
 $urgency = "";
 $date = "";
 
-while($row = mysql_fetch_array($result))
-{
-    $title = $row['title'];
-    $wisher = $row['wisher'];
-    $content = $row['content'];
-    $file_path = $row['attached_file_path'];
-    $urgency = $row['urgency'];
-    $date = $row['date'];
-}
 ?>
 
 <!DOCTYPE html>
@@ -444,13 +435,24 @@ while($row = mysql_fetch_array($result))
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <td><?php echo $wisher ?></td>
-                                            <td><?php echo $title ?></td>
-                                            <td><?php echo $content ?></td>
-                                            <td class="process"><?php echo $urgency ?></td>
-                                            <td><?php echo $date ?></td>
-                                        </tr>
+                                        <?php
+                                        while($row = mysql_fetch_array($result))
+                                        {
+
+                                            $title = $row['title'];
+                                            $wisher = $row['wisher'];
+                                            $content = $row['content'];
+                                            $file_path = $row['attached_file_path'];
+                                            $urgency = $row['urgency'];
+                                            $date = $row['date'];
+                                            echo("<tr>");
+                                            echo("<td>$wisher</td>");
+                                            echo("<td> $title </td>");
+                                            echo("<td> $content </td>");
+                                            echo("<td class=\"process\"> $urgency </td>");
+                                            echo("<td> $date </td></tr>");
+                                        }
+                                        ?>
                                         </tbody>
                                     </table>
                                 </div>
