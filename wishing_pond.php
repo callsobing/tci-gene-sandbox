@@ -5,6 +5,31 @@
  * Date: 2018/12/6
  * Time: 下午 05:21
  */
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "tcigene";
+$dbname = "tci_gene_dashboard";
+$conn = mysql_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connection');
+mysql_select_db($dbname);
+$sql = "SELECT * FROM 'wishing_pond'";
+$result = mysql_query($sql) or die('MySQL query error');
+
+$title = "";
+$wisher = "";
+$content = "";
+$file_path = "";
+$urgency = "";
+$date = "";
+
+while($row = mysql_fetch_array($result))
+{
+    $title = $row['title'];
+    $wisher = $row['wisher'];
+    $content = $row['content'];
+    $file_path = $row['attached_file_path'];
+    $urgency = $row['urgency'];
+    $date = $row['date'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -403,20 +428,34 @@
                             </div>
                         </div>
 
-                        <!-- 提交表格的 Working version -->
-<!--                        <div class="card">-->
-<!--                            <div class="card-header">-->
-<!--                                <strong>資料處理</strong> 專區　-->
-<!--                            </div>-->
-<!--                            <div class="card-body card-block">-->
-<!--                                <form action="./run_nCounter.php" method="post" enctype="multipart/form-data" class="form-horizontal">-->
-<!--                                    檔案名稱:<input type="file" name="file_input" id="file_input" />-->
-<!--                                    <button type="submit" class="btn btn-primary btn-sm">Submit</button>-->
-<!--                                    <button type="reset" class="btn btn-danger btn-sm">Reset</button>-->
-<!--                                </form>-->
-<!--                            </div>-->
-<!--                        </div>-->
-                        <!-- End of 提交表格的 Working version -->
+                        <div class="row m-t-30">
+                            <div class="col-md-12">
+                                <!-- DATA TABLE-->
+                                <div class="table-responsive m-b-40">
+                                    <table class="table table-borderless table-data3">
+                                        <thead>
+                                        <tr>
+                                            <th>發願者</th>
+                                            <th>主旨</th>
+                                            <th>內容</th>
+                                            <th>緊急程度</th>
+                                            <th>許願日期</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td><?php echo $wisher ?></td>
+                                            <td><?php echo $title ?></td>
+                                            <td><?php echo $content ?></td>
+                                            <td class="process"><?php echo $urgency ?></td>
+                                            <td><?php echo $date ?></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- END DATA TABLE-->
+                            </div>
+                        </div>
 
                         <div class="row">
                             <div class="col-md-12">
