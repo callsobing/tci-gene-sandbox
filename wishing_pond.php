@@ -428,11 +428,11 @@ $date = "";
                                     <table class="table table-borderless table-data3">
                                         <thead>
                                         <tr>
-                                            <th width="10%">發願者</th>
-                                            <th width="30%">主旨</th>
-                                            <th width="35%">內容</th>
+                                            <th width="12%">發願者</th>
+                                            <th width="28%">主旨</th>
+                                            <th width="30%">內容</th>
                                             <th width="15%">緊急程度</th>
-                                            <th width="10%">許願日期</th>
+                                            <th width="15%">許願日期</th>
                                         </tr>
                                         </thead>
                                         <tbody>
