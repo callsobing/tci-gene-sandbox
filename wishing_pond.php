@@ -359,7 +359,7 @@ while($row = mysql_fetch_array($result))
                                 <strong>TCI Gene - 許願池</strong>
                             </div>
                             <div class="card-body card-block">
-                                <form action="./run_nCounter.php" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                <form action="./insert_wishing_pond.php" method="post" enctype="multipart/form-data" class="form-horizontal">
                                     <div class="row form-group">
                                         <div class="col col-md-3">
                                             <label for="text-input" class=" form-control-label">主旨</label>
@@ -416,7 +416,7 @@ while($row = mysql_fetch_array($result))
                                     </div>
                                     <div class="row form-group">
                                         <div class="col col-md-6">
-                                            附加檔案: <input type="file" name="file_input" id="file_input" />
+                                            附加檔案: <input type="file" name="file_path" id="file_path" />
                                         </div>
                                     </div>
                                     <div class="row form-group">
