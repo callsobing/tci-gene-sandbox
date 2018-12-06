@@ -10,6 +10,7 @@ $dbuser = "root";
 $dbpass = "tcigene";
 $dbname = "tci_gene_dashboard";
 $conn = mysql_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connection');
+mysql_query("SET NAMES 'utf8'");
 mysql_select_db($dbname);
 $sql = "SELECT * FROM `wishing_pond`";
 $result = mysql_query($sql) or die('MySQL query error');
