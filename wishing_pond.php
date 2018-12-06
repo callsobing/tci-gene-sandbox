@@ -440,9 +440,9 @@ $date = "";
                                         while($row = mysql_fetch_array($result))
                                         {
 
-                                            $title = $row['title'];
+                                            $title = mb_strimwidth($row['title'], 0, 50, "...", "UTF-8");
                                             $wisher = $row['wisher'];
-                                            $content = $row['content'];
+                                            $content = mb_strimwidth($row['content'], 0, 50, "...", "UTF-8");
                                             $file_path = $row['attached_file_path'];
                                             $urgency = $row['urgency'];
                                             $date = $row['date'];
