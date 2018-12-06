@@ -8,14 +8,14 @@
 
 // Start 如果有上傳檔案放到正確的地方
 $target_dir = "uploaded_files/wishing_pond/";
-$target_file = $target_dir.$_FILES["file_path"]["name"];
-
-if (move_uploaded_file($_FILES['file_path']['tmp_name'], $target_file)) {
-} else {
-    echo "Possible file upload attack!\\\\n";
-}
+if($target_dir.$_FILES["file_path"]){
+    $target_file = $target_dir.$_FILES["file_path"]["name"];
+    if (move_uploaded_file($_FILES['file_path']['tmp_name'], $target_file)) {
+    } else {
+        echo "Possible file upload attack!\\\\n";
+    }
 // End 如果有上傳檔案放到正確的地方
-
+}
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "tcigene";
