@@ -460,6 +460,7 @@
                                                 <option value="Karen">Karen</option>
                                                 <option value="Lauren">Lauren</option>
                                                 <option value="Nick">Nick</option>
+                                                <option value="Ray">Ray</option>
                                                 <option value="Summer">Summer</option>
                                                 <option value="Yian">Yian</option>
                                             </select>
@@ -485,25 +486,25 @@
                                         <div class="col col-md-9">
                                             <div class="form-check-inline form-check">
                                                 <label for="inline-radio1" class="form-check-label ">
-                                                    <input type="radio" id="inline-radio1" name="inline-radios" value="option1" class="form-check-input">1
+                                                    <input type="radio" id="inline-radio1" name="inline-radios" value="option1" class="form-check-input"> 1
                                                 </label>
                                                 <label for="inline-radio2" class="form-check-label ">
-                                                    <input type="radio" id="inline-radio2" name="inline-radios" value="option2" class="form-check-input">2
+                                                    <input type="radio" id="inline-radio2" name="inline-radios" value="option2" class="form-check-input"> 2
                                                 </label>
                                                 <label for="inline-radio3" class="form-check-label ">
-                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option3" class="form-check-input">3
+                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option3" class="form-check-input"> 3
                                                 </label>
                                                 <label for="inline-radio3" class="form-check-label ">
-                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option4" class="form-check-input">4
+                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option4" class="form-check-input"> 4
                                                 </label>
                                                 <label for="inline-radio3" class="form-check-label ">
-                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option5" class="form-check-input">5
+                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option5" class="form-check-input"> 5
                                                 </label>
                                                 <label for="inline-radio3" class="form-check-label ">
-                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option6" class="form-check-input">6
+                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option6" class="form-check-input"> 6
                                                 </label>
                                                 <label for="inline-radio3" class="form-check-label ">
-                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option7" class="form-check-input">7
+                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option7" class="form-check-input"> 7
                                                 </label>
                                             </div>
                                         </div>
