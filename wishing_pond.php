@@ -511,7 +511,7 @@ $date = "";
                     alert("如果把心願放在心裡面，我是不知道你到底需要什麼的...\n記得填內容阿前輩!");
                     eval("document.pond_form['content'].focus()");
                 }else{
-                    document.submit.submit();
+                    document.pond_form['submit'].submit();
                 }
             })
         })
