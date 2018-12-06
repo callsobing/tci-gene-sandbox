@@ -350,7 +350,7 @@ $date = "";
                                 <strong>TCI Gene - 許願池</strong>
                             </div>
                             <div class="card-body card-block">
-                                <form id="pond_form" name="pond_form" action="./insert_wishing_pond.php" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                <form id="pond_form" name="pond_form" action="./insert_wishing_pond.php" method="post" enctype="multipart/form-data" class="form-horizontal" onSubmit="return check_filed(this)">
                                     <div class="row form-group">
                                         <div class="col col-md-3">
                                             <label for="text-input" class=" form-control-label">主旨</label>
@@ -413,7 +413,7 @@ $date = "";
                                     </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3">
-                                            <button type="submit" name="submit" id="submit" class="btn btn-primary btn-sm" onclick="return false">Submit</button>
+                                            <button type="submit" name="submit" id="submit" class="btn btn-primary btn-sm">Submit</button>
                                             <button type="reset" class="btn btn-danger btn-sm">Reset</button>
                                         </div>
                                     </div>
@@ -502,19 +502,19 @@ $date = "";
     <script src="js/main.js"></script>
     <!-- 檢查表單正確性  -->
     <script>
-        $(document).ready(function(){
-            $("#submit").click(function(){
-                if($("#title").val()==""){
+        function check_filed(form){
+                if(form.title.value==""){
                     alert("你累了嗎，記得填寫主旨喔!!!");
-                    eval("document.pond_form['title'].focus()");
-                }else if($("#content").val()==""){
+                    eval("form['title'].focus()");
+                    return false;
+                }else if(form.content.value==""){
                     alert("如果把心願放在心裡面，我是不知道你到底需要什麼的...\n記得填內容阿前輩!");
-                    eval("document.pond_form['content'].focus()");
+                    eval("form['content'].focus()");
+                    return false;
                 }else{
-                    document.pond_form['submit'].submit();
+                    return true;
                 }
-            })
-        })
+            }
     </script>
 
 </body>
