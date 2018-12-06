@@ -365,7 +365,7 @@ $date = "";
                                             <label for="select" class=" form-control-label">許願人員</label>
                                         </div>
                                         <div class="col-12 col-md-9">
-                                            <select name="name" id="name" class="form-control">
+                                            <select name="wisher" id="wisher" class="form-control">
                                                 <option value="匿名">我要匿名許願</option>
                                                 <option value="Austin">Austin</option>
                                                 <option value="Chelsea">Chelsea</option>
