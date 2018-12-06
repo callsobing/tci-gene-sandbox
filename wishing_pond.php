@@ -368,6 +368,7 @@ $date = "";
                                             <select name="wisher" id="wisher" class="form-control">
                                                 <option value="匿名">我要匿名許願</option>
                                                 <option value="Austin">Austin</option>
+                                                <option value="Bei">Bei</option>
                                                 <option value="Chelsea">Chelsea</option>
                                                 <option value="Elaine">Elaine</option>
                                                 <option value="Karen">Karen</option>
@@ -427,11 +428,11 @@ $date = "";
                                     <table class="table table-borderless table-data3">
                                         <thead>
                                         <tr>
-                                            <th>發願者</th>
-                                            <th>主旨</th>
-                                            <th>內容</th>
-                                            <th>緊急程度</th>
-                                            <th>許願日期</th>
+                                            <th width="10%">發願者</th>
+                                            <th width="30%">主旨</th>
+                                            <th width="35%">內容</th>
+                                            <th width="15%">緊急程度</th>
+                                            <th width="10%">許願日期</th>
                                         </tr>
                                         </thead>
                                         <tbody>
