@@ -444,17 +444,144 @@
                     <div class="container-fluid">
                         <div class="card">
                             <div class="card-header">
-                                <strong>資料處理</strong> 專區　
+                                <strong>資訊上傳</strong>
                             </div>
                             <div class="card-body card-block">
                                 <form action="./run_nCounter.php" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label class=" form-control-label">Static</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <p class="form-control-static">Username</p>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="text-input" class=" form-control-label">Text Input</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="text" id="text-input" name="text-input" placeholder="Text" class="form-control">
+                                            <small class="form-text text-muted">This is a help text</small>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="email-input" class=" form-control-label">Email Input</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="email" id="email-input" name="email-input" placeholder="Enter Email" class="form-control">
+                                            <small class="help-block form-text">Please enter your email</small>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="password-input" class=" form-control-label">Password</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="password" id="password-input" name="password-input" placeholder="Password" class="form-control">
+                                            <small class="help-block form-text">Please enter a complex password</small>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="disabled-input" class=" form-control-label">Disabled Input</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="text" id="disabled-input" name="disabled-input" placeholder="Disabled" disabled="" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="textarea-input" class=" form-control-label">Textarea</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <textarea name="textarea-input" id="textarea-input" rows="9" placeholder="Content..." class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="select" class=" form-control-label">Select</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <select name="select" id="select" class="form-control">
+                                                <option value="nCounter">nCounter資料分析</option>
+                                                <option value="qpcr">qPCR數據分析</option>
+                                                <option value="g2">G2報告生成</option>
+                                                <option value="r1">R1報告生成</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label class=" form-control-label">樣本數</label>
+                                        </div>
+                                        <div class="col col-md-9">
+                                            <div class="form-check-inline form-check">
+                                                <label for="inline-radio1" class="form-check-label ">
+                                                    <input type="radio" id="inline-radio1" name="inline-radios" value="option1" class="form-check-input">1
+                                                </label>
+                                                <label for="inline-radio2" class="form-check-label ">
+                                                    <input type="radio" id="inline-radio2" name="inline-radios" value="option2" class="form-check-input">2
+                                                </label>
+                                                <label for="inline-radio3" class="form-check-label ">
+                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option3" class="form-check-input">3
+                                                </label>
+                                                <label for="inline-radio3" class="form-check-label ">
+                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option4" class="form-check-input">4
+                                                </label>
+                                                <label for="inline-radio3" class="form-check-label ">
+                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option5" class="form-check-input">5
+                                                </label>
+                                                <label for="inline-radio3" class="form-check-label ">
+                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option6" class="form-check-input">6
+                                                </label>
+                                                <label for="inline-radio3" class="form-check-label ">
+                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option7" class="form-check-input">7
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label class=" form-control-label">時間點</label>
+                                        </div>
+                                        <div class="col col-md-9">
+                                            <div class="form-check-inline form-check">
+                                                <label for="inline-radio1" class="form-check-label ">
+                                                    <input type="radio" id="inline-radio1" name="inline-radios" value="option1" class="form-check-input">1
+                                                </label>
+                                                <label for="inline-radio2" class="form-check-label ">
+                                                    <input type="radio" id="inline-radio2" name="inline-radios" value="option2" class="form-check-input">2
+                                                </label>
+                                                <label for="inline-radio3" class="form-check-label ">
+                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option3" class="form-check-input">3
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
                                     檔案名稱:<input type="file" name="file_input" id="file_input" />
                                     <button type="submit" class="btn btn-primary btn-sm">Submit</button>
                                     <button type="reset" class="btn btn-danger btn-sm">Reset</button>
                                 </form>
                             </div>
-
                         </div>
+
+                        <!-- 提交表格的 Working version -->
+<!--                        <div class="card">-->
+<!--                            <div class="card-header">-->
+<!--                                <strong>資料處理</strong> 專區　-->
+<!--                            </div>-->
+<!--                            <div class="card-body card-block">-->
+<!--                                <form action="./run_nCounter.php" method="post" enctype="multipart/form-data" class="form-horizontal">-->
+<!--                                    檔案名稱:<input type="file" name="file_input" id="file_input" />-->
+<!--                                    <button type="submit" class="btn btn-primary btn-sm">Submit</button>-->
+<!--                                    <button type="reset" class="btn btn-danger btn-sm">Reset</button>-->
+<!--                                </form>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <!-- End of 提交表格的 Working version -->
+
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="copyright">
