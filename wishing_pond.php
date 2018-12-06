@@ -365,7 +365,7 @@ while($row = mysql_fetch_array($result))
                                             <label for="text-input" class=" form-control-label">主旨</label>
                                         </div>
                                         <div class="col-12 col-md-9">
-                                            <input type="text" id="text-input" name="text-input" placeholder="請輸入你的心願主旨" class="form-control">
+                                            <input type="text" id="title" name="title" placeholder="請輸入你的心願主旨" class="form-control">
                                             <small class="form-text text-muted">主旨請言簡意賅，便於理解與分類</small>
                                         </div>
                                     </div>
@@ -374,8 +374,8 @@ while($row = mysql_fetch_array($result))
                                             <label for="select" class=" form-control-label">許願人員</label>
                                         </div>
                                         <div class="col-12 col-md-9">
-                                            <select name="select" id="select" class="form-control">
-                                                <option value="anonymous">我要匿名許願</option>
+                                            <select name="name" id="name" class="form-control">
+                                                <option value="匿名">我要匿名許願</option>
                                                 <option value="Austin">Austin</option>
                                                 <option value="Chelsea">Chelsea</option>
                                                 <option value="Elaine">Elaine</option>
@@ -393,7 +393,7 @@ while($row = mysql_fetch_array($result))
                                             <label for="textarea-input" class=" form-control-label">許願內容</label>
                                         </div>
                                         <div class="col-12 col-md-9">
-                                            <textarea name="textarea-input" id="textarea-input" rows="9" placeholder="請在這裡詳述你的心願是什麼，如果可以搭配圖片輔助會更好唷" class="form-control"></textarea>
+                                            <textarea name="content" id="content" rows="9" placeholder="請在這裡詳述你的心願是什麼，如果可以搭配圖片輔助會更好唷" class="form-control"></textarea>
                                         </div>
                                     </div>
                                     <div class="row form-group">
@@ -402,14 +402,14 @@ while($row = mysql_fetch_array($result))
                                         </div>
                                         <div class="col col-md-9">
                                             <div class="form-check-inline form-check">
-                                                <label for="inline-radio1" class="form-check-label ">
-                                                    <input type="radio" id="inline-radio1" name="inline-radios" value="option1" class="form-check-input"> 真的非常緊急
+                                                <label class="form-check-label ">
+                                                    <input type="radio" id="urgency" name="urgency" value="真的非常緊急" class="form-check-input"> 真的非常緊急
                                                 </label>
-                                                <label for="inline-radio2" class="form-check-label ">
-                                                    <input type="radio" id="inline-radio2" name="inline-radios" value="option2" class="form-check-input"> 非常緊急
+                                                <label class="form-check-label ">
+                                                    <input type="radio" id="urgency" name="urgency" value="非常緊急" class="form-check-input"> 非常緊急
                                                 </label>
-                                                <label for="inline-radio3" class="form-check-label ">
-                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option3" class="form-check-input"> 緊急
+                                                <label class="form-check-label ">
+                                                    <input type="radio" id="urgency" name="urgency" value="緊急" class="form-check-input"> 緊急
                                                 </label>
                                             </div>
                                         </div>
