@@ -330,16 +330,26 @@
                         <img src="images/wish_pool.jpg"/>
                         <div class="card">
                             <div class="card-header">
-                                <strong>資訊上傳</strong>
+                                <strong>TCI Gene - 許願池</strong>
                             </div>
                             <div class="card-body card-block">
                                 <form action="./run_nCounter.php" method="post" enctype="multipart/form-data" class="form-horizontal">
                                     <div class="row form-group">
                                         <div class="col col-md-3">
-                                            <label for="select" class=" form-control-label">操作人員</label>
+                                            <label for="text-input" class=" form-control-label">主旨</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="text" id="text-input" name="text-input" placeholder="請輸入你的心願主旨" class="form-control">
+                                            <small class="form-text text-muted">主旨請言簡意賅，便於理解與分類</small>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="select" class=" form-control-label">許願人員</label>
                                         </div>
                                         <div class="col-12 col-md-9">
                                             <select name="select" id="select" class="form-control">
+                                                <option value="anonymous">我要匿名許願</option>
                                                 <option value="Austin">Austin</option>
                                                 <option value="Chelsea">Chelsea</option>
                                                 <option value="Elaine">Elaine</option>
@@ -354,67 +364,32 @@
                                     </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3">
-                                            <label for="select" class=" form-control-label">分析類別</label>
+                                            <label for="textarea-input" class=" form-control-label">許願內容</label>
                                         </div>
                                         <div class="col-12 col-md-9">
-                                            <select name="select" id="select" class="form-control">
-                                                <option value="nCounter">nCounter資料分析</option>
-                                                <option value="qpcr">qPCR數據分析</option>
-                                                <option value="g2">G2報告生成</option>
-                                                <option value="r1">R1報告生成</option>
-                                            </select>
+                                            <textarea name="textarea-input" id="textarea-input" rows="9" placeholder="請在這裡詳述你的心願是什麼，如果可以搭配圖片輔助會更好唷" class="form-control"></textarea>
                                         </div>
                                     </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3">
-                                            <label class=" form-control-label">樣本數</label>
+                                            <label class=" form-control-label">緊急程度</label>
                                         </div>
                                         <div class="col col-md-9">
                                             <div class="form-check-inline form-check">
                                                 <label for="inline-radio1" class="form-check-label ">
-                                                    <input type="radio" id="inline-radio1" name="inline-radios" value="option1" class="form-check-input"> 1
+                                                    <input type="radio" id="inline-radio1" name="inline-radios" value="option1" class="form-check-input"> 真的非常緊急
                                                 </label>
                                                 <label for="inline-radio2" class="form-check-label ">
-                                                    <input type="radio" id="inline-radio2" name="inline-radios" value="option2" class="form-check-input"> 2
+                                                    <input type="radio" id="inline-radio2" name="inline-radios" value="option2" class="form-check-input"> 非常緊急
                                                 </label>
                                                 <label for="inline-radio3" class="form-check-label ">
-                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option3" class="form-check-input"> 3
-                                                </label>
-                                                <label for="inline-radio3" class="form-check-label ">
-                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option4" class="form-check-input"> 4
-                                                </label>
-                                                <label for="inline-radio3" class="form-check-label ">
-                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option5" class="form-check-input"> 5
-                                                </label>
-                                                <label for="inline-radio3" class="form-check-label ">
-                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option6" class="form-check-input"> 6
-                                                </label>
-                                                <label for="inline-radio3" class="form-check-label ">
-                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option7" class="form-check-input"> 7
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row form-group">
-                                        <div class="col col-md-3">
-                                            <label class=" form-control-label">時間點</label>
-                                        </div>
-                                        <div class="col col-md-9">
-                                            <div class="form-check-inline form-check">
-                                                <label for="inline-radio1" class="form-check-label ">
-                                                    <input type="radio" id="inline-radio1" name="inline-radios" value="option1" class="form-check-input">1
-                                                </label>
-                                                <label for="inline-radio2" class="form-check-label ">
-                                                    <input type="radio" id="inline-radio2" name="inline-radios" value="option2" class="form-check-input">2
-                                                </label>
-                                                <label for="inline-radio3" class="form-check-label ">
-                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option3" class="form-check-input">3
+                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option3" class="form-check-input"> 緊急
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col col-md-9">
-檔案名稱:<input type="file" name="file_input" id="file_input" />
+                                        附加檔案: <input type="file" name="file_input" id="file_input" />
                                     </div>
                                     <div class="col col-md-9">
                                     <button type="submit" class="btn btn-primary btn-sm">Submit</button>
