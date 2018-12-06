@@ -450,58 +450,24 @@
                                 <form action="./run_nCounter.php" method="post" enctype="multipart/form-data" class="form-horizontal">
                                     <div class="row form-group">
                                         <div class="col col-md-3">
-                                            <label class=" form-control-label">Static</label>
+                                            <label for="select" class=" form-control-label">操作人員</label>
                                         </div>
                                         <div class="col-12 col-md-9">
-                                            <p class="form-control-static">Username</p>
+                                            <select name="select" id="select" class="form-control">
+                                                <option value="Austin">Austin</option>
+                                                <option value="Chelsea">Chelsea</option>
+                                                <option value="Elaine">Elaine</option>
+                                                <option value="Karen">Karen</option>
+                                                <option value="Lauren">Lauren</option>
+                                                <option value="Nick">Nick</option>
+                                                <option value="Summer">Summer</option>
+                                                <option value="Yian">Yian</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3">
-                                            <label for="text-input" class=" form-control-label">Text Input</label>
-                                        </div>
-                                        <div class="col-12 col-md-9">
-                                            <input type="text" id="text-input" name="text-input" placeholder="Text" class="form-control">
-                                            <small class="form-text text-muted">This is a help text</small>
-                                        </div>
-                                    </div>
-                                    <div class="row form-group">
-                                        <div class="col col-md-3">
-                                            <label for="email-input" class=" form-control-label">Email Input</label>
-                                        </div>
-                                        <div class="col-12 col-md-9">
-                                            <input type="email" id="email-input" name="email-input" placeholder="Enter Email" class="form-control">
-                                            <small class="help-block form-text">Please enter your email</small>
-                                        </div>
-                                    </div>
-                                    <div class="row form-group">
-                                        <div class="col col-md-3">
-                                            <label for="password-input" class=" form-control-label">Password</label>
-                                        </div>
-                                        <div class="col-12 col-md-9">
-                                            <input type="password" id="password-input" name="password-input" placeholder="Password" class="form-control">
-                                            <small class="help-block form-text">Please enter a complex password</small>
-                                        </div>
-                                    </div>
-                                    <div class="row form-group">
-                                        <div class="col col-md-3">
-                                            <label for="disabled-input" class=" form-control-label">Disabled Input</label>
-                                        </div>
-                                        <div class="col-12 col-md-9">
-                                            <input type="text" id="disabled-input" name="disabled-input" placeholder="Disabled" disabled="" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="row form-group">
-                                        <div class="col col-md-3">
-                                            <label for="textarea-input" class=" form-control-label">Textarea</label>
-                                        </div>
-                                        <div class="col-12 col-md-9">
-                                            <textarea name="textarea-input" id="textarea-input" rows="9" placeholder="Content..." class="form-control"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="row form-group">
-                                        <div class="col col-md-3">
-                                            <label for="select" class=" form-control-label">Select</label>
+                                            <label for="select" class=" form-control-label">分析類別</label>
                                         </div>
                                         <div class="col-12 col-md-9">
                                             <select name="select" id="select" class="form-control">
@@ -560,7 +526,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    檔案名稱:<input type="file" name="file_input" id="file_input" /><br>
+                                    檔案名稱:<input type="file" name="file_input" id="file_input" />
                                     <button type="submit" class="btn btn-primary btn-sm">Submit</button>
                                     <button type="reset" class="btn btn-danger btn-sm">Reset</button>
                                 </form>
