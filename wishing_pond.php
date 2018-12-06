@@ -350,7 +350,7 @@ $date = "";
                                 <strong>TCI Gene - 許願池</strong>
                             </div>
                             <div class="card-body card-block">
-                                <form action="./insert_wishing_pond.php" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                <form id="pond_form" action="./insert_wishing_pond.php" method="post" enctype="multipart/form-data" class="form-horizontal" onclick="return false">
                                     <div class="row form-group">
                                         <div class="col col-md-3">
                                             <label for="text-input" class=" form-control-label">主旨</label>
@@ -395,13 +395,13 @@ $date = "";
                                         <div class="col col-md-9">
                                             <div class="form-check-inline form-check">
                                                 <label class="form-check-label ">
-                                                    <input type="radio" id="urgency" name="urgency" value="真的非常緊急" class="form-check-input"> 真的非常緊急
+                                                    <input type="radio" id="urgency" name="urgency" value="緊急" class="form-check-input"> 緊急
                                                 </label>
                                                 <label class="form-check-label ">
                                                     <input type="radio" id="urgency" name="urgency" value="非常緊急" class="form-check-input"> 非常緊急
                                                 </label>
                                                 <label class="form-check-label ">
-                                                    <input type="radio" id="urgency" name="urgency" value="緊急" class="form-check-input"> 緊急
+                                                    <input type="radio" id="urgency" name="urgency" value="真的非常緊急" class="form-check-input"> 真的非常緊急
                                                 </label>
                                             </div>
                                         </div>
@@ -500,6 +500,25 @@ $date = "";
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
+    <!-- 檢查表單正確性  -->
+    <script>
+        $(document).ready(function(){
+            $("#button").click(function(){
+                if($("#title").val()==""){
+                    alert("你累了嗎，記得填寫主旨喔!!!");
+                    eval("document.pond_form['title'].focus()");
+                }else if($("#content").val()==""){
+                    alert("如果把心願放在心裡面，我是不知道你到底需要什麼的...\n記得填內容阿前輩!");
+                    eval("document.pond_form['content'].focus()");
+                }else if($("#address").val()==""){
+                    alert("你尚未填寫地址");
+                    eval("document.form1['address'].focus()");
+                }else{
+                    document.form1.submit();
+                }
+            })
+        })
+    </script>
 
 </body>
 
