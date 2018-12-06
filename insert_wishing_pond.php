@@ -8,7 +8,7 @@
 
 // Start 如果有上傳檔案放到正確的地方
 $target_dir = "uploaded_files/wishing_pond/";
-if($target_dir.$_FILES["file_path"]){
+if($_FILES["file_path"]){
     $target_file = $target_dir.$_FILES["file_path"]["name"];
     if (move_uploaded_file($_FILES['file_path']['tmp_name'], $target_file)) {
     } else {
