@@ -350,7 +350,7 @@ $date = "";
                                 <strong>TCI Gene - 許願池</strong>
                             </div>
                             <div class="card-body card-block">
-                                <form id="pond_form" action="./insert_wishing_pond.php" method="post" enctype="multipart/form-data" class="form-horizontal" onclick="return false">
+                                <form id="pond_form" name="pond_form" action="./insert_wishing_pond.php" method="post" enctype="multipart/form-data" class="form-horizontal" onclick="return false">
                                     <div class="row form-group">
                                         <div class="col col-md-3">
                                             <label for="text-input" class=" form-control-label">主旨</label>
