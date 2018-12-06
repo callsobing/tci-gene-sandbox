@@ -510,11 +510,8 @@ $date = "";
                 }else if($("#content").val()==""){
                     alert("如果把心願放在心裡面，我是不知道你到底需要什麼的...\n記得填內容阿前輩!");
                     eval("document.pond_form['content'].focus()");
-                }else if($("#address").val()==""){
-                    alert("你尚未填寫地址");
-                    eval("document.form1['address'].focus()");
                 }else{
-                    document.form1.submit();
+                    document.pond_form.submit();
                 }
             })
         })
