@@ -413,7 +413,7 @@ $date = "";
                                     </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3">
-                                            <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                                            <button type="submit" name="submit" id="submit" class="btn btn-primary btn-sm">Submit</button>
                                             <button type="reset" class="btn btn-danger btn-sm">Reset</button>
                                         </div>
                                     </div>
@@ -503,7 +503,7 @@ $date = "";
     <!-- 檢查表單正確性  -->
     <script>
         $(document).ready(function(){
-            $("#button").click(function(){
+            $("#submit").click(function(){
                 if($("#title").val()==""){
                     alert("你累了嗎，記得填寫主旨喔!!!");
                     eval("document.pond_form['title'].focus()");
