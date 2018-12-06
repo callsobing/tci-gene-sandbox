@@ -7,7 +7,7 @@
  */
 
 //$command = escapeshellcmd('python script/parse_nCounter_general.py');
-echo("<img src='images/waiting.jpg' width='100%'/>");
+echo("<img src='images/waiting.jpg' width='100%' height='100%'/>");
 ob_flush();
 flush();
 
