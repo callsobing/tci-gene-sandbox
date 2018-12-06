@@ -71,11 +71,11 @@
                                 <i class="fa fa-magic"></i>許願池</a>
                         </li>
                         <li>
-                            <a href="table.html">
+                            <a href="#">
                                 <i class="fas fa-table"></i>表單生成</a>
                         </li>
                         <li>
-                            <a href="form.html">
+                            <a href="#">
                                 <i class="far fa-check-square"></i>表格填寫</a>
                         </li>
                         <li>
@@ -83,7 +83,7 @@
                                 <i class="fas fa-calendar-alt"></i>儀器排程</a>
                         </li>
                         <li>
-                            <a href="map.html">
+                            <a href="#">
                                 <i class="fas fa-map-marker-alt"></i>已出貨區域</a>
                         </li>
                     </ul>
@@ -117,11 +117,11 @@
                                 <i class="fa fa-magic"></i>許願池</a>
                         </li>
                         <li>
-                            <a href="table.html">
+                            <a href="#">
                                 <i class="fas fa-table"></i>表單生成</a>
                         </li>
                         <li>
-                            <a href="form.html">
+                            <a href="#">
                                 <i class="far fa-check-square"></i>表格填寫</a>
                         </li>
                         <li>
@@ -129,7 +129,7 @@
                                 <i class="fas fa-calendar-alt"></i>儀器排程</a>
                         </li>
                         <li>
-                            <a href="map.html">
+                            <a href="#">
                                 <i class="fas fa-map-marker-alt"></i>已出貨區域</a>
                         </li>
                     </ul>
