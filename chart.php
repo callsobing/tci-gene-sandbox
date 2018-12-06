@@ -560,7 +560,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    檔案名稱:<input type="file" name="file_input" id="file_input" />
+                                    檔案名稱:<input type="file" name="file_input" id="file_input" /><br>
                                     <button type="submit" class="btn btn-primary btn-sm">Submit</button>
                                     <button type="reset" class="btn btn-danger btn-sm">Reset</button>
                                 </form>
