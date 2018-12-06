@@ -25,7 +25,7 @@ $conn = mysql_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connec
 $title = $_POST['title'];
 $wisher = $_POST['wisher'];
 $content = $_POST['content'];
-$file_path = $_POST['file_path'];
+$file_path = $_FILES["file_path"]["name"];
 $urgency = $_POST['urgency'];
 
 $sql = "INSERT INTO wishing_pond ".
