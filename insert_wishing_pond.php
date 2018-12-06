@@ -6,6 +6,16 @@
  * Time: 下午 09:08
  */
 
+// Start 如果有上傳檔案放到正確的地方
+$target_dir = "uploaded_files/wishing_pond/";
+$target_file = $target_dir.$_FILES["file_input"]["name"];
+
+if (move_uploaded_file($_FILES['file_input']['tmp_name'], $target_file)) {
+} else {
+    echo "Possible file upload attack!\\\\n";
+}
+// End 如果有上傳檔案放到正確的地方
+
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "tcigene";
