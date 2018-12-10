@@ -28,7 +28,6 @@ if($_POST['username']) {
             header("Location: index.php"); //將網址改為登入成功後要導向的頁面
         }
     }
-
 }
 ?>
 

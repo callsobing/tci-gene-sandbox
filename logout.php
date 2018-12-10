@@ -10,6 +10,7 @@ header("Content-Type:text/html; charset=utf-8");
 session_start();
 //清除Session
 session_destroy();
+setcookie("login", $_COOKIE['login'], time()-3600);
 //導到login.php
 header("Location:login.php");
 
