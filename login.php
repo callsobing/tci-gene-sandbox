@@ -20,7 +20,7 @@ if($_POST['username']) {
     echo $passwd;
     echo $userid;
     $sql = "SELECT password FROM members WHERE id = \'Yian.Tung\'";
-    $result = mysqli_query($con, $sql);
+    $result = mysqli_query($con, $sql) or die('Error with MySQL query') ;
     echo $result;
     echo $result[0];
 //
