@@ -20,7 +20,7 @@ if($_POST['username']) {
     $passwd = $_POST['password'];
     $userid = $_POST['username'];
 
-    $sql = "SELECT `password` FROM `members` WHERE `id` = 'Yian.Tung'";
+    $sql = "SELECT `password` FROM `members` WHERE `id` = '$userid'";
     $result = mysql_query($sql) or die("無法執行SQL語法!!");
 
     while ($row = mysql_fetch_array($result)){
