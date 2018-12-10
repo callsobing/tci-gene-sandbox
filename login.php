@@ -14,14 +14,17 @@ $dbpass = "tcigene";
 $dbname = "members";
 $conn = mysql_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connection');
 
-$passwd = $_POST[password];
-$userid = $_POST[username];
-$sql = "SELECT `password` FROM members WHERE `id` = '$userid'";
-$result = mysql_query($sql) or die('MySQL query error');
+if($_POST['username']) {
+    $passwd = $_POST['password'];
+    $userid = $_POST['username'];
 
-if($result[0] == $passwd){
-    setcookie("login",'USER', time()+3600);
-    header("Location: index.php"); //將網址改為登入成功後要導向的頁面
+    $sql = "SELECT `password` FROM members WHERE `id` = '$userid'";
+    $result = mysql_query($sql) or die('MySQL query error');
+
+    if ($result[0] == $passwd) {
+        setcookie("login", 'USER', time() + 3600);
+        header("Location: index.php"); //將網址改為登入成功後要導向的頁面
+    }
 }
 ?>
 
