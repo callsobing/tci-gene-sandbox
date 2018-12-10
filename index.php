@@ -1,13 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-if(!isset($_COOKIE["login"])){
-    header("Location: login.php"); //將網址改為要登入頁面
-}
-else{    ?>
-    您已登入
-<?php } ?>
-
+include 'check_login.php';
+?>
 <head>
 
     <!-- Required meta tags-->
