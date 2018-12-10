@@ -19,6 +19,7 @@ if($_POST['username']) {
     $userid = $_POST['username'];
     $result = mysqli_query($con,"SELECT `password` FROM `members` WHERE id = '$userid'");
     echo $result;
+    echo $result[0];
 //
 //    if ($result[0] == $passwd) {
 //        setcookie("login", 'USER', time() + 3600);
