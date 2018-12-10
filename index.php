@@ -100,6 +100,7 @@ include 'check_login.php';
             <div class="logo">
                 <a href="#">
                     <img src="images/tci-gene.webp" alt="Tci-Gene" />
+                    <!-- TCI-gene logo在手機上顯示不出來 -->
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
