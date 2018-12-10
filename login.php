@@ -23,7 +23,7 @@ if($_POST['username']) {
     $result = mysql_query($sql) or die("無法執行SQL語法!!");
 
     while ($row = mysql_fetch_array($result)){
-        echo $row;
+        echo $row[0];
     }
 //
 //    if ($result[0] == $passwd) {
