@@ -12,14 +12,11 @@ $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "tcigene";
 $dbname = "members";
-$conn = mysql_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connection');
-
+$con=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname) or die('Error with MySQL connection');
 if($_POST['username']) {
     $passwd = $_POST['password'];
     $userid = $_POST['username'];
-
-    $sql = "SELECT `password` FROM members WHERE `id` = $userid";
-    $result = mysql_query($sql) or die('MySQL query error');
+    $result = mysqli_query($con,"SELECT `password` FROM `members` WHERE id = '$userid'");
 
     if ($result[0] == $passwd) {
         setcookie("login", 'USER', time() + 3600);
