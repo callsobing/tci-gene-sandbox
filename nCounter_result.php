@@ -9,6 +9,9 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<?php
+include 'check_login.php';
+?>
 
 <head>
     <!-- Required meta tags-->
@@ -423,8 +426,8 @@
                                                         <i class="zmdi zmdi-money-box"></i>Billing</a>
                                                 </div>
                                             </div>
-                                            <div class="account-dropdown__footer">
-                                                <a href="#">
+<div class="account-dropdown__footer">
+                                                <a href="logout.php">
                                                     <i class="zmdi zmdi-power"></i>Logout</a>
                                             </div>
                                         </div>
