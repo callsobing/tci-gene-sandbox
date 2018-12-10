@@ -74,7 +74,7 @@ if($_POST['username']) {
                     <div class="login-content">
                         <div class="login-logo">
                             <a href="#">
-                                <img src="images/tci-gene.webp" alt="TciGene">
+                                <img src="images/tci-gene.png" alt="TciGene">
                             </a>
                         </div>
                         <div class="login-form">
