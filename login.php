@@ -19,7 +19,7 @@ if($_POST['username']) {
     $userid = $_POST['username'];
     echo $passwd;
     echo $userid;
-    $sql = "SELECT * FROM members WHERE id = '$userid'";
+    $sql = "SELECT * FROM members WHERE id = \'$userid\'";
     $result = mysqli_query($con, $sql);
     echo $result;
     echo $result[0];
