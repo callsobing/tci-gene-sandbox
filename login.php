@@ -9,6 +9,8 @@
  * Time: 下午 06:09
  */
 
+$cookie_name = 'user';
+$cookie_value = '';
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "tcigene";
@@ -19,14 +21,16 @@ $select_db = mysql_select_db($dbname) or die('Error with MySQL DB selection');
 if($_POST['username']) {
     $passwd = $_POST['password'];
     $userid = $_POST['username'];
+    $cookie_value = $userid;
 
     $sql = "SELECT `password` FROM `members` WHERE `id` = '$userid'";
     $result = mysql_query($sql) or die("無法執行SQL語法!!");
 
     while ($row = mysql_fetch_array($result)){
         if ($row[0] == $passwd) {
-            setcookie("login", $userid, time() + 3600);
-            header("Location: index.php"); //將網址改為登入成功後要導向的頁面
+            setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+            echo $_COOKIE[$cookie_name];
+            //header("Location: index.php"); //將網址改為登入成功後要導向的頁面
         }
     }
 }
