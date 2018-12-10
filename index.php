@@ -161,7 +161,7 @@ include 'check_login.php';
                                             <img src="images/icon/avatar-01.jpg" alt="Yian.Tung" />
                                         </div>
                                         <div class="content">
-                                            <a class="js-acc-btn" href="#"><?php $_COOKIE['login'] ?></a>
+                                            <a class="js-acc-btn" href="#"><?php $_COOKIE['user'] ?></a>
                                         </div>
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">

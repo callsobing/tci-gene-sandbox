@@ -29,8 +29,7 @@ if($_POST['username']) {
     while ($row = mysql_fetch_array($result)){
         if ($row[0] == $passwd) {
             setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-            echo $_COOKIE[$cookie_name];
-            //header("Location: index.php"); //將網址改為登入成功後要導向的頁面
+            header("Location: index.php"); //將網址改為登入成功後要導向的頁面
         }
     }
 }
