@@ -1,5 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Yian.Tung
+ * Date: 2018/12/10
+ * Time: 下午 06:09
+ */
+
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "tcigene";
+$dbname = "members";
+$conn = mysql_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connection');
+
+$passwd = $_POST[password];
+$userid = $_POST[username];
+$sql = "SELECT `password` FROM members WHERE `id` = '$userid'";
+$result = mysql_query($sql) or die('MySQL query error');
+
+if($result[0] == $passwd){
+    setcookie("login",'USER', time()+3600);
+    header("Location: index.php"); //將網址改為登入成功後要導向的頁面
+}
+?>
 
 <head>
     <!-- Required meta tags-->
@@ -49,8 +73,8 @@
                         <div class="login-form">
                             <form action="" method="post">
                                 <div class="form-group">
-                                    <label>Email Address</label>
-                                    <input class="au-input au-input--full" type="email" name="email" placeholder="Email">
+                                    <label>User ID</label>
+                                    <input class="au-input au-input--full" type="text" name="username" placeholder="User ID">
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>

@@ -2,7 +2,7 @@
 <html lang="en">
 <?php
 if(!isset($_COOKIE["login"])){
-    header("Location: login.html"); //將網址改為要登入頁面
+    header("Location: login.php"); //將網址改為要登入頁面
 }
 else{    ?>
     您已登入
