@@ -100,7 +100,6 @@ include 'check_login.php';
             <div class="logo">
                 <a href="#">
                     <img src="images/tci-gene.png" alt="Tci-Gene" />
-                    <!-- TCI-gene logo在手機上顯示不出來 -->
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -173,9 +172,9 @@ include 'check_login.php';
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
-                                                        <a href="#"><?php $_COOKIE['login'] ?></a>
+                                                        <a href="#"><?php $_COOKIE["user"] ?></a>
                                                     </h5>
-                                                    <span class="email"><?php $_COOKIE['login'] ?>@tci-bio.com</span>
+                                                    <span class="email"><?php $_COOKIE["user"] ?>@tci-bio.com</span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">
