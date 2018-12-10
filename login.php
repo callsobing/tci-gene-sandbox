@@ -11,8 +11,9 @@
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "tcigene";
-$dbname = "members";
-$con=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname) or die('Error with MySQL connection');
+$dbname = "tci_gene_dashboard";
+$con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname) or die('Error with MySQL connection');
+
 if($_POST['username']) {
     $passwd = $_POST['password'];
     $userid = $_POST['username'];
