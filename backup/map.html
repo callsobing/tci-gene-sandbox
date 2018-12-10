@@ -398,7 +398,7 @@ include 'check_login.php';
                                             <img src="images/icon/avatar-01.jpg" alt="Yian.Tung" />
                                         </div>
                                         <div class="content">
-                                            <a class="js-acc-btn" href="#">Yian.Tung</a>
+                                            <a class="js-acc-btn" href="#"><?php $_COOKIE['login'] ?></a>
                                         </div>
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
@@ -409,9 +409,9 @@ include 'check_login.php';
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
-                                                        <a href="#">Yian.Tung</a>
+                                                        <a href="#"><?php $_COOKIE['login'] ?></a>
                                                     </h5>
-                                                    <span class="email">Yian.Tung@tci-bio.com</span>
+                                                    <span class="email"><?php $_COOKIE['login'] ?>@tci-bio.com</span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">

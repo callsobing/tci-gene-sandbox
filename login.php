@@ -25,7 +25,7 @@ if($_POST['username']) {
 
     while ($row = mysql_fetch_array($result)){
         if ($row[0] == $passwd) {
-            setcookie("login", 'USER', time() + 3600);
+            setcookie("login", $userid, time() + 3600);
             header("Location: index.php"); //將網址改為登入成功後要導向的頁面
         }
     }
