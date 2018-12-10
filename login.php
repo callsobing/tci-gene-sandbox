@@ -19,7 +19,8 @@ if($_POST['username']) {
     $userid = $_POST['username'];
     echo $passwd;
     echo $userid;
-    $result = mysqli_query($con,"SELECT `password` FROM `members` WHERE id = '$userid'");
+    $sql = "SELECT password FROM members WHERE id = \'$userid\'";
+    $result = mysqli_query($con, $sql);
     echo $result;
     echo $result[0];
 //
