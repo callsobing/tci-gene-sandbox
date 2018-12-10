@@ -12,17 +12,20 @@ $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "tcigene";
 $dbname = "tci_gene_dashboard";
-$con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname) or die('Error with MySQL connection');
+$con = mysql_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connection');
+$select_db = mysql_select_db($dbname) or die('Error with MySQL DB selection');
 
 if($_POST['username']) {
     $passwd = $_POST['password'];
     $userid = $_POST['username'];
-    echo $passwd;
-    echo $userid;
+
+
     $sql = "SELECT password FROM members WHERE id = \'Yian.Tung\'";
-    $result = mysqli_query($con, $sql) or die('Error with MySQL query') ;
-    echo $result;
-    echo $result[0];
+    $result = mysql_query($sql) or die("無法執行SQL語法!!");
+
+    while ($row = mysql_fetch_array($result)){
+        echo $row;
+    }
 //
 //    if ($result[0] == $passwd) {
 //        setcookie("login", 'USER', time() + 3600);
