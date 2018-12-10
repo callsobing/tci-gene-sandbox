@@ -18,7 +18,7 @@ if($_POST['username']) {
     $passwd = $_POST['password'];
     $userid = $_POST['username'];
 
-    $sql = "SELECT `password` FROM members WHERE `id` = '$userid'";
+    $sql = "SELECT `password` FROM members WHERE `id` = $userid";
     $result = mysql_query($sql) or die('MySQL query error');
 
     if ($result[0] == $passwd) {
