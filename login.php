@@ -17,6 +17,8 @@ $con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname) or die('Error with MySQL 
 if($_POST['username']) {
     $passwd = $_POST['password'];
     $userid = $_POST['username'];
+    echo $passwd;
+    echo $userid;
     $result = mysqli_query($con,"SELECT `password` FROM `members` WHERE id = '$userid'");
     echo $result;
     echo $result[0];
