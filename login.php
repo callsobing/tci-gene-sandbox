@@ -23,13 +23,12 @@ if($_POST['username']) {
     $result = mysql_query($sql) or die("無法執行SQL語法!!");
 
     while ($row = mysql_fetch_array($result)){
-        echo $row[0];
+        if ($row[0] == $passwd) {
+            setcookie("login", 'USER', time() + 3600);
+            header("Location: index.php"); //將網址改為登入成功後要導向的頁面
+        }
     }
-//
-//    if ($result[0] == $passwd) {
-//        setcookie("login", 'USER', time() + 3600);
-//        header("Location: index.php"); //將網址改為登入成功後要導向的頁面
-//    }
+
 }
 ?>
 
