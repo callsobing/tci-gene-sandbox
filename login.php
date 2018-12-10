@@ -18,7 +18,7 @@ if($_POST['username']) {
     $passwd = $_POST['password'];
     $userid = $_POST['username'];
     $result = mysqli_query($con,"SELECT `password` FROM `members` WHERE id = '$userid'");
-
+    echo $result;
     if ($result[0] == $passwd) {
         setcookie("login", 'USER', time() + 3600);
         header("Location: index.php"); //將網址改為登入成功後要導向的頁面
