@@ -12,7 +12,7 @@ $dbname = "tci_gene_dashboard";
 $conn = mysql_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connection');
 mysql_query("SET NAMES 'utf8'");
 mysql_select_db($dbname);
-$userid = $_POST['username'];
+$userid = $_COOKIE['user'];
 $sql = "SELECT * FROM `uploaded_files` WHERE `name` = '$userid'";
 $result = mysql_query($sql);
 
