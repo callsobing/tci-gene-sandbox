@@ -88,9 +88,7 @@ if($_POST['username']) {
                 <div class="login-wrap">
                     <div class="login-content">
                         <div class="login-logo">
-                            <a href="#">
                                 <img src="images/tci-gene.jpg" alt="TciGene">
-                            </a>
                         </div>
                         <div class="login-form">
                             <form action="" method="post">
