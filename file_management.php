@@ -298,7 +298,7 @@ include 'check_login.php';
                                         echo("<td><a href='$target_dir$file_name' target=\"_blank\">下載</a></td>");
                                         echo("<td>刪除</td>");
                                         echo("<td>$memo</td></tr>");
-                                        $URL='http://'.$_SERVER['HTTP_HOST'].$target_dir.$file_name;
+                                        $URL='http://'.$_SERVER['HTTP_HOST'].'/'.$target_dir.$file_name;
                                         echo($URL);
                                         echo("<iframe src='https://view.officeapps.live.com/op/view.aspx?src=$URL' width='100%' height='100%' frameborder='1'></iframe>");
                                     }
