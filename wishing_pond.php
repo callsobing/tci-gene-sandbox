@@ -72,7 +72,7 @@ include 'check_login.php';
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.php">
-                            <img src="images/tci-gene.png" alt="Tci-Gene" />
+                            <img src="images/tci-gene.png" alt="Tci-Gene" height="80%"
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -125,7 +125,7 @@ include 'check_login.php';
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                    <img src="images/tci-gene.png" alt="Tci-Gene" />
+                    <img src="images/tci-gene.png" alt="Tci-Gene" height="80%"
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
