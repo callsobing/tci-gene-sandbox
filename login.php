@@ -41,57 +41,56 @@
 </head>
 
 <body class="animsition">
-
-    <?php
-    /**
-     * Created by PhpStorm.
-     * User: Yian.Tung
-     * Date: 2018/12/10
-     * Time: 下午 06:09
-     */
-
-    $cookie_name = 'user';
-    $cookie_value = '';
-    $cookie_gender = 'user_gender';
-    $dbhost = "localhost";
-    $dbuser = "root";
-    $dbpass = "tcigene";
-    $dbname = "tci_gene_dashboard";
-    $con = mysql_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connection');
-    $select_db = mysql_select_db($dbname) or die('Error with MySQL DB selection');
-
-    if(isset($_POST['username'])) {
-        $passwd = $_POST['password'];
-        $userid = $_POST['username'];
-        $cookie_value = $userid;
-
-        $gender = 'female';
-        $sql = "SELECT * FROM `members` WHERE `id` = '$userid'";
-        $result = mysql_query($sql) or die("無法執行SQL語法!!");
-        while ($row = mysql_fetch_array($result)){
-            if ($row['male'] == 1) {
-                $gender = 'male';
-            }
-            if ($row['password'] == $passwd) {
-                session_start();
-                setcookie($cookie_name, $cookie_value, time() + 86400 , '/');
-                setcookie($cookie_gender, $gender, time() + 86400 , '/');
-                header("Location: index.php"); //將網址改為登入成功後要導向的頁面
-            } else{
-                ?>
-                <script>
-                    swal("Please contact:", "基因研發中心 生物資訊部<br>童翊安 #6552", "success");
-                </script>
-                <?php
-            }
-        }
-    }
-    ?>
     <!--引用jQuery-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
     <!--引用SweetAlert2.js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.3/sweetalert2.js" type="text/javascript"></script>
 
+    <?php
+        /**
+         * Created by PhpStorm.
+         * User: Yian.Tung
+         * Date: 2018/12/10
+         * Time: 下午 06:09
+         */
+
+        $cookie_name = 'user';
+        $cookie_value = '';
+        $cookie_gender = 'user_gender';
+        $dbhost = "localhost";
+        $dbuser = "root";
+        $dbpass = "tcigene";
+        $dbname = "tci_gene_dashboard";
+        $con = mysql_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connection');
+        $select_db = mysql_select_db($dbname) or die('Error with MySQL DB selection');
+
+        if(isset($_POST['username'])) {
+            $passwd = $_POST['password'];
+            $userid = $_POST['username'];
+            $cookie_value = $userid;
+
+            $gender = 'female';
+            $sql = "SELECT * FROM `members` WHERE `id` = '$userid'";
+            $result = mysql_query($sql) or die("無法執行SQL語法!!");
+            while ($row = mysql_fetch_array($result)){
+                if ($row['male'] == 1) {
+                    $gender = 'male';
+                }
+                if ($row['password'] == $passwd) {
+                    session_start();
+                    setcookie($cookie_name, $cookie_value, time() + 86400 , '/');
+                    setcookie($cookie_gender, $gender, time() + 86400 , '/');
+                    header("Location: index.php"); //將網址改為登入成功後要導向的頁面
+                } else{
+                    ?>
+                    <script>
+                        swal("Please contact:", "基因研發中心 生物資訊部<br>童翊安 #6552", "success");
+                    </script>
+                    <?php
+                }
+            }
+        }
+    ?>
     <div class="page-wrapper">
         <div class="page-content--bge5">
             <div class="container">
