@@ -72,9 +72,8 @@ include 'check_login.php';
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.php">
-                            <img src="images/tci-gene.png" alt="Tci-Gene" height="80%"
-                        </a>
-                        <button class="hamburger hamburger--slider" type="button">
+                            <img src="images/tci-gene.png" alt="Tci-Gene" height="80%" />
+                        </a><button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
                                 <span class="hamburger-inner"></span>
                             </span>
@@ -217,7 +216,7 @@ include 'check_login.php';
                                                         <i class="zmdi zmdi-money-box"></i>Billing</a>
                                                 </div>
                                             </div>
-<div class="account-dropdown__footer">
+                                            <div class="account-dropdown__footer">
                                                 <a href="logout.php">
                                                     <i class="zmdi zmdi-power"></i>Logout</a>
                                             </div>
