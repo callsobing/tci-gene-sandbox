@@ -167,6 +167,7 @@ include 'check_login.php';
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <img src="https://img.icons8.com/doodle/96/000000/user-<?php echo $_COOKIE['user_gender'] ?>.png">
+                                                </div>
                                                 <div class="content">
                                                     <h5 class="name">
                                                         <a href="#"><?php echo $_COOKIE['user']; ?></a>
