@@ -19,7 +19,7 @@ $dbname = "tci_gene_dashboard";
 $con = mysql_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connection');
 $select_db = mysql_select_db($dbname) or die('Error with MySQL DB selection');
 
-if($_POST['username']) {
+if(isset($_POST['username'])) {
     $passwd = $_POST['password'];
     $userid = $_POST['username'];
     $cookie_value = $userid;
@@ -48,12 +48,18 @@ if($_POST['username']) {
 ?>
 
 <head>
+    <style>
+        .button {
+            background-color: #fdffff;
+        }
+    </style>
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="au theme template">
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.3/sweetalert2.css" />
 
     <!-- Title Page-->
     <title>Login</title>
@@ -105,7 +111,7 @@ if($_POST['username']) {
                                         <input type="checkbox" name="remember">Remember Me
                                     </label>
                                     <label>
-                                        <a href="#">Forgotten Password?</a>
+                                        <button type="button" class="button">忘記密碼了嗎?</button>
                                     </label>
                                 </div>
                                 <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
@@ -117,6 +123,19 @@ if($_POST['username']) {
             </div>
         </div>
     </div>
+    <!--引用jQuery-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <!--引用SweetAlert2.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.3/sweetalert2.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("button:button").click(function () {
+                //alert範例
+                swal("Please contact:", "基因研發中心 生物資訊部<br>童翊安 #6552", "success");
+
+            });
+        });
+    </script>
 
     <!-- Jquery JS-->
     <script src="vendor/jquery-3.2.1.min.js"></script>
