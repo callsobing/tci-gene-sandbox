@@ -88,7 +88,7 @@ if($_POST['username']) {
                 <div class="login-wrap">
                     <div class="login-content">
                         <div class="login-logo">
-                                <img src="images/tci-gene.jpg" alt="TciGene" width="100%">
+                                <img src="images/tci-gene.png" alt="TciGene">
                         </div>
                         <div class="login-form">
                             <form action="" method="post">
