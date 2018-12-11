@@ -294,7 +294,6 @@ include 'check_login.php';
                                         echo("<td>$file_name</td>");
                                         echo("<td>$file_size</td>");
                                         echo("<td>$date</td>");
-                                        echo("<td>$urgency</td>");
                                         echo("<td> </td>");
                                         echo("<td> </td>");
                                         echo("<td>$memo</td></tr>");

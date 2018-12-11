@@ -18,7 +18,7 @@ if(!empty($_FILES["file_path"]["tmp_name"])){
         mkdir($target_dir, 0777, true);
     }
     $target_file = $target_dir.$_FILES["file_path"]["name"];
-    $file_size = ($_FILES["file"]["size"] / 1024);
+    $file_size = ($_FILES["file_path"]["size"] / 1024);
 
     if (move_uploaded_file($_FILES['file_path']['tmp_name'], $target_file)) {
     } else {
