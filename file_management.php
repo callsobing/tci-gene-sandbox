@@ -40,7 +40,7 @@ include 'check_login.php';
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>TCI Gene 許願池</title>
+    <title>TCI Gene 檔案管理</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -235,7 +235,7 @@ include 'check_login.php';
         <div class="main-content">
             <div class="section__content section__content--p30">
                 <div class="container-fluid">
-                    <img src="images/wish_pool.jpg"/>
+                    <img src="images/file_upload.jpg"/>
                     <div class="card">
                         <div class="card-header">
                             <strong>TCI Gene - 檔案上傳</strong>
@@ -247,7 +247,7 @@ include 'check_login.php';
                                         <label for="text-input" class=" form-control-label">備註</label>
                                     </div>
                                     <div class="col-12 col-md-9">
-                                        <input type="text" id="memo" name="memo" placeholder="請輸入你的心願主旨" class="form-control">
+                                        <input type="text" id="memo" name="memo" placeholder="請輸入你的檔案敘述" class="form-control">
                                         <small class="form-text text-muted">請言簡意賅，便於日後理解檔案內容</small>
                                     </div>
                                 </div>
