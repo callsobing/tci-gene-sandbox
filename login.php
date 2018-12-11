@@ -86,10 +86,10 @@ if($_POST['username']) {
         <div class="page-content--bge5">
             <div class="container">
                 <div class="login-wrap">
+                    <div class="login-logo">
+                        <img src="images/tci-gene.png" alt="TciGene">
+                    </div>
                     <div class="login-content">
-                        <div class="login-logo">
-                                <img src="images/tci-gene.png" alt="TciGene">
-                        </div>
                         <div class="login-form">
                             <form action="" method="post">
                                 <div class="form-group">
@@ -127,7 +127,6 @@ if($_POST['username']) {
                 </div>
             </div>
         </div>
-
     </div>
 
     <!-- Jquery JS-->
