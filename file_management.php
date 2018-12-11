@@ -13,7 +13,7 @@ $conn = mysql_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connec
 mysql_query("SET NAMES 'utf8'");
 mysql_select_db($dbname);
 $userid = $_POST['username'];
-$sql = "SELECT * FROM `uploaded_files` WHERE `id` = '$userid'";
+$sql = "SELECT * FROM `uploaded_files` WHERE `name` = '$userid'";
 $result = mysql_query($sql);
 
 $file_name = "";
@@ -272,12 +272,12 @@ include 'check_login.php';
                                 <table class="table table-borderless table-data3">
                                     <thead>
                                     <tr>
-                                        <th width="12%">檔名</th>
-                                        <th width="26%">檔案大小</th>
-                                        <th width="30%">上傳時間</th>
+                                        <th width="15%">檔名</th>
+                                        <th width="10%">檔案大小</th>
+                                        <th width="15%">上傳時間</th>
                                         <th width="15%">下載</th>
-                                        <th width="18%">刪除</th>
-                                        <th width="18%">備註</th>
+                                        <th width="15%">刪除</th>
+                                        <th width="30%">備註</th>
                                     </tr>
                                     </thead>
                                     <tbody>
