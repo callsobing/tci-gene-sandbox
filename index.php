@@ -73,7 +73,7 @@ include 'check_login.php';
                         </li>
                         <li>
                             <a href="#">
-                                <i class="fas fa-table"></i>表單生成</a>
+                                <i class="fas fa-table"></i>檔案管理</a>
                         </li>
                         <li>
                             <a href="#">
@@ -119,7 +119,7 @@ include 'check_login.php';
                         </li>
                         <li>
                             <a href="#">
-                                <i class="fas fa-table"></i>表單生成</a>
+                                <i class="fas fa-table"></i>檔案管理</a>
                         </li>
                         <li>
                             <a href="#">
