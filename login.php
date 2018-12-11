@@ -83,7 +83,6 @@
                     header("Location: index.php"); //將網址改為登入成功後要導向的頁面
                 }
             }
-        } else{
             ?>
             <script>
                 swal("帳號密碼有誤!", "請聯繫基因研發中心 - 生物資訊部<br>童翊安 #6552", "error");
