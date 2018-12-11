@@ -301,7 +301,7 @@ include 'check_login.php';
                                         $url_comp='http://'.$_SERVER['SERVER_NAME'].$_SERVER["REQUEST_URI"];
                                         $url_dir = dirname($url_comp);
                                         $url = $url_dir.'/'.$target_dir.$file_name;
-                                        echo("<iframe src='https://view.officeapps.live.com/op/embed.aspx?src=$url' width='100%' height='100%' frameborder='0'>This is an embedded <a target='_blank' href='http://office.com'>Microsoft Office</a> document, powered by <a target='_blank' href='http://office.com/webapps'>Office Online</a>.</iframe>");
+                                        echo("<iframe src=\"https://docs.google.com/gview?url=$url&embedded=true\" frameborder=\"0\"></iframe>");
                                     }
                                     ?>
                                     </tbody>
