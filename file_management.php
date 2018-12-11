@@ -15,6 +15,7 @@ mysql_select_db($dbname);
 $userid = $_COOKIE['user'];
 $sql = "SELECT * FROM `uploaded_files` WHERE `uploader` = '$userid'";
 $result = mysql_query($sql);
+$target_dir = "uploaded_files/". $uploader ."/";
 
 $file_name = "";
 $file_size = 0;
@@ -292,10 +293,10 @@ include 'check_login.php';
                                         $date = $row['date'];
                                         echo("<tr>");
                                         echo("<td>$file_name</td>");
-                                        echo("<td>$file_size</td>");
+                                        echo("<td>strval($file_size).'KB'</td>");
                                         echo("<td>$date</td>");
-                                        echo("<td> </td>");
-                                        echo("<td> </td>");
+                                        echo("<td><a href='$target_dir.$file_name'>下載</a></td>");
+                                        echo("<td>刪除</td>");
                                         echo("<td>$memo</td></tr>");
                                     }
                                     ?>
