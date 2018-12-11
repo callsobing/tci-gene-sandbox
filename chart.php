@@ -270,7 +270,7 @@ include 'check_login.php';
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="images/icon/avatar-01.jpg" alt="Yian.Tung" />
+                                            <img src="https://img.icons8.com/bubbles/100/000000/male-beloved.png">
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#"><?php echo $_COOKIE['user']; ?></a>
@@ -279,7 +279,7 @@ include 'check_login.php';
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="images/icon/avatar-01.jpg" alt="Yian.Tung" />
+                                                        <img src="https://img.icons8.com/bubbles/100/000000/male-beloved.png">
                                                     </a>
                                                 </div>
                                                 <div class="content">
