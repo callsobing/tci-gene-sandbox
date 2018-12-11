@@ -25,19 +25,13 @@ if(isset($_POST['username'])) {
     $cookie_value = $userid;
 
     $gender = 'female';
-    $sql = "SELECT `male` FROM `members` WHERE `id` = '$userid'";
+    $sql = "SELECT * FROM `members` WHERE `id` = '$userid'";
     $result = mysql_query($sql) or die("無法執行SQL語法!!");
     while ($row = mysql_fetch_array($result)){
-        if ($row[0] == 1) {
+        if ($row['male'] == 1) {
             $gender = 'male';
         }
-    }
-
-    $sql = "SELECT `password` FROM `members` WHERE `id` = '$userid'";
-    $result = mysql_query($sql) or die("無法執行SQL語法!!");
-
-    while ($row = mysql_fetch_array($result)){
-        if ($row[0] == $passwd) {
+        if ($row['password'] == $passwd) {
             session_start();
             setcookie($cookie_name, $cookie_value, time() + 86400 , '/');
             setcookie($cookie_gender, $gender, time() + 86400 , '/');
@@ -111,7 +105,7 @@ if(isset($_POST['username'])) {
                                         <input type="checkbox" name="remember">Remember Me
                                     </label>
                                     <label>
-                                        <button type="button" class="button">忘記密碼了嗎?</button>
+                                        <input type="button" class="button">忘記密碼了嗎?</button>
                                     </label>
                                 </div>
                                 <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
@@ -129,7 +123,7 @@ if(isset($_POST['username'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.3/sweetalert2.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(function () {
-            $("button:button").click(function () {
+            $("input:button").click(function () {
                 //alert範例
                 swal("Please contact:", "基因研發中心 生物資訊部<br>童翊安 #6552", "success");
 
