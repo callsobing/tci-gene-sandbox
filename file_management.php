@@ -285,7 +285,6 @@ include 'check_login.php';
                                     <?php
                                     while($row = mysql_fetch_array($result))
                                     {
-
                                         $file_name = $row['name'];
                                         $file_size = $row['size'];
                                         $uploader = $row['uploader'];
@@ -298,10 +297,6 @@ include 'check_login.php';
                                         echo("<td><a href='$target_dir$file_name' target=\"_blank\">下載</a></td>");
                                         echo("<td>刪除</td>");
                                         echo("<td>$memo</td></tr>");
-                                        $url_comp='http://'.$_SERVER['SERVER_NAME'].$_SERVER["REQUEST_URI"];
-                                        $url_dir = dirname($url_comp);
-                                        $url = $url_dir.'/'.$target_dir.$file_name;
-                                        echo("<iframe src=\"https://docs.google.com/gview?url=$url&embedded=true\" frameborder=\"0\"></iframe>");
                                     }
                                     ?>
                                     </tbody>
