@@ -97,7 +97,7 @@
                 <div class="login-wrap">
                     <div class="login-content">
                         <div class="login-logo">
-                            <img src="images/tci-gene.png" alt="TciGene">
+                            <img src="images/tci-gene.png" alt="TciGene" height="80%">
                         </div>
                         <div class="login-form">
                             <form action="" method="post">
