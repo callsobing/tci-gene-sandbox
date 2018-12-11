@@ -81,14 +81,14 @@
                     setcookie($cookie_name, $cookie_value, time() + 86400 , '/');
                     setcookie($cookie_gender, $gender, time() + 86400 , '/');
                     header("Location: index.php"); //將網址改為登入成功後要導向的頁面
-                } else{
-                    ?>
-                    <script>
-                        swal("帳號密碼有誤!", "請聯繫基因研發中心 - 生物資訊部<br>童翊安 #6552", "error");
-                    </script>
-                    <?php
                 }
             }
+        } else{
+            ?>
+            <script>
+                swal("帳號密碼有誤!", "請聯繫基因研發中心 - 生物資訊部<br>童翊安 #6552", "error");
+            </script>
+            <?php
         }
     ?>
     <div class="page-wrapper">
