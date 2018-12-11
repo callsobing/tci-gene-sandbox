@@ -84,7 +84,7 @@
                 } else{
                     ?>
                     <script>
-                        swal("Please contact:", "基因研發中心 生物資訊部<br>童翊安 #6552", "success");
+                        swal("帳號密碼有誤!", "請聯繫基因研發中心 - 生物資訊部<br>童翊安 #6552", "error");
                     </script>
                     <?php
                 }
