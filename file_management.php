@@ -13,7 +13,7 @@ $conn = mysql_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connec
 mysql_query("SET NAMES 'utf8'");
 mysql_select_db($dbname);
 $userid = $_COOKIE['user'];
-$sql = "SELECT * FROM `uploaded_files` WHERE `name` = '$userid'";
+$sql = "SELECT * FROM `uploaded_files` WHERE `uploader` = '$userid'";
 $result = mysql_query($sql);
 
 $file_name = "";
