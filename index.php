@@ -45,9 +45,7 @@ include 'check_login.php';
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
-                        <a class="logo" href="index.php">
-                            <img src="images/tci-gene.png" alt="Tci-Gene" />
-                        </a>
+                        <img src="images/tci-gene.png" alt="Tci-Gene" />
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
                                 <span class="hamburger-inner"></span>
