@@ -14,7 +14,7 @@ mysql_query("SET NAMES 'utf8'");
 mysql_select_db($dbname);
 $userid = $_POST['username'];
 $sql = "SELECT * FROM `uploaded_files` WHERE `id` = '$userid'";
-$result = mysql_query($sql) or die('MySQL query error');
+$result = mysql_query($sql);
 
 $file_name = "";
 $file_size = 0;
