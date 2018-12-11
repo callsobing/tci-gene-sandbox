@@ -99,9 +99,9 @@ include 'check_login.php';
                             <i class="fa fa-magic"></i>許願池</a>
                     </li>
                     <li>
-                        <a href="#">
-                            <i class="fas fa-table"></i>檔案管理</a>
-                    </li>
+                            <a href="file_management.php">
+                                <i class="fas fa-table"></i>檔案管理</a>
+                        </li>
                     <li>
                         <a href="#">
                             <i class="far fa-check-square"></i>表格填寫</a>
@@ -145,9 +145,9 @@ include 'check_login.php';
                             <i class="fa fa-magic"></i>許願池</a>
                     </li>
                     <li>
-                        <a href="#">
-                            <i class="fas fa-table"></i>檔案管理</a>
-                    </li>
+                            <a href="file_management.php">
+                                <i class="fas fa-table"></i>檔案管理</a>
+                        </li>
                     <li>
                         <a href="#">
                             <i class="far fa-check-square"></i>表格填寫</a>

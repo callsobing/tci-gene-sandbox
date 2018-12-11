@@ -72,7 +72,7 @@ include 'check_login.php';
                                 <i class="fa fa-magic"></i>許願池</a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="file_management.php">
                                 <i class="fas fa-table"></i>檔案管理</a>
                         </li>
                         <li>
@@ -118,7 +118,7 @@ include 'check_login.php';
                                 <i class="fa fa-magic"></i>許願池</a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="file_management.php">
                                 <i class="fas fa-table"></i>檔案管理</a>
                         </li>
                         <li>
