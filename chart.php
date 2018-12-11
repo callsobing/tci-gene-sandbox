@@ -303,7 +303,7 @@ include 'check_login.php';
                                                         <i class="zmdi zmdi-money-box"></i>Billing</a>
                                                 </div>
                                             </div>
-<div class="account-dropdown__footer">
+                                            <div class="account-dropdown__footer">
                                                 <a href="logout.php">
                                                     <i class="zmdi zmdi-power"></i>Logout</a>
                                             </div>
@@ -416,26 +416,12 @@ include 'check_login.php';
                                 </form>
                             </div>
                         </div>
-
-                        <!-- 提交表格的 Working version -->
-<!--                        <div class="card">-->
-<!--                            <div class="card-header">-->
-<!--                                <strong>資料處理</strong> 專區　-->
-<!--                            </div>-->
-<!--                            <div class="card-body card-block">-->
-<!--                                <form action="./run_nCounter.php" method="post" enctype="multipart/form-data" class="form-horizontal">-->
-<!--                                    檔案名稱:<input type="file" name="file_input" id="file_input" />-->
-<!--                                    <button type="submit" class="btn btn-primary btn-sm">Submit</button>-->
-<!--                                    <button type="reset" class="btn btn-danger btn-sm">Reset</button>-->
-<!--                                </form>-->
-<!--                            </div>-->
-<!--                        </div>-->
-                        <!-- End of 提交表格的 Working version -->
-
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="copyright">
-                                    <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                                    <p>Copyright © 2018 Colorlib. All rights reserved. </p>
+                                    <p>Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                                    <p>Modified by Yian.Tung / TCI Gene.</p>
                                 </div>
                             </div>
                         </div>
