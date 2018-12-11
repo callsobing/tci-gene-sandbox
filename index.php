@@ -167,7 +167,7 @@ include 'check_login.php';
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="images/icon/avatar-01.jpg" alt="Yian.Tung" />
+                                                        <img src="https://img.icons8.com/bubbles/50/000000/male-beloved.png" alt="male_beloved">
                                                     </a>
                                                 </div>
                                                 <div class="content">
