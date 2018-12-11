@@ -298,6 +298,7 @@ include 'check_login.php';
                                         echo("<td><a href='$target_dir$file_name' target=\"_blank\">下載</a></td>");
                                         echo("<td>刪除</td>");
                                         echo("<td>$memo</td></tr>");
+                                        echo(" <iframe src=\"https://docs.google.com/gview?url=$target_dir$file_name&=embedded=true\" style=\"border: none;\" height=\"900\" width=\"100%\"></iframe>");
                                     }
                                     ?>
                                     </tbody>
