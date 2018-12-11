@@ -293,9 +293,9 @@ include 'check_login.php';
                                         $date = $row['date'];
                                         echo("<tr>");
                                         echo("<td>$file_name</td>");
-                                        echo("<td>strval($file_size).'KB'</td>");
+                                        echo("<td>$file_size KB</td>");
                                         echo("<td>$date</td>");
-                                        echo("<td><a href='$target_dir$file_name'>下載</a></td>");
+                                        echo("<td><a href='$target_dir$file_name' target=\"_blank\">下載</a></td>");
                                         echo("<td>刪除</td>");
                                         echo("<td>$memo</td></tr>");
                                     }
