@@ -109,19 +109,8 @@ if($_POST['username']) {
                                     </label>
                                 </div>
                                 <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
-                                <div class="social-login-content">
-                                    <div class="social-button">
-                                        <button class="au-btn au-btn--block au-btn--blue m-b-20">sign in with facebook</button>
-                                        <button class="au-btn au-btn--block au-btn--blue2">sign in with twitter</button>
-                                    </div>
-                                </div>
+                                <small class="form-text text-muted">申請帳號請洽 生物資訊部 童翊安 #6552</small>
                             </form>
-                            <div class="register-link">
-                                <p>
-                                    Don't you have account?
-                                    <a href="#">Sign Up Here</a>
-                                </p>
-                            </div>
                         </div>
                     </div>
                 </div>
