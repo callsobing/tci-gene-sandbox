@@ -11,6 +11,7 @@
 
 $cookie_name = 'user';
 $cookie_value = '';
+$cookie_gender = 'user_gender';
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "tcigene";
@@ -23,6 +24,15 @@ if($_POST['username']) {
     $userid = $_POST['username'];
     $cookie_value = $userid;
 
+    $gender = 'female';
+    $sql = "SELECT `male` FROM `members` WHERE `id` = '$userid'";
+    $result = mysql_query($sql) or die("無法執行SQL語法!!");
+    while ($row = mysql_fetch_array($result)){
+        if ($row[0] == 1) {
+            $gender = 'male';
+        }
+    }
+
     $sql = "SELECT `password` FROM `members` WHERE `id` = '$userid'";
     $result = mysql_query($sql) or die("無法執行SQL語法!!");
 
@@ -30,6 +40,7 @@ if($_POST['username']) {
         if ($row[0] == $passwd) {
             session_start();
             setcookie($cookie_name, $cookie_value, time() + 86400 , '/');
+            setcookie($cookie_gender, $gender, time() + 86400 , '/');
             header("Location: index.php"); //將網址改為登入成功後要導向的頁面
         }
     }

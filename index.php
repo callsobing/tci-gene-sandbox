@@ -158,7 +158,7 @@ include 'check_login.php';
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="https://img.icons8.com/bubbles/100/000000/male-beloved.png">
+                                            <img src="https://img.icons8.com/doodle/96/000000/user-<? echo $_COOKIE['user_gender'] ?>.png">
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#"><?php echo $_COOKIE['user']; ?></a>
@@ -166,9 +166,7 @@ include 'check_login.php';
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
                                                 <div class="image">
-                                                    <a href="#">
-                                                        <img src="https://img.icons8.com/bubbles/100/000000/male-beloved.png">                                                    </a>
-                                                </div>
+                                                    <img src="https://img.icons8.com/doodle/96/000000/user-<? echo $_COOKIE['user_gender'] ?>.png">
                                                 <div class="content">
                                                     <h5 class="name">
                                                         <a href="#"><?php echo $_COOKIE['user']; ?></a>
