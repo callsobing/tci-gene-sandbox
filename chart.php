@@ -3,7 +3,32 @@
 <?php
 include 'check_login.php';
 ?>
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Yian.Tung
+ * Date: 2018/12/6
+ * Time: 下午 05:21
+ */
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "tcigene";
+$dbname = "tci_gene_dashboard";
+$conn = mysql_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connection');
+mysql_query("SET NAMES 'utf8'");
+mysql_select_db($dbname);
+$userid = $_COOKIE['user'];
+$sql = "SELECT * FROM `uploaded_files` WHERE `uploader` = '$userid'";
+$result = mysql_query($sql);
+$target_dir = "uploaded_files/". $userid ."/";
 
+$file_name = "";
+$file_size = 0;
+$uploader = "";
+$memo = "";
+$date = "";
+
+?>
 <head>
     <!-- Required meta tags-->
     <meta charset="UTF-8">
@@ -248,58 +273,23 @@ include 'check_login.php';
                                     </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3">
-                                            <label class=" form-control-label">樣本數</label>
+                                            <label for="file_select" class=" form-control-label">相關檔案</label>
                                         </div>
-                                        <div class="col col-md-9">
-                                            <div class="form-check-inline form-check">
-                                                <label for="inline-radio1" class="form-check-label ">
-                                                    <input type="radio" id="inline-radio1" name="inline-radios" value="option1" class="form-check-input"> 1
-                                                </label>
-                                                <label for="inline-radio2" class="form-check-label ">
-                                                    <input type="radio" id="inline-radio2" name="inline-radios" value="option2" class="form-check-input"> 2
-                                                </label>
-                                                <label for="inline-radio3" class="form-check-label ">
-                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option3" class="form-check-input"> 3
-                                                </label>
-                                                <label for="inline-radio3" class="form-check-label ">
-                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option4" class="form-check-input"> 4
-                                                </label>
-                                                <label for="inline-radio3" class="form-check-label ">
-                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option5" class="form-check-input"> 5
-                                                </label>
-                                                <label for="inline-radio3" class="form-check-label ">
-                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option6" class="form-check-input"> 6
-                                                </label>
-                                                <label for="inline-radio3" class="form-check-label ">
-                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option7" class="form-check-input"> 7
-                                                </label>
-                                            </div>
+                                        <div class="col-12 col-md-9">
+                                            <select name="file_select" id="file_select" class="form-control">
+                                                <?php
+                                                while($row = mysql_fetch_array($result))
+                                                {
+                                                    $file_name = $row['name'];
+                                                    $file_size = $row['size'];
+                                                    $uploader = $row['uploader'];
+                                                    $memo = $row['memo'];
+                                                    $date = $row['date'];
+                                                    echo("<option value=\"$target_dir$file_name\">$file_name</option>");
+                                                }
+                                                ?>
+                                            </select>
                                         </div>
-                                    </div>
-                                    <div class="row form-group">
-                                        <div class="col col-md-3">
-                                            <label class=" form-control-label">時間點</label>
-                                        </div>
-                                        <div class="col col-md-9">
-                                            <div class="form-check-inline form-check">
-                                                <label for="inline-radio1" class="form-check-label ">
-                                                    <input type="radio" id="inline-radio1" name="inline-radios" value="option1" class="form-check-input">1
-                                                </label>
-                                                <label for="inline-radio2" class="form-check-label ">
-                                                    <input type="radio" id="inline-radio2" name="inline-radios" value="option2" class="form-check-input">2
-                                                </label>
-                                                <label for="inline-radio3" class="form-check-label ">
-                                                    <input type="radio" id="inline-radio3" name="inline-radios" value="option3" class="form-check-input">3
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col col-md-9">
-                                    檔案名稱:<input type="file" name="file_input" id="file_input" />
-                                    </div>
-                                    <div class="col col-md-9">
-                                    <button type="submit" class="btn btn-primary btn-sm">Submit</button>
-                                    <button type="reset" class="btn btn-danger btn-sm">Reset</button>
                                     </div>
                                 </form>
                             </div>
