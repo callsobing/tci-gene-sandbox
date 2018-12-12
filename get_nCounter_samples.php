@@ -12,20 +12,12 @@ include 'check_login.php';
  * Time: 下午 12:35
  */
 
-$file_name = $_POST['file_select'];
+$file_name = $_POST["file_select"];
 $uuid = uniqid();
 $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py '".$file_name."' '".$uuid."'");
 
 ?>
-<?php
-$file = fopen("nCounter_$uuid.txt", "r");
-while (!feof($file)) {
-    $line =  fgets($file);
-    $items = preg_split ('/\t/', $line);
-    echo($items[0]);
-}
-fclose($file);
-?>
+
 <head>
     <!-- Required meta tags-->
     <meta charset="UTF-8">
@@ -310,18 +302,18 @@ fclose($file);
                                             <div class="col col-md-9">
                                                 <div class="form-check">
                                                     <div class="checkbox">
-<!--                                            --><?php
-//                                            $file = fopen("nCounter_$uuid.txt", "r");
-//                                            while (!feof($file)) {
-//                                                $items = preg_split ('/\t/', fgets($file));
-//                                            ?>
-<!--                                                <label for="checkbox3" class="form-check-label ">-->
-<!--                                                            <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> --><?php //echo($items[0]); ?>
-<!--                                                </label>-->
-<!--                                            --><?php
-//                                            }
-//                                            fclose($file);
-//                                            ?>
+                                            <?php
+                                            $file = fopen("data/nCounter_$uuid.txt", "r");
+                                            while (!feof($file)) {
+                                                $items = preg_split ('/\t/', fgets($file));
+                                            ?>
+                                                <label for="checkbox3" class="form-check-label ">
+                                                            <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> <?php echo($items[0]); ?>
+                                                </label>
+                                            <?php
+                                            }
+                                            fclose($file);
+                                            ?>
                                                     </div>
                                                 </div>
                                             </div>

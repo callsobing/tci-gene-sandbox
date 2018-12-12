@@ -239,7 +239,7 @@ $date = "";
                                 <strong>新分析專案</strong>
                             </div>
                             <div class="card-body card-block">
-                                <form action="./get_nCounter_samples.php" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                <form action="./project_selector.php" method="post" enctype="multipart/form-data" class="form-horizontal">
                                     <div class="row form-group">
                                         <div class="col col-md-3">
                                             <label for="project_type" class=" form-control-label">分析類別</label>
