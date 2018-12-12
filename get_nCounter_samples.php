@@ -2,21 +2,20 @@
 <html lang="en">
 <?php
 include 'check_login.php';
-?>
-
-<?php
-/**
- * Created by PhpStorm.
- * User: Yian.Tung
- * Date: 2018/12/4
- * Time: 下午 12:35
- */
 
 if (!file_exists($_POST["file_select"])){
+    $file = fopen($_POST["file_select"], "r");
+    $line = fgets($file);
+    if (!strpos($line, 'Probe Name') === 0) {
+        echo "<script type='text/javascript'>";
+        echo "window.location.href='new_project.php?error=wrong_format'";
+        echo "</script>";
+    }
     echo "<script type='text/javascript'>";
-    echo "window.location.href='new_project.php'";
+    echo "window.location.href='new_project.php?error=file_not_exist'";
     echo "</script>";
 }
+
 
 $file_name = $_POST["file_select"];
 $uuid = uniqid();

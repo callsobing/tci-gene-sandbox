@@ -57,6 +57,7 @@ $date = "";
     <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.3/sweetalert2.css" />
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
@@ -64,6 +65,26 @@ $date = "";
 </head>
 
 <body class="animsition">
+<!--引用jQuery--><!--引用SweetAlert2.js-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.3/sweetalert2.js" type="text/javascript"></script>
+
+<?php
+if(isset($_GET['error'])) {
+    if ($_GET['error'] == 'wrong_format'){
+        ?>
+        <script>
+            swal("資料不正確!","請檢查檔案是否為nCounter資料，<br>此檔案格式並不正確。","info");
+        </script>
+    <?php
+    } if ($_GET['error'] == 'file_not_exist'){ ?>
+        <script>
+            swal("資料不存在!","此檔案並不存在，<br>請重新操作一次。","info");
+        </script>
+        <?php
+    }
+}
+?>
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
         <header class="header-mobile d-block d-lg-none">
@@ -71,7 +92,7 @@ $date = "";
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.php">
-<img src="images/tci-gene.png" alt="Tci-Gene" height="80%" />
+                            <img src="images/tci-gene.png" alt="Tci-Gene" height="80%" />
                         </a><button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
                                 <span class="hamburger-inner"></span>
