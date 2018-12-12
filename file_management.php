@@ -66,6 +66,19 @@ include 'check_login.php';
 </head>
 
 <body class="animsition">
+<!--引用jQuery-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
+<!--引用SweetAlert2.js-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.3/sweetalert2.js" type="text/javascript"></script>
+<?php
+if(isset($_GET['error'])){?>
+<script>
+    swal("上傳資料為空!", "請檢查上傳檔案是否正確，<br>並重新操作一次。", "error");
+</script>
+<?php
+}
+?>
+
 <div class="page-wrapper">
     <!-- HEADER MOBILE-->
     <header class="header-mobile d-block d-lg-none">
