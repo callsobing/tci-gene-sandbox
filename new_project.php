@@ -242,28 +242,10 @@ $date = "";
                                 <form action="./run_nCounter.php" method="post" enctype="multipart/form-data" class="form-horizontal">
                                     <div class="row form-group">
                                         <div class="col col-md-3">
-                                            <label for="select" class=" form-control-label">操作人員</label>
+                                            <label for="project_type" class=" form-control-label">分析類別</label>
                                         </div>
                                         <div class="col-12 col-md-9">
-                                            <select name="select" id="select" class="form-control">
-                                                <option value="Austin">Austin</option>
-                                                <option value="Chelsea">Chelsea</option>
-                                                <option value="Elaine">Elaine</option>
-                                                <option value="Karen">Karen</option>
-                                                <option value="Lauren">Lauren</option>
-                                                <option value="Nick">Nick</option>
-                                                <option value="Ray">Ray</option>
-                                                <option value="Summer">Summer</option>
-                                                <option value="Yian">Yian</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="row form-group">
-                                        <div class="col col-md-3">
-                                            <label for="select" class=" form-control-label">分析類別</label>
-                                        </div>
-                                        <div class="col-12 col-md-9">
-                                            <select name="select" id="select" class="form-control">
+                                            <select name="project_type" id="project_type" class="form-control">
                                                 <option value="nCounter">nCounter資料分析</option>
                                                 <option value="qpcr">qPCR數據分析</option>
                                                 <option value="g2">G2報告生成</option>
@@ -281,10 +263,6 @@ $date = "";
                                                 while($row = mysql_fetch_array($result))
                                                 {
                                                     $file_name = $row['name'];
-                                                    $file_size = $row['size'];
-                                                    $uploader = $row['uploader'];
-                                                    $memo = $row['memo'];
-                                                    $date = $row['date'];
                                                     echo("<option value=\"$target_dir$file_name\">$file_name</option>");
                                                 }
                                                 ?>
