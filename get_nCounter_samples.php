@@ -282,87 +282,89 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                     <!-- /# column -->
                     <div class="col-lg-12">
                         <div class="card">
-                            <form action="./project_selector.php" method="post" enctype="multipart/form-data" class="form-horizontal">
-                                <div class="row form-group">
-                                    <div class="card-header">
-                                        <h4>nCounter 報告設定</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="custom-tab">
-                                            <nav>
-                                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                                    <a class="nav-item nav-link active" id="custom-nav-1-tab" data-toggle="tab" href="#custom-nav-1" role="tab" aria-controls="custom-nav-1"
-                                                       aria-selected="true">Mock</a>
-                                                    <a class="nav-item nav-link" id="custom-nav-2-tab" data-toggle="tab" href="#custom-nav-2" role="tab" aria-controls="custom-nav-2"
-                                                       aria-selected="false">Condition1</a>
-                                                    <a class="nav-item nav-link" id="custom-nav-3-tab" data-toggle="tab" href="#custom-nav-3" role="tab" aria-controls="custom-nav-3"
-                                                       aria-selected="false">Condition2</a>
-                                                </div>
-                                            </nav>
-                                            <div class="tab-content pl-3 pt-2" id="nav-tabContent">
-                                                <div class="tab-pane fade show active" id="custom-nav-1" role="tabpanel" aria-labelledby="custom-nav-1-tab">
-                                                    <div class="col col-md-9">
-                                                        <div class="form-check">
-                                                    <?php
-                                                    $file = fopen("data/nCounter_$uuid.txt", "r");
-                                                    while (!feof($file)) {
-                                                        $items = preg_split ('/\t/', fgets($file));
-                                                    ?>
-                                                        <div>
-                                                            <label for="checkbox" class="form-check-label ">
-                                                                        <input type="checkbox" name="mock[]" value="<?php echo($items[0]); ?>" class="form-check-input"> <?php echo($items[0]); ?>
-                                                            </label>
-                                                        </div>
-                                                    <?php
-                                                    }
-                                                    fclose($file);
-                                                    ?>
-                                                        </div>
+                            <form action="#" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                <div class="card-header">
+                                    <h4>nCounter 報告設定</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="custom-tab">
+                                        <nav>
+                                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                                <a class="nav-item nav-link active" id="custom-nav-1-tab" data-toggle="tab" href="#custom-nav-1" role="tab" aria-controls="custom-nav-1"
+                                                   aria-selected="true">Mock</a>
+                                                <a class="nav-item nav-link" id="custom-nav-2-tab" data-toggle="tab" href="#custom-nav-2" role="tab" aria-controls="custom-nav-2"
+                                                   aria-selected="false">Condition1</a>
+                                                <a class="nav-item nav-link" id="custom-nav-3-tab" data-toggle="tab" href="#custom-nav-3" role="tab" aria-controls="custom-nav-3"
+                                                   aria-selected="false">Condition2</a>
+                                            </div>
+                                        </nav>
+                                        <div class="tab-content pl-3 pt-2" id="nav-tabContent">
+                                            <div class="tab-pane fade show active" id="custom-nav-1" role="tabpanel" aria-labelledby="custom-nav-1-tab">
+                                                <div class="col col-md-9">
+                                                    <div class="form-check">
+                                                <?php
+                                                $file = fopen("data/nCounter_$uuid.txt", "r");
+                                                while (!feof($file)) {
+                                                    $items = preg_split ('/\t/', fgets($file));
+                                                ?>
+                                                    <div>
+                                                        <label for="checkbox" class="form-check-label ">
+                                                                    <input type="checkbox" name="mock[]" value="<?php echo($items[0]); ?>" class="form-check-input"> <?php echo($items[0]); ?>
+                                                        </label>
+                                                    </div>
+                                                <?php
+                                                }
+                                                fclose($file);
+                                                ?>
                                                     </div>
                                                 </div>
-                                                <div class="tab-pane fade" id="custom-nav-2" role="tabpanel" aria-labelledby="custom-nav-2-tab">
-                                                    <div class="col col-md-9">
-                                                        <div class="form-check">
-                                                            <?php
-                                                            $file = fopen("data/nCounter_$uuid.txt", "r");
-                                                            while (!feof($file)) {
-                                                                $items = preg_split ('/\t/', fgets($file));
-                                                                ?>
-                                                                <div>
-                                                                    <label for="checkbox" class="form-check-label ">
-                                                                        <input type="checkbox" name="cond3[]" value="<?php echo($items[0]); ?>" class="form-check-input"> <?php echo($items[0]); ?>
-                                                                    </label>
-                                                                </div>
-                                                                <?php
-                                                            }
-                                                            fclose($file);
+                                            </div>
+                                            <div class="tab-pane fade" id="custom-nav-2" role="tabpanel" aria-labelledby="custom-nav-2-tab">
+                                                <div class="col col-md-9">
+                                                    <div class="form-check">
+                                                        <?php
+                                                        $file = fopen("data/nCounter_$uuid.txt", "r");
+                                                        while (!feof($file)) {
+                                                            $items = preg_split ('/\t/', fgets($file));
                                                             ?>
-                                                        </div>
+                                                            <div>
+                                                                <label for="checkbox" class="form-check-label ">
+                                                                    <input type="checkbox" name="cond3[]" value="<?php echo($items[0]); ?>" class="form-check-input"> <?php echo($items[0]); ?>
+                                                                </label>
+                                                            </div>
+                                                            <?php
+                                                        }
+                                                        fclose($file);
+                                                        ?>
                                                     </div>
                                                 </div>
-                                                <div class="tab-pane fade" id="custom-nav-3" role="tabpanel" aria-labelledby="custom-nav-3-tab">
-                                                    <div class="col col-md-9">
-                                                        <div class="form-check">
-                                                            <?php
-                                                            $file = fopen("data/nCounter_$uuid.txt", "r");
-                                                            while (!feof($file)) {
-                                                                $items = preg_split ('/\t/', fgets($file));
-                                                                ?>
-                                                                <div>
-                                                                    <label for="checkbox" class="form-check-label ">
-                                                                        <input type="checkbox" name="cond2[]" value="<?php echo($items[0]); ?>" class="form-check-input"> <?php echo($items[0]); ?>
-                                                                    </label>
-                                                                </div>
-                                                                <?php
-                                                            }
-                                                            fclose($file);
+                                            </div>
+                                            <div class="tab-pane fade" id="custom-nav-3" role="tabpanel" aria-labelledby="custom-nav-3-tab">
+                                                <div class="col col-md-9">
+                                                    <div class="form-check">
+                                                        <?php
+                                                        $file = fopen("data/nCounter_$uuid.txt", "r");
+                                                        while (!feof($file)) {
+                                                            $items = preg_split ('/\t/', fgets($file));
                                                             ?>
-                                                        </div>
+                                                            <div>
+                                                                <label for="checkbox" class="form-check-label ">
+                                                                    <input type="checkbox" name="cond2[]" value="<?php echo($items[0]); ?>" class="form-check-input"> <?php echo($items[0]); ?>
+                                                                </label>
+                                                            </div>
+                                                            <?php
+                                                        }
+                                                        fclose($file);
+                                                        ?>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="col col-md-9">
+                                    <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                                    <button type="reset" class="btn btn-danger btn-sm">Reset</button>
                                 </div>
                             </form>
                         </div>
