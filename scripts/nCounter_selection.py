@@ -30,6 +30,11 @@ for line in nCounter_fh:
 output_fh = open("data/nCounter_%s.txt" % uuid, "w")
 
 # 輸出格式: print("Sample_id\tExpr avg\tExpr std")
-for key in sorted(sample_data, ):
-    output_fh.write("%s\t%.2f\t%.2f\n" % (key, np.average(sample_data[key]), np.std(sample_data[key])))
+first = True
+for key in sorted(sample_data):
+    if first:
+        output_fh.write("%s\t%.2f\t%.2f" % (key, np.average(sample_data[key]), np.std(sample_data[key])))
+        first = False
+        continue
+    output_fh.write("\n%s\t%.2f\t%.2f" % (key, np.average(sample_data[key]), np.std(sample_data[key])))
 output_fh.close()
