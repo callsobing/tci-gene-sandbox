@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <script>
     function post(path, params, method) {
         method = method || "post"; // Set method to post by default if not specified.
@@ -22,6 +24,7 @@
 
 </script>
 
+<body>
 <?php
 /**
  * Created by PhpStorm.
@@ -46,3 +49,6 @@ if($project_type == 'nCounter'){
 }
 
 ?>
+
+</body>
+</html>
