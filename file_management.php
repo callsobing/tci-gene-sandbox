@@ -74,7 +74,7 @@ include 'check_login.php';
 <?php
 if(isset($_GET['error'])){?>
 <script>
-    swal("上傳資料為空!", "請檢查上傳檔案是否正確，<br>並重新操作一次。", "error");
+    swal("上傳資料為空!", "請檢查上傳檔案是否正確，<br>並重新操作一次。", "question");
 </script>
 <?php
 }
