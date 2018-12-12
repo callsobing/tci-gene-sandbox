@@ -8,7 +8,7 @@
 
 $file_name = $_POST["file_select"];
 echo($file_name);
-$command_inline = 'sudo -u www-data python3.4 scripts/nCounter_selection.py ' .  $file_name . ' ' . uniqid();
-$command = exec($command_inline);
+echo("sudo -u www-data python3.4 scripts/nCounter_selection.py '".$file_name."' '".uniqid()."'");
+$command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py '".$file_name."' '".uniqid()."'");
 
 ?>
