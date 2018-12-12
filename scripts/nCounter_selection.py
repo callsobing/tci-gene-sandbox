@@ -27,7 +27,7 @@ for line in nCounter_fh:
         sample_data[sample_ids[i-8]].append(float(splitted[i]))
     line_idx += 1
 
-output_fh = open("~/data/nCounter_%s.txt" % uuid, "w")
+output_fh = open("data/nCounter_%s.txt" % uuid, "w")
 
 # 輸出格式: print("Sample_id\tExpr avg\tExpr std")
 for key in sample_data:
