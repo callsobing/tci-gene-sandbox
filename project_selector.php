@@ -34,9 +34,11 @@ $project_type = $_POST['project_type'];
 $file_path = $_POST['file_select'];
 
 if($project_type == 'nCounter'){
-    echo "<script type='text/javascript'>";
-    echo "post('get_nCounter_samples.php', {file_select: '$file_path'})";
-    echo "</script>";
+    ?>
+    <script type='text/javascript'>
+    post('get_nCounter_samples.php', {file_select: '<?php echo($file_path) ?>'})
+    </script>
+<?php
 } else {
     echo "<script type='text/javascript'>";
     echo "window.location.href='new_project.php'";
