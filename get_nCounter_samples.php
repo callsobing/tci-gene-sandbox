@@ -12,6 +12,12 @@ include 'check_login.php';
  * Time: 下午 12:35
  */
 
+if (!isset($_POST["file_select"])){
+    echo "<script type='text/javascript'>";
+    echo "window.location.href='new_project.php'";
+    echo "</script>";
+}
+
 $file_name = $_POST["file_select"];
 $uuid = uniqid();
 $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py '".$file_name."' '".$uuid."'");
