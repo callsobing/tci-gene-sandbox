@@ -286,7 +286,9 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                 <h4>nCounter 報告設定</h4>
                             </div>
                             <div class="card-body">
-                                <div class="custom-tab">
+                                <form action="./project_selector.php" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                    <div class="row form-group">
+                                        <div class="custom-tab">
                                     <nav>
                                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                             <a class="nav-item nav-link active" id="custom-nav-1-tab" data-toggle="tab" href="#custom-nav-1" role="tab" aria-controls="custom-nav-1"
@@ -360,6 +362,8 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                         </div>
                                     </div>
                                 </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
