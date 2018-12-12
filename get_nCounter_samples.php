@@ -369,6 +369,7 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                     </div>
                                 </div>
                                 <div class="card-columns">
+                                    <p><br></p>
                                 </div>
                             </form>
                         </div>
