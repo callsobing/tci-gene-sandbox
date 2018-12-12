@@ -361,10 +361,10 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col col-md-9">
-                                    <button type="submit" class="btn btn-primary btn-sm">Submit</button>
-                                    <button type="reset" class="btn btn-danger btn-sm">Reset</button>
+                                    <div class="col col-md-9">
+                                        <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                                        <button type="reset" class="btn btn-danger btn-sm">Reset</button>
+                                    </div>
                                 </div>
                             </form>
                         </div>
