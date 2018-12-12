@@ -10,11 +10,12 @@ if (!file_exists($_POST["file_select"])){
 } else{
     $file = fopen($_POST["file_select"], "r");
     $line = fgets($file);
-    if (!strpos($line, 'Probe Name') === 0) {
-        echo "<script type='text/javascript'>";
-        echo "window.location.href='new_project.php?error=wrong_format'";
-        echo "</script>";
-    }
+    echo ($line);
+//    if (!strpos($line, 'Probe Name') == 0) {
+//        echo "<script type='text/javascript'>";
+//        echo "window.location.href='new_project.php?error=wrong_format'";
+//        echo "</script>";
+//    }
 }
 
 
