@@ -18,7 +18,7 @@ for line in nCounter_fh:
     splitted = line.split("\t")
     for i in range(8, len(splitted)):
         if line_idx == 1:
-            sample_id = str(i) + ":" + splitted[i]
+            sample_id = "{:02d}".format(i) + ":" + splitted[i]
             sample_data[sample_id] = []
             sample_ids.append(sample_id)
             continue
@@ -30,6 +30,6 @@ for line in nCounter_fh:
 output_fh = open("data/nCounter_%s.txt" % uuid, "w")
 
 # 輸出格式: print("Sample_id\tExpr avg\tExpr std")
-for key in sorted(sample_data):
+for key in sorted(sample_data, ):
     output_fh.write("%s\t%.2f\t%.2f\n" % (key, np.average(sample_data[key]), np.std(sample_data[key])))
 output_fh.close()
