@@ -50,6 +50,7 @@ if($_FILES["file_path"]["size"] > 0){
     echo "window.location.href='$url'";
     echo "</script>";
 } else {
+    $url = "file_management.php";
     echo "<script type='text/javascript'>";
     echo "window.location.href='$url?error=blank_file'";
     echo "</script>";
