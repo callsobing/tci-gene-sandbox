@@ -10,46 +10,60 @@
 echo("<img src='images/waiting.jpg' width='100%' height='100%'/>");
 ob_flush();
 flush();
+$uuid = uniqid();
+
+$output = fopen("arguments_$uuid.txt", "w");
 
 if (isset($_POST['mock']))
 {
-    print_r($_POST['mock']);
+    $i=count($_POST['mock']);
+    for($j=0 ; $j<$i ; $j++){
+        if($j == 0) {
+            fwrite($output, $_POST['mock'][$j]);
+        } else {
+            fwrite($output, "\t".$_POST['mock'][$j]);
+        }
+    }
+    fwrite($output, "\n");
 }
 
 if (isset($_POST['cond1']))
 {
-    print_r($_POST['cond1']);
+    $i=count($_POST['cond1']);
+    for($j=0 ; $j<$i ; $j++){
+        if($j == 0) {
+            fwrite($output, $_POST['cond1'][$j]);
+        } else {
+            fwrite($output, "\t".$_POST['cond1'][$j]);
+        }
+    }
+    fwrite($output, "\n");
 }
 
 if (isset($_POST['cond2']))
 {
-    print_r($_POST['cond2']);
+    $i=count($_POST['cond2']);
+    for($j=0 ; $j<$i ; $j++){
+        if($j == 0) {
+            fwrite($output, $_POST['cond2'][$j]);
+        } else {
+            fwrite($output, "\t".$_POST['cond2'][$j]);
+        }
+    }
+    fwrite($output, "\n");
 }
 
-//
-//# 上傳使用者資料到uploaded_files
-//$target_dir = "uploaded_files/";
-//$target_file = $target_dir.$_FILES["file_input"]["name"];
-//
-//
-//if (move_uploaded_file($_FILES['file_input']['tmp_name'], $target_file)) {
-////    echo "File is valid, and was successfully uploaded.\\\\n";
-//} else {
-//    echo "Possible file upload attack!\\\\n";
-//}
-//
-//ob_flush();
-//flush();
-//
-//$file_name = $_FILES["file_input"]["name"];
-//$command_inline = 'sudo -u www-data python3.4 scripts/parse_nCounter_general.py ' .  $file_name;
-//$command = exec($command_inline);
-//
-////echo($command);
-//
-//$url = "nCounter_result.php?file=$file_name";
-//echo "<script type='text/javascript'>";
-//echo "window.location.href='$url'";
-//echo "</script>";
+fclose($output);
+
+$file_name = $_FILES["file_input"]["name"];
+$command_inline = 'sudo -u www-data python3.4 scripts/parse_nCounter_general.py ' .  $file_name . " arguments_$uuid.txt";
+$command = exec($command_inline);
+
+//echo($command);
+
+$url = "nCounter_result.php?file=$file_name";
+echo "<script type='text/javascript'>";
+echo "window.location.href='$url'";
+echo "</script>";
 
 ?>
