@@ -301,20 +301,21 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                         <div class="tab-pane fade show active" id="custom-nav-1" role="tabpanel" aria-labelledby="custom-nav-1-tab">
                                             <div class="col col-md-9">
                                                 <div class="form-check">
-                                                    <div class="checkbox">
+
                                             <?php
                                             $file = fopen("data/nCounter_$uuid.txt", "r");
                                             while (!feof($file)) {
                                                 $items = preg_split ('/\t/', fgets($file));
                                             ?>
+                                                <div class="checkbox">
                                                 <label for="checkbox3" class="form-check-label ">
                                                             <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> <?php echo($items[0]); ?>
                                                 </label>
+                                                </div>
                                             <?php
                                             }
                                             fclose($file);
                                             ?>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
