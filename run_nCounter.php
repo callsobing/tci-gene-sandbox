@@ -12,7 +12,7 @@ ob_flush();
 flush();
 $uuid = uniqid();
 
-$output = fopen("arguments_$uuid.txt", "w");
+$output = fopen("data/arguments_$uuid.txt", "w");
 
 if (isset($_POST['mock']))
 {
@@ -56,7 +56,7 @@ if (isset($_POST['cond2']))
 fclose($output);
 
 $file_name = $_FILES["file_input"]["name"];
-$command_inline = 'sudo -u www-data python3.4 scripts/parse_nCounter_general.py ' .  $file_name . " arguments_$uuid.txt";
+$command_inline = 'sudo -u www-data python3.4 scripts/parse_nCounter_general.py ' .  $file_name . " data/arguments_$uuid.txt";
 $command = exec($command_inline);
 
 //echo($command);
