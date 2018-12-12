@@ -306,7 +306,7 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                             while (!feof($file)) {
                                                 $items = preg_split ('/\t/', fgets($file));
                                             ?>
-                                                <div class="au-checkbox">
+                                                <div>
                                                     <label for="checkbox" class="form-check-label ">
                                                                 <input type="checkbox" name="mock[]" value="<?php echo($items[0]); ?>" class="form-check-input"> <?php echo($items[0]); ?>
                                                     </label>
@@ -326,7 +326,7 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                                     while (!feof($file)) {
                                                         $items = preg_split ('/\t/', fgets($file));
                                                         ?>
-                                                        <div class="au-checkbox">
+                                                        <div>
                                                             <label for="checkbox" class="form-check-label ">
                                                                 <input type="checkbox" name="cond3[]" value="<?php echo($items[0]); ?>" class="form-check-input"> <?php echo($items[0]); ?>
                                                             </label>
@@ -346,7 +346,7 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                                     while (!feof($file)) {
                                                         $items = preg_split ('/\t/', fgets($file));
                                                         ?>
-                                                        <div class="au-checkbox">
+                                                        <div>
                                                             <label for="checkbox" class="form-check-label ">
                                                                 <input type="checkbox" name="cond2[]" value="<?php echo($items[0]); ?>" class="form-check-input"> <?php echo($items[0]); ?>
                                                             </label>
