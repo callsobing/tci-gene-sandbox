@@ -3,11 +3,11 @@
 <?php
 include 'check_login.php';
 
-if (!file_exists($_POST["file_select"])){
+if (!file_exists($_POST["file_select"])){ # 檢查檔案存不存在
     echo "<script type='text/javascript'>";
     echo "window.location.href='new_project.php?error=file_not_exist'";
     echo "</script>";
-} else{
+} elseif (mime_content_type($_POST["file_select"]) == 'text/plain'){ #如果是文字檔就檢查格式
     $file = fopen($_POST["file_select"], "r");
     $line = fgets($file);
     if (!substr($line, 0, strlen('Probe Name')) === 'Probe Name') {
@@ -16,6 +16,10 @@ if (!file_exists($_POST["file_select"])){
         echo "window.location.href='new_project.php?error=wrong_format'";
         echo "</script>";
     }
+} else{ # 如果連文字檔都不是就不檢查
+    echo "<script type='text/javascript'>";
+    echo "window.location.href='new_project.php?error=wrong_format'";
+    echo "</script>";
 }
 
 $file_name = $_POST["file_select"];
