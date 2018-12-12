@@ -4,6 +4,10 @@
 include 'check_login.php';
 
 if (!file_exists($_POST["file_select"])){
+    echo "<script type='text/javascript'>";
+    echo "window.location.href='new_project.php?error=file_not_exist'";
+    echo "</script>";
+} else{
     $file = fopen($_POST["file_select"], "r");
     $line = fgets($file);
     if (!strpos($line, 'Probe Name') === 0) {
@@ -11,9 +15,6 @@ if (!file_exists($_POST["file_select"])){
         echo "window.location.href='new_project.php?error=wrong_format'";
         echo "</script>";
     }
-    echo "<script type='text/javascript'>";
-    echo "window.location.href='new_project.php?error=file_not_exist'";
-    echo "</script>";
 }
 
 
