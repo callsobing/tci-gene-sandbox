@@ -155,7 +155,7 @@ if(isset($_GET['error'])){?>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="wishing_pond.php">
                             <i class="fa fa-magic"></i>許願池</a>
                     </li>
                     <li>
