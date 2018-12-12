@@ -368,6 +368,8 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                         <button type="reset" class="btn btn-danger btn-sm">Reset</button>
                                     </div>
                                 </div>
+                                <div class="card-columns">
+                                </div>
                             </form>
                         </div>
                     </div>
