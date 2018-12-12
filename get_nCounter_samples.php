@@ -12,7 +12,7 @@ include 'check_login.php';
  * Time: 下午 12:35
  */
 
-if (!isset($_POST["file_select"])){
+if (!file_exists($_POST["file_select"])){
     echo "<script type='text/javascript'>";
     echo "window.location.href='new_project.php'";
     echo "</script>";
