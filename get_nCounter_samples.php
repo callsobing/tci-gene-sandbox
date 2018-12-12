@@ -236,7 +236,7 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                     <!-- /# column -->
                     <div class="col-lg-12">
                         <div class="card">
-                            <form action="#" method="post" enctype="multipart/form-data" class="form-horizontal">
+                            <form action="run_nCounter.php" method="post" enctype="multipart/form-data" class="form-horizontal">
                                 <div class="card-header">
                                     <h4>nCounter 報告設定</h4>
                                 </div>
@@ -292,7 +292,7 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                                             ?>
                                                             <div>
                                                                 <label for="checkbox" class="form-check-label ">
-                                                                    <input type="checkbox" name="cond3[]" value="<?php echo($items[0]); ?>" class="form-check-input"> <?php echo($items[0]); ?>
+                                                                    <input type="checkbox" name="cond1[]" value="<?php echo($items[0]); ?>" class="form-check-input"> <?php echo($items[0]); ?>
                                                                 </label>
                                                             </div>
                                                             <?php
