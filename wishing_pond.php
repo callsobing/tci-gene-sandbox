@@ -91,7 +91,7 @@ include 'check_login.php';
                         </li>
                         <li>
                             <a href="new_project.php">
-                                <i class="fas fa-chart-bar"></i>圖表專區
+                                <i class="fas fa-chart-bar"></i>分析專案
                             </a>
                         </li>
                         <li>
@@ -137,7 +137,7 @@ include 'check_login.php';
                         </li>
                         <li>
                             <a href="new_project.php">
-                                <i class="fas fa-chart-bar"></i>圖表專區
+                                <i class="fas fa-chart-bar"></i>分析專案
                             </a>
                         </li>
                         <li>

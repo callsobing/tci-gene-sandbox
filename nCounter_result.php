@@ -182,7 +182,7 @@ include 'check_login.php';
                         <li>
                             <!--<a href="chart.php">-->
                             <a href="new_project.php">
-                                <i class="fas fa-chart-bar"></i>圖表專區</a>
+                                <i class="fas fa-chart-bar"></i>分析專案</a>
                         </li>
                         <li>
                             <!--<a href="table.html">-->

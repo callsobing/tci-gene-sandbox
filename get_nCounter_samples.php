@@ -89,7 +89,7 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                     </li>
                     <li>
                         <a href="new_project.php">
-                            <i class="fas fa-chart-bar"></i>圖表專區
+                            <i class="fas fa-chart-bar"></i>分析專案
                         </a>
                     </li>
                     <li>
@@ -135,7 +135,7 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                     </li>
                     <li>
                         <a href="new_project.php">
-                            <i class="fas fa-chart-bar"></i>圖表專區
+                            <i class="fas fa-chart-bar"></i>分析專案
                         </a>
                     </li>
                     <li>
