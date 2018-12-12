@@ -74,7 +74,7 @@ if(isset($_GET['error'])) {
     if ($_GET['error'] == 'wrong_format'){
         ?>
         <script>
-            swal("資料不正確!","請檢查檔案是否為nCounter資料，<br>此檔案格式並不正確。","info");
+            swal("資料格式錯誤!","請檢查檔案是否為nCounter資料，<br>此檔案格式並不正確。","info");
         </script>
     <?php
     } if ($_GET['error'] == 'file_not_exist'){ ?>
@@ -82,6 +82,11 @@ if(isset($_GET['error'])) {
             swal("資料不存在!","此檔案並不存在，<br>請重新操作一次。","info");
         </script>
         <?php
+    } if ($_GET['error'] == 'file_not_exist'){ ?>
+    <script>
+        swal("資料類型錯誤!","此檔案非純文字(*.txt)資料，<br>請重新操作一次。","info");
+    </script>
+    <?php
     }
 }
 ?>

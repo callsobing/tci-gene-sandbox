@@ -18,7 +18,7 @@ if (!file_exists($_POST["file_select"])){ # 檢查檔案存不存在
     }
 } else{ # 如果連文字檔都不是就不檢查
     echo "<script type='text/javascript'>";
-    echo "window.location.href='new_project.php?error=wrong_format'";
+    echo "window.location.href='new_project.php?error=wrong_mime'";
     echo "</script>";
 }
 
