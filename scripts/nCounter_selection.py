@@ -1,9 +1,8 @@
 import sys
-import uuid
 import numpy as np
 
-uuid = str(uuid.uuid4().hex)
 nCounter_fh = open(sys.argv[1])
+uuid = sys.argv[2]
 # nCounter_fh = open("../uploaded_files/20181115_FTB 2-7-4-2 & FTB 2-5-6-2.txt")
 
 first = True
