@@ -67,10 +67,7 @@ include 'check_login.php';
 </head>
 
 <body class="animsition">
-<!--引用jQuery-->
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
-<!--引用SweetAlert2.js-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.3/sweetalert2.js" type="text/javascript"></script>
+
 <?php
 if(isset($_GET['error'])){?>
 <script>
