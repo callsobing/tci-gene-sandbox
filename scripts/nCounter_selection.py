@@ -4,6 +4,7 @@ import numpy as np
 
 uuid = str(uuid.uuid4().hex)
 nCounter_fh = open(sys.argv[1])
+# nCounter_fh = open("../uploaded_files/20181115_FTB 2-7-4-2 & FTB 2-5-6-2.txt")
 
 first = True
 line_idx = 0
@@ -27,8 +28,9 @@ for line in nCounter_fh:
         sample_data[sample_ids[i-8]].append(float(splitted[i]))
     line_idx += 1
 
-output_fh = open("nCounter_%s.txt" % uuid, "w")
+output_fh = open("../data/nCounter_%s.txt" % uuid, "w")
 
 # 輸出格式: print("Sample_id\tExpr avg\tExpr std")
 for key in sample_data:
     output_fh.write("%s\t%.2f\t%.2f\n" % (key, np.average(sample_data[key]), np.std(sample_data[key])))
+output_fh.close()
