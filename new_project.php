@@ -89,7 +89,7 @@ $date = "";
                             </a>
                         </li>
                         <li>
-                            <a href="chart.php">
+                            <a href="new_project.php">
                                 <i class="fas fa-chart-bar"></i>圖表專區
                             </a>
                         </li>
@@ -135,7 +135,7 @@ $date = "";
                             </a>
                         </li>
                         <li>
-                            <a href="chart.php">
+                            <a href="new_project.php">
                                 <i class="fas fa-chart-bar"></i>圖表專區
                             </a>
                         </li>
@@ -236,7 +236,7 @@ $date = "";
                     <div class="container-fluid">
                         <div class="card">
                             <div class="card-header">
-                                <strong>資訊上傳</strong>
+                                <strong>新分析專案</strong>
                             </div>
                             <div class="card-body card-block">
                                 <form action="./run_nCounter.php" method="post" enctype="multipart/form-data" class="form-horizontal">

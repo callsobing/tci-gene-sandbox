@@ -86,7 +86,7 @@ include 'check_login.php';
                             </ul>
                         </li>
                         <li>
-                            <a href="chart.php">
+                            <a href="new_project.php">
                                 <i class="fas fa-chart-bar"></i>Charts</a>
                         </li>
                         <li>
@@ -181,7 +181,7 @@ include 'check_login.php';
                         </li>
                         <li>
                             <!--<a href="chart.php">-->
-                            <a href="chart.php">
+                            <a href="new_project.php">
                                 <i class="fas fa-chart-bar"></i>圖表專區</a>
                         </li>
                         <li>
