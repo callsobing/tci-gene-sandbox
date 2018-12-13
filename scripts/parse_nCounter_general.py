@@ -12,7 +12,7 @@ import sys
 # plt.rcParams['font.sans-serif'] = ['SimHei']
 
 file_name = sys.argv[1]
-# file_name = "test.xlsx"
+samples_fh = sys.argv[2]
 
 def create_directory(directory_path):
     if not os.path.exists(directory_path):
@@ -94,23 +94,59 @@ platforms = {"抗氧化": {"up": ["SOD1","SOD2","GPX1","CAT"], "down": []},
             "促進免疫活化與分化": {"up": [], "down": ["CD40","ERBB2","LIF","MALT1","NCK1","PAF1","DYNLL2","GRK5","PSMD4","RDH10","RELB","SCARF1","TNFSF14","ABR","IL13","IL4R","IL5RA","RELA"]}
             }
 
-df_uht = pd.read_excel(io="uploaded_files/%s" % file_name, sheetname="Sheet1")
-uht_list = df_uht.values.tolist()[1:]
-exp_identifiers = list(df_uht)
-gene_names = df_uht.index.values[1:]
+selected_sample_fh = open(samples_fh)
+mock_samples = []
+cond1_samples = []
+cond2_samples = []
+count = 0
+for line in selected_sample_fh:
+    line = line.rstrip()
+    splitted = line.split("\t")
+    if count == 0:
+        mock_samples = splitted
+        count += 1
+        continue
+    if count == 1:
+        cond1_samples = splitted
+        count += 1
+        continue
+    if count == 2:
+        cond2_samples = splitted
+        continue
+selected_sample_fh.close()
 
-experiments_expr_map = {}
-for exp_idx in range(len(exp_identifiers)):
-    if exp_identifiers[exp_idx] not in experiments_expr_map:
-        experiments_expr_map[exp_identifiers[exp_idx]] = {}
-    for gene_idx in range(len(gene_names)):
-        experiments_expr_map[exp_identifiers[exp_idx]][gene_names[gene_idx]] = uht_list[gene_idx][exp_idx]
+
+nCounter_fh = open("uploaded_files/%s" % file_name)
+samples_idx = {}
+gene_names = []
+expression_map = {}
+count = 0
+for line in nCounter_fh:
+    line = line.rstrip()
+    splitted = line.split("\t")
+    if count == 1:
+        for idx in range(8, len(splitted)):
+            samples_idx[splitted[idx]] = idx
+            expression_map[splitted[idx]] = []
+        count += 1
+        continue
+    if count < 3:
+        count += 1
+        continue
+    gene_names.append(splitted[0])
+    for sample in samples_idx:
+        expression_map[sample].append(splitted[samples_idx[sample]])  # 最後輸出格式: expression_map: 以sample名字為key，按照次序記錄各基因表現量
 
 gene_details_map = {}
 for gene_idx in range(len(gene_names)):
-    mock_avg = average([uht_list[gene_idx][0], uht_list[gene_idx][1], uht_list[gene_idx][2]])
+    mock_sum = 0
+    for mock_id in mock_samples:
+        mock_idx = samples_idx[mock_id]
+        mock_sum += expression_map[mock_idx][gene_idx]
+    mock_avg = mock_sum / float(len(mock_samples))
     gene_details_map[gene_names[gene_idx]] = \
         {
+            # 這邊要先跟Lucas他們確認計算邏輯，6h的數值畫一張? 24h一張? 這樣是算一個cond還是兩個cond? 一開始系統那樣選擇合不合邏輯?
         "mock": {"fold_change": [1, 1, 1], "std": 0},
         "6h_1": {"fold_change": [uht_list[gene_idx][3]/mock_avg, uht_list[gene_idx][4]/mock_avg, uht_list[gene_idx][5]/mock_avg],
                  "std": np.std([uht_list[gene_idx][3]/mock_avg, uht_list[gene_idx][4]/mock_avg, uht_list[gene_idx][5]/mock_avg])},
