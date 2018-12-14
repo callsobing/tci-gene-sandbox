@@ -3,16 +3,19 @@ import json
 import pandas as pd
 import matplotlib
 matplotlib.use('Agg')
-import matplotlib.pyplot as plt
 from pylab import *
 import numpy as np
 from scipy import stats
 import os
 import sys
+import re
 # plt.rcParams['font.sans-serif'] = ['SimHei']
 
-file_name = sys.argv[1]
-samples_fh = sys.argv[2]
+# file_name = sys.argv[1]
+# samples_fh = sys.argv[2]
+
+file_name = "20181115_FTB 2-7-4-2 & FTB 2-5-6-2.txt"
+samples_fh = "../data/arg_test.txt"
 
 def create_directory(directory_path):
     if not os.path.exists(directory_path):
@@ -38,23 +41,25 @@ def label_significance(pos_in_fig, mean1, mean2, std, ymax):
         # Annotate significance level
         plt.annotate(text, xy=(pos_in_fig - 0.05, average(mean2) + std + ymax * 0.005), fontsize="xx-large")
         # Annotate Relative Expression ratio
-        plt.annotate("{:.2f}".format(average(mean2)), xy=(pos_in_fig - 0.12, average(mean2) - ymax * 0.05), fontsize="x-large")
+    plt.annotate("{:.2f}".format(average(mean2)), xy=(pos_in_fig - 0.12, average(mean2) - ymax * 0.05), fontsize="x-large")
 
 
 def plot_gene(gene_details_map, gene, file_name):
-    fig, ax = plt.subplots()
-    plt.figure(figsize=(6, 7))
     mock_mean = average(gene_details_map[gene]["mock"]["fold_change"])
-    mean_6h1 = average(gene_details_map[gene]["6h_1"]["fold_change"])
-    mean_6h2 = average(gene_details_map[gene]["6h_2"]["fold_change"])
-    x_pos = [0, 1, 2]
-    means = [mock_mean, mean_6h1, mean_6h2]
-    errors = [gene_details_map[gene]["mock"]["std"], gene_details_map[gene]["6h_1"]["std"],
-              gene_details_map[gene]["6h_2"]["std"]]
+    mean_6h1 = average(gene_details_map[gene]["cond1"]["fold_change"])
+    mean_6h2 = average(gene_details_map[gene]["cond2"]["fold_change"])
+    x_pos = (0, 1, 2)
+    means = (mock_mean, mean_6h1, mean_6h2)
+    errors = [gene_details_map[gene]["mock"]["std"], gene_details_map[gene]["cond1"]["std"],
+              gene_details_map[gene]["cond2"]["std"]]
 
-    labels = ('mock', '6h_1', '6h_2')
-    error_kw = {"barsabove": True}
-    ax.p1 = plt.bar(x_pos, means, yerr=errors, align='center', alpha=0.5, ecolor='black', capsize=8, width=0.8, error_kw=error_kw)
+    labels = ('mock', 'cond1', 'cond2')
+    fig, ax = plt.subplots()
+    rect = ax.bar(x_pos, means, 0.8, color='lightskyblue')
+    plotline1, caplines1, barlinecols1 = ax.errorbar(x_pos, means, yerr=errors, lolims=True, capsize=0, ls='None', color='black')
+
+    caplines1[0].set_marker('_')
+    caplines1[0].set_markersize(20)
 
     ymax = max(means) + max(errors) * 1.5
     plt.ylim(ymax=ymax)
@@ -65,9 +70,9 @@ def plot_gene(gene_details_map, gene, file_name):
     plt.gca().spines['right'].set_color('none')
     plt.gca().spines['top'].set_color('none')
 
-    label_significance(1, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["6h_1"]["fold_change"], errors[1], ymax)
-    label_significance(2, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["6h_2"]["fold_change"], errors[2], ymax)
-    plt.savefig("figures/%s/%s.png" % (file_name, gene))
+    label_significance(1, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["cond1"]["fold_change"], errors[1], ymax)
+    label_significance(2, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["cond2"]["fold_change"], errors[2], ymax)
+    plt.savefig("../figures/%s/%s.png" % (file_name, gene))
     plt.cla()
     plt.close(fig)
 
@@ -116,7 +121,7 @@ for line in selected_sample_fh:
 selected_sample_fh.close()
 
 
-nCounter_fh = open("uploaded_files/%s" % file_name)
+nCounter_fh = open("../uploaded_files/%s" % file_name)
 samples_idx = {}
 gene_names = []
 expression_map = {}
@@ -126,8 +131,8 @@ for line in nCounter_fh:
     splitted = line.split("\t")
     if count == 1:
         for idx in range(8, len(splitted)):
-            samples_idx[splitted[idx]] = idx
-            expression_map[splitted[idx]] = []
+            samples_idx["{:02d}".format(idx) + ":" + splitted[idx]] = idx
+            expression_map["{:02d}".format(idx)  + ":" + splitted[idx]] = []
         count += 1
         continue
     if count < 3:
@@ -138,28 +143,41 @@ for line in nCounter_fh:
         expression_map[sample].append(splitted[samples_idx[sample]])  # 最後輸出格式: expression_map: 以sample名字為key，按照次序記錄各基因表現量
 
 gene_details_map = {}
+# 初始化gene maps
+for gene_idx in range(len(gene_names)):
+    gene_details_map[gene_names[gene_idx]] = \
+        {
+        "mock": {"fold_change": [1, 1, 1], "std": 0},
+        "cond1": {"fold_change": [], "std": 0.0},
+        "cond2": {"fold_change": [], "std": 0.0},
+        }
+    gene_details_map[gene_names[gene_idx]] = \
+        {
+            "mock": {"fold_change": [1, 1, 1], "std": 0},
+            "cond1": {"fold_change": [], "std": 0.0},
+            "cond2": {"fold_change": [], "std": 0.0}
+        }
+
 for gene_idx in range(len(gene_names)):
     mock_sum = 0
     for mock_id in mock_samples:
         mock_idx = samples_idx[mock_id]
-        mock_sum += expression_map[mock_idx][gene_idx]
+        mock_sum += float(expression_map[mock_id][gene_idx])
     mock_avg = mock_sum / float(len(mock_samples))
-    gene_details_map[gene_names[gene_idx]] = \
-        {
-            # 這邊要先跟Lucas他們確認計算邏輯，6h的數值畫一張? 24h一張? 這樣是算一個cond還是兩個cond? 一開始系統那樣選擇合不合邏輯?
-        "mock": {"fold_change": [1, 1, 1], "std": 0},
-        "6h_1": {"fold_change": [uht_list[gene_idx][3]/mock_avg, uht_list[gene_idx][4]/mock_avg, uht_list[gene_idx][5]/mock_avg],
-                 "std": np.std([uht_list[gene_idx][3]/mock_avg, uht_list[gene_idx][4]/mock_avg, uht_list[gene_idx][5]/mock_avg])},
-        "6h_2": {"fold_change": [uht_list[gene_idx][6]/mock_avg, uht_list[gene_idx][7]/mock_avg, uht_list[gene_idx][8]/mock_avg],
-                 "std": np.std([uht_list[gene_idx][6]/mock_avg, uht_list[gene_idx][7]/mock_avg, uht_list[gene_idx][8]/mock_avg])},
-        "24h_1": {"fold_change": [uht_list[gene_idx][9]/mock_avg, uht_list[gene_idx][10]/mock_avg, uht_list[gene_idx][11]/mock_avg],
-                 "std": np.std([uht_list[gene_idx][9]/mock_avg, uht_list[gene_idx][10]/mock_avg, uht_list[gene_idx][11]/mock_avg])},
-        "24h_2": {"fold_change": [uht_list[gene_idx][12]/mock_avg, uht_list[gene_idx][13]/mock_avg, uht_list[gene_idx][14]/mock_avg],
-                 "std": np.std([uht_list[gene_idx][12]/mock_avg, uht_list[gene_idx][13]/mock_avg, uht_list[gene_idx][14]/mock_avg])}
-        }
+    for cond1_sample in cond1_samples:
+        sample_idx = samples_idx[cond1_sample]
+        gene_details_map[gene_names[gene_idx]]["cond1"]["fold_change"].append(float(expression_map[cond1_sample][gene_idx]) / mock_avg)
+    gene_details_map[gene_names[gene_idx]]["cond1"]["std"] = np.std(gene_details_map[gene_names[gene_idx]]["cond1"]["fold_change"])
 
-if create_directory("figures/%s" % file_name):
+    for cond2_sample in cond2_samples:
+        sample_idx = samples_idx[cond2_sample]
+        gene_details_map[gene_names[gene_idx]]["cond2"]["fold_change"].append(float(expression_map[cond2_sample][gene_idx]) / mock_avg)
+    gene_details_map[gene_names[gene_idx]]["cond2"]["std"] = np.std(gene_details_map[gene_names[gene_idx]]["cond2"]["fold_change"])
+
+# 這邊應該要新增一個資料夾叫做report專門存相關資料
+if create_directory("../figures/%s" % file_name):
     for gene_idx in range(len(gene_names)):
         plot_gene(gene_details_map, gene_names[gene_idx], file_name)
+
 else:
     print("Cannot create directory!!")
