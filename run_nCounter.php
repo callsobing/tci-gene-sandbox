@@ -57,7 +57,7 @@ if (isset($_POST['cond2']))
 
 fclose($output);
 
-$file_name = $_FILES["file_input"]["name"];
+$file_name = $_POST['file_name'];
 echo($file_name);
 echo("reports/args_$uuid");
 echo($user_id);

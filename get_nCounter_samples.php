@@ -248,6 +248,7 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                         <div class="col-12 col-md-9">
                                             <input type="text" id="project_name" name="project_name" placeholder="請輸入你的專案名稱" class="form-control">
                                             <small class="form-text text-muted">請使用與專案直接相關的敘述，方便未來辨識</small>
+                                            <input type="hidden" id="file_input" name="file_input" value="<?php echo($_POST["file_select"]) ?>">
                                         </div>
                                     </div>
                                     <div class="custom-tab">
