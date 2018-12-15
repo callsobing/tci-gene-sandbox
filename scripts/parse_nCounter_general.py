@@ -8,14 +8,12 @@ import numpy as np
 from scipy import stats
 import os
 import sys
-import re
-import uuid
-# plt.rcParams['font.sans-serif'] = ['SimHei']
+plt.rcParams['font.sans-serif'] = ['SimHei']
 
 file_name = sys.argv[1]
 samples_fh = sys.argv[2]
 user_id = sys.argv[3]
-report_uuid = uuid.uuid4().hex
+report_uuid = sys.argv[4]
 
 
 def create_directory(directory_path):
