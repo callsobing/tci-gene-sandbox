@@ -11,8 +11,10 @@ echo("<img src='images/waiting.jpg' width='100%' height='100%'/>");
 ob_flush();
 flush();
 $uuid = uniqid();
+$user_id = $_COOKIE['user'];
 
-$output = fopen("data/arguments_$uuid.txt", "w");
+
+$output = fopen("report/args_$uuid.txt", "w");
 
 if (isset($_POST['mock']))
 {
@@ -56,14 +58,13 @@ if (isset($_POST['cond2']))
 fclose($output);
 
 $file_name = $_FILES["file_input"]["name"];
-$command_inline = 'sudo -u www-data python3.4 scripts/parse_nCounter_general.py ' .  $file_name . " data/arguments_$uuid.txt";
+$command_inline = "sudo -u www-data python3.4 scripts/parse_nCounter_general.py $file_name report/args_$uuid.txt $user_id $uuid";
 $command = exec($command_inline);
 
-//echo($command);
-
-$url = "nCounter_result.php?file=$file_name";
-echo "<script type='text/javascript'>";
-echo "window.location.href='$url'";
-echo "</script>";
+//
+//$url = "nCounter_result.php?file=$file_name";
+//echo "<script type='text/javascript'>";
+//echo "window.location.href='$url'";
+//echo "</script>";
 
 ?>
