@@ -14,7 +14,7 @@ $uuid = uniqid();
 $user_id = $_COOKIE['user'];
 
 
-$output = fopen("report/args_$uuid.txt", "w");
+$output = fopen("reports/args_$uuid.txt", "w");
 
 if (isset($_POST['mock']))
 {
@@ -58,7 +58,7 @@ if (isset($_POST['cond2']))
 fclose($output);
 
 $file_name = $_FILES["file_input"]["name"];
-$command_inline = "sudo -u www-data python3.4 scripts/parse_nCounter_general.py $file_name report/args_$uuid.txt $user_id $uuid";
+$command_inline = "sudo -u www-data python3.4 scripts/parse_nCounter_general.py $file_name reports/args_$uuid.txt $user_id $uuid";
 $command = exec($command_inline);
 
 //
