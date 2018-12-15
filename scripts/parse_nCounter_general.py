@@ -9,13 +9,17 @@ from scipy import stats
 import os
 import sys
 import re
+import uuid
 # plt.rcParams['font.sans-serif'] = ['SimHei']
 
-# file_name = sys.argv[1]
-# samples_fh = sys.argv[2]
+file_name = sys.argv[1]
+samples_fh = sys.argv[2]
+user_id = sys.argv[3]
 
-file_name = "20181115_FTB 2-7-4-2 & FTB 2-5-6-2.txt"
-samples_fh = "../data/arg_test.txt"
+# file_name = "20181115_FTB 2-7-4-2 & FTB 2-5-6-2.txt"
+# samples_fh = "../data/arg_test.txt"
+report_uuid = uuid.uuid4().hex
+
 
 def create_directory(directory_path):
     if not os.path.exists(directory_path):
@@ -72,7 +76,7 @@ def plot_gene(gene_details_map, gene, file_name):
 
     label_significance(1, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["cond1"]["fold_change"], errors[1], ymax)
     label_significance(2, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["cond2"]["fold_change"], errors[2], ymax)
-    plt.savefig("../figures/%s/%s.png" % (file_name, gene))
+    plt.savefig("../report/%s/%s/%s.png" % (user_id, file_name, gene))
     plt.cla()
     plt.close(fig)
 
@@ -175,7 +179,8 @@ for gene_idx in range(len(gene_names)):
     gene_details_map[gene_names[gene_idx]]["cond2"]["std"] = np.std(gene_details_map[gene_names[gene_idx]]["cond2"]["fold_change"])
 
 # 這邊應該要新增一個資料夾叫做report專門存相關資料
-if create_directory("../figures/%s" % file_name):
+# report下面新開uuid的資料夾 - "/使用者名稱/uuid/"
+if create_directory("../report/%s/%s/" % (user_id, file_name)):
     for gene_idx in range(len(gene_names)):
         plot_gene(gene_details_map, gene_names[gene_idx], file_name)
 
