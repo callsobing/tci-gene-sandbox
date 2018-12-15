@@ -43,7 +43,7 @@ def label_significance(pos_in_fig, mean1, mean2, std, ymax):
     plt.annotate("{:.2f}".format(average(mean2)), xy=(pos_in_fig - 0.12, average(mean2) - ymax * 0.05), fontsize="x-large")
 
 
-def plot_gene(gene_details_map, gene, file_name):
+def plot_gene(gene_details_map, gene, user_id, report_uuid):
     mock_mean = average(gene_details_map[gene]["mock"]["fold_change"])
     mean_6h1 = average(gene_details_map[gene]["cond1"]["fold_change"])
     mean_6h2 = average(gene_details_map[gene]["cond2"]["fold_change"])
@@ -71,7 +71,7 @@ def plot_gene(gene_details_map, gene, file_name):
 
     label_significance(1, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["cond1"]["fold_change"], errors[1], ymax)
     label_significance(2, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["cond2"]["fold_change"], errors[2], ymax)
-    plt.savefig("../report/%s/%s/%s.png" % (user_id, file_name, gene))
+    plt.savefig("../report/%s/%s/%s.png" % (user_id, report_uuid, gene))
     plt.cla()
     plt.close(fig)
 
@@ -120,7 +120,7 @@ for line in selected_sample_fh:
 selected_sample_fh.close()
 
 
-nCounter_fh = open("../uploaded_files/%s" % file_name)
+nCounter_fh = open("../uploaded_files/%s/%s" % (user_id, file_name))
 samples_idx = {}
 gene_names = []
 expression_map = {}
@@ -175,8 +175,8 @@ for gene_idx in range(len(gene_names)):
 
 # 這邊應該要新增一個資料夾叫做report專門存相關資料
 # report下面新開uuid的資料夾 - "/使用者名稱/uuid/"
-if create_directory("../report/%s/%s/" % (user_id, file_name)):
+if create_directory("../report/%s/%s/" % (user_id, report_uuid)):
     for gene_idx in range(len(gene_names)):
-        plot_gene(gene_details_map, gene_names[gene_idx], file_name)
+        plot_gene(gene_details_map, gene_names[gene_idx], user_id, report_uuid)
 else:
     print("Cannot create directory!!")
