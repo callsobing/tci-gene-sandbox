@@ -120,7 +120,7 @@ for line in selected_sample_fh:
 selected_sample_fh.close()
 
 
-nCounter_fh = open("uploaded_files/%s/%s" % (user_id, file_name))
+nCounter_fh = open(file_name)
 samples_idx = {}
 gene_names = []
 expression_map = {}

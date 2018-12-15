@@ -62,7 +62,7 @@ echo($file_name);
 echo("reports/args_$uuid");
 echo($user_id);
 echo($uuid);
-$command_inline = "sudo -u www-data python3.4 scripts/parse_nCounter_general.py $file_name reports/args_$uuid.txt $user_id $uuid";
+$command_inline = "sudo -u www-data python3.4 scripts/parse_nCounter_general.py $file_name args_$uuid.txt $user_id $uuid";
 $command = exec($command_inline);
 
 //
