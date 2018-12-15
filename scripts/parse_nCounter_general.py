@@ -15,9 +15,6 @@ import uuid
 file_name = sys.argv[1]
 samples_fh = sys.argv[2]
 user_id = sys.argv[3]
-
-# file_name = "20181115_FTB 2-7-4-2 & FTB 2-5-6-2.txt"
-# samples_fh = "../data/arg_test.txt"
 report_uuid = uuid.uuid4().hex
 
 
@@ -183,6 +180,5 @@ for gene_idx in range(len(gene_names)):
 if create_directory("../report/%s/%s/" % (user_id, file_name)):
     for gene_idx in range(len(gene_names)):
         plot_gene(gene_details_map, gene_names[gene_idx], file_name)
-
 else:
     print("Cannot create directory!!")
