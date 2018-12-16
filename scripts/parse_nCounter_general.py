@@ -58,9 +58,9 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
     fig, ax = plt.subplots()
     rect = ax.bar(x_pos, means, 0.8, color='lightskyblue')
     plotline1, caplines1, barlinecols1 = ax.errorbar(x_pos, means, yerr=errors, lolims=True, color='black')
-    print(caplines1)
-    caplines1.set_marker('_')
-    caplines1.set_markersize(20)
+
+    caplines1[0].set_marker('_')
+    caplines1[0].set_markersize(20)
 
     ymax = max(means) + max(errors) * 1.5
     plt.ylim(ymax=ymax)
