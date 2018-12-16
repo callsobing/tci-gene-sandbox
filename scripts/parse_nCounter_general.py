@@ -61,7 +61,8 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
 
     # 在這裡設定capsize試試看
     for item in caplines1:
-        print(item)
+        print(item, end="\t")
+    print("\n", end="")
     caplines1[0].set_marker('_')
     caplines1[1].set_markersize(0)
 
