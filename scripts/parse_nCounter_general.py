@@ -49,8 +49,8 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
     mean_6h2 = average(gene_details_map[gene]["cond2"]["fold_change"])
     x_pos = (0.5, 1.5, 2.5)
     means = (mock_mean, mean_6h1, mean_6h2)
-    errors = [[0, gene_details_map[gene]["mock"]["std"]/2], [0, gene_details_map[gene]["cond1"]["std"]/2],
-              [0, gene_details_map[gene]["cond2"]["std"]/2]]
+    errors = [gene_details_map[gene]["mock"]["std"], gene_details_map[gene]["cond1"]["std"],
+              gene_details_map[gene]["cond2"]["std"]]
 
     labels = ('mock', 'cond1', 'cond2')
     fig, ax = plt.subplots()
