@@ -59,10 +59,9 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
     plt.bar(x_pos, means, 0.7, color='lightskyblue', align='center', linewidth=0)
     plotline1, caplines1, barlinecols1 = ax.errorbar(x_pos, means, yerr=errors, lolims=True, ls='None', color='black', barsabove=True)
 
-    caplines1[0].set_marker('$A$')
-    caplines1[1].set_marker('$B$')
-    caplines1[2].set_marker('$C$')
-    # caplines1[1].set_markersize(0)
+    caplines1[0].set_marker('.')
+    caplines1[2].set_marker('_')
+    caplines1[0].set_markersize(0)
     # caplines1[2].set_markersize(0)
 
     ymax = max(means) + max(errors[1]) * 1.5
