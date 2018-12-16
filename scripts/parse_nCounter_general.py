@@ -60,7 +60,7 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
     plotline1, caplines1, barlinecols1 = ax.errorbar(x_pos, means, yerr=errors, lolims=True, ls='None', color='black', barsabove=True)
 
     caplines1[0].set_marker('_')
-    caplines1[0].set_markersize(20)
+    caplines1[1].set_markersize(0)
 
     ymax = max(means) + max(errors[1]) * 1.5
     plt.ylim(ymax=ymax)
