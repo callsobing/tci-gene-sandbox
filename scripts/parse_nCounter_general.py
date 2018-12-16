@@ -47,7 +47,7 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
     mock_mean = average(gene_details_map[gene]["mock"]["fold_change"])
     mean_6h1 = average(gene_details_map[gene]["cond1"]["fold_change"])
     mean_6h2 = average(gene_details_map[gene]["cond2"]["fold_change"])
-    x_pos = (0, 1, 2)
+    x_pos = (0.5, 1.5, 2.5)
     means = (mock_mean, mean_6h1, mean_6h2)
     errors = [gene_details_map[gene]["mock"]["std"], gene_details_map[gene]["cond1"]["std"],
               gene_details_map[gene]["cond2"]["std"]]
@@ -55,7 +55,7 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
     labels = ('mock', 'cond1', 'cond2')
     fig, ax = plt.subplots()
     # rect = plt.bar(x_pos, means, 0.5, color='lightskyblue')
-    rect = plt.bar(x_pos, means)
+    rect = plt.bar(x_pos, means, align='center')
     # plotline1, caplines1, barlinecols1 = ax.errorbar(x_pos, means, yerr=errors, lolims=True, ls='None', color='black')
     #
     # caplines1[0].set_marker('_')
