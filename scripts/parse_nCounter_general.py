@@ -59,6 +59,9 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
     plt.bar(x_pos, means, 0.7, color='lightskyblue', align='center', linewidth=0)
     plotline1, caplines1, barlinecols1 = ax.errorbar(x_pos, means, yerr=errors, lolims=True, ls='None', color='black', barsabove=True)
 
+    # 在這裡設定capsize試試看
+    for item in caplines1:
+        print(item)
     caplines1[0].set_marker('_')
     caplines1[1].set_markersize(0)
 
