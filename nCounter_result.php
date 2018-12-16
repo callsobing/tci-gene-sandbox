@@ -5,9 +5,9 @@
  * Date: 2018/12/4
  * Time: 下午 12:29
  */
-$user_id = $_COOKIE['user'];
-$uuid = $_GET['uuid'];
-
+$user = $_COOKIE['user'];
+$uuid = $_POST['uuid'];
+$file_name = $_POST['file_select']
 ?>
 
 <!DOCTYPE html>
@@ -344,9 +344,6 @@ include 'check_login.php';
                                 <div class="card-body">
                                     <div class="custom-tab">
                                         <nav>
-                                            <?php
-                                            $file_name = $_GET["file"]
-                                            ?>
                                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                                 <a class="nav-item nav-link active" id="custom-nav-1-tab" data-toggle="tab" href="#custom-nav-1" role="tab" aria-controls="custom-nav-1"
                                                    aria-selected="true">抗氧化</a>

@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
 <?php
 /**
  * Created by PhpStorm.
@@ -60,11 +64,33 @@ fclose($output);
 $file_name = $_POST['file_input'];
 $command_inline = "sudo -u www-data python3.4 scripts/parse_nCounter_general.py \"$file_name\" reports/args_$uuid.txt $user_id $uuid";
 $command = exec($command_inline);
-
-
-$url = "nCounter_result.php?file=$file_name&uuid=$uuid";
-echo "<script type='text/javascript'>";
-echo "window.location.href='$url'";
-echo "</script>";
-
 ?>
+<script>
+    function post(path, params, method) {
+        method = method || "post"; // Set method to post by default if not specified.
+
+        var form = document.createElement("form");
+        form.setAttribute("method", method);
+        form.setAttribute("action", path);
+
+        for(var key in params) {
+            if(params.hasOwnProperty(key)) {
+                var hiddenField = document.createElement("input");
+                hiddenField.setAttribute("type", "hidden");
+                hiddenField.setAttribute("name", key);
+                hiddenField.setAttribute("value", params[key]);
+
+                form.appendChild(hiddenField);
+            }
+        }
+        document.body.appendChild(form);
+        form.submit();
+    }
+
+</script>
+<script type='text/javascript'>
+    post('nCounter_result.php', {file_select: '<?php echo($file_name) ?>', uuid: '<?php echo($uuid) ?>'})
+</script>
+</body>
+</html>
+
