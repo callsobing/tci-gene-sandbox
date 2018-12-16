@@ -55,7 +55,7 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
 
     labels = ('mock', 'cond1', 'cond2')
     fig, ax = plt.subplots()
-    plt.figure(figsize=(6, 7))
+    # plt.figure(figsize=(6, 7))
 
     plt.bar(x_pos, means, 0.7, color='lightskyblue', align='center', linewidth=0)
     plotline1, caplines1, barlinecols1 = ax.errorbar(x_pos, means, yerr=errors, lolims=True, ls='None', color='black', barsabove=True)
@@ -66,13 +66,18 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
     caplines1[2].set_markersize(10)
 
     ymax = max(means) + max(errors[1]) * 1.5
+    print("@@@")
+    print(max(means))
+    print(ymax)
+    print("###")
+
     plt.ylim(ymax=ymax)
-    ax.xlabel(gene, fontsize="x-large")
-    ax.ylabel('Relative Expression Ratio', fontsize="x-large")
-    ax.xticks(x_pos, labels, color='k', fontsize="x-large")
-    ax.yticks(fontsize="x-large")
-    ax.gca().spines['right'].set_color('none')
-    ax.gca().spines['top'].set_color('none')
+    plt.xlabel(gene, fontsize="x-large")
+    plt.ylabel('Relative Expression Ratio', fontsize="x-large")
+    plt.xticks(x_pos, labels, color='k', fontsize="x-large")
+    plt.yticks(fontsize="x-large")
+    plt.gca().spines['right'].set_color('none')
+    plt.gca().spines['top'].set_color('none')
 
     label_significance(x_pos[1], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["cond1"]["fold_change"], errors[1][1], ymax)
     label_significance(x_pos[2], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["cond2"]["fold_change"], errors[1][2], ymax)
