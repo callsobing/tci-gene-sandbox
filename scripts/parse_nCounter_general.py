@@ -71,8 +71,8 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
     plt.gca().spines['right'].set_color('none')
     plt.gca().spines['top'].set_color('none')
 
-    label_significance(x_pos[1], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["cond1"]["fold_change"], errors[1], ymax)
-    label_significance(x_pos[2], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["cond2"]["fold_change"], errors[2], ymax)
+    label_significance(x_pos[1], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["cond1"]["fold_change"], errors[1][1], ymax)
+    label_significance(x_pos[2], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["cond2"]["fold_change"], errors[1][2], ymax)
     plt.savefig("reports/%s/%s/%s.png" % (user_id, report_uuid, gene))
     plt.cla()
     plt.close(fig)
