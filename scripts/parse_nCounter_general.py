@@ -66,7 +66,7 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
     caplines1[2].set_markersize(10)
 
     ymax = max(means) + max(errors[1]) * 2
-    plt.ylim(ymax=ymax)
+    plt.ylim(0, ymax)
     plt.xlabel(gene, fontsize="x-large")
     plt.ylabel('Relative Expression Ratio', fontsize="x-large")
     plt.xticks(x_pos, labels, color='k', fontsize="x-large")
