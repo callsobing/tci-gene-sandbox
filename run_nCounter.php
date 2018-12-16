@@ -61,10 +61,10 @@ $file_name = $_POST['file_input'];
 $command_inline = "sudo -u www-data python3.4 scripts/parse_nCounter_general.py \"$file_name\" reports/args_$uuid.txt $user_id $uuid";
 $command = exec($command_inline);
 
-//
-//$url = "nCounter_result.php?file=$file_name";
-//echo "<script type='text/javascript'>";
-//echo "window.location.href='$url'";
-//echo "</script>";
+
+$url = "nCounter_result.php?file=$file_name&uuid=$uuid";
+echo "<script type='text/javascript'>";
+echo "window.location.href='$url'";
+echo "</script>";
 
 ?>

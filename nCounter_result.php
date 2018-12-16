@@ -5,6 +5,9 @@
  * Date: 2018/12/4
  * Time: 下午 12:29
  */
+$user_id = $_COOKIE['user'];
+$uuid = $_GET['uuid'];
+
 ?>
 
 <!DOCTYPE html>
@@ -404,7 +407,7 @@ include 'check_login.php';
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </td>
-                                                            <td><img src="figures/<?php echo($file_name) ?>/SOD1.png" width="100%"></td>
+                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/<?php echo($file_name) ?>/SOD1.png" width="100%"></td>
                                                             <td>SOD1</td>
                                                             <td>
                                                                 <span class="badge badge-success">提高</span>
@@ -420,7 +423,7 @@ include 'check_login.php';
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </td>
-                                                            <td><img src="figures/<?php echo($file_name) ?>/SOD2.png " width="100%"></td>
+                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/<?php echo($file_name) ?>/SOD2.png " width="100%"></td>
                                                             <td>SOD2</td>
                                                             <td>
                                                                 <span class="badge badge-success">提高</span>
@@ -436,7 +439,7 @@ include 'check_login.php';
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </td>
-                                                            <td><img src="figures/<?php echo($file_name) ?>/GPX1.png " width="100%"></td>
+                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/<?php echo($file_name) ?>/GPX1.png " width="100%"></td>
                                                             <td>GPX1</td>
                                                             <td>
                                                                 <span class="badge badge-danger">下降</span>
@@ -452,7 +455,7 @@ include 'check_login.php';
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </td>
-                                                            <td><img src="figures/<?php echo($file_name) ?>/CAT.png " width="100%"></td>
+                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/<?php echo($file_name) ?>/CAT.png " width="100%"></td>
                                                             <td>CAT</td>
                                                             <td>
                                                                 <span class="badge badge-success">提高</span>
@@ -493,7 +496,7 @@ include 'check_login.php';
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </td>
-                                                            <td><img src="figures/<?php echo($file_name) ?>/CCT2.png" width="100%"></td>
+                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/<?php echo($file_name) ?>/CCT2.png" width="100%"></td>
                                                             <td>CCT2</td>
                                                             <td>
                                                                 <span class="badge badge-success">提高</span>
@@ -509,7 +512,7 @@ include 'check_login.php';
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </td>
-                                                            <td><img src="figures/<?php echo($file_name) ?>/CCT5.png " width="100%"></td>
+                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/<?php echo($file_name) ?>/CCT5.png " width="100%"></td>
                                                             <td>CCT5</td>
                                                             <td>
                                                                 <span class="badge badge-success">提高</span>
@@ -525,7 +528,7 @@ include 'check_login.php';
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </td>
-                                                            <td><img src="figures/<?php echo($file_name) ?>/CCT6A.png " width="100%"></td>
+                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/<?php echo($file_name) ?>/CCT6A.png " width="100%"></td>
                                                             <td>CCT6A</td>
                                                             <td>
                                                                 <span class="badge badge-danger">下降</span>
@@ -541,7 +544,7 @@ include 'check_login.php';
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </td>
-                                                            <td><img src="figures/<?php echo($file_name) ?>/CCT7.png " width="100%"></td>
+                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/<?php echo($file_name) ?>/CCT7.png " width="100%"></td>
                                                             <td>CCT7</td>
                                                             <td>
                                                                 <span class="badge badge-success">提高</span>
@@ -582,7 +585,7 @@ include 'check_login.php';
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </td>
-                                                            <td><img src="figures/<?php echo($file_name) ?>/UNG.png" width="100%"></td>
+                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/<?php echo($file_name) ?>/UNG.png" width="100%"></td>
                                                             <td>UNG</td>
                                                             <td>
                                                                 <span class="badge badge-success">提高</span>
@@ -598,7 +601,7 @@ include 'check_login.php';
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </td>
-                                                            <td><img src="figures/<?php echo($file_name) ?>/OGG1.png " width="100%"></td>
+                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/<?php echo($file_name) ?>/OGG1.png " width="100%"></td>
                                                             <td>OGG1</td>
                                                             <td>
                                                                 <span class="badge badge-success">提高</span>
@@ -614,7 +617,7 @@ include 'check_login.php';
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </td>
-                                                            <td><img src="figures/<?php echo($file_name) ?>/MPG.png " width="100%"></td>
+                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/<?php echo($file_name) ?>/MPG.png " width="100%"></td>
                                                             <td>MPG</td>
                                                             <td>
                                                                 <span class="badge badge-success">提高</span>
@@ -630,7 +633,7 @@ include 'check_login.php';
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </td>
-                                                            <td><img src="figures/<?php echo($file_name) ?>/APEX1.png " width="100%"></td>
+                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/<?php echo($file_name) ?>/APEX1.png " width="100%"></td>
                                                             <td>APEX1</td>
                                                             <td>
                                                                 <span class="badge badge-success">提高</span>
@@ -671,7 +674,7 @@ include 'check_login.php';
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </td>
-                                                            <td><img src="figures/<?php echo($file_name) ?>/IL-1B.png" width="100%"></td>
+                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/<?php echo($file_name) ?>/IL-1B.png" width="100%"></td>
                                                             <td>IL-1B</td>
                                                             <td>
                                                                 <span class="badge badge-success">提高</span>
@@ -687,7 +690,7 @@ include 'check_login.php';
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </td>
-                                                            <td><img src="figures/<?php echo($file_name) ?>/IL-8.png " width="100%"></td>
+                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/<?php echo($file_name) ?>/IL-8.png " width="100%"></td>
                                                             <td>IL-8</td>
                                                             <td>
                                                                 <span class="badge badge-success">提高</span>
@@ -703,7 +706,7 @@ include 'check_login.php';
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </td>
-                                                            <td><img src="figures/<?php echo($file_name) ?>/IL-6.png " width="100%"></td>
+                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/<?php echo($file_name) ?>/IL-6.png " width="100%"></td>
                                                             <td>IL-6</td>
                                                             <td>
                                                                 <span class="badge badge-success">提高</span>
@@ -719,7 +722,7 @@ include 'check_login.php';
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </td>
-                                                            <td><img src="figures/<?php echo($file_name) ?>/IL-10.png " width="100%"></td>
+                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/<?php echo($file_name) ?>/IL-10.png " width="100%"></td>
                                                             <td>IL-10</td>
                                                             <td>
                                                                 <span class="badge badge-success">提高</span>
