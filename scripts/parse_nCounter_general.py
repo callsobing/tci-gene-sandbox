@@ -54,9 +54,9 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
 
     labels = ('mock', 'cond1', 'cond2')
     fig, ax = plt.subplots()
-    rect = plt.bar(x_pos, means, 0.7, color='lightskyblue', align='center', linewidth=0, )
 
     plotline1, caplines1, barlinecols1 = ax.errorbar(x_pos, means, yerr=errors, lolims=True, ls='None', color='black', barsabove=True)
+    rect = plt.bar(x_pos, means, 0.7, color='lightskyblue', align='center', linewidth=0, )
 
     caplines1[0].set_marker('_')
     caplines1[0].set_markersize(20)
