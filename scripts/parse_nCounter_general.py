@@ -49,17 +49,18 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
     mean_6h2 = average(gene_details_map[gene]["cond2"]["fold_change"])
     x_pos = (0.5, 1.5, 2.5)
     means = (mock_mean, mean_6h1, mean_6h2)
-    errors = [gene_details_map[gene]["mock"]["std"], gene_details_map[gene]["cond1"]["std"],
-              gene_details_map[gene]["cond2"]["std"]]
+    errors = [[0, gene_details_map[gene]["mock"]["std"]],
+              [0, gene_details_map[gene]["cond1"]["std"]],
+              [0, gene_details_map[gene]["cond2"]["std"]]]
 
     labels = ('mock', 'cond1', 'cond2')
     fig, ax = plt.subplots()
 
-    plotline1, caplines1, barlinecols1 = ax.errorbar(x_pos, means, yerr=errors, lolims=True, ls='None', color='black', barsabove=True)
-    rect = plt.bar(x_pos, means, 0.7, color='lightskyblue', align='center', linewidth=0, )
+    # plotline1, caplines1, barlinecols1 = ax.errorbar(x_pos, means, yerr=errors, lolims=True, ls='None', color='black', barsabove=True)
+    rect = plt.bar(x_pos, means, 0.7, color='lightskyblue', align='center', linewidth=0, yerr=errors)
 
-    caplines1[0].set_marker('_')
-    caplines1[0].set_markersize(20)
+    # caplines1[0].set_marker('_')
+    # caplines1[0].set_markersize(20)
 
     ymax = max(means) + max(errors) * 1.5
     plt.ylim(ymax=ymax)
