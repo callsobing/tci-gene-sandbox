@@ -62,7 +62,7 @@ $command_inline = "sudo -u www-data python3.4 scripts/parse_nCounter_general.py 
 $command = exec($command_inline);
 
 
-$url = "nCounter_result.php?file=$file_name&uuid=$uuid";
+$url = "nCounter_result.php?file=\"$file_name\"&uuid=$uuid";
 echo "<script type='text/javascript'>";
 echo "window.location.href='$url'";
 echo "</script>";
