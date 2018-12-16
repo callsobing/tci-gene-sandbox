@@ -57,7 +57,8 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
     fig, ax = plt.subplots()
 
     # plotline1, caplines1, barlinecols1 = ax.errorbar(x_pos, means, yerr=errors, lolims=True, ls='None', color='black', barsabove=True)
-    rect = plt.bar(x_pos, means, 0.7, color='lightskyblue', align='center', linewidth=0, yerr=errors)
+    print(plt.bar(x_pos, means, 0.7, color='lightskyblue', align='center', linewidth=0, yerr=errors))
+
 
     # caplines1[0].set_marker('_')
     # caplines1[0].set_markersize(20)
