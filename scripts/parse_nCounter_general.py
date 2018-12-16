@@ -51,8 +51,6 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
     means = (mock_mean, mean_6h1, mean_6h2)
     errors = [gene_details_map[gene]["mock"]["std"], gene_details_map[gene]["cond1"]["std"],
               gene_details_map[gene]["cond2"]["std"]]
-    print(means)
-    print(errors)
 
     labels = ('mock', 'cond1', 'cond2')
     fig, ax = plt.subplots()
@@ -179,7 +177,6 @@ for gene_idx in range(len(gene_names)):
 # report下面新開uuid的資料夾 - "/使用者名稱/uuid/"
 if create_directory("reports/%s/%s/" % (user_id, report_uuid)):
     for gene_idx in range(len(gene_names)):
-        print(gene_names[gene_idx])
         plot_gene(gene_details_map, gene_names[gene_idx], user_id, report_uuid)
 else:
     print("Cannot create directory!!")
