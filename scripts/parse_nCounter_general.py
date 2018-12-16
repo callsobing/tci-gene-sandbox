@@ -57,11 +57,10 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
     fig, ax = plt.subplots()
 
     # plotline1, caplines1, barlinecols1 = ax.errorbar(x_pos, means, yerr=errors, lolims=True, ls='None', color='black', barsabove=True)
-    art1, art2, art3, art4 = plt.bar(x_pos, means, 0.7, color='lightskyblue', align='center', linewidth=0, yerr=errors)
+    art1, art2, art3 = plt.bar(x_pos, means, 0.7, color='lightskyblue', align='center', linewidth=0, yerr=errors)
     print(art1)
     print(art2)
     print(art3)
-    print(art4)
 
 
     # caplines1[0].set_marker('_')
