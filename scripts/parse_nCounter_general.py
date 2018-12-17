@@ -48,14 +48,14 @@ def platform_score(gene_details_map, platforms):
     output_fh = open("reports/%s/%s/platform_score" % (user_id, report_uuid), "w")
     for platform in platforms:
         gene_count = 0.0
-        for gene in platform['up']:
+        for gene in platforms[platform]['up']:
             gene_count += 1
             mock_mean = gene_details_map[gene]["mock"]["fold_change"]
             cond1_mean = gene_details_map[gene]["cond1"]["fold_change"]
             cond2_mean = gene_details_map[gene]["cond2"]["fold_change"]
             score_sum += significance_score(mock_mean, cond1_mean) * expression_direction_score(1, cond1_mean)
             score_sum += significance_score(mock_mean, cond2_mean) * expression_direction_score(1, cond2_mean)
-        for gene in platform['down']:
+        for gene in platforms[platform]['down']:
             gene_count += 1
             mock_mean = gene_details_map[gene]["mock"]["fold_change"]
             cond1_mean = gene_details_map[gene]["cond1"]["fold_change"]
