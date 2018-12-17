@@ -85,13 +85,10 @@ def label_significance(pos_in_fig, mean1, mean2, std, ymax):
     (statistic, pvalue) = stats.ttest_ind(mean1, mean2)
     text = ""
     if pvalue < 0.001:
-        # text = "p-value: %s\n***" % "{:.4f}".format(pvalue)
         text = "***"
     elif pvalue < 0.01:
-        # text = "p-value: %s\n**" % "{:.4f}".format(pvalue)
         text = "**"
     elif pvalue < 0.05:
-        # text = "p-value: %s\n*" % "{:.4f}".format(pvalue)
         text = "*"
     if text:
         # Annotate significance level
