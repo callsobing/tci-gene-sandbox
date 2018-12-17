@@ -326,8 +326,8 @@ include 'check_login.php';
                                                 <div class="col-lg-3">
                                                 </div>
                                                 <div class="col-lg-9">
-                                                    <?php echo($key) ?>
                                                     <div class="progress mb-2">
+                                                        <?php echo($key) ?>
                                                         <div class="progress-bar bg-<?php if($significance[$key] > 50){ echo("success"); } elseif($significance[$key] > 25){ echo("warning"); } else { echo("info"); } ?>" role="progressbar" style="width:<?php echo($significance[$key]); ?>%" aria-valuenow="<?php echo($significance[$key]); ?>" aria-valuemin="0" aria-valuemax="100"><?php echo($significance[$key]); ?>%</div>
                                                     </div>
                                                 </div>
