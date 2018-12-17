@@ -343,10 +343,10 @@ include 'check_login.php';
                                 </div>
                                 <div class="card-body">
                                     <div class="progress mb-2">
-                                        <div class="progress-bar bg-success" role="progressbar" style="width: 96%" aria-valuenow="96" aria-valuemin="0" aria-valuemax="100">96%</div>
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 96%" aria-valuenow="96" aria-valuemin="0" aria-valuemax="100" onclick="location.href='#custom-nav-6'">96%</div>
                                     </div>
                                     <div class="progress mb-2">
-                                        <div class="progress-bar bg-success" role="progressbar" style="width: 91%" aria-valuenow="91" aria-valuemin="0" aria-valuemax="100">91%</div>
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 91%" aria-valuenow="91" aria-valuemin="0" aria-valuemax="100" onclick="location.href='#custom-nav-2'>91%</div>
                                     </div>
                                     <div class="progress mb-2">
                                         <div class="progress-bar bg-warning" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
