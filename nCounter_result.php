@@ -352,7 +352,6 @@ include 'check_login.php';
                                                 <?php
                                                 $count = 0;
                                                 foreach ($platforms as $platform_count) {
-                                                    echo($platform_count);
                                                     $count += 1;
                                                     foreach ($platform_count as $key => $value) {
                                                     ?>
