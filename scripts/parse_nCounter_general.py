@@ -63,7 +63,7 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
     caplines1[0].set_marker('.')
     caplines1[2].set_marker('_')
     caplines1[0].set_markersize(0)
-    caplines1[2].set_markersize(10)
+    caplines1[2].set_markersize(15)
 
     ymax = max(means) + max(errors[1]) * 2
     plt.ylim(0, ymax)
