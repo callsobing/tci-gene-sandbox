@@ -28,7 +28,7 @@ def significance_score(mean1, mean2):
 
 
 def expression_direction_score(direction, expression):
-    difference = expression - 1
+    difference = average(expression) - 1
     check_direction = difference * direction
     multiplier = 1
     if check_direction < 0: # 和預期方向不同就扣分
