@@ -93,7 +93,7 @@ def platform_score(gene_details_map):
         if score_sum < 0:
             output_fh.write("%s\t0\n" % platform)
         else:
-            output_fh.write("%s\t%f\n" % (platform, (score_sum * 100 /(gene_count*2))/9))
+            output_fh.write("%s\t%.2f\n" % (platform, (score_sum * 100 /(gene_count*2))/9))
     output_fh.close()
 
 
