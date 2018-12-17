@@ -352,9 +352,9 @@ include 'check_login.php';
                                                 <?php
                                                 $count = 0;
                                                 foreach ($platforms as $platform_count) {
-                                                    echo($platform_count[0]);
+                                                    echo($platform_count);
                                                     $count += 1;
-                                                    foreach ($platforms[$platform_count] as $key => $value) {
+                                                    foreach ($platform_count as $key => $value) {
                                                         echo($key[0]);
                                                     ?>
                                                 <a class="nav-item nav-link <?php if($count == 1){ echo("active");} ?>" id="custom-nav-<?php echo($count); ?>-tab" data-toggle="tab" href="#custom-nav-<?php echo($count); ?>" role="tab" aria-controls="custom-nav-<?php echo($count); ?>"
@@ -373,7 +373,7 @@ include 'check_login.php';
                                             $count = 0;
                                             foreach ($platforms as $platform_count) {
                                                 $count += 1;
-                                                foreach ($platforms[$platform_count] as $key => $value) {
+                                                foreach ($platform_count as $key => $value) {
                                             ?>
                                             <div class="tab-pane fade show <?php if($count == 1){ echo("active");} ?>" id="custom-nav-<?php echo($count); ?>" role="tabpanel" aria-labelledby="custom-nav-<?php echo($count); ?>-tab">
                                                 <!-- DATA TABLE -->
