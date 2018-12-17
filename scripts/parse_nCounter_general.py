@@ -106,6 +106,7 @@ def platform_score(gene_details_map):
 
     output_fh = open("reports/%s/%s/platform_score" % (user_id, report_uuid), "w+")
     for platform in platform_data:
+        output_fh.write(platform)
         gene_count = 0.0
         for gene in platforms[platform]['up']:
             if gene not in gene_details_map:
