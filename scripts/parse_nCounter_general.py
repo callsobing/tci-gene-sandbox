@@ -68,44 +68,9 @@ def expression_direction_score(direction, expression):
 
 def platform_score(gene_details_map):
     score_sum = 0
-    platform_data = {
-        "抗氧化": {"up": ["SOD1", "SOD2", "GPX1", "CAT"], "down": []},
-        "抗老": {"up": ["CCT2", "CCT5", "CCT6A", "CCT7", "CCT8", "Pink1", "Parkin", "Atg1", "Atg8", "SIRT1", "FOXO",
-                      "NADSYN", "MRPS5", "Ubl-5", "SOD3"], "down": ["PARP1", "PARP2"]},
-        "DNA修復": {
-            "up": ["UNG", "OGG1", "MPG", "APEX1", "ERCC1", "ERCC6", "XPA", "XRCC1", "XRCC5", "MSH2", "MLH1", "MSH6"],
-            "down": []},
-        "免疫": {"up": ["IL-1B", "IL-8", "IL-6", "IL-10", "IL-18", "TNF-a"], "down": []},
-        "護胃": {"up": ["SOD1", "SOD2", "GPX1"], "down": ["IL-1B", "IL-6", "IL-8"]},
-        "護眼": {"up": [], "down": ["VEGFA", "CASP3", "CASP8", "IL-1B", "IL-8", "TNF-a"]},
-        "抗黑色素生成": {"up": [], "down": ["TYR", "TYRP1", "MC1R", "MITF"]},
-        "膠原蛋白合成/組合/降解": {
-            "up": ["COL1A1", "COL1A2", "COL4A1", "COL4A4", "COL4A5", "TIMP1", "ELN", "FBN1", "LOX", "HAS2", "HAS3"],
-            "down": ["MMP1", "MMP9", "MMP2"]},
-        "抗發炎": {"up": ["IL-10", "TGFB", "IL4"],
-                "down": ["IL-1B", "IL-8", "IL-6", "IL-18", "TNF-a", "IL-16", "IL23", "IL12A", "IFNG", "IL3"]},
-        "細胞凋亡": {"up": [], "down": ["BCL-2", "BAX", "BCLXL", "BAD", "CASP9", "AIFM1", "EndoG"]},
-        "心血管保健": {"up": ["PTGIS", "NOS3", "PLAT", "PROC"],
-                  "down": ["EDN1", "VWF", "F3", "SERPINE1", "PDGFC", "FGF2", "IGF2BP3", "IGF1R", "IL-8", "IL-6",
-                           "ICAM1", "VCAM1", "CASP8"]},
-        "晝夜節律": {"up": ["SIRT1", "CLOCK", "BMAL1 (ARNTL)", "PER2", "CRY", "KPNB1"], "down": []},
-        "LPS模擬體內發炎": {"up": ["NOS3"], "down": ["ICAM1", "VCAM1", "IL-8"]},
-        "非酒精性肝損傷": {
-            "up": ["UNG", "OGG1", "MPG", "APEX1", "ERCC1", "ERCC6", "XPA", "XRCC1", "XRCC5", "MSH2", "MLH1", "MSH6",
-                   "SOD1", "SOD2", "GPX1", "CAT"], "down": []},
-        "皮膚角質保濕": {"up": ["Tgm1", "Krt1", "Keratin 10", "Keratin 14", "AQP3", "FLG-F", "SMPD1", "GBA", "HAS2", "HAS3"],
-                   "down": []},
-        "脂肪肝": {"up": ["PPAR-g", "PPAR-a"], "down": ["SREBP-1c (SREBF1)", "SCD1 (SCD)", "ACC (ACACA)"]},
-        "提升HDL": {"up": ["CETP", "SCARB1", "apoA-I (APA1)", "LDLR", "ABCA1"], "down": []},
-        "健髮平台": {"up": ["KROX20", "SCF", "VEGFA", "IGF1"], "down": ["SRD5A1", "SRD5A2", "AR", "TGFB", "BDNF"]},
-        "端粒酶活性平台": {"up": ["TERT", "TERC", "RTEL1"], "down": []},
-        "免疫活化與分化": {"up": [],
-                    "down": ["CD40", "ERBB2", "LIF", "MALT1", "NCK1", "PAF1", "DYNLL2", "GRK5", "PSMD4", "RDH10",
-                             "RELB", "SCARF1", "TNFSF14", "ABR", "IL13", "IL4R", "IL5RA", "RELA"]}
-    }
 
     output_fh = open("reports/%s/%s/platform_score" % (user_id, report_uuid), "w+")
-    for platform in platform_data:
+    for platform in platforms:
         output_fh.write(platform)
         gene_count = 0.0
         for gene in platforms[platform]['up']:
