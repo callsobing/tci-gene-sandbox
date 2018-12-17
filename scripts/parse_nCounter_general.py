@@ -46,8 +46,7 @@ def expression_direction_score(direction, expression):
 def platform_score(gene_details_map, platforms):
     score_sum = 0
     output_fh = open("reports/%s/%s/platform_score" % (user_id, report_uuid), "w")
-    for platform in platforms:
-        output_fh.write("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+    for platform, value in platforms.items():
         gene_count = 0.0
         for gene in platforms[platform]['up']:
             if gene not in gene_details_map:
