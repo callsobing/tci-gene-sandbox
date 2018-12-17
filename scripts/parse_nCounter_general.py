@@ -105,6 +105,7 @@ def platform_score(gene_details_map):
     }
 
     output_fh = open("reports/%s/%s/platform_score" % (user_id, report_uuid), "w+")
+    output_fh.write(platform_data)
     for platform in platform_data:
         output_fh.write(platforms)
         output_fh.write(platform)
