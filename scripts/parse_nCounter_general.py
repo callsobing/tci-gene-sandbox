@@ -69,7 +69,7 @@ def expression_direction_score(direction, expression):
 def platform_score(gene_details_map):
     score_sum = 0
 
-    output_fh = open("reports/%s/%s/platform_score" % (user_id, report_uuid), "w+")
+    output_fh = open("reports/%s/%s/platform_score" % (user_id, report_uuid), "w", encoding="utf-8")
     for platform in platforms:
         gene_count = 0.0
         for gene in platforms[platform]['up']:
@@ -93,7 +93,7 @@ def platform_score(gene_details_map):
         if score_sum < 0:
             output_fh.write("%s\t0\n" % platform)
         else:
-            output_fh.write("%s\t%3f\n" % (platform, (score_sum * 100 /(gene_count*2))/9))
+            output_fh.write("%s\t%f\n" % (platform, (score_sum * 100 /(gene_count*2))/9))
     output_fh.close()
 
 
