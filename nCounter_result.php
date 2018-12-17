@@ -351,8 +351,9 @@ include 'check_login.php';
                                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                                 <?php
                                                 $count = 0;
-                                                foreach ($platforms as $key => $value) {
+                                                foreach ($platforms as $platform_count) {
                                                     $count += 1;
+                                                    foreach ($platforms[$platform_count] as $key => $value) {
                                                     ?>
                                                 <a class="nav-item nav-link <?php if($count == 1){ echo("active");} ?>" id="custom-nav-<?php echo($count); ?>-tab" data-toggle="tab" href="#custom-nav-<?php echo($count); ?>" role="tab" aria-controls="custom-nav-<?php echo($count); ?>"
                                                    aria-selected="<?php if($count == 1){ echo("true");} else {echo("false");} ?>">
@@ -361,14 +362,16 @@ include 'check_login.php';
                                                         <div class="progress-bar bg-warning" role="progressbar" style="width: 68%" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100">68%</div>
                                                     </div>
                                                 </a>
-                                                <?php } ?>
+                                                <?php }
+                                                }?>
                                             </div>
                                         </nav>
                                         <div class="tab-content pl-3 pt-2" id="nav-tabContent">
                                             <?php
                                             $count = 0;
-                                            foreach ($platforms as $key => $value) {
-                                            $count += 1;
+                                            foreach ($platforms as $platform_count) {
+                                                $count += 1;
+                                                foreach ($platforms[$platform_count] as $key => $value) {
                                             ?>
                                             <div class="tab-pane fade show <?php if($count == 1){ echo("active");} ?>" id="custom-nav-<?php echo($count); ?>" role="tabpanel" aria-labelledby="custom-nav-<?php echo($count); ?>-tab">
                                                 <!-- DATA TABLE -->
@@ -439,6 +442,7 @@ include 'check_login.php';
                                                 <!-- END DATA TABLE -->
                                             </div>
                                             <?php
+                                                }
                                             }
                                             ?>
                                         </div>
