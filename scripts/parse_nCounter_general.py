@@ -94,7 +94,7 @@ def platform_score(gene_details_map):
             result[platform] = 0
         else:
             result[platform] = (score_sum * 100 /( gene_count * 9))
-        sorted_by_value = sorted(result.items(), key=lambda kv: kv[1], reverse=True)
+    sorted_by_value = sorted(result.items(), key=lambda kv: kv[1], reverse=True)
     for key_data in sorted_by_value:
         output_fh.write("%s\t%.2f\n" % (key_data, sorted_by_value[key_data]))
     output_fh.close()
