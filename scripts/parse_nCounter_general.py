@@ -68,6 +68,7 @@ def expression_direction_score(direction, expression):
 
 def platform_score(gene_details_map):
     output_fh = open("reports/%s/%s/platform_score" % (user_id, report_uuid), "w", encoding="utf-8")
+    result = {}
     for platform in platforms:
         score_sum = 0
         gene_count = 0.0
@@ -90,9 +91,12 @@ def platform_score(gene_details_map):
             score_sum += significance_score(mock_mean, cond1_mean) * expression_direction_score(-1, cond1_mean)
             score_sum += significance_score(mock_mean, cond2_mean) * expression_direction_score(-1, cond2_mean)
         if score_sum < 0:
-            output_fh.write("%s\t0\n" % platform)
+            result[platform] = 0
         else:
-            output_fh.write("%s\t%.2f\n" % (platform, (score_sum * 100 /( gene_count * 9))))
+            result[platform] = (score_sum * 100 /( gene_count * 9))
+        sorted_by_value = sorted(result.items(), key=lambda kv: kv[1])
+        for key_data in sorted_by_value:
+            output_fh.write("%s\t%.2f" % (key_data, sorted_by_value[key_data]))
     output_fh.close()
 
 
