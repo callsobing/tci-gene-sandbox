@@ -323,8 +323,13 @@ include 'check_login.php';
                                         foreach ($platforms as $platform_count) {
                                             foreach ($platform_count as $key => $value) {
                                                 ?>
-                                                <div class="progress mb-2">
-                                                    <div class="progress-bar bg-<?php if($significance[$key] > 0.5){ echo("success"); } elseif($significance[$key] > 0.25){ echo("warning"); } else { echo("info"); } ?>" role="progressbar" style="width:<?php echo($significance[$key]); ?>%" aria-valuenow="<?php echo($significance[$key]); ?>" aria-valuemin="0" aria-valuemax="100"><?php echo($significance[$key]); ?>%</div>
+                                                <div class="col-lg-3">
+                                                    <?php echo($key) ?>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <div class="progress mb-2">
+                                                        <div class="progress-bar bg-<?php if($significance[$key] > 50){ echo("success"); } elseif($significance[$key] > 25){ echo("warning"); } else { echo("info"); } ?>" role="progressbar" style="width:<?php echo($significance[$key]); ?>%" aria-valuenow="<?php echo($significance[$key]); ?>" aria-valuemin="0" aria-valuemax="100"><?php echo($significance[$key]); ?>%</div>
+                                                    </div>
                                                 </div>
                                             <?php }
                                         }?>
@@ -350,7 +355,7 @@ include 'check_login.php';
                                                    aria-selected="<?php if($count == 1){ echo("true");} else {echo("false");} ?>">
                                                     <?php echo($key); ?>
                                                     <div class="progress mb-2">
-                                                        <div class="progress-bar bg-<?php if($significance[$key] > 0.5){ echo("success"); } elseif($significance[$key] > 0.25){ echo("warning"); } else { echo("info"); } ?>" role="progressbar" style="width:<?php echo($significance[$key]); ?>%" aria-valuenow="<?php echo($significance[$key]); ?>" aria-valuemin="0" aria-valuemax="100"><?php echo($significance[$key]); ?>%</div>
+                                                        <div class="progress-bar bg-<?php if($significance[$key] > 50){ echo("success"); } elseif($significance[$key] > 25){ echo("warning"); } else { echo("info"); } ?>" role="progressbar" style="width:<?php echo($significance[$key]); ?>%" aria-valuenow="<?php echo($significance[$key]); ?>" aria-valuemin="0" aria-valuemax="100"><?php echo($significance[$key]); ?>%</div>
                                                     </div>
                                                 </a>
                                                 <?php }
