@@ -240,5 +240,6 @@ for gene_idx in range(len(gene_names)):
 if create_directory("reports/%s/%s/" % (user_id, report_uuid)):
     for gene_idx in range(len(gene_names)):
         plot_gene(gene_details_map, gene_names[gene_idx], user_id, report_uuid)
+    platform_score(gene_details_map, platforms)
 else:
     print("Cannot create directory!!")
