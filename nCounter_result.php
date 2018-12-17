@@ -7,7 +7,30 @@
  */
 $user = $_COOKIE['user'];
 $uuid = $_POST['uuid'];
-$file_name = $_POST['file_select']
+$file_name = $_POST['file_select'];
+
+$platforms = Array(
+            Array("抗氧化"=> Array("up"=> ["SOD1","SOD2","GPX1","CAT"], "down"=> [])),
+            Array("抗老"=> Array("up"=> ["CCT2","CCT5","CCT6A","CCT7","CCT8","Pink1","Parkin","Atg1","Atg8","SIRT1","FOXO","NADSYN","MRPS5","Ubl-5","SOD3"], "down"=> ["PARP1","PARP2"])),
+            Array("DNA修復"=> Array("up"=> ["UNG","OGG1","MPG","APEX1","ERCC1","ERCC6","XPA","XRCC1","XRCC5","MSH2","MLH1","MSH6"], "down"=> [])),
+            Array("免疫"=> Array("up"=> ["IL-1B","IL-8","IL-6","IL-10","IL-18","TNF-a"], "down"=> [])),
+            Array("護胃"=> Array("up"=> ["SOD1","SOD2","GPX1"], "down"=> ["IL-1B","IL-6","IL-8"])),
+            Array("護眼"=> Array("up"=> [], "down"=> ["VEGFA","CASP3","CASP8","IL-1B","IL-8","TNF-a"])),
+            Array("美白-抗黑色素生成"=> Array("up"=> [], "down"=> ["TYR","TYRP1","MC1R","MITF"])),
+            Array("膠原蛋白合成、組合、與降解"=> Array("up"=> ["COL1A1","COL1A2","COL4A1","COL4A4","COL4A5","TIMP1","ELN","FBN1","LOX","HAS2","HAS3"], "down"=> ["MMP1","MMP9","MMP2"])),
+            Array("抗發炎"=> Array("up"=> ["IL-10","TGFB","IL4"], "down"=> ["IL-1B","IL-8","IL-6","IL-18","TNF-a","IL-16","IL23","IL12A","IFNG","IL3"])),
+            Array("細胞凋亡"=> Array("up"=> [], "down"=> ["BCL-2","BAX","BCLXL","BAD","CASP9","AIFM1","EndoG"])),
+            Array("心血管保健"=> Array("up"=> ["PTGIS","NOS3","PLAT","PROC"], "down"=> ["EDN1","VWF","F3","SERPINE1","PDGFC","FGF2","IGF2BP3","IGF1R","IL-8","IL-6","ICAM1","VCAM1","CASP8"])),
+            Array("晝夜節律"=> Array("up"=> ["SIRT1","CLOCK","BMAL1 (ARNTL)","PER2","CRY","KPNB1"], "down"=> [])),
+            Array("以LPS模擬體內受到發炎反應"=> Array("up"=> ["NOS3"], "down"=> ["ICAM1","VCAM1","IL-8"])),
+            Array("非酒精性肝損傷"=> Array("up"=> ["UNG","OGG1","MPG","APEX1","ERCC1","ERCC6","XPA","XRCC1","XRCC5","MSH2","MLH1","MSH6","SOD1","SOD2","GPX1","CAT"], "down"=> [])),
+            Array("皮膚角質保濕"=> Array("up"=> ["Tgm1","Krt1","Keratin 10","Keratin 14","AQP3","FLG-F","SMPD1","GBA","HAS2","HAS3"], "down"=> [])),
+            Array("脂肪肝"=> Array("up"=> ["PPAR-g","PPAR-a"], "down"=> ["SREBP-1c (SREBF1)","SCD1 (SCD)","ACC (ACACA)"])),
+            Array("提升HDL"=> Array("up"=> ["CETP","SCARB1","apoA-I (APA1)","LDLR","ABCA1"], "down"=> [])),
+            Array("健髮平台"=> Array("up"=> ["KROX20","SCF","VEGFA","IGF1"], "down"=> ["SRD5A1","SRD5A2","AR","TGFB","BDNF"])),
+            Array("端粒酶活性平台"=> Array("up"=> ["TERT","TERC","RTEL1"], "down"=> [])),
+            Array("促進免疫活化與分化"=> Array("up"=> [], "down"=> ["CD40","ERBB2","LIF","MALT1","NCK1","PAF1","DYNLL2","GRK5","PSMD4","RDH10","RELB","SCARF1","TNFSF14","ABR","IL13","IL4R","IL5RA","RELA"]))
+            );
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +81,7 @@ include 'check_login.php';
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.php">
-<img src="images/tci-gene.png" alt="Tci-Gene" height="80%" />
+                            <img src="images/tci-gene.png" alt="Tci-Gene" height="80%" />
                         </a><button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
                                 <span class="hamburger-inner"></span>
@@ -183,17 +206,14 @@ include 'check_login.php';
                                 <i class="fas fa-tachometer-alt"></i>資訊主頁</a>
                         </li>
                         <li>
-                            <!--<a href="chart.php">-->
                             <a href="new_project.php">
                                 <i class="fas fa-chart-bar"></i>分析專案</a>
                         </li>
                         <li>
-                            <!--<a href="table.html">-->
                             <a href="#">
                                 <i class="fas fa-table"></i>檔案管理</a>
                         </li>
                         <li>
-                            <!--<a href="form.html">-->
                             <a href="#">
                                 <i class="far fa-check-square"></i>表格填寫</a>
                         </li>
@@ -202,64 +222,13 @@ include 'check_login.php';
                                 <i class="fas fa-calendar-alt"></i>儀器排程</a>
                         </li>
                         <li>
-                            <!--<a href="map.html">-->
                             <a href="#">
                                 <i class="fas fa-map-marker-alt"></i>已出貨區域</a>
                         </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-copy"></i>Pages</a>
-                            <!--<ul class="list-unstyled navbar__sub-list js-sub-list">-->
-                                <!--<li>-->
-                                    <!--<a href="login.html">Login</a>-->
-                                <!--</li>-->
-                                <!--<li>-->
-                                    <!--<a href="register.html">Register</a>-->
-                                <!--</li>-->
-                                <!--<li>-->
-                                    <!--<a href="forget-pass.html">Forget Password</a>-->
-                                <!--</li>-->
-                            <!--</ul>-->
                         </li>
-                        <!--<li class="has-sub">-->
-                            <!--<a class="js-arrow" href="#">-->
-                                <!--<i class="fas fa-desktop"></i>UI Elements</a>-->
-                            <!--<ul class="list-unstyled navbar__sub-list js-sub-list">-->
-                                <!--<li>-->
-                                    <!--<a href="button.html">Button</a>-->
-                                <!--</li>-->
-                                <!--<li>-->
-                                    <!--<a href="badge.html">Badges</a>-->
-                                <!--</li>-->
-                                <!--<li>-->
-                                    <!--<a href="tab.html">Tabs</a>-->
-                                <!--</li>-->
-                                <!--<li>-->
-                                    <!--<a href="card.html">Cards</a>-->
-                                <!--</li>-->
-                                <!--<li>-->
-                                    <!--<a href="alert.html">Alerts</a>-->
-                                <!--</li>-->
-                                <!--<li>-->
-                                    <!--<a href="progress-bar.html">Progress Bars</a>-->
-                                <!--</li>-->
-                                <!--<li>-->
-                                    <!--<a href="modal.html">Modals</a>-->
-                                <!--</li>-->
-                                <!--<li>-->
-                                    <!--<a href="switch.html">Switchs</a>-->
-                                <!--</li>-->
-                                <!--<li>-->
-                                    <!--<a href="grid.html">Grids</a>-->
-                                <!--</li>-->
-                                <!--<li>-->
-                                    <!--<a href="fontawesome.html">Fontawesome Icon</a>-->
-                                <!--</li>-->
-                                <!--<li>-->
-                                    <!--<a href="typo.html">Typography</a>-->
-                                <!--</li>-->
-                            <!--</ul>-->
-                        <!--</li>-->
                     </ul>
                 </nav>
             </div>
@@ -317,7 +286,7 @@ include 'check_login.php';
                                                         <i class="zmdi zmdi-money-box"></i>Billing</a>
                                                 </div>
                                             </div>
-<div class="account-dropdown__footer">
+                                            <div class="account-dropdown__footer">
                                                 <a href="logout.php">
                                                     <i class="zmdi zmdi-power"></i>Logout</a>
                                             </div>
@@ -380,45 +349,30 @@ include 'check_login.php';
                                     <div class="custom-tab">
                                         <nav>
                                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                                <a class="nav-item nav-link active" id="custom-nav-1-tab" data-toggle="tab" href="#custom-nav-1" role="tab" aria-controls="custom-nav-1"
-                                                   aria-selected="true">
-                                                    抗氧化
+                                                <?php
+                                                $count = 0;
+                                                foreach ($platforms as $key => $value) {
+                                                    $count += 1;
+                                                    ?>
+                                                <a class="nav-item nav-link <?php if($count == 1){ echo("active");} ?>" id="custom-nav-<?php echo($count); ?>-tab" data-toggle="tab" href="#custom-nav-<?php echo($count); ?>" role="tab" aria-controls="custom-nav-<?php echo($count); ?>"
+                                                   aria-selected="<?php if($count == 1){ echo("true");} else {echo("false");} ?>">
+                                                    <?php echo($key); ?>
                                                     <div class="progress mb-2">
                                                         <div class="progress-bar bg-warning" role="progressbar" style="width: 68%" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100">68%</div>
                                                     </div>
                                                 </a>
-                                                <a class="nav-item nav-link" id="custom-nav-2-tab" data-toggle="tab" href="#custom-nav-2" role="tab" aria-controls="custom-nav-2"
-                                                   aria-selected="false">抗老</a>
-                                                <a class="nav-item nav-link" id="custom-nav-3-tab" data-toggle="tab" href="#custom-nav-3" role="tab" aria-controls="custom-nav-3"
-                                                   aria-selected="false">DNA修復</a>
-                                                <a class="nav-item nav-link" id="custom-nav-4-tab" data-toggle="tab" href="#custom-nav-4" role="tab" aria-controls="custom-nav-4"
-                                                   aria-selected="true">免疫</a>
-                                                <a class="nav-item nav-link" id="custom-nav-5-tab" data-toggle="tab" href="#custom-nav-5" role="tab" aria-controls="custom-nav-5"
-                                                   aria-selected="false">護胃</a>
-                                                <a class="nav-item nav-link" id="custom-nav-6-tab" data-toggle="tab" href="#custom-nav-6" role="tab" aria-controls="custom-nav-6"
-                                                   aria-selected="false">護眼</a>
-                                                <a class="nav-item nav-link" id="custom-nav-7-tab" data-toggle="tab" href="#custom-nav-7" role="tab" aria-controls="custom-nav-7"
-                                                   aria-selected="false">美白</a>
-                                                <a class="nav-item nav-link" id="custom-nav-8-tab" data-toggle="tab" href="#custom-nav-8" role="tab" aria-controls="custom-nav-8"
-                                                   aria-selected="true">膠原蛋白合成</a>
-                                                <a class="nav-item nav-link" id="custom-nav-9-tab" data-toggle="tab" href="#custom-nav-9" role="tab" aria-controls="custom-nav-9"
-                                                   aria-selected="false">抗發炎</a>
-                                                <a class="nav-item nav-link" id="custom-nav-10-tab" data-toggle="tab" href="#custom-nav-10" role="tab" aria-controls="custom-nav-10"
-                                                   aria-selected="false">細胞凋亡</a>
-                                                <a class="nav-item nav-link " id="custom-nav-11-tab" data-toggle="tab" href="#custom-nav-11" role="tab" aria-controls="custom-nav-11"
-                                                   aria-selected="true">心血管保健</a>
-                                                <a class="nav-item nav-link" id="custom-nav-12-tab" data-toggle="tab" href="#custom-nav-12" role="tab" aria-controls="custom-nav-12"
-                                                   aria-selected="false">晝夜節律</a>
-                                                <a class="nav-item nav-link" id="custom-nav-13-tab" data-toggle="tab" href="#custom-nav-13" role="tab" aria-controls="custom-nav-13"
-                                                   aria-selected="false">非酒精性肝損傷</a>
-                                                <a class="nav-item nav-link" id="custom-nav-14-tab" data-toggle="tab" href="#custom-nav-14" role="tab" aria-controls="custom-nav-14"
-                                                   aria-selected="false">皮膚角質保濕</a>
+                                                <?php } ?>
                                             </div>
                                         </nav>
                                         <div class="tab-content pl-3 pt-2" id="nav-tabContent">
-                                            <div class="tab-pane fade show active" id="custom-nav-1" role="tabpanel" aria-labelledby="custom-nav-1-tab">
+                                            <?php
+                                            $count = 0;
+                                            foreach ($platforms as $key => $value) {
+                                            $count += 1;
+                                            ?>
+                                            <div class="tab-pane fade show <?php if($count == 1){ echo("active");} ?>" id="custom-nav-<?php echo($count); ?>" role="tabpanel" aria-labelledby="custom-nav-<?php echo($count); ?>-tab">
                                                 <!-- DATA TABLE -->
-                                                <h3 class="title-5 m-b-35">抗氧化 - 基因表現圖表</h3>
+                                                <h3 class="title-5 m-b-35"><?php echo($key); ?> - 基因表現圖表</h3>
                                                 <div class="table-responsive table-responsive-data2">
                                                     <table class="table table-data2" style="font-size:x-large;">
                                                         <thead>
@@ -432,11 +386,13 @@ include 'check_login.php';
                                                             <th width="35%" style="font-size:medium;">表現量圖表</th>
                                                             <th width="15%" style="font-size:medium;">基因</th>
                                                             <th width="15%" style="font-size:medium;">期待方向</th>
-                                                            <th width="15%" style="font-size:medium;">實際表現量</th>
-                                                            <th width="15%" style="font-size:medium;">顯著性</th>
                                                         </tr>
                                                         </thead>
                                                         <tbody>
+                                                        <?php
+                                                        if(!empty($value['up'])){
+                                                            foreach ($value['up'] as &$gene) {
+                                                        ?>
                                                         <tr class="tr-shadow">
                                                             <td>
                                                                 <label class="au-checkbox">
@@ -444,357 +400,48 @@ include 'check_login.php';
                                                                     <span class="au-checkmark"></span>
                                                                 </label>
                                                             </td>
-                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/SOD1.png" width="100%"></td>
-                                                            <td>SOD1</td>
+                                                            <td><img src="reports/<?php echo($user); ?>/<?php echo($uuid); ?>/<?php echo($gene); ?>.png" width="100%"></td>
+                                                            <td><?php echo($gene) ?></td>
                                                             <td>
                                                                 <span class="badge badge-success">提高</span>
                                                             </td>
-                                                            <td class="desc">1.92</td>
-                                                            <td>-</td>
                                                         </tr>
+                                                        <?php
+                                                            }
+                                                        }
+                                                        ?>
                                                         <tr class="spacer"></tr>
-                                                        <tr class="tr-shadow">
-                                                            <td>
-                                                                <label class="au-checkbox">
-                                                                    <input type="checkbox">
-                                                                    <span class="au-checkmark"></span>
-                                                                </label>
-                                                            </td>
-                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/SOD2.png " width="100%"></td>
-                                                            <td>SOD2</td>
-                                                            <td>
-                                                                <span class="badge badge-success">提高</span>
-                                                            </td>
-                                                            <td class="desc">1.13</td>
-                                                            <td>-</td>
-                                                        </tr>
+                                                        <?php
+                                                        if(!empty($value['down'])){
+                                                            foreach ($value['down'] as &$gene) {
+                                                                ?>
+                                                                <tr class="tr-shadow">
+                                                                    <td>
+                                                                        <label class="au-checkbox">
+                                                                            <input type="checkbox">
+                                                                            <span class="au-checkmark"></span>
+                                                                        </label>
+                                                                    </td>
+                                                                    <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/<?php echo($gene) ?>.png" width="100%"></td>
+                                                                    <td><?php echo($gene) ?></td>
+                                                                    <td>
+                                                                        <span class="badge badge-danger">降低</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <?php
+                                                            }
+                                                        }
+                                                        ?>
                                                         <tr class="spacer"></tr>
-                                                        <tr class="tr-shadow">
-                                                            <td>
-                                                                <label class="au-checkbox">
-                                                                    <input type="checkbox">
-                                                                    <span class="au-checkmark"></span>
-                                                                </label>
-                                                            </td>
-                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/GPX1.png " width="100%"></td>
-                                                            <td>GPX1</td>
-                                                            <td>
-                                                                <span class="badge badge-danger">下降</span>
-                                                            </td>
-                                                            <td class="desc">1.01</td>
-                                                            <td>-</td>
-                                                        </tr>
-                                                        <tr class="spacer"></tr>
-                                                        <tr class="tr-shadow">
-                                                            <td>
-                                                                <label class="au-checkbox">
-                                                                    <input type="checkbox">
-                                                                    <span class="au-checkmark"></span>
-                                                                </label>
-                                                            </td>
-                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/CAT.png " width="100%"></td>
-                                                            <td>CAT</td>
-                                                            <td>
-                                                                <span class="badge badge-success">提高</span>
-                                                            </td>
-                                                            <td class="desc">1.92</td>
-                                                            <td>**</td>
-                                                        </tr>
                                                         </tbody>
                                                     </table>
                                                 </div>
                                                 <!-- END DATA TABLE -->
                                             </div>
-                                            <div class="tab-pane fade" id="custom-nav-2" role="tabpanel" aria-labelledby="custom-nav-2-tab">
-                                                <!-- DATA TABLE -->
-                                                <h3 class="title-5 m-b-35">抗老 - 基因表現圖表</h3>
-                                                <div class="table-responsive table-responsive-data2">
-                                                    <table class="table table-data2" style="font-size:x-large;">
-                                                        <thead>
-                                                        <tr>
-                                                            <th width="5%">
-                                                                <label class="au-checkbox">
-                                                                    <input type="checkbox">
-                                                                    <span class="au-checkmark"></span>
-                                                                </label>
-                                                            </th>
-                                                            <th width="35%" style="font-size:medium;">表現量圖表</th>
-                                                            <th width="15%" style="font-size:medium;">基因</th>
-                                                            <th width="15%" style="font-size:medium;">期待方向</th>
-                                                            <th width="15%" style="font-size:medium;">實際表現量</th>
-                                                            <th width="15%" style="font-size:medium;">顯著性</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        <tr class="tr-shadow">
-                                                            <td>
-                                                                <label class="au-checkbox">
-                                                                    <input type="checkbox">
-                                                                    <span class="au-checkmark"></span>
-                                                                </label>
-                                                            </td>
-                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/CCT2.png" width="100%"></td>
-                                                            <td>CCT2</td>
-                                                            <td>
-                                                                <span class="badge badge-success">提高</span>
-                                                            </td>
-                                                            <td class="desc">1.92</td>
-                                                            <td>***</td>
-                                                        </tr>
-                                                        <tr class="spacer"></tr>
-                                                        <tr class="tr-shadow">
-                                                            <td>
-                                                                <label class="au-checkbox">
-                                                                    <input type="checkbox">
-                                                                    <span class="au-checkmark"></span>
-                                                                </label>
-                                                            </td>
-                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/CCT5.png " width="100%"></td>
-                                                            <td>CCT5</td>
-                                                            <td>
-                                                                <span class="badge badge-success">提高</span>
-                                                            </td>
-                                                            <td class="desc">1.13</td>
-                                                            <td>-</td>
-                                                        </tr>
-                                                        <tr class="spacer"></tr>
-                                                        <tr class="tr-shadow">
-                                                            <td>
-                                                                <label class="au-checkbox">
-                                                                    <input type="checkbox">
-                                                                    <span class="au-checkmark"></span>
-                                                                </label>
-                                                            </td>
-                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/CCT6A.png " width="100%"></td>
-                                                            <td>CCT6A</td>
-                                                            <td>
-                                                                <span class="badge badge-danger">下降</span>
-                                                            </td>
-                                                            <td class="desc">1.01</td>
-                                                            <td>-</td>
-                                                        </tr>
-                                                        <tr class="spacer"></tr>
-                                                        <tr class="tr-shadow">
-                                                            <td>
-                                                                <label class="au-checkbox">
-                                                                    <input type="checkbox">
-                                                                    <span class="au-checkmark"></span>
-                                                                </label>
-                                                            </td>
-                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/CCT7.png " width="100%"></td>
-                                                            <td>CCT7</td>
-                                                            <td>
-                                                                <span class="badge badge-success">提高</span>
-                                                            </td>
-                                                            <td class="desc">1.92</td>
-                                                            <td>**</td>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                                <!-- END DATA TABLE -->
-                                            </div>
-                                            <div class="tab-pane fade" id="custom-nav-3" role="tabpanel" aria-labelledby="custom-nav-3-tab">
-                                                <!-- DATA TABLE -->
-                                                <h3 class="title-5 m-b-35">DNA修復 - 基因表現圖表</h3>
-                                                <div class="table-responsive table-responsive-data2">
-                                                    <table class="table table-data2" style="font-size:x-large;">
-                                                        <thead>
-                                                        <tr>
-                                                            <th width="5%">
-                                                                <label class="au-checkbox">
-                                                                    <input type="checkbox">
-                                                                    <span class="au-checkmark"></span>
-                                                                </label>
-                                                            </th>
-                                                            <th width="35%" style="font-size:medium;">表現量圖表</th>
-                                                            <th width="15%" style="font-size:medium;">基因</th>
-                                                            <th width="15%" style="font-size:medium;">期待方向</th>
-                                                            <th width="15%" style="font-size:medium;">實際表現量</th>
-                                                            <th width="15%" style="font-size:medium;">顯著性</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        <tr class="tr-shadow">
-                                                            <td>
-                                                                <label class="au-checkbox">
-                                                                    <input type="checkbox">
-                                                                    <span class="au-checkmark"></span>
-                                                                </label>
-                                                            </td>
-                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/UNG.png" width="100%"></td>
-                                                            <td>UNG</td>
-                                                            <td>
-                                                                <span class="badge badge-success">提高</span>
-                                                            </td>
-                                                            <td class="desc">1.92</td>
-                                                            <td>-</td>
-                                                        </tr>
-                                                        <tr class="spacer"></tr>
-                                                        <tr class="tr-shadow">
-                                                            <td>
-                                                                <label class="au-checkbox">
-                                                                    <input type="checkbox">
-                                                                    <span class="au-checkmark"></span>
-                                                                </label>
-                                                            </td>
-                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/OGG1.png " width="100%"></td>
-                                                            <td>OGG1</td>
-                                                            <td>
-                                                                <span class="badge badge-success">提高</span>
-                                                            </td>
-                                                            <td class="desc">1.13</td>
-                                                            <td>-</td>
-                                                        </tr>
-                                                        <tr class="spacer"></tr>
-                                                        <tr class="tr-shadow">
-                                                            <td>
-                                                                <label class="au-checkbox">
-                                                                    <input type="checkbox">
-                                                                    <span class="au-checkmark"></span>
-                                                                </label>
-                                                            </td>
-                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/MPG.png " width="100%"></td>
-                                                            <td>MPG</td>
-                                                            <td>
-                                                                <span class="badge badge-success">提高</span>
-                                                            </td>
-                                                            <td class="desc">1.01</td>
-                                                            <td>-</td>
-                                                        </tr>
-                                                        <tr class="spacer"></tr>
-                                                        <tr class="tr-shadow">
-                                                            <td>
-                                                                <label class="au-checkbox">
-                                                                    <input type="checkbox">
-                                                                    <span class="au-checkmark"></span>
-                                                                </label>
-                                                            </td>
-                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/APEX1.png " width="100%"></td>
-                                                            <td>APEX1</td>
-                                                            <td>
-                                                                <span class="badge badge-success">提高</span>
-                                                            </td>
-                                                            <td class="desc">1.92</td>
-                                                            <td>-</td>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                                <!-- END DATA TABLE -->
-                                            </div>
-                                            <div class="tab-pane fade" id="custom-nav-4" role="tabpanel" aria-labelledby="custom-nav-4-tab">
-                                                <!-- DATA TABLE -->
-                                                <h3 class="title-5 m-b-35">免疫 - 基因表現圖表</h3>
-                                                <div class="table-responsive table-responsive-data2">
-                                                    <table class="table table-data2" style="font-size:x-large;">
-                                                        <thead>
-                                                        <tr>
-                                                            <th width="5%">
-                                                                <label class="au-checkbox">
-                                                                    <input type="checkbox">
-                                                                    <span class="au-checkmark"></span>
-                                                                </label>
-                                                            </th>
-                                                            <th width="35%" style="font-size:medium;">表現量圖表</th>
-                                                            <th width="15%" style="font-size:medium;">基因</th>
-                                                            <th width="15%" style="font-size:medium;">期待方向</th>
-                                                            <th width="15%" style="font-size:medium;">實際表現量</th>
-                                                            <th width="15%" style="font-size:medium;">顯著性</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        <tr class="tr-shadow">
-                                                            <td>
-                                                                <label class="au-checkbox">
-                                                                    <input type="checkbox">
-                                                                    <span class="au-checkmark"></span>
-                                                                </label>
-                                                            </td>
-                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/IL-1B.png" width="100%"></td>
-                                                            <td>IL-1B</td>
-                                                            <td>
-                                                                <span class="badge badge-success">提高</span>
-                                                            </td>
-                                                            <td class="desc">1.92</td>
-                                                            <td>-</td>
-                                                        </tr>
-                                                        <tr class="spacer"></tr>
-                                                        <tr class="tr-shadow">
-                                                            <td>
-                                                                <label class="au-checkbox">
-                                                                    <input type="checkbox">
-                                                                    <span class="au-checkmark"></span>
-                                                                </label>
-                                                            </td>
-                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/IL-8.png " width="100%"></td>
-                                                            <td>IL-8</td>
-                                                            <td>
-                                                                <span class="badge badge-success">提高</span>
-                                                            </td>
-                                                            <td class="desc">1.13</td>
-                                                            <td>-</td>
-                                                        </tr>
-                                                        <tr class="spacer"></tr>
-                                                        <tr class="tr-shadow">
-                                                            <td>
-                                                                <label class="au-checkbox">
-                                                                    <input type="checkbox">
-                                                                    <span class="au-checkmark"></span>
-                                                                </label>
-                                                            </td>
-                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/IL-6.png " width="100%"></td>
-                                                            <td>IL-6</td>
-                                                            <td>
-                                                                <span class="badge badge-success">提高</span>
-                                                            </td>
-                                                            <td class="desc">1.01</td>
-                                                            <td>-</td>
-                                                        </tr>
-                                                        <tr class="spacer"></tr>
-                                                        <tr class="tr-shadow">
-                                                            <td>
-                                                                <label class="au-checkbox">
-                                                                    <input type="checkbox">
-                                                                    <span class="au-checkmark"></span>
-                                                                </label>
-                                                            </td>
-                                                            <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/IL-10.png " width="100%"></td>
-                                                            <td>IL-10</td>
-                                                            <td>
-                                                                <span class="badge badge-success">提高</span>
-                                                            </td>
-                                                            <td class="desc">1.92</td>
-                                                            <td>-</td>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                                <!-- END DATA TABLE -->
-                                            </div>
-                                            <div class="tab-pane fade" id="custom-nav-5" role="tabpanel" aria-labelledby="custom-nav-5-tab">
-                                            </div>
-                                            <div class="tab-pane fade" id="custom-nav-6" role="tabpanel" aria-labelledby="custom-nav-6-tab">
-                                            </div>
-                                            <div class="tab-pane fade" id="custom-nav-7" role="tabpanel" aria-labelledby="custom-nav-7-tab">
-                                            </div>
-                                            <div class="tab-pane fade" id="custom-nav-8" role="tabpanel" aria-labelledby="custom-nav-8-tab">
-                                            </div>
-                                            <div class="tab-pane fade" id="custom-nav-9" role="tabpanel" aria-labelledby="custom-nav-9-tab">
-                                            </div>
-                                            <div class="tab-pane fade" id="custom-nav-10" role="tabpanel" aria-labelledby="custom-nav-10-tab">
-                                            </div>
-                                            <div class="tab-pane fade" id="custom-nav-11" role="tabpanel" aria-labelledby="custom-nav-11-tab">
-                                            </div>
-                                            <div class="tab-pane fade" id="custom-nav-12" role="tabpanel" aria-labelledby="custom-nav-12-tab">
-                                            </div>
-                                            <div class="tab-pane fade" id="custom-nav-13" role="tabpanel" aria-labelledby="custom-nav-13-tab">
-                                            </div>
-                                            <div class="tab-pane fade" id="custom-nav-14" role="tabpanel" aria-labelledby="custom-nav-14-tab">
-                                            </div>
-
+                                            <?php
+                                            }
+                                            ?>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
