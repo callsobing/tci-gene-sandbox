@@ -381,7 +381,12 @@ include 'check_login.php';
                                         <nav>
                                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                                 <a class="nav-item nav-link active" id="custom-nav-1-tab" data-toggle="tab" href="#custom-nav-1" role="tab" aria-controls="custom-nav-1"
-                                                   aria-selected="true">抗氧化</a>
+                                                   aria-selected="true">
+                                                    抗氧化
+                                                    <div class="progress mb-2">
+                                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 68%" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100">68%</div>
+                                                    </div>
+                                                </a>
                                                 <a class="nav-item nav-link" id="custom-nav-2-tab" data-toggle="tab" href="#custom-nav-2" role="tab" aria-controls="custom-nav-2"
                                                    aria-selected="false">抗老</a>
                                                 <a class="nav-item nav-link" id="custom-nav-3-tab" data-toggle="tab" href="#custom-nav-3" role="tab" aria-controls="custom-nav-3"
