@@ -8,6 +8,14 @@
 $user = $_COOKIE['user'];
 $uuid = $_POST['uuid'];
 $file_name = $_POST['file_select'];
+$platform_score_file = "reports/$user/$uuid/platform_score";
+
+$significance = Array();
+$file = fopen($platform_score_file, "r");
+while (!feof($file)) {
+    $items = preg_split('/\t/', fgets($file));
+    $significance += array($items[0] => floatval($items[1]));
+}
 
 $platforms = Array(
             Array("抗氧化"=> Array("up"=> ["SOD1","SOD2","GPX1","CAT"], "down"=> [])),
@@ -16,20 +24,20 @@ $platforms = Array(
             Array("免疫"=> Array("up"=> ["IL-1B","IL-8","IL-6","IL-10","IL-18","TNF-a"], "down"=> [])),
             Array("護胃"=> Array("up"=> ["SOD1","SOD2","GPX1"], "down"=> ["IL-1B","IL-6","IL-8"])),
             Array("護眼"=> Array("up"=> [], "down"=> ["VEGFA","CASP3","CASP8","IL-1B","IL-8","TNF-a"])),
-            Array("美白-抗黑色素生成"=> Array("up"=> [], "down"=> ["TYR","TYRP1","MC1R","MITF"])),
-            Array("膠原蛋白合成、組合、與降解"=> Array("up"=> ["COL1A1","COL1A2","COL4A1","COL4A4","COL4A5","TIMP1","ELN","FBN1","LOX","HAS2","HAS3"], "down"=> ["MMP1","MMP9","MMP2"])),
+            Array("抗黑色素生成"=> Array("up"=> [], "down"=> ["TYR","TYRP1","MC1R","MITF"])),
+            Array("膠原蛋白合成/組合/降解"=> Array("up"=> ["COL1A1","COL1A2","COL4A1","COL4A4","COL4A5","TIMP1","ELN","FBN1","LOX","HAS2","HAS3"], "down"=> ["MMP1","MMP9","MMP2"])),
             Array("抗發炎"=> Array("up"=> ["IL-10","TGFB","IL4"], "down"=> ["IL-1B","IL-8","IL-6","IL-18","TNF-a","IL-16","IL23","IL12A","IFNG","IL3"])),
             Array("細胞凋亡"=> Array("up"=> [], "down"=> ["BCL-2","BAX","BCLXL","BAD","CASP9","AIFM1","EndoG"])),
             Array("心血管保健"=> Array("up"=> ["PTGIS","NOS3","PLAT","PROC"], "down"=> ["EDN1","VWF","F3","SERPINE1","PDGFC","FGF2","IGF2BP3","IGF1R","IL-8","IL-6","ICAM1","VCAM1","CASP8"])),
             Array("晝夜節律"=> Array("up"=> ["SIRT1","CLOCK","BMAL1 (ARNTL)","PER2","CRY","KPNB1"], "down"=> [])),
-            Array("以LPS模擬體內受到發炎反應"=> Array("up"=> ["NOS3"], "down"=> ["ICAM1","VCAM1","IL-8"])),
+            Array("LPS模擬體內發炎"=> Array("up"=> ["NOS3"], "down"=> ["ICAM1","VCAM1","IL-8"])),
             Array("非酒精性肝損傷"=> Array("up"=> ["UNG","OGG1","MPG","APEX1","ERCC1","ERCC6","XPA","XRCC1","XRCC5","MSH2","MLH1","MSH6","SOD1","SOD2","GPX1","CAT"], "down"=> [])),
             Array("皮膚角質保濕"=> Array("up"=> ["Tgm1","Krt1","Keratin 10","Keratin 14","AQP3","FLG-F","SMPD1","GBA","HAS2","HAS3"], "down"=> [])),
             Array("脂肪肝"=> Array("up"=> ["PPAR-g","PPAR-a"], "down"=> ["SREBP-1c (SREBF1)","SCD1 (SCD)","ACC (ACACA)"])),
             Array("提升HDL"=> Array("up"=> ["CETP","SCARB1","apoA-I (APA1)","LDLR","ABCA1"], "down"=> [])),
             Array("健髮平台"=> Array("up"=> ["KROX20","SCF","VEGFA","IGF1"], "down"=> ["SRD5A1","SRD5A2","AR","TGFB","BDNF"])),
             Array("端粒酶活性平台"=> Array("up"=> ["TERT","TERC","RTEL1"], "down"=> [])),
-            Array("促進免疫活化與分化"=> Array("up"=> [], "down"=> ["CD40","ERBB2","LIF","MALT1","NCK1","PAF1","DYNLL2","GRK5","PSMD4","RDH10","RELB","SCARF1","TNFSF14","ABR","IL13","IL4R","IL5RA","RELA"]))
+            Array("免疫活化與分化"=> Array("up"=> [], "down"=> ["CD40","ERBB2","LIF","MALT1","NCK1","PAF1","DYNLL2","GRK5","PSMD4","RDH10","RELB","SCARF1","TNFSF14","ABR","IL13","IL4R","IL5RA","RELA"]))
             );
 ?>
 
@@ -311,32 +319,15 @@ include 'check_login.php';
                                     <h4>各平台評分</h4>
                                 </div>
                                 <div class="card-body">
-                                    <div class="progress mb-2">
-                                        <div class="progress-bar bg-success" role="progressbar" style="width: 96%" aria-valuenow="96" aria-valuemin="0" aria-valuemax="100" onclick="location.href='#custom-nav-6'" data-toggle="tab" href="#custom-nav-6" aria-controls="custom-nav-6">96%</div>
-                                    </div>
-                                    <div class="progress mb-2">
-                                        <div class="progress-bar bg-success" role="progressbar" style="width: 91%" aria-valuenow="91" aria-valuemin="0" aria-valuemax="100" onclick="location.href='#custom-nav-2'">91%</div>
-                                    </div>
-                                    <div class="progress mb-2">
-                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
-                                    </div>
-                                    <div class="progress mb-2">
-                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 68%" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100">68%</div>
-                                    </div>
-                                    <div class="progress mb-2">
-                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100">66%</div>
-                                    </div>
-                                    <div class="progress mb-2">
-                                        <div class="progress-bar bg-info" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
-                                    </div>
-                                    <div class="progress mb-2">
-                                        <div class="progress-bar bg-info" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100">35%</div>
-                                    </div>
-                                    <div class="progress mb-2">
-                                        <div class="progress-bar bg-info" role="progressbar" style="width: 32%" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100">32%</div>
-                                    </div>
-                                    <div class="progress mb-2">
-                                        <div class="progress-bar bg-info" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">10%</div>
+                                        <?php
+                                        foreach ($platforms as $platform_count) {
+                                            foreach ($platform_count as $key => $value) {
+                                                ?>
+                                                <div class="progress mb-2">
+                                                    <div class="progress-bar bg-<?php if($significance[$key] > 0.5){ echo("success"); } elseif($significance[$key] > 0.25){ echo("warning"); } else { echo("info"); } ?>" role="progressbar" style="width:<?php echo($significance[$key]); ?>%" aria-valuenow="<?php echo($significance[$key]); ?>" aria-valuemin="0" aria-valuemax="100"><?php echo($significance[$key]); ?>%</div>
+                                                </div>
+                                            <?php }
+                                        }?>
                                     </div>
                                 </div>
                             </div>
@@ -359,7 +350,7 @@ include 'check_login.php';
                                                    aria-selected="<?php if($count == 1){ echo("true");} else {echo("false");} ?>">
                                                     <?php echo($key); ?>
                                                     <div class="progress mb-2">
-                                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 68%" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100">68%</div>
+                                                        <div class="progress-bar bg-<?php if($significance[$key] > 0.5){ echo("success"); } elseif($significance[$key] > 0.25){ echo("warning"); } else { echo("info"); } ?>" role="progressbar" style="width:<?php echo($significance[$key]); ?>%" aria-valuenow="<?php echo($significance[$key]); ?>" aria-valuemin="0" aria-valuemax="100"><?php echo($significance[$key]); ?>%</div>
                                                     </div>
                                                 </a>
                                                 <?php }
