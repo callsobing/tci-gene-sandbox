@@ -320,22 +320,22 @@ include 'check_login.php';
                                 </div>
                                 <div class="card-body">
                                     <table>
-                                        <tr>
                                         <?php
                                         foreach ($platforms as $platform_count) {
                                             foreach ($platform_count as $key => $value) {
                                                 ?>
-                                                        <td>
-                                                            <?php echo($key) ?>
-                                                        </td>
-                                                        <td>
-                                                            <div class="progress mb-2">
-                                                                <div class="progress-bar bg-<?php if($significance[$key] > 50){ echo("success"); } elseif($significance[$key] > 25){ echo("warning"); } else { echo("info"); } ?>" role="progressbar" style="width:<?php echo($significance[$key]); ?>%" aria-valuenow="<?php echo($significance[$key]); ?>" aria-valuemin="0" aria-valuemax="100"><?php echo($significance[$key]); ?>%</div>
-                                                            </div>
-                                                        </td>
+                                                <tr>
+                                                    <td>
+                                                        <?php echo($key) ?>
+                                                    </td>
+                                                    <td>
+                                                        <div class="progress mb-2">
+                                                            <div class="progress-bar bg-<?php if($significance[$key] > 50){ echo("success"); } elseif($significance[$key] > 25){ echo("warning"); } else { echo("info"); } ?>" role="progressbar" style="width:<?php echo($significance[$key]); ?>%" aria-valuenow="<?php echo($significance[$key]); ?>" aria-valuemin="0" aria-valuemax="100"><?php echo($significance[$key]); ?>%</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
                                             <?php }
                                         }?>
-                                        </tr>
                                     </table>
                                     </div>
                                 </div>
