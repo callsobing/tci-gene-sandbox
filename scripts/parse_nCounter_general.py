@@ -57,12 +57,12 @@ def expression_direction_score(direction, expression):
     if check_direction < 0: # 和預期方向不同就扣分
         multiplier = -1
 
-    if abs(difference) < 0.1:
-        return 1. * multiplier
-    elif abs(difference) < 0.3:
-        return 2. * multiplier
-    elif abs(difference) < 0.5:
+    if abs(difference) > 0.5:
         return 3. * multiplier
+    elif abs(difference) > 0.3:
+        return 2. * multiplier
+    elif abs(difference) > 0.1:
+        return 1. * multiplier
     return 0
 
 
