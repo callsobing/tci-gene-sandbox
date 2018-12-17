@@ -339,7 +339,7 @@ include 'check_login.php';
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4>Labels</h4>
+                                    <h4>各平台評分</h4>
                                 </div>
                                 <div class="card-body">
                                     <div class="progress mb-2">
