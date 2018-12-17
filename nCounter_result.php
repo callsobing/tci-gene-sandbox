@@ -341,6 +341,43 @@ include 'check_login.php';
                                 <div class="card-header">
                                     <h4>nCounter 運算結果</h4>
                                 </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4>Labels</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="muted">To create a default progress bar, add a
+                                            <code>.progress</code> class to a
+                                            <code>&lt;div&gt;</code> element:</p>
+                                        <div class="progress mb-2">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="96" aria-valuemin="0" aria-valuemax="100">96%</div>
+                                        </div>
+                                        <div class="progress mb-2">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="91" aria-valuemin="0" aria-valuemax="100">91%</div>
+                                        </div>
+                                        <div class="progress mb-2">
+                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+                                        </div>
+                                        <div class="progress mb-2">
+                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100">68%</div>
+                                        </div>
+                                        <div class="progress mb-2">
+                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100">66%</div>
+                                        </div>
+                                        <div class="progress mb-2">
+                                            <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
+                                        </div>
+                                        <div class="progress mb-2">
+                                            <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100">35%</div>
+                                        </div>
+                                        <div class="progress mb-2">
+                                            <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100">32%</div>
+                                        </div>
+                                        <div class="progress mb-2">
+                                            <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">10%</div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="card-body">
                                     <div class="custom-tab">
                                         <nav>
