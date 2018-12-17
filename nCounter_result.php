@@ -324,9 +324,9 @@ include 'check_login.php';
                                             foreach ($platform_count as $key => $value) {
                                                 ?>
                                                 <div class="col-lg-3">
-                                                    <?php echo($key) ?>
                                                 </div>
                                                 <div class="col-lg-9">
+                                                    <?php echo($key) ?>
                                                     <div class="progress mb-2">
                                                         <div class="progress-bar bg-<?php if($significance[$key] > 50){ echo("success"); } elseif($significance[$key] > 25){ echo("warning"); } else { echo("info"); } ?>" role="progressbar" style="width:<?php echo($significance[$key]); ?>%" aria-valuenow="<?php echo($significance[$key]); ?>" aria-valuemin="0" aria-valuemax="100"><?php echo($significance[$key]); ?>%</div>
                                                     </div>
