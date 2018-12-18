@@ -324,26 +324,6 @@ include 'check_login.php';
                                 <div class="card-body">
                                     <span>分析日期: <?php echo($date); ?><br></span>
                                     <span>專案描述:<?php echo($description); ?><br></span>
-                                    <?php
-                                    $file = fopen("reports/args_$uuid.txt", "r");
-                                    $count = 0;
-                                    while (!feof($file)) {
-                                        if($count == 0){
-                                            ?> <span>Mock樣本:<?php echo(fgets($file)); ?><br></span> <?php
-                                            $count += 1;
-                                        }
-                                        if($count == 1){
-                                            ?> <span>Condition 1 樣本:<?php echo(fgets($file)); ?><br></span> <?php
-                                            $count += 1;
-                                        }
-                                        if($count == 2){
-                                            ?> <span>Condition 2 樣本:<?php echo(fgets($file)); ?><br></span><?php
-                                            $count += 1;
-                                        }
-                                    }
-                                    fclose($file);
-                                    ?>
-
                                 </div>
                             </div>
 
