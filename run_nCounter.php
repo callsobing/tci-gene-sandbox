@@ -50,7 +50,7 @@ if (isset($_POST['cond1']))
     fwrite($output, "\n");
 } else{
     $url = $_SERVER['HTTP_REFERER'];
-    echo ("<script> alert('You did not select samples for condition1!');document.location.href=\"$url\";</script>");
+    echo ("<script> alert('You did not select samples for condition1!');document.location.href=\"$url?error=sample_not_selected\";</script>");
 }
 
 if (isset($_POST['cond2']))
@@ -66,7 +66,7 @@ if (isset($_POST['cond2']))
     fwrite($output, "\n");
 }else{
     $url = $_SERVER['HTTP_REFERER'];
-    echo ("<script> alert('You did not select samples for condition2!');document.location.href=\"$url\";</script>");
+    echo ("<script> alert('You did not select samples for condition2!');document.location.href=\"$url?error=sample_not_selected\";</script>");
 }
 
 fclose($output);
