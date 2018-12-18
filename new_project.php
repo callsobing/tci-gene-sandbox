@@ -302,6 +302,48 @@ if(isset($_GET['error'])) {
                                 </form>
                             </div>
                         </div>
+
+                        <div class="row m-t-30">
+                            <div class="col-md-12">
+                                <!-- DATA TABLE-->
+                                <div class="table-responsive m-b-40">
+                                    <table class="table table-borderless table-data3">
+                                        <thead>
+                                        <tr>
+                                            <th width="15%">流水號</th>
+                                            <th width="10%">專案敘述</th>
+                                            <th width="15%">關聯資料</th>
+                                            <th width="15%">建立時間</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?php
+                                        mysql_query("SET NAMES 'utf8'");
+                                        mysql_select_db($dbname);
+                                        $userid = $_COOKIE['user'];
+                                        $sql = "SELECT * FROM `projects` WHERE `user_id` = '$userid'";
+                                        $result = mysql_query($sql);
+
+                                        while($row = mysql_fetch_array($result))
+                                        {
+                                            $file_name = $row['associated_file'];
+                                            $uuid = $row['uuid'];
+                                            $description = $row['description'];
+                                            $date = $row['date'];
+                                            echo("<tr>");
+                                            echo("<td>$uuid</td>");
+                                            echo("<td>$description KB</td>");
+                                            echo("<td>$file_name</td>");
+                                            echo("<td>$date</td></tr>");
+                                        }
+                                        ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- END DATA TABLE-->
+                            </div>
+                        </div>
+
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="copyright">
