@@ -1,7 +1,6 @@
 import sys
 import numpy as np
 
-nCounter_fh = open(sys.argv[1])
 uuid = sys.argv[2]
 # nCounter_fh = open("../uploaded_files/20181115_FTB 2-7-4-2 & FTB 2-5-6-2.txt")
 
@@ -9,6 +8,11 @@ first = True
 line_idx = 0
 sample_data = {}
 sample_ids = []
+
+with open(sys.argv[1], 'rb') as f:
+    nCounter_fh = f.readlines()
+
+
 for line in nCounter_fh:
     line = line.rstrip()
     if first:
