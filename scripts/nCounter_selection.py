@@ -14,6 +14,7 @@ with open(sys.argv[1], 'rb') as f:
 
 
 for line in nCounter_fh:
+    print(line)
     line = line.rstrip()
     if first:
         first = False
