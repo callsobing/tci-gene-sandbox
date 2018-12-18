@@ -396,8 +396,8 @@ include 'check_login.php';
                                                         ?>
                                                         <tr class="tr-shadow">
                                                             <td>
-                                                                <label class="au-checkbox">
-                                                                    <input type="checkbox" name="gene" value="<?php echo($gene); ?>">
+                                                                <label for="checkbox" class="form-check-label ">
+                                                                    <input type="checkbox" name="gene[]" value="<?php echo($gene); ?>" class="form-check-input">
                                                                 </label>
                                                             </td>
                                                             <td><img src="reports/<?php echo($user); ?>/<?php echo($uuid); ?>/<?php echo($gene); ?>.png" width="100%"></td>
@@ -417,8 +417,8 @@ include 'check_login.php';
                                                                 ?>
                                                                 <tr class="tr-shadow">
                                                                     <td>
-                                                                        <label class="au-checkbox">
-                                                                            <input type="checkbox" name="gene" value="<?php echo($gene); ?>">
+                                                                        <label for="checkbox" class="form-check-label ">
+                                                                            <input type="checkbox" name="gene[]" value="<?php echo($gene); ?>" class="form-check-input">
                                                                         </label>
                                                                     </td>
                                                                     <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/<?php echo($gene) ?>.png" width="100%"></td>
