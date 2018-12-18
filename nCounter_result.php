@@ -322,8 +322,8 @@ include 'check_login.php';
                                     <h4>專案資訊</h4>
                                 </div>
                                 <div class="card-body">
-                                    <span>分析日期: <?php echo($date) ?><br></span>
-                                    <span>專案描述:<?php echo($description) ?><br></span>
+                                    <span>分析日期: <?php echo($date); ?><br></span>
+                                    <span>專案描述:<?php echo($description); ?><br></span>
                                     <?php
                                     $file = fopen("reports/args_$uuid.txt", "r");
                                     $count = 0;
@@ -356,7 +356,7 @@ include 'check_login.php';
                                         foreach ($platforms as $platform_count) {
                                             foreach ($platform_count as $key => $value) {
                                                 ?>
-                                                <span class="progress-title"><?php echo($key) ?></span>
+                                                <span class="progress-title"><?php echo($key); ?></span>
                                                 <div class="progress mb-2">
                                                     <div class="progress-bar bg-<?php if($significance[$key] > 50){ echo("success"); } elseif($significance[$key] > 25){ echo("danger"); } else { echo("warning"); } ?>" role="progressbar" style="width:<?php echo($significance[$key]); ?>%" aria-valuenow="<?php echo($significance[$key]); ?>" aria-valuemin="0" aria-valuemax="100"><?php echo($significance[$key]); ?>%</div>
                                                 </div>
