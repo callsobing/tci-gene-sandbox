@@ -80,6 +80,13 @@ mysql_query("SET NAMES 'utf8'");
 mysql_select_db($dbname);
 $result = mysql_query($sql) or die('MySQL query error');
 
+$sql = "SELECT * FROM `projects` WHERE `uuid` = '$uuid'";
+$result = mysql_query($sql);
+
+while($row = mysql_fetch_array($result))
+{
+    $date = $row['date'];
+}
 
 ?>
 <script>
@@ -106,7 +113,7 @@ $result = mysql_query($sql) or die('MySQL query error');
 
 </script>
 <script type='text/javascript'>
-    post('nCounter_result.php', {file_select: '<?php echo($file_name) ?>', uuid: '<?php echo($uuid) ?>'})
+    post('nCounter_result.php', {file_select: '<?php echo($file_name) ?>', uuid: '<?php echo($uuid) ?>', description: '<?php echo($description) ?>', date: '<?php echo($date) ?>'})
 </script>
 </body>
 </html>
