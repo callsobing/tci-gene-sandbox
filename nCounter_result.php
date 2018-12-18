@@ -10,6 +10,7 @@ $user = $_COOKIE['user'];
 $uuid = $_POST['uuid'];
 $file_name = $_POST['file_select'];
 $platform_score_file = "reports/$user/$uuid/platform_score";
+$description = $_POST['description'];
 
 $significance = Array();
 $file = fopen($platform_score_file, "r");
@@ -317,6 +318,15 @@ include 'check_login.php';
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header">
+                                    <h4>專案描述</h4>
+                                </div>
+                                <div class="card-body">
+                                    <span class="progress-title"><br><?php echo($description) ?><br></span>
+                                </div>
+                            </div>
+                            
+                            <div class="card">
+                                <div class="card-header">
                                     <h4>各平台評分</h4>
                                 </div>
                                 <div class="card-body">
@@ -330,7 +340,6 @@ include 'check_login.php';
                                                 </div>
                                             <?php }
                                         }?>
-                                    </div>
                                 </div>
                             </div>
 
