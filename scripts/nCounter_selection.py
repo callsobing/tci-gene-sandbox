@@ -12,9 +12,7 @@ sample_ids = []
 with open(sys.argv[1], 'r', errors="ignore", encoding="utf-8") as f:
     nCounter_fh = f.readlines()
 
-
 for line in nCounter_fh:
-    print(line)
     line = line.rstrip()
     if first:
         first = False
