@@ -53,8 +53,10 @@ for line in file_fh:
 
     title_shape.text = platform
 
-    left = top = Inches(2)
-    pic = slide.shapes.add_picture("reports/%s/%s/%s.png" % (user_id, uuid, gene), left, top)
+    top = Inches(1.4)
+    left = Inches(2.1)
+    height = Inches(3.5)
+    pic = slide.shapes.add_picture("reports/%s/%s/%s.png" % (user_id, uuid, gene), left, top, height=height)
 file_fh.close()
 
 prs.save('reports/%s/%s/%s.pptx' % (user_id, uuid, uuid))
