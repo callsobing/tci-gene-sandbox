@@ -331,7 +331,7 @@ if(isset($_GET['error'])) {
                                             $description = $row['description'];
                                             $date = $row['date'];
                                             echo("<tr>");
-                                            echo("<td>");
+                                            echo("<td  width=\"15%\">");
                                             ?>
                                             <form method="post" action="nCounter_result.php" class="inline">
                                                 <input type="hidden" name="file_select" value="<?php echo($file_name) ?>">
@@ -342,9 +342,9 @@ if(isset($_GET['error'])) {
                                             </form>
                                             <?php
                                             echo("</td>");
-                                            echo("<td><font color='black'>$description</font></td>");
-                                            echo("<td><font color='black'>$file_name</font></td>");
-                                            echo("<td><font color='black'>$date</font></td></tr>");
+                                            echo("<td width=\"40%\"><font color='black'>$description</font></td>");
+                                            echo("<td width=\"30%\"><font color='black'>$file_name</font></td>");
+                                            echo("<td width=\"15%\"><font color='black'>$date</font></td></tr>");
                                         }
                                         ?>
                                         </tbody>
