@@ -321,7 +321,7 @@ include 'check_login.php';
                                     <h4>專案描述</h4>
                                 </div>
                                 <div class="card-body">
-                                    <span class="progress-title"><br><?php echo($description) ?><br></span>
+                                    <span class="progress-title"><?php echo($description) ?><br></span>
                                 </div>
                             </div>
 
