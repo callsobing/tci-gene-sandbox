@@ -354,7 +354,7 @@ if(isset($_GET['error'])) {
                                             $description = $row['description'];
                                             $date = $row['date'];
                                             echo("<tr>");
-                                            echo("<td><p onclick=\"get_result('nCounter_result.php', $file_name, $uuid )\" >$uuid</p></td>");
+                                            echo("<td><div onclick=\"get_result('nCounter_result.php', '$file_name', $uuid )\" >$uuid</div></td>");
                                             echo("<td>$description</td>");
                                             echo("<td>$file_name</td>");
                                             echo("<td>$date</td></tr>");
