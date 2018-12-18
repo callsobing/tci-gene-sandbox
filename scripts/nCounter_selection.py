@@ -9,7 +9,7 @@ line_idx = 0
 sample_data = {}
 sample_ids = []
 
-with open(sys.argv[1], 'rb') as f:
+with open(sys.argv[1], 'r', errors="ignore", encoding="utf-8") as f:
     nCounter_fh = f.readlines()
 
 
