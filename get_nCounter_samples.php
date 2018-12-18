@@ -5,6 +5,12 @@ include 'check_login.php';
 session_cache_limiter("private");
 session_start();
 
+if($_GET['error'] == "sample_not_selected"){
+    echo "<script type='text/javascript'>";
+    echo "window.location.href='new_project.php?error=sample_not_selected'";
+    echo "</script>";
+}
+
 if (!file_exists($_POST["file_select"])){ # 檢查檔案存不存在
     echo "<script type='text/javascript'>";
     echo "window.location.href='new_project.php?error=file_not_exist'";

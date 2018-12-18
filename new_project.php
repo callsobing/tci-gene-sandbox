@@ -87,6 +87,12 @@ if(isset($_GET['error'])) {
         swal("資料類型錯誤!","此檔案非純文字(*.txt)資料，<br>請重新操作一次。","info");
     </script>
     <?php
+    } if ($_GET['error'] == 'sample_not_selected'){
+        ?>
+    <script>
+        swal("你沒有選到samples噢!","請檢查你mock/cond1/cond2的選擇，<br>正確的選擇才會有正確的數據喲。","info");
+    </script>
+    <?php
     }
 }
 ?>

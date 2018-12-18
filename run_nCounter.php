@@ -37,7 +37,7 @@ if (isset($_POST['mock']))
     fwrite($output, "\n");
 } else{
     $url = $_SERVER['HTTP_REFERER'];
-    echo ("<script> alert('You did not select samples for mock!');document.location.href=\"$url\";</script>");
+    echo ("<script> alert('You did not select samples for mock!');document.location.href=\"$url?error=sample_not_selected\";</script>");
 }
 
 if (isset($_POST['cond1']))
