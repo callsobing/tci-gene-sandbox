@@ -29,6 +29,6 @@ $link = "reports/$user_id/$uuid/$uuid.pptx";
 echo "<script type='text/javascript'>";
 echo "window.location.href='$link'";
 echo "</script>";
-
+echo "window.open('', '_self', ''); window.close();";
 
 ?>
