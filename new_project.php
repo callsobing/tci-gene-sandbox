@@ -311,8 +311,8 @@ if(isset($_GET['error'])) {
                                         <thead>
                                         <tr>
                                             <th width="15%">流水號</th>
-                                            <th width="10%">專案敘述</th>
-                                            <th width="15%">關聯資料</th>
+                                            <th width="40%">專案敘述</th>
+                                            <th width="30%">關聯資料</th>
                                             <th width="15%">建立時間</th>
                                         </tr>
                                         </thead>
