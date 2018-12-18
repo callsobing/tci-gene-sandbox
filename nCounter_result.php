@@ -449,9 +449,12 @@ include 'check_login.php';
                                     </div>
                                     <input type="hidden" name="uuid" value="<?php echo($uuid); ?>">
                                     <input type="hidden" name="description" value="<?php echo($description); ?>">
-                                    <div class="col col-md-9">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <br>
                                         <button type="submit" class="btn btn-primary btn-sm">產生報告模板</button>
                                         <button type="reset" class="btn btn-danger btn-sm">重新選擇</button>
+                                        <br>
                                     </div>
                                 </form>
                             </div>
