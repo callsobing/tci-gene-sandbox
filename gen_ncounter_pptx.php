@@ -8,7 +8,10 @@
 
 $user_id = $_COOKIE['user'];
 $uuid = $_POST['uuid'];
+$description = $_POST['description'];
 $output = fopen("reports/$user_id/$uuid/selected_figures.txt", "w");
+
+fwrite($output, $description."\n");
 
 if (isset($_POST['gene']))
 {
@@ -18,7 +21,5 @@ if (isset($_POST['gene']))
     }
 }
 fclose($output);
-
-
 
 ?>
