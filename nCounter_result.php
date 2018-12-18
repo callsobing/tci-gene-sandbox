@@ -452,8 +452,8 @@ include 'check_login.php';
                                     </div>
                                     <div class="col-md-12">
                                         <br>
-                                        <button type="submit" class="btn btn-primary btn-sm">產生報告模板</button>
-                                        <button type="reset" class="btn btn-danger btn-sm">重新選擇</button>
+                                        <center><button type="submit" class="btn btn-primary btn-sm">產生報告模板</button>
+                                            <button type="reset" class="btn btn-danger btn-sm">重新選擇</button></center>
                                         <br>
                                     </div>
                                 </form>
