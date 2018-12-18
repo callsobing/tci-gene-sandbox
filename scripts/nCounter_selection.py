@@ -1,7 +1,7 @@
 import sys
 import numpy as np
 
-nCounter_fh = open(sys.argv[1], encoding="utf-8")
+nCounter_fh = open(sys.argv[1])
 uuid = sys.argv[2]
 # nCounter_fh = open("../uploaded_files/20181115_FTB 2-7-4-2 & FTB 2-5-6-2.txt")
 
