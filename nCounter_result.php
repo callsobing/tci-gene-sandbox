@@ -383,10 +383,6 @@ include 'check_login.php';
                                                         <thead>
                                                         <tr>
                                                             <th width="5%">
-                                                                <label class="au-checkbox">
-                                                                    <input type="checkbox">
-                                                                    <span class="au-checkmark"></span>
-                                                                </label>
                                                             </th>
                                                             <th width="35%" style="font-size:medium;">表現量圖表</th>
                                                             <th width="15%" style="font-size:medium;">基因</th>
@@ -401,8 +397,7 @@ include 'check_login.php';
                                                         <tr class="tr-shadow">
                                                             <td>
                                                                 <label class="au-checkbox">
-                                                                    <input type="checkbox">
-                                                                    <span class="au-checkmark"></span>
+                                                                    <input type="checkbox" name="gene" value="<?php echo($gene); ?>">
                                                                 </label>
                                                             </td>
                                                             <td><img src="reports/<?php echo($user); ?>/<?php echo($uuid); ?>/<?php echo($gene); ?>.png" width="100%"></td>
@@ -423,8 +418,7 @@ include 'check_login.php';
                                                                 <tr class="tr-shadow">
                                                                     <td>
                                                                         <label class="au-checkbox">
-                                                                            <input type="checkbox">
-                                                                            <span class="au-checkmark"></span>
+                                                                            <input type="checkbox" name="gene" value="<?php echo($gene); ?>">
                                                                         </label>
                                                                     </td>
                                                                     <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/<?php echo($gene) ?>.png" width="100%"></td>
