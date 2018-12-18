@@ -7,7 +7,9 @@
  */
 
 $user_id = $_COOKIE['user'];
+$uuid = $_POST['uuid'];
 $output = fopen("reports/$user_id/$uuid/selected_figures.txt", "w");
+
 if (isset($_POST['gene']))
 {
     $i=count($_POST['gene']);
