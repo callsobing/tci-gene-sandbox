@@ -68,6 +68,29 @@ $date = "";
 <!--引用jQuery--><!--引用SweetAlert2.js-->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.3/sweetalert2.js" type="text/javascript"></script>
+<!--  用post的方法把資料傳給下個目標網頁   -->
+<script>
+    function get_result(path, file_name, uuid, method) {
+        method = method || "post"; // Set method to post by default if not specified.
+
+        var form = document.createElement("form");
+        form.setAttribute("method", method);
+        form.setAttribute("action", path);
+
+
+        var hiddenField = document.createElement("input");
+        hiddenField.setAttribute("type", "hidden");
+        hiddenField.setAttribute("name", "file_select");
+        hiddenField.setAttribute("value", file_name);
+        hiddenField.setAttribute("name", "uuid");
+        hiddenField.setAttribute("value", uuid);
+
+        form.appendChild(hiddenField);
+
+        document.body.appendChild(form);
+        form.submit();
+    }
+</script>
 
 <?php
 if(isset($_GET['error'])) {
@@ -331,8 +354,8 @@ if(isset($_GET['error'])) {
                                             $description = $row['description'];
                                             $date = $row['date'];
                                             echo("<tr>");
-                                            echo("<td><p onclick=\"post('nCounter_result.php', $file_name, $uuid )\" >$uuid</p></td>");
-                                            echo("<td>$description KB</td>");
+                                            echo("<td><p onclick=\"get_result('nCounter_result.php', $file_name, $uuid )\" >$uuid</p></td>");
+                                            echo("<td>$description</td>");
                                             echo("<td>$file_name</td>");
                                             echo("<td>$date</td></tr>");
                                         }
@@ -385,32 +408,6 @@ if(isset($_GET['error'])) {
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
-
-    <!--  用post的方法把資料傳給下個目標網頁   -->
-    <script>
-        function post(path, file_name, uuid, method) {
-            method = method || "post"; // Set method to post by default if not specified.
-
-            var form = document.createElement("form");
-            form.setAttribute("method", method);
-            form.setAttribute("action", path);
-
-
-            var hiddenField = document.createElement("input");
-            hiddenField.setAttribute("type", "hidden");
-            hiddenField.setAttribute("name", "file_select");
-            hiddenField.setAttribute("value", file_name);
-            hiddenField.setAttribute("name", "uuid");
-            hiddenField.setAttribute("value", uuid);
-
-            form.appendChild(hiddenField);
-
-            document.body.appendChild(form);
-            form.submit();
-        }
-
-    </script>
-    <script type='text/javascript'>post('nCounter_result.php', {file_select: '<?php echo($file_name) ?>', uuid: '<?php echo($uuid) ?>'})</script>
 </body>
 
 </html>
