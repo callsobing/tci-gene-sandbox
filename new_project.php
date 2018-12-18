@@ -343,8 +343,8 @@ if(isset($_GET['error'])) {
                                             <?php
                                             echo("</td>");
                                             echo("<td><font color='black'>$description</font></td>");
-                                            echo("<td>$file_name</td>");
-                                            echo("<td>$date</td></tr>");
+                                            echo("<td><font color='black'>$file_name</font></td>");
+                                            echo("<td><font color='black'>$date</font></td></tr>");
                                         }
                                         ?>
                                         </tbody>
