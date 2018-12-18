@@ -336,6 +336,7 @@ if(isset($_GET['error'])) {
                                             <form method="post" action="nCounter_result.php" class="inline">
                                                 <input type="hidden" name="file_select" value="<?php echo($file_name) ?>">
                                                 <input type="hidden" name="uuid" value="<?php echo($uuid) ?>">
+                                                <input type="hidden" name="description" value="<?php echo($description) ?>">
                                                 <button type="submit" name="submit_param" value="submit_value" class="link-button">
                                                     <?php echo($uuid) ?>
                                                 </button>

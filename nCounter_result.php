@@ -324,7 +324,7 @@ include 'check_login.php';
                                     <span class="progress-title"><br><?php echo($description) ?><br></span>
                                 </div>
                             </div>
-                            
+
                             <div class="card">
                                 <div class="card-header">
                                     <h4>各平台評分</h4>
