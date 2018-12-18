@@ -2,6 +2,8 @@
 <html lang="en">
 <?php
 include 'check_login.php';
+session_cache_limiter("private");
+session_start();
 
 if (!file_exists($_POST["file_select"])){ # 檢查檔案存不存在
     echo "<script type='text/javascript'>";

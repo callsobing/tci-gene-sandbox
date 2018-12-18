@@ -10,6 +10,8 @@
  * Time: 下午 12:35
  */
 
+session_cache_limiter(‘private’);
+session_start();
 //$command = escapeshellcmd('python script/parse_nCounter_general.py');
 echo("<img src='images/waiting.jpg' width='100%' height='100%'/>");
 ob_flush();
@@ -20,6 +22,7 @@ $description = $_POST['project_name'];
 $file_name = $_POST['file_input'];
 
 $output = fopen("reports/args_$uuid.txt", "w");
+
 
 if (isset($_POST['mock']))
 {
@@ -32,6 +35,8 @@ if (isset($_POST['mock']))
         }
     }
     fwrite($output, "\n");
+} else{
+    echo"<script>alert('你沒有選到Mock samples噢！');history.go(-1);</script>";
 }
 
 if (isset($_POST['cond1']))
@@ -45,6 +50,8 @@ if (isset($_POST['cond1']))
         }
     }
     fwrite($output, "\n");
+} else{
+    echo"<script>alert('你沒有選到condition1的samples噢！');history.go(-1);</script>";
 }
 
 if (isset($_POST['cond2']))
@@ -58,6 +65,8 @@ if (isset($_POST['cond2']))
         }
     }
     fwrite($output, "\n");
+}else{
+    echo"<script>alert('你沒有選到condition2的samples噢！');history.go(-1);</script>";
 }
 
 fclose($output);
