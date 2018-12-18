@@ -331,7 +331,17 @@ if(isset($_GET['error'])) {
                                             $description = $row['description'];
                                             $date = $row['date'];
                                             echo("<tr>");
-                                            echo("<td><div onclick=\"get_result('nCounter_result.php', '$file_name', $uuid )\" >$uuid</div></td>");
+                                            echo("<td>");
+                                            ?>
+                                            <form method="post" action="nCounter_result.php" class="inline">
+                                                <input type="hidden" name="file_select" value="<?php echo($file_name) ?>">
+                                                <input type="hidden" name="uuid" value="<?php echo($uuid) ?>">
+                                                <button type="submit" name="submit_param" value="submit_value" class="link-button">
+                                                    <?php echo($uuid) ?>
+                                                </button>
+                                            </form>
+                                            <?php
+                                            echo("</td>");
                                             echo("<td>$description</td>");
                                             echo("<td>$file_name</td>");
                                             echo("<td>$date</td></tr>");
@@ -361,29 +371,7 @@ if(isset($_GET['error'])) {
         <!-- END PAGE CONTAINER-->
 
     </div>
-    <!--  用post的方法把資料傳給下個目標網頁   -->
-    <script>
-        function get_result(path, file_name, uuid, method) {
-            method = method || "post"; // Set method to post by default if not specified.
 
-            var form = document.createElement("form");
-            form.setAttribute("method", method);
-            form.setAttribute("action", path);
-
-
-            var hiddenField = document.createElement("input");
-            hiddenField.setAttribute("type", "hidden");
-            hiddenField.setAttribute("name", "file_select");
-            hiddenField.setAttribute("value", file_name);
-            hiddenField.setAttribute("name", "uuid");
-            hiddenField.setAttribute("value", uuid);
-
-            form.appendChild(hiddenField);
-
-            document.body.appendChild(form);
-            form.submit();
-        }
-    </script>
     <!-- Jquery JS-->
     <script src="vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
