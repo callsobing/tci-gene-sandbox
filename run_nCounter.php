@@ -12,10 +12,7 @@
 
 session_cache_limiter(‘private’);
 session_start();
-//$command = escapeshellcmd('python script/parse_nCounter_general.py');
-echo("<img src='images/waiting.jpg' width='100%' height='100%'/>");
-ob_flush();
-flush();
+
 $uuid = uniqid();
 $user_id = $_COOKIE['user'];
 $description = $_POST['project_name'];
@@ -76,6 +73,10 @@ fclose($output);
 
 # 只有在接收到各狀況的樣本集之後才可以執行
 if (isset($_POST['mock']) & isset($_POST['cond1']) & isset($_POST['cond2'])) {
+    echo("<img src='images/waiting.jpg' width='100%' height='100%'/>");
+    ob_flush();
+    flush();
+
     $command_inline = "sudo -u www-data python3.4 scripts/parse_nCounter_general.py \"$file_name\" reports/args_$uuid.txt $user_id $uuid";
     $command = exec($command_inline);
 
