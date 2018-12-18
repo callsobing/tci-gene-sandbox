@@ -342,7 +342,7 @@ if(isset($_GET['error'])) {
                                             </form>
                                             <?php
                                             echo("</td>");
-                                            echo("<td>$description</td>");
+                                            echo("<td><font color='black'>$description</font></td>");
                                             echo("<td>$file_name</td>");
                                             echo("<td>$date</td></tr>");
                                         }
