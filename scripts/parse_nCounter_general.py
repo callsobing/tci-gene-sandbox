@@ -181,8 +181,9 @@ for line in selected_sample_fh:
         continue
 selected_sample_fh.close()
 
+with open(file_name, 'r', errors="ignore", encoding="utf-8") as f:
+    nCounter_fh = f.readlines()
 
-nCounter_fh = open(file_name)
 samples_idx = {}
 gene_names = []
 expression_map = {}
