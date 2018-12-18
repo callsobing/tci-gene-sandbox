@@ -14,10 +14,7 @@ if (isset($_POST['gene']))
 {
     $i=count($_POST['gene']);
     for($j=0 ; $j<$i ; $j++){
-        $items = preg_split('/\t/', $_POST['gene'][$j]);
-        $gene_id = $items[0];
-        $platform = $items[1];
-        fwrite($output, $platform."\t".$gene_id."\n");
+        fwrite($output, $_POST['gene'][$j]."\n");
     }
 }
 fclose($output);
