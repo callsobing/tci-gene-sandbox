@@ -68,29 +68,6 @@ $date = "";
 <!--引用jQuery--><!--引用SweetAlert2.js-->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.3/sweetalert2.js" type="text/javascript"></script>
-<!--  用post的方法把資料傳給下個目標網頁   -->
-<script>
-    function get_result(path, file_name, uuid, method) {
-        method = method || "post"; // Set method to post by default if not specified.
-
-        var form = document.createElement("form");
-        form.setAttribute("method", method);
-        form.setAttribute("action", path);
-
-
-        var hiddenField = document.createElement("input");
-        hiddenField.setAttribute("type", "hidden");
-        hiddenField.setAttribute("name", "file_select");
-        hiddenField.setAttribute("value", file_name);
-        hiddenField.setAttribute("name", "uuid");
-        hiddenField.setAttribute("value", uuid);
-
-        form.appendChild(hiddenField);
-
-        document.body.appendChild(form);
-        form.submit();
-    }
-</script>
 
 <?php
 if(isset($_GET['error'])) {
@@ -384,7 +361,29 @@ if(isset($_GET['error'])) {
         <!-- END PAGE CONTAINER-->
 
     </div>
+    <!--  用post的方法把資料傳給下個目標網頁   -->
+    <script>
+        function get_result(path, file_name, uuid, method) {
+            method = method || "post"; // Set method to post by default if not specified.
 
+            var form = document.createElement("form");
+            form.setAttribute("method", method);
+            form.setAttribute("action", path);
+
+
+            var hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", "file_select");
+            hiddenField.setAttribute("value", file_name);
+            hiddenField.setAttribute("name", "uuid");
+            hiddenField.setAttribute("value", uuid);
+
+            form.appendChild(hiddenField);
+
+            document.body.appendChild(form);
+            form.submit();
+        }
+    </script>
     <!-- Jquery JS-->
     <script src="vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
