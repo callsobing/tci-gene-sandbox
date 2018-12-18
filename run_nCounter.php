@@ -71,32 +71,31 @@ if (isset($_POST['cond2']))
 
 fclose($output);
 
-$command_inline = "sudo -u www-data python3.4 scripts/parse_nCounter_general.py \"$file_name\" reports/args_$uuid.txt $user_id $uuid";
-$command = exec($command_inline);
+if (isset($_POST['mock']) & isset($_POST['cond1']) & isset($_POST['cond2'])) {
+    $command_inline = "sudo -u www-data python3.4 scripts/parse_nCounter_general.py \"$file_name\" reports/args_$uuid.txt $user_id $uuid";
+    $command = exec($command_inline);
 
 # 把專案寫到資料庫中
-$dbhost = "localhost";
-$dbuser = "root";
-$dbpass = "tcigene";
-$dbname = "tci_gene_dashboard";
-$conn = mysql_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connection');
+    $dbhost = "localhost";
+    $dbuser = "root";
+    $dbpass = "tcigene";
+    $dbname = "tci_gene_dashboard";
+    $conn = mysql_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connection');
 
-$sql = "INSERT INTO projects ".
-    "(uuid, associated_file, description, user_id) ".
-    "VALUES ('$uuid', '$file_name', '$description', '$user_id')";
+    $sql = "INSERT INTO projects " .
+        "(uuid, associated_file, description, user_id) " .
+        "VALUES ('$uuid', '$file_name', '$description', '$user_id')";
 
-mysql_query("SET NAMES 'utf8'");
-mysql_select_db($dbname);
-$result = mysql_query($sql) or die('MySQL query error');
+    mysql_query("SET NAMES 'utf8'");
+    mysql_select_db($dbname);
+    $result = mysql_query($sql) or die('MySQL query error');
 
-$sql = "SELECT * FROM `projects` WHERE `uuid` = '$uuid'";
-$result = mysql_query($sql);
+    $sql = "SELECT * FROM `projects` WHERE `uuid` = '$uuid'";
+    $result = mysql_query($sql);
 
-while($row = mysql_fetch_array($result))
-{
-    $date = $row['date'];
-}
-
+    while ($row = mysql_fetch_array($result)) {
+        $date = $row['date'];
+    }
 ?>
 <script>
     function post(path, params, method) {
@@ -124,6 +123,7 @@ while($row = mysql_fetch_array($result))
 <script type='text/javascript'>
     post('nCounter_result.php', {file_select: '<?php echo($file_name) ?>', uuid: '<?php echo($uuid) ?>', description: '<?php echo($description) ?>', date: '<?php echo($date) ?>'})
 </script>
+<?php } ?>
 </body>
 </html>
 
