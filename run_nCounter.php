@@ -36,7 +36,8 @@ if (isset($_POST['mock']))
     }
     fwrite($output, "\n");
 } else{
-    echo"<script>alert('You did not select samples for mock!');history.go(-1);</script>";
+    $url = $_SERVER['HTTP_REFERER'];
+    echo ("<script> alert('You did not select samples for mock!');document.location.href=\"$url\";</script>");
 }
 
 if (isset($_POST['cond1']))
@@ -51,7 +52,8 @@ if (isset($_POST['cond1']))
     }
     fwrite($output, "\n");
 } else{
-    echo"<script>alert('You did not select samples for condition1！');history.go(-1);</script>";
+    $url = $_SERVER['HTTP_REFERER'];
+    echo ("<script> alert('You did not select samples for condition1!');document.location.href=\"$url\";</script>");
 }
 
 if (isset($_POST['cond2']))
@@ -66,7 +68,8 @@ if (isset($_POST['cond2']))
     }
     fwrite($output, "\n");
 }else{
-    echo"<script>alert('You did not select samples for condition2！');history.go(-1);</script>";
+    $url = $_SERVER['HTTP_REFERER'];
+    echo ("<script> alert('You did not select samples for condition2!');document.location.href=\"$url\";</script>");
 }
 
 fclose($output);
