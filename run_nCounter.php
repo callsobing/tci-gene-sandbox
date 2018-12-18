@@ -36,7 +36,7 @@ if (isset($_POST['mock']))
     }
     fwrite($output, "\n");
 } else{
-    echo"<script>alert('你沒有選到Mock samples噢！');history.go(-1);</script>";
+    echo"<script charset=”gb2312″>alert('你沒有選到Mock samples噢！');history.go(-1);</script>";
 }
 
 if (isset($_POST['cond1']))
@@ -51,7 +51,7 @@ if (isset($_POST['cond1']))
     }
     fwrite($output, "\n");
 } else{
-    echo"<script>alert('你沒有選到condition1的samples噢！');history.go(-1);</script>";
+    echo"<script charset=”gb2312″>alert('你沒有選到condition1的samples噢！');history.go(-1);</script>";
 }
 
 if (isset($_POST['cond2']))
@@ -66,7 +66,7 @@ if (isset($_POST['cond2']))
     }
     fwrite($output, "\n");
 }else{
-    echo"<script>alert('你沒有選到condition2的samples噢！');history.go(-1);</script>";
+    echo"<script charset=”gb2312″>alert('你沒有選到condition2的samples噢！');history.go(-1);</script>";
 }
 
 fclose($output);
