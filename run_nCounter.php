@@ -16,7 +16,8 @@ ob_flush();
 flush();
 $uuid = uniqid();
 $user_id = $_COOKIE['user'];
-
+$description = $_POST['project_name'];
+$file_name = $_POST['file_input'];
 
 $output = fopen("reports/args_$uuid.txt", "w");
 
@@ -61,9 +62,25 @@ if (isset($_POST['cond2']))
 
 fclose($output);
 
-$file_name = $_POST['file_input'];
 $command_inline = "sudo -u www-data python3.4 scripts/parse_nCounter_general.py \"$file_name\" reports/args_$uuid.txt $user_id $uuid";
 $command = exec($command_inline);
+
+# 把專案寫到資料庫中
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "tcigene";
+$dbname = "tci_gene_dashboard";
+$conn = mysql_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connection');
+
+$sql = "INSERT INTO projects ".
+    "(uuid, associated_file, description, user_id) ".
+    "VALUES ('$uuid', '$file_name', '$description', '$user_id')";
+
+mysql_query("SET NAMES 'utf8'");
+mysql_select_db($dbname);
+$result = mysql_query($sql) or die('MySQL query error');
+
+
 ?>
 <script>
     function post(path, params, method) {
