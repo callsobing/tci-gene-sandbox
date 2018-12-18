@@ -11,7 +11,7 @@ user_id = sys.argv[1]
 uuid = sys.argv[2]
 prs = Presentation('data/pptx_template.pptx')
 
-file_fh = open("reports/%s/%s/selected_figures.txt" % (user_id, uuid))
+file_fh = open("reports/%s/%s/selected_figures.txt" % (user_id, uuid), encoding="utf-8")
 
 first = True
 description = ""
@@ -32,7 +32,7 @@ for shape in first_slide.shapes:
         elif shape.text == "date":
             shape.text = now
 
-file_fh = open("reports/%s/%s/selected_figures.txt" % (user_id, uuid))
+file_fh = open("reports/%s/%s/selected_figures.txt" % (user_id, uuid), encoding="utf-8")
 
 first = True
 for line in file_fh:
