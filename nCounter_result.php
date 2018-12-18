@@ -11,7 +11,7 @@ $uuid = $_POST['uuid'];
 $file_name = $_POST['file_select'];
 $platform_score_file = "reports/$user/$uuid/platform_score";
 $description = $_POST['description'];
-$description = $_POST['date'];
+$date = $_POST['date'];
 
 $significance = Array();
 $file = fopen($platform_score_file, "r");
