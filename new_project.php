@@ -331,7 +331,7 @@ if(isset($_GET['error'])) {
                                             $description = $row['description'];
                                             $date = $row['date'];
                                             echo("<tr>");
-                                            echo("<td>$uuid</td>");
+                                            echo("<td><div onclick=post('nCounter_result.php', $file_name, $uuid )>$uuid</div></td>");
                                             echo("<td>$description KB</td>");
                                             echo("<td>$file_name</td>");
                                             echo("<td>$date</td></tr>");
@@ -386,6 +386,31 @@ if(isset($_GET['error'])) {
     <!-- Main JS-->
     <script src="js/main.js"></script>
 
+    <!--  用post的方法把資料傳給下個目標網頁   -->
+    <script>
+        function post(path, file_name, uuid, method) {
+            method = method || "post"; // Set method to post by default if not specified.
+
+            var form = document.createElement("form");
+            form.setAttribute("method", method);
+            form.setAttribute("action", path);
+
+
+            var hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", "file_select");
+            hiddenField.setAttribute("value", file_name);
+            hiddenField.setAttribute("name", "uuid");
+            hiddenField.setAttribute("value", uuid);
+
+            form.appendChild(hiddenField);
+
+            document.body.appendChild(form);
+            form.submit();
+        }
+
+    </script>
+    <script type='text/javascript'>post('nCounter_result.php', {file_select: '<?php echo($file_name) ?>', uuid: '<?php echo($uuid) ?>'})</script>
 </body>
 
 </html>
