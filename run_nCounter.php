@@ -36,7 +36,7 @@ if (isset($_POST['mock']))
     }
     fwrite($output, "\n");
 } else{
-    echo"<script charset=”gb2312″>alert('你沒有選到Mock samples噢！');history.go(-1);</script>";
+    echo"<script>alert('You did not select samples for mock!');history.go(-1);</script>";
 }
 
 if (isset($_POST['cond1']))
@@ -51,7 +51,7 @@ if (isset($_POST['cond1']))
     }
     fwrite($output, "\n");
 } else{
-    echo"<script charset=”gb2312″>alert('你沒有選到condition1的samples噢！');history.go(-1);</script>";
+    echo"<script>alert('You did not select samples for condition1！');history.go(-1);</script>";
 }
 
 if (isset($_POST['cond2']))
@@ -66,16 +66,17 @@ if (isset($_POST['cond2']))
     }
     fwrite($output, "\n");
 }else{
-    echo"<script charset=”gb2312″>alert('你沒有選到condition2的samples噢！');history.go(-1);</script>";
+    echo"<script>alert('You did not select samples for condition2！');history.go(-1);</script>";
 }
 
 fclose($output);
 
+# 只有在接收到各狀況的樣本集之後才可以執行
 if (isset($_POST['mock']) & isset($_POST['cond1']) & isset($_POST['cond2'])) {
     $command_inline = "sudo -u www-data python3.4 scripts/parse_nCounter_general.py \"$file_name\" reports/args_$uuid.txt $user_id $uuid";
     $command = exec($command_inline);
 
-# 把專案寫到資料庫中
+    # 把專案寫到資料庫中
     $dbhost = "localhost";
     $dbuser = "root";
     $dbpass = "tcigene";
@@ -96,8 +97,8 @@ if (isset($_POST['mock']) & isset($_POST['cond1']) & isset($_POST['cond2'])) {
     while ($row = mysql_fetch_array($result)) {
         $date = $row['date'];
     }
-?>
-<script>
+    ?>
+    <script>
     function post(path, params, method) {
         method = method || "post"; // Set method to post by default if not specified.
 
@@ -119,11 +120,13 @@ if (isset($_POST['mock']) & isset($_POST['cond1']) & isset($_POST['cond2'])) {
         form.submit();
     }
 
-</script>
-<script type='text/javascript'>
-    post('nCounter_result.php', {file_select: '<?php echo($file_name) ?>', uuid: '<?php echo($uuid) ?>', description: '<?php echo($description) ?>', date: '<?php echo($date) ?>'})
-</script>
-<?php } ?>
+    </script>
+    <script type='text/javascript'>
+        post('nCounter_result.php', {file_select: '<?php echo($file_name) ?>', uuid: '<?php echo($uuid) ?>', description: '<?php echo($description) ?>', date: '<?php echo($date) ?>'})
+    </script>
+<?php
+}
+?>
 </body>
 </html>
 
