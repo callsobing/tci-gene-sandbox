@@ -346,106 +346,112 @@ include 'check_login.php';
                             </div>
 
                             <div class="card">
-                                <div class="card-header">
-                                    <h4>nCounter 運算結果</h4>
-                                </div>
-                                <div class="card-body">
-                                    <div class="custom-tab">
-                                        <nav>
-                                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <form action="./gen_ncounter_pptx.php" method="post" enctype="multipart/form-data" class="form-horizontal" target="_blank">
+                                    <div class="card-header">
+                                        <h4>nCounter 運算結果</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="custom-tab">
+                                            <nav>
+                                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                                    <?php
+                                                    $count = 0;
+                                                    foreach ($platforms as $platform_count) {
+                                                        $count += 1;
+                                                        foreach ($platform_count as $key => $value) {
+                                                        ?>
+                                                    <a class="nav-item nav-link <?php if($count == 1){ echo("active");} ?>" id="custom-nav-<?php echo($count); ?>-tab" data-toggle="tab" href="#custom-nav-<?php echo($count); ?>" role="tab" aria-controls="custom-nav-<?php echo($count); ?>"
+                                                       aria-selected="<?php if($count == 1){ echo("true");} else {echo("false");} ?>">
+                                                        <?php echo($key); ?>
+                                                        <div class="progress mb-2" style="height: 8px;">
+                                                            <div class="progress-bar bg-<?php if($significance[$key] > 50){ echo("success"); } elseif($significance[$key] > 25){ echo("danger"); } else { echo("warning"); } ?>" role="progressbar" style="width:<?php echo($significance[$key]); ?>%" aria-valuenow="<?php echo($significance[$key]); ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </a>
+                                                    <?php }
+                                                    }?>
+                                                </div>
+                                            </nav>
+                                            <div class="tab-content pl-3 pt-2" id="nav-tabContent">
                                                 <?php
                                                 $count = 0;
                                                 foreach ($platforms as $platform_count) {
                                                     $count += 1;
                                                     foreach ($platform_count as $key => $value) {
-                                                    ?>
-                                                <a class="nav-item nav-link <?php if($count == 1){ echo("active");} ?>" id="custom-nav-<?php echo($count); ?>-tab" data-toggle="tab" href="#custom-nav-<?php echo($count); ?>" role="tab" aria-controls="custom-nav-<?php echo($count); ?>"
-                                                   aria-selected="<?php if($count == 1){ echo("true");} else {echo("false");} ?>">
-                                                    <?php echo($key); ?>
-                                                    <div class="progress mb-2" style="height: 8px;">
-                                                        <div class="progress-bar bg-<?php if($significance[$key] > 50){ echo("success"); } elseif($significance[$key] > 25){ echo("danger"); } else { echo("warning"); } ?>" role="progressbar" style="width:<?php echo($significance[$key]); ?>%" aria-valuenow="<?php echo($significance[$key]); ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                                                ?>
+                                                <div class="tab-pane fade show <?php if($count == 1){ echo("active");} ?>" id="custom-nav-<?php echo($count); ?>" role="tabpanel" aria-labelledby="custom-nav-<?php echo($count); ?>-tab">
+                                                    <!-- DATA TABLE -->
+                                                    <h3 class="title-5 m-b-35"><?php echo($key); ?> - 基因表現圖表</h3>
+                                                    <div class="table-responsive table-responsive-data2">
+                                                        <table class="table table-data2" style="font-size:x-large;">
+                                                            <thead>
+                                                            <tr>
+                                                                <th width="5%">
+                                                                </th>
+                                                                <th width="35%" style="font-size:medium;">表現量圖表</th>
+                                                                <th width="15%" style="font-size:medium;">基因</th>
+                                                                <th width="15%" style="font-size:medium;">期待方向</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <?php
+                                                            if(!empty($value['up'])){
+                                                                foreach ($value['up'] as &$gene) {
+                                                            ?>
+                                                            <tr class="tr-shadow">
+                                                                <td>
+                                                                    <label for="checkbox" class="form-check-label ">
+                                                                        <input type="checkbox" name="gene[]" value="<?php echo($gene.'###'.$key); ?>" class="form-check-input">
+                                                                    </label>
+                                                                </td>
+                                                                <td><img src="reports/<?php echo($user); ?>/<?php echo($uuid); ?>/<?php echo($gene); ?>.png" width="100%"></td>
+                                                                <td><?php echo($gene) ?></td>
+                                                                <td>
+                                                                    <span class="badge badge-success">提高</span>
+                                                                </td>
+                                                            </tr>
+                                                            <?php
+                                                                }
+                                                            }
+                                                            ?>
+                                                            <tr class="spacer"></tr>
+                                                            <?php
+                                                            if(!empty($value['down'])){
+                                                                foreach ($value['down'] as &$gene) {
+                                                                    ?>
+                                                                    <tr class="tr-shadow">
+                                                                        <td>
+                                                                            <label for="checkbox" class="form-check-label ">
+                                                                                <input type="checkbox" name="gene[]" value="<?php echo($gene.'###'.$key); ?>" class="form-check-input">
+                                                                            </label>
+                                                                        </td>
+                                                                        <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/<?php echo($gene) ?>.png" width="100%"></td>
+                                                                        <td><?php echo($gene) ?></td>
+                                                                        <td>
+                                                                            <span class="badge badge-danger">降低</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <?php
+                                                                }
+                                                            }
+                                                            ?>
+                                                            <tr class="spacer"></tr>
+                                                            </tbody>
+                                                        </table>
                                                     </div>
-                                                </a>
-                                                <?php }
-                                                }?>
-                                            </div>
-                                        </nav>
-                                        <div class="tab-content pl-3 pt-2" id="nav-tabContent">
-                                            <?php
-                                            $count = 0;
-                                            foreach ($platforms as $platform_count) {
-                                                $count += 1;
-                                                foreach ($platform_count as $key => $value) {
-                                            ?>
-                                            <div class="tab-pane fade show <?php if($count == 1){ echo("active");} ?>" id="custom-nav-<?php echo($count); ?>" role="tabpanel" aria-labelledby="custom-nav-<?php echo($count); ?>-tab">
-                                                <!-- DATA TABLE -->
-                                                <h3 class="title-5 m-b-35"><?php echo($key); ?> - 基因表現圖表</h3>
-                                                <div class="table-responsive table-responsive-data2">
-                                                    <table class="table table-data2" style="font-size:x-large;">
-                                                        <thead>
-                                                        <tr>
-                                                            <th width="5%">
-                                                            </th>
-                                                            <th width="35%" style="font-size:medium;">表現量圖表</th>
-                                                            <th width="15%" style="font-size:medium;">基因</th>
-                                                            <th width="15%" style="font-size:medium;">期待方向</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        <?php
-                                                        if(!empty($value['up'])){
-                                                            foreach ($value['up'] as &$gene) {
-                                                        ?>
-                                                        <tr class="tr-shadow">
-                                                            <td>
-                                                                <label for="checkbox" class="form-check-label ">
-                                                                    <input type="checkbox" name="gene[]" value="<?php echo($gene.'###'.$key); ?>" class="form-check-input">
-                                                                </label>
-                                                            </td>
-                                                            <td><img src="reports/<?php echo($user); ?>/<?php echo($uuid); ?>/<?php echo($gene); ?>.png" width="100%"></td>
-                                                            <td><?php echo($gene) ?></td>
-                                                            <td>
-                                                                <span class="badge badge-success">提高</span>
-                                                            </td>
-                                                        </tr>
-                                                        <?php
-                                                            }
-                                                        }
-                                                        ?>
-                                                        <tr class="spacer"></tr>
-                                                        <?php
-                                                        if(!empty($value['down'])){
-                                                            foreach ($value['down'] as &$gene) {
-                                                                ?>
-                                                                <tr class="tr-shadow">
-                                                                    <td>
-                                                                        <label for="checkbox" class="form-check-label ">
-                                                                            <input type="checkbox" name="gene[]" value="<?php echo($gene.'###'.$key); ?>" class="form-check-input">
-                                                                        </label>
-                                                                    </td>
-                                                                    <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/<?php echo($gene) ?>.png" width="100%"></td>
-                                                                    <td><?php echo($gene) ?></td>
-                                                                    <td>
-                                                                        <span class="badge badge-danger">降低</span>
-                                                                    </td>
-                                                                </tr>
-                                                                <?php
-                                                            }
-                                                        }
-                                                        ?>
-                                                        <tr class="spacer"></tr>
-                                                        </tbody>
-                                                    </table>
+                                                    <!-- END DATA TABLE -->
                                                 </div>
-                                                <!-- END DATA TABLE -->
-                                            </div>
-                                            <?php
+                                                <?php
+                                                    }
                                                 }
-                                            }
-                                            ?>
+                                                ?>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                    <div class="col col-md-9">
+                                        <button type="submit" class="btn btn-primary btn-sm">產生報告模板</button>
+                                        <button type="reset" class="btn btn-danger btn-sm">重新選擇</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                         <!-- /# column -->
