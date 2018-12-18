@@ -11,6 +11,7 @@ $uuid = $_POST['uuid'];
 $file_name = $_POST['file_select'];
 $platform_score_file = "reports/$user/$uuid/platform_score";
 $description = $_POST['description'];
+$description = $_POST['date'];
 
 $significance = Array();
 $file = fopen($platform_score_file, "r");
@@ -318,10 +319,31 @@ include 'check_login.php';
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4>專案描述</h4>
+                                    <h4>專案資訊</h4>
                                 </div>
                                 <div class="card-body">
-                                    <span class="progress-title"><?php echo($description) ?><br></span>
+                                    <span>分析日期: <?php echo($date) ?><br></span>
+                                    <span>專案描述:<?php echo($description) ?><br></span>
+                                    <?php
+                                    $file = fopen("reports/args_$uuid.txt", "r");
+                                    $count = 0;
+                                    while (!feof($file)) {
+                                        if($count == 0){
+                                            ?> <span>Mock樣本:<?php echo(fgets($file)); ?><br></span> <?php
+                                            $count += 1;
+                                        }
+                                        if($count == 1){
+                                            ?> <span>Condition 1 樣本:<?php echo(fgets($file)); ?><br></span> <?php
+                                            $count += 1;
+                                        }
+                                        if($count == 2){
+                                            ?> <span>Condition 2 樣本:<?php echo(fgets($file)); ?><br></span><?php
+                                            $count += 1;
+                                        }
+                                    }
+                                    fclose($file);
+                                    ?>
+
                                 </div>
                             </div>
 
