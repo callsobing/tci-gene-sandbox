@@ -206,22 +206,28 @@ include 'check_login.php';
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                    <img src="images/tci-gene.png" alt="Tci-Gene" height="80%" />
-                        </a>
+                    <img src="images/tci-gene.png" alt="Tci-Gene" height="80%"/>
+                </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
-                        <li class="active has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>資訊主頁</a>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="index.php">
+                                <i class="fas fa-tachometer-alt"></i>資訊主頁
+                            </a>
                         </li>
                         <li>
                             <a href="new_project.php">
-                                <i class="fas fa-chart-bar"></i>分析專案</a>
+                                <i class="fas fa-chart-bar"></i>分析專案
+                            </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="wishing_pond.php">
+                                <i class="fa fa-magic"></i>許願池</a>
+                        </li>
+                        <li>
+                            <a href="file_management.php">
                                 <i class="fas fa-table"></i>檔案管理</a>
                         </li>
                         <li>
@@ -235,10 +241,6 @@ include 'check_login.php';
                         <li>
                             <a href="#">
                                 <i class="fas fa-map-marker-alt"></i>已出貨區域</a>
-                        </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Pages</a>
                         </li>
                     </ul>
                 </nav>
