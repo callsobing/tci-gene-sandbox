@@ -37,14 +37,14 @@ if (isset($_POST['mock']))
     echo ("<script> alert('You did not select samples for mock!');document.location.href=\"$url?error=sample_not_selected\";</script>");
 }
 
-if (isset($_POST['cond1']))
+if (isset($_POST['t1c1']))
 {
-    $i=count($_POST['cond1']);
+    $i=count($_POST['t1c1']);
     for($j=0 ; $j<$i ; $j++){
         if($j == 0) {
-            fwrite($output, $_POST['cond1'][$j]);
+            fwrite($output, $_POST['t1c1'][$j]);
         } else {
-            fwrite($output, "\t".$_POST['cond1'][$j]);
+            fwrite($output, "\t".$_POST['t1c1'][$j]);
         }
     }
     fwrite($output, "\n");
@@ -53,14 +53,46 @@ if (isset($_POST['cond1']))
     echo ("<script> alert('You did not select samples for condition1!');document.location.href=\"$url?error=sample_not_selected\";</script>");
 }
 
-if (isset($_POST['cond2']))
+if (isset($_POST['t1c2']))
 {
-    $i=count($_POST['cond2']);
+    $i=count($_POST['t1c2']);
     for($j=0 ; $j<$i ; $j++){
         if($j == 0) {
-            fwrite($output, $_POST['cond2'][$j]);
+            fwrite($output, $_POST['t1c2'][$j]);
         } else {
-            fwrite($output, "\t".$_POST['cond2'][$j]);
+            fwrite($output, "\t".$_POST['t1c2'][$j]);
+        }
+    }
+    fwrite($output, "\n");
+}else{
+    $url = $_SERVER['HTTP_REFERER'];
+    echo ("<script> alert('You did not select samples for condition1!');document.location.href=\"$url?error=sample_not_selected\";</script>");
+}
+
+if (isset($_POST['t2c1']))
+{
+    $i=count($_POST['t2c1']);
+    for($j=0 ; $j<$i ; $j++){
+        if($j == 0) {
+            fwrite($output, $_POST['t2c1'][$j]);
+        } else {
+            fwrite($output, "\t".$_POST['t2c1'][$j]);
+        }
+    }
+    fwrite($output, "\n");
+}else{
+    $url = $_SERVER['HTTP_REFERER'];
+    echo ("<script> alert('You did not select samples for condition2!');document.location.href=\"$url?error=sample_not_selected\";</script>");
+}
+
+if (isset($_POST['t2c2']))
+{
+    $i=count($_POST['t2c2']);
+    for($j=0 ; $j<$i ; $j++){
+        if($j == 0) {
+            fwrite($output, $_POST['t2c2'][$j]);
+        } else {
+            fwrite($output, "\t".$_POST['t2c2'][$j]);
         }
     }
     fwrite($output, "\n");
@@ -72,7 +104,7 @@ if (isset($_POST['cond2']))
 fclose($output);
 
 # 只有在接收到各狀況的樣本集之後才可以執行
-if (isset($_POST['mock']) & isset($_POST['cond1']) & isset($_POST['cond2'])) {
+if (isset($_POST['mock']) & isset($_POST['t1c1']) & isset($_POST['t1c2']) & isset($_POST['t2c1']) & isset($_POST['t2c2'])) {
     echo("<img src='images/waiting.jpg' width='100%' height='100%'/>");
     ob_flush();
     flush();

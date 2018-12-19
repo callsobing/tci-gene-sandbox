@@ -306,7 +306,7 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                                             ?>
                                                             <div>
                                                                 <label for="checkbox" class="form-check-label ">
-                                                                    <input type="checkbox" name="cond1[]" value="<?php echo($items[0]); ?>" class="form-check-input"> <?php echo($items[0]); ?>
+                                                                    <input type="checkbox" name="t1c1[]" value="<?php echo($items[0]); ?>" class="form-check-input"> <?php echo($items[0]); ?>
                                                                 </label>
                                                             </div>
                                                             <?php
@@ -326,7 +326,7 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                                             ?>
                                                             <div>
                                                                 <label for="checkbox" class="form-check-label ">
-                                                                    <input type="checkbox" name="cond2[]" value="<?php echo($items[0]); ?>" class="form-check-input"> <?php echo($items[0]); ?>
+                                                                    <input type="checkbox" name="t1c2[]" value="<?php echo($items[0]); ?>" class="form-check-input"> <?php echo($items[0]); ?>
                                                                 </label>
                                                             </div>
                                                             <?php
@@ -346,7 +346,7 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                                             ?>
                                                             <div>
                                                                 <label for="checkbox" class="form-check-label ">
-                                                                    <input type="checkbox" name="cond2[]" value="<?php echo($items[0]); ?>" class="form-check-input"> <?php echo($items[0]); ?>
+                                                                    <input type="checkbox" name="t2c1[]" value="<?php echo($items[0]); ?>" class="form-check-input"> <?php echo($items[0]); ?>
                                                                 </label>
                                                             </div>
                                                             <?php
@@ -366,7 +366,7 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                                             ?>
                                                             <div>
                                                                 <label for="checkbox" class="form-check-label ">
-                                                                    <input type="checkbox" name="cond2[]" value="<?php echo($items[0]); ?>" class="form-check-input"> <?php echo($items[0]); ?>
+                                                                    <input type="checkbox" name="t2c2[]" value="<?php echo($items[0]); ?>" class="form-check-input"> <?php echo($items[0]); ?>
                                                                 </label>
                                                             </div>
                                                             <?php
