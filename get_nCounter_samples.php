@@ -265,9 +265,14 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                                 <a class="nav-item nav-link active" id="custom-nav-1-tab" data-toggle="tab" href="#custom-nav-1" role="tab" aria-controls="custom-nav-1"
                                                    aria-selected="true">Mock</a>
                                                 <a class="nav-item nav-link" id="custom-nav-2-tab" data-toggle="tab" href="#custom-nav-2" role="tab" aria-controls="custom-nav-2"
-                                                   aria-selected="false">Condition1</a>
+                                                   aria-selected="false">T1 - C1</a>
                                                 <a class="nav-item nav-link" id="custom-nav-3-tab" data-toggle="tab" href="#custom-nav-3" role="tab" aria-controls="custom-nav-3"
-                                                   aria-selected="false">Condition2</a>
+                                                   aria-selected="false">T1 - C2</a>
+                                                <a class="nav-item nav-link" id="custom-nav-4-tab" data-toggle="tab" href="#custom-nav-4" role="tab" aria-controls="custom-nav-4"
+                                                   aria-selected="false">T2 - C1</a>
+                                                <a class="nav-item nav-link" id="custom-nav-5-tab" data-toggle="tab" href="#custom-nav-5" role="tab" aria-controls="custom-nav-5"
+                                                   aria-selected="false">T2 - C2</a>
+
                                             </div>
                                         </nav>
                                         <div class="tab-content pl-3 pt-2" id="nav-tabContent">
@@ -312,6 +317,46 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                                 </div>
                                             </div>
                                             <div class="tab-pane fade" id="custom-nav-3" role="tabpanel" aria-labelledby="custom-nav-3-tab">
+                                                <div class="col col-md-9">
+                                                    <div class="form-check">
+                                                        <?php
+                                                        $file = fopen("data/nCounter_$uuid.txt", "r");
+                                                        while (!feof($file)) {
+                                                            $items = preg_split ('/\t/', fgets($file));
+                                                            ?>
+                                                            <div>
+                                                                <label for="checkbox" class="form-check-label ">
+                                                                    <input type="checkbox" name="cond2[]" value="<?php echo($items[0]); ?>" class="form-check-input"> <?php echo($items[0]); ?>
+                                                                </label>
+                                                            </div>
+                                                            <?php
+                                                        }
+                                                        fclose($file);
+                                                        ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="custom-nav-4" role="tabpanel" aria-labelledby="custom-nav-4-tab">
+                                                <div class="col col-md-9">
+                                                    <div class="form-check">
+                                                        <?php
+                                                        $file = fopen("data/nCounter_$uuid.txt", "r");
+                                                        while (!feof($file)) {
+                                                            $items = preg_split ('/\t/', fgets($file));
+                                                            ?>
+                                                            <div>
+                                                                <label for="checkbox" class="form-check-label ">
+                                                                    <input type="checkbox" name="cond2[]" value="<?php echo($items[0]); ?>" class="form-check-input"> <?php echo($items[0]); ?>
+                                                                </label>
+                                                            </div>
+                                                            <?php
+                                                        }
+                                                        fclose($file);
+                                                        ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="custom-nav-5" role="tabpanel" aria-labelledby="custom-nav-5-tab">
                                                 <div class="col col-md-9">
                                                     <div class="form-check">
                                                         <?php
