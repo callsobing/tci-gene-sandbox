@@ -25,7 +25,7 @@ platforms = {
             "抗黑色素生成": {"up": [], "down": ["TYR","TYRP1","MC1R","MITF"]},
             "膠原蛋白合成/組合/降解": {"up": ["COL1A1","COL1A2","COL4A1","COL4A4","COL4A5","TIMP1","ELN","FBN1","LOX","HAS2","HAS3"], "down": ["MMP1","MMP9","MMP2"]},
             "抗發炎": {"up": ["IL-10","TGFB","IL4"], "down": ["IL-1B","IL-8","IL-6","IL-18","TNF-a","IL-16","IL23","IL12A","IFNG","IL3"]},
-            "細胞凋亡": {"up": [], "down": ["BCL-2","BAX","BCLXL","BAD","CASP9","AIFM1","EndoG"]},
+            "細胞凋亡": {"up": ["BCL-2"], "down": ["BAX","BCLXL","BAD","CASP9","AIFM1","EndoG"]},
             "心血管保健": {"up": ["PTGIS","NOS3","PLAT","PROC"], "down": ["EDN1","VWF","F3","SERPINE1","PDGFC","FGF2","IGF2BP3","IGF1R","IL-8","IL-6","ICAM1","VCAM1","CASP8"]},
             "晝夜節律": {"up": ["SIRT1","CLOCK","BMAL1 (ARNTL)","PER2","CRY","KPNB1"], "down": []},
             "LPS模擬體內發炎": {"up": ["NOS3"], "down": ["ICAM1","VCAM1","IL-8"]},
