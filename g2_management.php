@@ -258,12 +258,13 @@ include 'check_login.php';
                                     <td><label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="靜脈曲張" class="form-check-input">靜脈曲張</label></td>
                                     <td><label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="晚發型阿茲海默症" class="form-check-input">晚發型阿茲海默症</label></td>
                                     </tr>
-                                    <tr>
+                                    <tr><pre>
                                     <td><label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="帕金森氏症" class="form-check-input">帕金森氏症</label></td>
                                     <td><label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="退化性關節炎" class="form-check-input">退化性關節炎</label></td>
                                     <td><label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="骨質疏鬆" class="form-check-input">骨質疏鬆</label></td>
                                     <td><label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="肌少症" class="form-check-input">肌少症</label></td>
                                     <td><label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="子宮內膜異位症" class="form-check-input">子宮內膜異位症</label></td></tr>
+                                    </pre>
                                     <tr>
                                     <td><label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="子宮肌瘤" class="form-check-input">子宮肌瘤</label></td>
                                     <td><label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="多囊性卵巢症候群" class="form-check-input">多囊性卵巢症候群</label></td>
