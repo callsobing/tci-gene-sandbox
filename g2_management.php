@@ -344,10 +344,10 @@ include 'check_login.php';
                         </thead>
                         <tbody>
                         <?php
+                        $sql = "SELECT * FROM `customer_g2`";
+                        $result = mysql_query($sql);
                         while($row = mysql_fetch_array($result))
                         {
-                            $sql = "SELECT * FROM `customer_g2`";
-                            $result = mysql_query($sql);
                             $member_id = $row['會員編號'];
                             $name = $row['姓名'];
                             $gender = $row['性別'];
