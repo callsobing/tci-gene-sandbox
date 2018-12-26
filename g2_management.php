@@ -248,7 +248,7 @@ include 'check_login.php';
                                     <label for="multiple-select" class=" form-control-label">疾病風險</label>
                                 </div>
                                 <div class="col col-md-9">
-                                    <select name="disease[]" id="multiple-select" multiple="" class="form-control">
+                                    <select name="selected_disease" id="multiple-select" multiple="" class="form-control">
                                         <option value="肥胖症">肥胖症</option>
                                         <option value="第二型糖尿病">第二型糖尿病</option>
                                         <option value="高血壓">高血壓</option>
