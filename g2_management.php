@@ -15,15 +15,6 @@ $conn = mysql_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connec
 mysql_query("SET NAMES 'utf8'");
 mysql_select_db($dbname);
 $userid = $_COOKIE['user'];
-$sql = "SELECT * FROM `uploaded_files` WHERE `uploader` = '$userid'";
-$result = mysql_query($sql);
-
-
-$file_name = "";
-$file_size = 0;
-$uploader = "";
-$memo = "";
-$date = "";
 
 ?>
 
@@ -339,27 +330,47 @@ include 'check_login.php';
                             <th width="15%">生日</th>
                             <th width="15%">年齡</th>
                             <th width="30%">電話</th>
-                            <th width="30%">地址</th>
                             <th width="30%">備註</th>
-                            <th width="30%">電話</th>
+                            <?php
+                            if (isset($_POST['selected_disease']))
+                            {
+                                $i=count($_POST['selected_disease']);
+                                for($j=0 ; $j<$i ; $j++) {
+                                    echo("<th width=\"30%\">".$_POST["selected_disease"][$j]."</th>");
+                                }
+                            }
+                            ?>
                         </tr>
                         </thead>
                         <tbody>
                         <?php
                         while($row = mysql_fetch_array($result))
                         {
-                            $file_name = $row['name'];
-                            $file_size = $row['size'];
-                            $uploader = $row['uploader'];
-                            $memo = $row['memo'];
-                            $date = $row['date'];
+                            $sql = "SELECT * FROM `customer_g2`";
+                            $result = mysql_query($sql);
+                            $member_id = $row['會員編號'];
+                            $name = $row['姓名'];
+                            $gender = $row['性別'];
+                            $bd = $row['生日'];
+                            $age = $row['年齡'];
+                            $phone = $row['電話'];
+                            $memo = $row['備註'];
                             echo("<tr>");
-                            echo("<td>$file_name</td>");
-                            echo("<td>$file_size KB</td>");
-                            echo("<td>$date</td>");
-                            echo("<td><a href='$target_dir$file_name' target=\"_blank\">下載</a></td>");
-                            echo("<td>刪除</td>");
-                            echo("<td>$memo</td></tr>");
+                            echo("<td>$member_id</td>");
+                            echo("<td>$name</td>");
+                            echo("<td>$gender</td>");
+                            echo("<td>$bd</td>");
+                            echo("<td>$age</td>");
+                            echo("<td>$phone</td>");
+                            echo("<td>$memo</td>");
+                            if (isset($_POST['selected_disease']))
+                            {
+                                $i=count($_POST['selected_disease']);
+                                for($j=0 ; $j<$i ; $j++) {
+                                    $disease = $_POST['selected_disease'];
+                                    echo("<td>".$row[$disease]."</td>");
+                                }
+                            }
                         }
                         ?>
                         </tbody>
