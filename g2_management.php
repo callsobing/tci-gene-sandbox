@@ -308,8 +308,8 @@ include 'check_login.php';
                                         <option value="淋巴癌">淋巴癌</option>
                                     </select>
                                     <div class="row form-group">
-                                        <div class="col col-md-3"><button type="submit" name="submit" id="submit" class="btn btn-primary btn-sm">Submit</button></div>
-                                        <div class="col col-md-3"><button type="reset" class="btn btn-danger btn-sm">Reset</button></div>
+                                        <div class="col col-md-6"><button type="submit" name="submit" id="submit" class="btn btn-primary btn-sm">Submit</button></div>
+                                        <div class="col col-md-6"><button type="reset" class="btn btn-danger btn-sm">Reset</button></div>
                                     </div>
                             </form>
                         </div>
