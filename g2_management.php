@@ -307,9 +307,9 @@ include 'check_login.php';
                                         <option value="膀胱癌">膀胱癌</option>
                                         <option value="淋巴癌">淋巴癌</option>
                                     </select>
-                                    <div class="row form-group">
-                                        <div><button type="submit" name="submit" id="submit" class="btn btn-primary btn-sm">Submit</button></div>
-                                        <div><button type="reset" class="btn btn-danger btn-sm">Reset</button></div>
+                                    <div class="row form-group"><br>
+                                        <p><div><button type="submit" name="submit" id="submit" class="btn btn-primary btn-sm">Submit</button></div>
+                                        <div><button type="reset" class="btn btn-danger btn-sm">Reset</button></div></p>
                                     </div>
                             </form>
                         </div>
@@ -432,6 +432,7 @@ include 'check_login.php';
 
         // Create download link element
         downloadLink = document.createElement("a");
+        downloadLink.target("_blank");
 
         document.body.appendChild(downloadLink);
 
