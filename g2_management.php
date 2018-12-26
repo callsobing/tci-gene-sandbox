@@ -321,7 +321,8 @@ include 'check_login.php';
                 <!-- 有收到資料才show下面欄位 -->
                 <!-- DATA TABLE-->
                 <div class="card">
-                    <table class="sortable" cellpadding="10">
+                    <button onclick="exportTableToExcel('customer_Data')">輸出為xls檔案</button>
+                    <table class="sortable" cellpadding="10" id="customer_Data">
                         <thead>
                         <tr>
                             <th>會員編號</th>
@@ -420,7 +421,39 @@ include 'check_login.php';
 
 <!-- Main JS-->
 <script src="js/main.js"></script>
-<!-- 檢查表單正確性  -->
+<!-- export to Excel  -->
+<script>
+    function exportTableToExcel(tableID, filename = ''){
+        var downloadLink;
+        var dataType = 'application/vnd.ms-excel';
+        var tableSelect = document.getElementById(tableID);
+        var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+
+        // Specify file name
+        filename = filename?filename+'.xls':'excel_data.xls';
+
+        // Create download link element
+        downloadLink = document.createElement("a");
+
+        document.body.appendChild(downloadLink);
+
+        if(navigator.msSaveOrOpenBlob){
+            var blob = new Blob(['\ufeff', tableHTML], {
+                type: dataType
+            });
+            navigator.msSaveOrOpenBlob( blob, filename);
+        }else{
+            // Create a link to the file
+            downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+
+            // Setting the file name
+            downloadLink.download = filename;
+
+            //triggering the function
+            downloadLink.click();
+        }
+    }
+</script>
 
 </body>
 
