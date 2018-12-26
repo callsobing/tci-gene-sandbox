@@ -367,7 +367,7 @@ include 'check_login.php';
                             {
                                 $i=count($_POST['selected_disease']);
                                 for($j=0 ; $j<$i ; $j++) {
-                                    $disease = $_POST['selected_disease'];
+                                    $disease = $_POST['selected_disease'][$j];
                                     echo("<td>".$row[$disease]."</td>");
                                 }
                             }
