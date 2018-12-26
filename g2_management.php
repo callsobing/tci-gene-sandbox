@@ -327,7 +327,7 @@ include 'check_login.php';
                             <th width="15%">會員編號</th>
                             <th width="10%">姓名</th>
                             <th width="15%">性別</th>
-                            <th width="15%">生日</th>
+<!--                            <th width="15%">生日</th>-->
                             <th width="15%">年齡</th>
                             <th width="30%">電話</th>
                             <th width="30%">備註</th>
@@ -351,7 +351,7 @@ include 'check_login.php';
                             $member_id = $row['會員編號'];
                             $name = $row['姓名'];
                             $gender = $row['性別'];
-                            $bd = $row['生日'];
+//                            $bd = $row['生日'];
                             $age = $row['年齡'];
                             $phone = $row['電話'];
                             $memo = $row['備註'];
@@ -359,7 +359,7 @@ include 'check_login.php';
                             echo("<td>$member_id</td>");
                             echo("<td>$name</td>");
                             echo("<td>$gender</td>");
-                            echo("<td>$bd</td>");
+//                            echo("<td>$bd</td>");
                             echo("<td>$age</td>");
                             echo("<td>$phone</td>");
                             echo("<td>$memo</td>");
