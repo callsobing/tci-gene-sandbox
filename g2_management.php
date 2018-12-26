@@ -65,6 +65,16 @@ include 'check_login.php';
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
+    <style>
+        /* Sortable tables */
+        table.sortable thead {
+            background-color:#eee;
+            color:#666666;
+            font-weight: bold;
+            cursor: default;
+        }
+
+    </style>
 
 </head>
 
@@ -328,7 +338,7 @@ include 'check_login.php';
                     <div class="row m-t-30">
                         <div class="col-md-12">
                             <!-- DATA TABLE-->
-                            <div class="table-responsive m-b-40">
+                            <div>
                                 <table class="sortable">
                                     <thead>
                                     <tr>
