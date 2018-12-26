@@ -52,6 +52,8 @@ include 'check_login.php';
 
     <!-- Bootstrap CSS-->
     <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css" rel="stylesheet" media="all">
+    <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet" media="all">
 
     <!-- Vendor CSS-->
     <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
@@ -322,42 +324,40 @@ include 'check_login.php';
                 <div class="card">
                 <!-- 有收到資料才show下面欄位 -->
                     <!-- DATA TABLE-->
-                    <div class="table-responsive m-b-40">
-                        <table class="table table-borderless table-data3">
-                            <thead>
-                            <tr>
-                                <th width="15%" data-sortable="true">會員編號</th>
-                                <th width="10%">姓名</th>
-                                <th width="15%">性別</th>
-                                <th width="15%">生日</th>
-                                <th width="15%">年齡</th>
-                                <th width="30%">電話</th>
-                                <th width="30%">地址</th>
-                                <th width="30%">備註</th>
-                                <th width="30%">電話</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                            while($row = mysql_fetch_array($result))
-                            {
-                                $file_name = $row['name'];
-                                $file_size = $row['size'];
-                                $uploader = $row['uploader'];
-                                $memo = $row['memo'];
-                                $date = $row['date'];
-                                echo("<tr>");
-                                echo("<td>$file_name</td>");
-                                echo("<td>$file_size KB</td>");
-                                echo("<td>$date</td>");
-                                echo("<td><a href='$target_dir$file_name' target=\"_blank\">下載</a></td>");
-                                echo("<td>刪除</td>");
-                                echo("<td>$memo</td></tr>");
-                            }
-                            ?>
-                            </tbody>
-                        </table>
-                    </div>
+                    <table id="data_table" class="table table-borderless table-data3">
+                        <thead>
+                        <tr>
+                            <th width="15%" data-sortable="true">會員編號</th>
+                            <th width="10%">姓名</th>
+                            <th width="15%">性別</th>
+                            <th width="15%">生日</th>
+                            <th width="15%">年齡</th>
+                            <th width="30%">電話</th>
+                            <th width="30%">地址</th>
+                            <th width="30%">備註</th>
+                            <th width="30%">電話</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        while($row = mysql_fetch_array($result))
+                        {
+                            $file_name = $row['name'];
+                            $file_size = $row['size'];
+                            $uploader = $row['uploader'];
+                            $memo = $row['memo'];
+                            $date = $row['date'];
+                            echo("<tr>");
+                            echo("<td>$file_name</td>");
+                            echo("<td>$file_size KB</td>");
+                            echo("<td>$date</td>");
+                            echo("<td><a href='$target_dir$file_name' target=\"_blank\">下載</a></td>");
+                            echo("<td>刪除</td>");
+                            echo("<td>$memo</td></tr>");
+                        }
+                        ?>
+                        </tbody>
+                    </table>
                     <!-- END DATA TABLE-->
                 </div>
 
@@ -396,13 +396,20 @@ include 'check_login.php';
 <script src="vendor/circle-progress/circle-progress.min.js"></script>
 <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
 <script src="vendor/chartjs/Chart.bundle.min.js"></script>
-<script src="vendor/select2/select2.min.js">
-</script>
+<script src="vendor/select2/select2.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
 
 <!-- Main JS-->
 <script src="js/main.js"></script>
 <!-- 檢查表單正確性  -->
-
+<script>
+    $(document).ready(function() {
+        $('#data_table').DataTable();
+    } );
+</script>
 </body>
 
 </html>
