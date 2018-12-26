@@ -244,63 +244,78 @@ include 'check_login.php';
                         <div class="card-body card-block">
                             <form id="pond_form" name="pond_form" action="g2_management.php" method="post" enctype="multipart/form-data" class="form-horizontal" onSubmit="return check_filed(this)">
                                 <div>
-                                    <div class="col col-md-3">
-                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="肥胖症" class="form-check-input">肥胖症</label>&#9;
-                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="第二型糖尿病" class="form-check-input">第二型糖尿病</label>&#9;
-                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="高血壓" class="form-check-input">高血壓</label>&#9;
-                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="高血脂" class="form-check-input">高血脂</label></div>
+                                    <pre>
+                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="肥胖症" class="form-check-input">肥胖症</label>
+                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="第二型糖尿病" class="form-check-input">第二型糖尿病</label>
+                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="高血壓" class="form-check-input">高血壓</label>
+                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="高血脂" class="form-check-input">高血脂</label>
+                                    </pre>
+                                    <pre>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="高尿酸血症" class="form-check-input">高尿酸血症</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="冠狀動脈疾病" class="form-check-input">冠狀動脈疾病</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="心房顫動" class="form-check-input">心房顫動</label>
-                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="腦中風" class="form-check-input">腦中風</label><br>
+                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="腦中風" class="form-check-input">腦中風</label></pre>
+                                    <pre>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="靜脈曲張" class="form-check-input">靜脈曲張</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="晚發型阿茲海默症" class="form-check-input">晚發型阿茲海默症</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="帕金森氏症" class="form-check-input">帕金森氏症</label>
-                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="退化性關節炎" class="form-check-input">退化性關節炎</label><br>
+                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="退化性關節炎" class="form-check-input">退化性關節炎</label></pre>
+                                    <pre>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="骨質疏鬆" class="form-check-input">骨質疏鬆</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="肌少症" class="form-check-input">肌少症</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="子宮內膜異位症" class="form-check-input">子宮內膜異位症</label>                                                
-                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="子宮肌瘤" class="form-check-input">子宮肌瘤</label><br>
+                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="子宮肌瘤" class="form-check-input">子宮肌瘤</label></pre>
+                                    <pre>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="多囊性卵巢症候群" class="form-check-input">多囊性卵巢症候群</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="女性尿道感染" class="form-check-input">女性尿道感染</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="類風濕性關節炎" class="form-check-input">類風濕性關節炎</label>
-                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="紅斑性狼瘡" class="form-check-input">紅斑性狼瘡</label><br>
+                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="紅斑性狼瘡" class="form-check-input">紅斑性狼瘡</label></pre>
+                                    <pre>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="自體免疫甲狀腺疾病" class="form-check-input">自體免疫甲狀腺疾病</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="僵直性脊椎炎" class="form-check-input">僵直性脊椎炎</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="肝硬化" class="form-check-input">肝硬化</label>
-                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="脂肪肝" class="form-check-input">脂肪肝</label><br>
+                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="脂肪肝" class="form-check-input">脂肪肝</label></pre>
+                                    <pre>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="膽石症" class="form-check-input">膽石症</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="消化性潰瘍" class="form-check-input">消化性潰瘍</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="大腸息肉症" class="form-check-input">大腸息肉症</label>
-                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="胰臟炎" class="form-check-input">胰臟炎</label><br>
+                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="胰臟炎" class="form-check-input">胰臟炎</label></pre>
+                                    <pre>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="白內障" class="form-check-input">白內障</label>                               
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="青光眼" class="form-check-input">青光眼</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="黃斑部病變" class="form-check-input">黃斑部病變</label>
-                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="高度近視" class="form-check-input">高度近視</label><br>
+                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="高度近視" class="form-check-input">高度近視</label></pre>
+                                    <pre>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="憂鬱症" class="form-check-input">憂鬱症</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="躁鬱症" class="form-check-input">躁鬱症</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="思覺失調症" class="form-check-input">思覺失調症</label>
-                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="慢性阻塞性肺病" class="form-check-input">慢性阻塞性肺病</label><br>
+                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="慢性阻塞性肺病" class="form-check-input">慢性阻塞性肺病</label></pre>
+                                    <pre>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="攝護腺肥大" class="form-check-input">攝護腺肥大</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="腎結石" class="form-check-input">腎結石</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="腎衰竭" class="form-check-input">腎衰竭</label>
-                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="氣喘" class="form-check-input">氣喘</label><br>
+                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="氣喘" class="form-check-input">氣喘</label></pre>
+                                    <pre>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="過敏性鼻炎" class="form-check-input">過敏性鼻炎</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="異位性皮膚炎" class="form-check-input">異位性皮膚炎</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="乾癬" class="form-check-input">乾癬</label>                               
-                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="牙周病" class="form-check-input">牙周病</label><br>
+                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="牙周病" class="form-check-input">牙周病</label></pre>
+                                    <pre>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="口腔癌" class="form-check-input">口腔癌</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="鼻咽癌" class="form-check-input">鼻咽癌</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="食道癌" class="form-check-input">食道癌</label>
-                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="肺癌" class="form-check-input">肺癌</label><br>
+                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="肺癌" class="form-check-input">肺癌</label></pre>
+                                    <pre>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="胃癌" class="form-check-input">胃癌</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="肝癌" class="form-check-input">肝癌</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="大腸癌" class="form-check-input">大腸癌</label>
-                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="胰臟癌" class="form-check-input">胰臟癌</label><br>
+                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="胰臟癌" class="form-check-input">胰臟癌</label></pre>
+                                    <pre>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="乳癌" class="form-check-input">乳癌</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="卵巢癌" class="form-check-input">卵巢癌</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="子宮頸癌" class="form-check-input">子宮頸癌</label>
-                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="攝護腺癌" class="form-check-input">攝護腺癌</label><br>
+                                    <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="攝護腺癌" class="form-check-input">攝護腺癌</label></pre>
+                                    <pre>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="膀胱癌" class="form-check-input">膀胱癌</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="淋巴癌" class="form-check-input">淋巴癌</label>
                                 </pre>
