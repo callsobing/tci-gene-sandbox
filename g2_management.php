@@ -242,7 +242,7 @@ include 'check_login.php';
                     <div class="card">
                         <div class="card-header">
                             <strong><?php
-                                foreach ($_POST['multiple_select'] as $product){
+                                foreach ($_POST['selected_disease'] as $product){
                                     echo $product . ' was selected <br />';
                                 }
 
@@ -253,7 +253,7 @@ include 'check_login.php';
                             <form id="pond_form" name="pond_form" action="g2_management.php" method="post" enctype="multipart/form-data" class="form-horizontal" onSubmit="return check_filed(this)">
                             <div class="row form-group">
                                 <div class="col col-md-3">
-                                    <label for="multiple_select" class=" form-control-label">疾病風險</label>
+                                    <label for="selected_disease" class=" form-control-label">疾病風險</label>
                                 </div>
                                 <div class="col col-md-9">
                                     <select name="selected_disease" id="multiple-select" class="form-control" multiple>
