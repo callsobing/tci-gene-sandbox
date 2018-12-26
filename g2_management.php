@@ -16,9 +16,6 @@ if (isset($_POST['selected_disease']))
     for($j=0 ; $j<$i ; $j++){
         echo($_POST['selected_disease'][$j]);
     }
-} else{
-    $url = $_SERVER['HTTP_REFERER'];
-    echo ("<script> alert('You did not select disease!');document.location.href=\"$url?error=sample_not_selected\";</script>");
 }
 
 
