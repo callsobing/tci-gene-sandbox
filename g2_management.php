@@ -321,7 +321,7 @@ include 'check_login.php';
                 <!-- 有收到資料才show下面欄位 -->
                 <!-- DATA TABLE-->
                 <div class="card">
-                    <table class="sortable">
+                    <table class="sortable" cellpadding="10">
                         <thead>
                         <tr>
                             <th width="15%">會員編號</th>
