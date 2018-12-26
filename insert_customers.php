@@ -23,7 +23,7 @@ while (!feof($file)) {
         '$items[20]', '$items[21]', '$items[22]', '$items[23]', '$items[24]', '$items[25]', '$items[26]', '$items[27]', '$items[28]', '$items[29]',
         '$items[30]', '$items[31]', '$items[32]', '$items[33]', '$items[34]', '$items[35]', '$items[36]', '$items[37]', '$items[38]', '$items[39]',
         '$items[40]', '$items[41]', '$items[42]', '$items[43]', '$items[44]', '$items[45]', '$items[46]', '$items[47]', '$items[48]', '$items[49]',
-        '$items[50]', '$items[51]', '$items[52]', '$items[53]', '$items[54]', '$items[55]', '$items[56]', '$items[57]', '$items[58]', '$items[59]',
+        '$items[50]', '$items[51]', '$items[52]', '$items[53]', '$items[54]', '$items[55]', '$items[56]', '$items[57]', '$items[58]', '$items[59]'
         '$items[60]', '$items[61]', '$items[62]', '$items[63]', '$items[64]', '$items[65]'
         )";
 
