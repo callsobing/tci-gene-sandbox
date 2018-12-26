@@ -244,13 +244,14 @@ include 'check_login.php';
                         <div class="card-body card-block">
                             <form id="pond_form" name="pond_form" action="g2_management.php" method="post" enctype="multipart/form-data" class="form-horizontal" onSubmit="return check_filed(this)">
                                 <div class="col-md-3">
-                                    <p>
+                                    <p><pre>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="肥胖症" class="form-check-input">肥胖症</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="第二型糖尿病" class="form-check-input">第二型糖尿病</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="高血壓" class="form-check-input">高血壓</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="高血脂" class="form-check-input">高血脂</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="高尿酸血症" class="form-check-input">高尿酸血症</label>
-                                    </p><p>
+                                    </pre></p>
+                                    <p>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="冠狀動脈疾病" class="form-check-input">冠狀動脈疾病</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="心房顫動" class="form-check-input">心房顫動</label>
                                     <label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="腦中風" class="form-check-input">腦中風</label>
