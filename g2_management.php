@@ -309,8 +309,8 @@ include 'check_login.php';
                                     </select>
                                     <br>
                                     <div>
-                                        <div><button type="submit" name="submit" id="submit" class="btn btn-primary btn-sm">Submit</button></div>
-                                        <div><button type="reset" class="btn btn-danger btn-sm">Reset</button></div>
+                                        <button type="submit" name="submit" id="submit" class="btn btn-primary btn-sm">Submit</button>
+                                        <button type="reset" class="btn btn-danger btn-sm">Reset</button>
                                     </div>
                             </form>
                         </div>
