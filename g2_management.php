@@ -329,7 +329,7 @@ include 'check_login.php';
                         <div class="col-md-12">
                             <!-- DATA TABLE-->
                             <div class="table-responsive m-b-40">
-                                <table class="table table-borderless table-data3">
+                                <table class="sortable">
                                     <thead>
                                     <tr>
                                         <th width="15%">會員編號</th>
@@ -404,8 +404,8 @@ include 'check_login.php';
 <script src="vendor/circle-progress/circle-progress.min.js"></script>
 <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
 <script src="vendor/chartjs/Chart.bundle.min.js"></script>
-<script src="vendor/select2/select2.min.js">
-</script>
+<script src="vendor/select2/select2.min.js"></script>
+<script src="vendor/sorttable.js"></script>
 
 <!-- Main JS-->
 <script src="js/main.js"></script>
