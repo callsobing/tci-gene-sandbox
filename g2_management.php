@@ -369,7 +369,7 @@ include 'check_login.php';
                     ?>
                     </tbody>
                 </table>
-            <!-- END DATA TABLE-->
+                <!-- END DATA TABLE-->
 
                 <div class="row">
                     <div class="col-md-12">
