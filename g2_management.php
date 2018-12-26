@@ -318,8 +318,10 @@ include 'check_login.php';
                             </form>
                         </div>
                     </div>
+                </div>
 
-                    <!-- 有收到資料才show下面欄位 -->
+                <div class="card">
+                <!-- 有收到資料才show下面欄位 -->
                     <div class="row m-t-30">
                         <div class="col-md-12">
                             <!-- DATA TABLE-->
