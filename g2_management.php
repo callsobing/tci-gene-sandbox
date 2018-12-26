@@ -251,13 +251,7 @@ include 'check_login.php';
                 <div class="container-fluid">
                     <div class="card">
                         <div class="card-header">
-                            <strong><?php
-                                foreach ($_POST['selected_disease'] as $product){
-                                    echo $product . ' was selected <br />';
-                                }
-
-                                ?>
-                                TCI Gene - G2 全檢資料管理</strong>
+                            <strong>TCI Gene - G2 全檢資料管理</strong>
                         </div>
                         <div class="card-body card-block">
                             <form id="pond_form" name="pond_form" action="g2_management.php" method="post" enctype="multipart/form-data" class="form-horizontal">
@@ -335,42 +329,43 @@ include 'check_login.php';
 
                 <!-- 有收到資料才show下面欄位 -->
                 <!-- DATA TABLE-->
-                <table class="sortable">
-                    <thead>
-                    <tr>
-                        <th width="15%">會員編號</th>
-                        <th width="10%">姓名</th>
-                        <th width="15%">性別</th>
-                        <th width="15%">生日</th>
-                        <th width="15%">年齡</th>
-                        <th width="30%">電話</th>
-                        <th width="30%">地址</th>
-                        <th width="30%">備註</th>
-                        <th width="30%">電話</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-                    while($row = mysql_fetch_array($result))
-                    {
-                        $file_name = $row['name'];
-                        $file_size = $row['size'];
-                        $uploader = $row['uploader'];
-                        $memo = $row['memo'];
-                        $date = $row['date'];
-                        echo("<tr>");
-                        echo("<td>$file_name</td>");
-                        echo("<td>$file_size KB</td>");
-                        echo("<td>$date</td>");
-                        echo("<td><a href='$target_dir$file_name' target=\"_blank\">下載</a></td>");
-                        echo("<td>刪除</td>");
-                        echo("<td>$memo</td></tr>");
-                    }
-                    ?>
-                    </tbody>
-                </table>
-                <!-- END DATA TABLE-->
-
+                <div class="card">
+                    <table class="sortable">
+                        <thead>
+                        <tr>
+                            <th width="15%">會員編號</th>
+                            <th width="10%">姓名</th>
+                            <th width="15%">性別</th>
+                            <th width="15%">生日</th>
+                            <th width="15%">年齡</th>
+                            <th width="30%">電話</th>
+                            <th width="30%">地址</th>
+                            <th width="30%">備註</th>
+                            <th width="30%">電話</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        while($row = mysql_fetch_array($result))
+                        {
+                            $file_name = $row['name'];
+                            $file_size = $row['size'];
+                            $uploader = $row['uploader'];
+                            $memo = $row['memo'];
+                            $date = $row['date'];
+                            echo("<tr>");
+                            echo("<td>$file_name</td>");
+                            echo("<td>$file_size KB</td>");
+                            echo("<td>$date</td>");
+                            echo("<td><a href='$target_dir$file_name' target=\"_blank\">下載</a></td>");
+                            echo("<td>刪除</td>");
+                            echo("<td>$memo</td></tr>");
+                        }
+                        ?>
+                        </tbody>
+                    </table>
+                    <!-- END DATA TABLE-->
+                </div>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="copyright">
