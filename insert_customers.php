@@ -12,7 +12,7 @@ $dbpass = "tcigene";
 $dbname = "tci_gene_dashboard";
 $conn = mysql_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connection');
 
-$file = fopen("../private_data/完整會員疾病風險總表_20181226.txt", "r");
+$file = fopen("private_data/完整會員疾病風險總表_20181226.txt", "r");
 while (!feof($file)) {
     $items = preg_split('/\t/', fgets($file));
 
