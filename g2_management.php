@@ -307,7 +307,7 @@ include 'check_login.php';
                                         <option value="膀胱癌">膀胱癌</option>
                                         <option value="淋巴癌">淋巴癌</option>
                                     </select>
-                                    <br>
+                                    <p><br></p>
                                     <div>
                                         <button type="submit" name="submit" id="submit" class="btn btn-primary btn-sm">Submit</button>
                                         <button type="reset" class="btn btn-danger btn-sm">Reset</button>
@@ -327,7 +327,7 @@ include 'check_login.php';
                             <th>會員編號</th>
                             <th>姓名</th>
                             <th>性別</th>
-<!--                            <th width="15%">生日</th>-->
+                            <!-- <th width="15%">生日</th> -->
                             <th>客服</th>
                             <th>年齡</th>
                             <th>電話</th>
