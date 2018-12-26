@@ -243,66 +243,71 @@ include 'check_login.php';
                         </div>
                         <div class="card-body card-block">
                             <form id="pond_form" name="pond_form" action="g2_management.php" method="post" enctype="multipart/form-data" class="form-horizontal" onSubmit="return check_filed(this)">
-                                <div class="col-md-3">
-                                    <p><input type="checkbox" name="disease[]" value="肥胖症" class="form-check-input">肥胖症</p>
-                                    <p><input type="checkbox" name="disease[]" value="第二型糖尿病" class="form-check-input">第二型糖尿病</p>
-                                    <p><input type="checkbox" name="disease[]" value="高血壓" class="form-check-input">高血壓</p>
-                                    <p><input type="checkbox" name="disease[]" value="高血脂" class="form-check-input">高血脂</p>
-                                    <p><input type="checkbox" name="disease[]" value="高尿酸血症" class="form-check-input">高尿酸血症</p>
-                                    <p><input type="checkbox" name="disease[]" value="冠狀動脈疾病" class="form-check-input">冠狀動脈疾病</p>
-                                    <p><input type="checkbox" name="disease[]" value="心房顫動" class="form-check-input">心房顫動</p>
-                                    <p><input type="checkbox" name="disease[]" value="腦中風" class="form-check-input">腦中風</p>
-                                    <p><input type="checkbox" name="disease[]" value="靜脈曲張" class="form-check-input">靜脈曲張</p>
-                                    <p><input type="checkbox" name="disease[]" value="晚發型阿茲海默症" class="form-check-input">晚發型阿茲海默症</p>
-                                    <p><input type="checkbox" name="disease[]" value="帕金森氏症" class="form-check-input">帕金森氏症</p>
-                                    <p><input type="checkbox" name="disease[]" value="退化性關節炎" class="form-check-input">退化性關節炎</p>
-                                    <p><input type="checkbox" name="disease[]" value="骨質疏鬆" class="form-check-input">骨質疏鬆</p>
-                                    <p><input type="checkbox" name="disease[]" value="肌少症" class="form-check-input">肌少症</p>
-                                    <p><input type="checkbox" name="disease[]" value="子宮內膜異位症" class="form-check-input">子宮內膜異位症</p>
-                                    <p><input type="checkbox" name="disease[]" value="子宮肌瘤" class="form-check-input">子宮肌瘤</p>
-                                    <p><input type="checkbox" name="disease[]" value="多囊性卵巢症候群" class="form-check-input">多囊性卵巢症候群</p>
-                                    <p><input type="checkbox" name="disease[]" value="女性尿道感染" class="form-check-input">女性尿道感染</p>
-                                    <p><input type="checkbox" name="disease[]" value="類風濕性關節炎" class="form-check-input">類風濕性關節炎</p>
-                                    <p><input type="checkbox" name="disease[]" value="紅斑性狼瘡" class="form-check-input">紅斑性狼瘡</p>
-                                    <p><input type="checkbox" name="disease[]" value="自體免疫甲狀腺疾病" class="form-check-input">自體免疫甲狀腺疾病</p>
-                                    <p><input type="checkbox" name="disease[]" value="僵直性脊椎炎" class="form-check-input">僵直性脊椎炎</p>
-                                    <p><input type="checkbox" name="disease[]" value="肝硬化" class="form-check-input">肝硬化</p>
-                                    <p><input type="checkbox" name="disease[]" value="脂肪肝" class="form-check-input">脂肪肝</p>
-                                    <p><input type="checkbox" name="disease[]" value="膽石症" class="form-check-input">膽石症</p>
-                                    <p><input type="checkbox" name="disease[]" value="消化性潰瘍" class="form-check-input">消化性潰瘍</p>
-                                    <p><input type="checkbox" name="disease[]" value="大腸息肉症" class="form-check-input">大腸息肉症</p>
-                                    <p><input type="checkbox" name="disease[]" value="胰臟炎" class="form-check-input">胰臟炎</p>
-                                    <p><input type="checkbox" name="disease[]" value="白內障" class="form-check-input">白內障</p>
-                                    <p><input type="checkbox" name="disease[]" value="青光眼" class="form-check-input">青光眼</p>
-                                    <p><input type="checkbox" name="disease[]" value="黃斑部病變" class="form-check-input">黃斑部病變</p>
-                                    <p><input type="checkbox" name="disease[]" value="高度近視" class="form-check-input">高度近視</p>
-                                    <p><input type="checkbox" name="disease[]" value="憂鬱症" class="form-check-input">憂鬱症</p>
-                                    <p><input type="checkbox" name="disease[]" value="躁鬱症" class="form-check-input">躁鬱症</p>
-                                    <p><input type="checkbox" name="disease[]" value="思覺失調症" class="form-check-input">思覺失調症</p>
-                                    <p><input type="checkbox" name="disease[]" value="慢性阻塞性肺病" class="form-check-input">慢性阻塞性肺病</p>
-                                    <p><input type="checkbox" name="disease[]" value="攝護腺肥大" class="form-check-input">攝護腺肥大</p>
-                                    <p><input type="checkbox" name="disease[]" value="腎結石" class="form-check-input">腎結石</p>
-                                    <p><input type="checkbox" name="disease[]" value="腎衰竭" class="form-check-input">腎衰竭</p>
-                                    <p><input type="checkbox" name="disease[]" value="氣喘" class="form-check-input">氣喘</p>
-                                    <p><input type="checkbox" name="disease[]" value="過敏性鼻炎" class="form-check-input">過敏性鼻炎</p>
-                                    <p><input type="checkbox" name="disease[]" value="異位性皮膚炎" class="form-check-input">異位性皮膚炎</p>
-                                    <p><input type="checkbox" name="disease[]" value="乾癬" class="form-check-input">乾癬</p>
-                                    <p><input type="checkbox" name="disease[]" value="牙周病" class="form-check-input">牙周病</p>
-                                    <p><input type="checkbox" name="disease[]" value="口腔癌" class="form-check-input">口腔癌</p>
-                                    <p><input type="checkbox" name="disease[]" value="鼻咽癌" class="form-check-input">鼻咽癌</p>
-                                    <p><input type="checkbox" name="disease[]" value="食道癌" class="form-check-input">食道癌</p>
-                                    <p><input type="checkbox" name="disease[]" value="肺癌" class="form-check-input">肺癌</p>
-                                    <p><input type="checkbox" name="disease[]" value="胃癌" class="form-check-input">胃癌</p>
-                                    <p><input type="checkbox" name="disease[]" value="肝癌" class="form-check-input">肝癌</p>
-                                    <p><input type="checkbox" name="disease[]" value="大腸癌" class="form-check-input">大腸癌</p>
-                                    <p><input type="checkbox" name="disease[]" value="胰臟癌" class="form-check-input">胰臟癌</p>
-                                    <p><input type="checkbox" name="disease[]" value="乳癌" class="form-check-input">乳癌</p>
-                                    <p><input type="checkbox" name="disease[]" value="卵巢癌" class="form-check-input">卵巢癌</p>
-                                    <p><input type="checkbox" name="disease[]" value="子宮頸癌" class="form-check-input">子宮頸癌</p>
-                                    <p><input type="checkbox" name="disease[]" value="攝護腺癌" class="form-check-input">攝護腺癌</p>
-                                    <p><input type="checkbox" name="disease[]" value="膀胱癌" class="form-check-input">膀胱癌</p>
-                                    <p><input type="checkbox" name="disease[]" value="淋巴癌" class="form-check-input">淋巴癌</p>
-                                    </p>
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label for="multiple-select" class=" form-control-label">疾病風險</label>
+                                </div>
+                                <div class="col col-md-9">
+                                    <select name="disease[]" id="multiple-select" multiple="" class="form-control">
+                                        <option value="肥胖症">肥胖症</option>
+                                        <option value="第二型糖尿病">第二型糖尿病</option>
+                                        <option value="高血壓">高血壓</option>
+                                        <option value="高血脂">高血脂</option>
+                                        <option value="高尿酸血症">高尿酸血症</option>
+                                        <option value="冠狀動脈疾病">冠狀動脈疾病</option>
+                                        <option value="心房顫動">心房顫動</option>
+                                        <option value="腦中風">腦中風</option>
+                                        <option value="靜脈曲張">靜脈曲張</option>
+                                        <option value="晚發型阿茲海默症">晚發型阿茲海默症</option>
+                                        <option value="帕金森氏症">帕金森氏症</option>
+                                        <option value="退化性關節炎">退化性關節炎</option>
+                                        <option value="骨質疏鬆">骨質疏鬆</option>
+                                        <option value="肌少症">肌少症</option>
+                                        <option value="子宮內膜異位症">子宮內膜異位症</option>
+                                        <option value="子宮肌瘤">子宮肌瘤</option>
+                                        <option value="多囊性卵巢症候群">多囊性卵巢症候群</option>
+                                        <option value="女性尿道感染">女性尿道感染</option>
+                                        <option value="類風濕性關節炎">類風濕性關節炎</option>
+                                        <option value="紅斑性狼瘡">紅斑性狼瘡</option>
+                                        <option value="自體免疫甲狀腺疾病">自體免疫甲狀腺疾病</option>
+                                        <option value="僵直性脊椎炎">僵直性脊椎炎</option>
+                                        <option value="肝硬化">肝硬化</option>
+                                        <option value="脂肪肝">脂肪肝</option>
+                                        <option value="膽石症">膽石症</option>
+                                        <option value="消化性潰瘍">消化性潰瘍</option>
+                                        <option value="大腸息肉症">大腸息肉症</option>
+                                        <option value="胰臟炎">胰臟炎</option>
+                                        <option value="白內障">白內障</option>
+                                        <option value="青光眼">青光眼</option>
+                                        <option value="黃斑部病變">黃斑部病變</option>
+                                        <option value="高度近視">高度近視</option>
+                                        <option value="憂鬱症">憂鬱症</option>
+                                        <option value="躁鬱症">躁鬱症</option>
+                                        <option value="思覺失調症">思覺失調症</option>
+                                        <option value="慢性阻塞性肺病">慢性阻塞性肺病</option>
+                                        <option value="攝護腺肥大">攝護腺肥大</option>
+                                        <option value="腎結石">腎結石</option>
+                                        <option value="腎衰竭">腎衰竭</option>
+                                        <option value="氣喘">氣喘</option>
+                                        <option value="過敏性鼻炎">過敏性鼻炎</option>
+                                        <option value="異位性皮膚炎">異位性皮膚炎</option>
+                                        <option value="乾癬">乾癬</option>
+                                        <option value="牙周病">牙周病</option>
+                                        <option value="口腔癌">口腔癌</option>
+                                        <option value="鼻咽癌">鼻咽癌</option>
+                                        <option value="食道癌">食道癌</option>
+                                        <option value="肺癌">肺癌</option>
+                                        <option value="胃癌">胃癌</option>
+                                        <option value="肝癌">肝癌</option>
+                                        <option value="大腸癌">大腸癌</option>
+                                        <option value="胰臟癌">胰臟癌</option>
+                                        <option value="乳癌">乳癌</option>
+                                        <option value="卵巢癌">卵巢癌</option>
+                                        <option value="子宮頸癌">子宮頸癌</option>
+                                        <option value="攝護腺癌">攝護腺癌</option>
+                                        <option value="膀胱癌">膀胱癌</option>
+                                        <option value="淋巴癌">淋巴癌</option>
+                                    </select>
                                 </div>
                                 <div class="row form-group">
                                     <div class="col col-md-3">
