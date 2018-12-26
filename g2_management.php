@@ -319,7 +319,7 @@ include 'check_login.php';
 
                 <!-- 有收到資料才show下面欄位 -->
                 <!-- DATA TABLE-->
-                <p align="right"><button onclick="exportTableToExcel('customer_Data')" class="button"><span>輸出為xls檔案</span></button></p>
+                <p align="right"><button onclick="exportTableToExcel('customer_Data')" class="button" formtarget="_blank"><span>輸出為xls檔案</span></button></p>
                 <div class="card">
                     <table class="sortable" cellpadding="10" id="customer_Data">
                         <thead>
