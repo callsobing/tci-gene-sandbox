@@ -312,12 +312,10 @@ include 'check_login.php';
                                     <option value="膀胱癌">膀胱癌</option>
                                     <option value="淋巴癌">淋巴癌</option>
                                 </select>
-                                <p>
                                 <div class="row form-group">
                                     <button type="submit" name="submit" id="submit" class="btn btn-primary btn-sm">Submit</button>
                                     <button type="reset" class="btn btn-danger btn-sm">Reset</button>
                                 </div>
-                                </p>
                             </div>
                             </form>
                         </div>
@@ -327,10 +325,10 @@ include 'check_login.php';
                 <div class="card">
                 <!-- 有收到資料才show下面欄位 -->
                     <!-- DATA TABLE-->
-                    <table id="data_table" class="table table-borderless table-data3">
+                    <table id="data_table" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                         <tr>
-                            <th width="15%" data-sortable="true">會員編號</th>
+                            <th width="15%">會員編號</th>
                             <th width="10%">姓名</th>
                             <th width="15%">性別</th>
                             <th width="15%">生日</th>
