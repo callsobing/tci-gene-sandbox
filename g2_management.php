@@ -324,19 +324,20 @@ include 'check_login.php';
                     <table class="sortable" cellpadding="10">
                         <thead>
                         <tr>
-                            <th width="15%">會員編號</th>
-                            <th width="10%">姓名</th>
-                            <th width="15%">性別</th>
-                            <th width="15%">生日</th>
-                            <th width="15%">年齡</th>
-                            <th width="30%">電話</th>
-                            <th width="30%">備註</th>
+                            <th>會員編號</th>
+                            <th>姓名</th>
+                            <th>性別</th>
+<!--                            <th width="15%">生日</th>-->
+                            <th>客服</th>
+                            <th>年齡</th>
+                            <th>電話</th>
+                            <th>備註</th>
                             <?php
                             if (isset($_POST['selected_disease']))
                             {
                                 $i=count($_POST['selected_disease']);
                                 for($j=0 ; $j<$i ; $j++) {
-                                    echo("<th width=\"30%\">".$_POST["selected_disease"][$j]."</th>");
+                                    echo("<th>".$_POST["selected_disease"][$j]."</th>");
                                 }
                             }
                             ?>
@@ -349,6 +350,7 @@ include 'check_login.php';
                         while($row = mysql_fetch_array($result))
                         {
                             $member_id = $row['會員編號'];
+                            $cs_id = $row['客服'];
                             $name = $row['姓名'];
                             $gender = $row['性別'];
                             $bd = $row['生日'];
@@ -359,7 +361,8 @@ include 'check_login.php';
                             echo("<td>$member_id</td>");
                             echo("<td>$name</td>");
                             echo("<td>$gender</td>");
-                            echo("<td>$bd</td>");
+//                            echo("<td>$bd</td>");
+                            echo("<td>$cs_id</td>");
                             echo("<td>$age</td>");
                             echo("<td>$phone</td>");
                             echo("<td>$memo</td>");
