@@ -245,11 +245,11 @@ include 'check_login.php';
                             <form id="pond_form" name="pond_form" action="g2_management.php" method="post" enctype="multipart/form-data" class="form-horizontal" onSubmit="return check_filed(this)">
                                 <div class="col-md-3">
                                     <tr>
-                                        <td><label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="肥胖症" class="form-check-input">肥胖症</label></td>
-                                        <td><label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="第二型糖尿病" class="form-check-input">第二型糖尿病</label></td>
-                                        <td><label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="高血壓" class="form-check-input">高血壓</label></td>
-                                        <td><label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="高血脂" class="form-check-input">高血脂</label></td>
-                                        <td><label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="高尿酸血症" class="form-check-input">高尿酸血症</label></td>
+                                        <td><label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="肥胖症" class="form-check-input"><p>肥胖症</p></label></td>
+                                        <td><label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="第二型糖尿病" class="form-check-input"><p>第二型糖尿病</p></label></td>
+                                        <td><label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="高血壓" class="form-check-input"><p>高血壓</p></label></td>
+                                        <td><label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="高血脂" class="form-check-input"><p>高血脂</p></label></td>
+                                        <td><label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="高尿酸血症" class="form-check-input"><p>高尿酸血症</p></label></td>
                                     </tr>
                                     <tr>
                                     <td><label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="冠狀動脈疾病" class="form-check-input">冠狀動脈疾病</label></td>
@@ -258,13 +258,12 @@ include 'check_login.php';
                                     <td><label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="靜脈曲張" class="form-check-input">靜脈曲張</label></td>
                                     <td><label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="晚發型阿茲海默症" class="form-check-input">晚發型阿茲海默症</label></td>
                                     </tr>
-                                    <tr><pre>
+                                    <tr>
                                     <td><label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="帕金森氏症" class="form-check-input">帕金森氏症</label></td>
                                     <td><label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="退化性關節炎" class="form-check-input">退化性關節炎</label></td>
                                     <td><label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="骨質疏鬆" class="form-check-input">骨質疏鬆</label></td>
                                     <td><label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="肌少症" class="form-check-input">肌少症</label></td>
                                     <td><label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="子宮內膜異位症" class="form-check-input">子宮內膜異位症</label></td></tr>
-                                    </pre>
                                     <tr>
                                     <td><label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="子宮肌瘤" class="form-check-input">子宮肌瘤</label></td>
                                     <td><label for="checkbox" class="form-check-label "><input type="checkbox" name="disease[]" value="多囊性卵巢症候群" class="form-check-input">多囊性卵巢症候群</label></td>
