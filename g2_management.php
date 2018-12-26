@@ -9,13 +9,26 @@ $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "tcigene";
 $dbname = "tci_gene_dashboard";
+
+if (isset($_POST['selected_disease']))
+{
+    $i=count($_POST['selected_disease']);
+    for($j=0 ; $j<$i ; $j++){
+        echo($_POST['selected_disease'][$j]);
+    }
+} else{
+    $url = $_SERVER['HTTP_REFERER'];
+    echo ("<script> alert('You did not select disease!');document.location.href=\"$url?error=sample_not_selected\";</script>");
+}
+
+
 $conn = mysql_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connection');
 mysql_query("SET NAMES 'utf8'");
 mysql_select_db($dbname);
 $userid = $_COOKIE['user'];
 $sql = "SELECT * FROM `uploaded_files` WHERE `uploader` = '$userid'";
 $result = mysql_query($sql);
-$target_dir = "uploaded_files/". $userid ."/";
+
 
 $file_name = "";
 $file_size = 0;
