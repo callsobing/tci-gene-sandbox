@@ -242,24 +242,21 @@ include 'check_login.php';
                     <div class="card">
                         <div class="card-header">
                             <strong><?php
-                            if (isset($_POST['selected_disease']))
-{
-    $i=count($_POST['selected_disease']);
-    for($j=0 ; $j<$i ; $j++){
-        echo($_POST['selected_disease'][$j]);
-    }
-}
-                            ?>
+                                foreach ($_POST['multiple_select'] as $product){
+                                    echo $product . ' was selected <br />';
+                                }
+
+                                ?>
                             TCI Gene - G2 全檢資料管理</strong>
                         </div>
                         <div class="card-body card-block">
                             <form id="pond_form" name="pond_form" action="g2_management.php" method="post" enctype="multipart/form-data" class="form-horizontal" onSubmit="return check_filed(this)">
                             <div class="row form-group">
                                 <div class="col col-md-3">
-                                    <label for="multiple-select" class=" form-control-label">疾病風險</label>
+                                    <label for="multiple_select" class=" form-control-label">疾病風險</label>
                                 </div>
                                 <div class="col col-md-9">
-                                    <select name="selected_disease" id="multiple-select" multiple="" class="form-control" >
+                                    <select name="selected_disease" id="multiple-select" class="form-control" multiple>
                                         <option value="肥胖症">肥胖症</option>
                                         <option value="第二型糖尿病">第二型糖尿病</option>
                                         <option value="高血壓">高血壓</option>
