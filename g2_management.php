@@ -10,14 +10,6 @@ $dbuser = "root";
 $dbpass = "tcigene";
 $dbname = "tci_gene_dashboard";
 
-if (isset($_POST['selected_disease']))
-{
-    $i=count($_POST['selected_disease']);
-    for($j=0 ; $j<$i ; $j++){
-        echo($_POST['selected_disease'][$j]);
-    }
-}
-
 
 $conn = mysql_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connection');
 mysql_query("SET NAMES 'utf8'");
@@ -249,7 +241,16 @@ include 'check_login.php';
                 <div class="container-fluid">
                     <div class="card">
                         <div class="card-header">
-                            <strong>TCI Gene - G2 全檢資料管理</strong>
+                            <strong><?php
+                            if (isset($_POST['selected_disease']))
+{
+    $i=count($_POST['selected_disease']);
+    for($j=0 ; $j<$i ; $j++){
+        echo($_POST['selected_disease'][$j]);
+    }
+}
+                            ?>
+                            TCI Gene - G2 全檢資料管理</strong>
                         </div>
                         <div class="card-body card-block">
                             <form id="pond_form" name="pond_form" action="g2_management.php" method="post" enctype="multipart/form-data" class="form-horizontal" onSubmit="return check_filed(this)">
