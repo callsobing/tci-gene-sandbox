@@ -326,7 +326,7 @@ include 'check_login.php';
                         <table class="table table-borderless table-data3">
                             <thead>
                             <tr>
-                                <th width="15%">會員編號</th>
+                                <th width="15%" data-sortable="true">會員編號</th>
                                 <th width="10%">姓名</th>
                                 <th width="15%">性別</th>
                                 <th width="15%">生日</th>
