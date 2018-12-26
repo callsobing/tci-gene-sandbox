@@ -456,17 +456,17 @@ include 'check_login.php';
 <style>
     .button {
         display: inline-block;
-        border-radius: 4px;
+        border-radius: 2px;
         background-color: #f4511e;
         border: none;
         color: #FFFFFF;
         text-align: center;
-        font-size: 28px;
-        padding: 20px;
-        width: 200px;
-        transition: all 0.5s;
+        font-size: 12px;
+        padding: 4px;
+        width: 80px;
+        transition: all 0.2s;
         cursor: pointer;
-        margin: 5px;
+        margin: 2px;
     }
 
     .button span {
@@ -486,7 +486,7 @@ include 'check_login.php';
     }
 
     .button:hover span {
-        padding-right: 25px;
+        padding-right: 20px;
     }
 
     .button:hover span:after {
