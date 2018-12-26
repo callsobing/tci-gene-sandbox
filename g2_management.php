@@ -321,7 +321,7 @@ include 'check_login.php';
                 <!-- DATA TABLE-->
                 <p align="right"><button onclick="exportTableToExcel('customer_Data')" class="button" formtarget="_blank"><span>輸出為xls檔案</span></button></p>
                 <div class="card">
-                    <table class="sortable" cellpadding="2px" id="customer_Data" border="2px">
+                    <table class="sortable" id="customer_Data">
                         <thead>
                         <tr>
                             <th>會員編號</th>
