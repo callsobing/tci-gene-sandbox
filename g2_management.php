@@ -252,7 +252,7 @@ include 'check_login.php';
                         <div class="card-body card-block">
                             <form id="pond_form" name="pond_form" action="g2_management.php" method="post" enctype="multipart/form-data" class="form-horizontal">
                             <div class="row form-group">
-                                <select multiple name="selected_disease" id="selected_disease" class="form-control">
+                                <select multiple name="selected_disease[]" class="form-control">
                                     <option value="肥胖症">肥胖症</option>
                                     <option value="第二型糖尿病">第二型糖尿病</option>
                                     <option value="高血壓">高血壓</option>
