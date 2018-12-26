@@ -250,73 +250,68 @@ include 'check_login.php';
                             TCI Gene - G2 全檢資料管理</strong>
                         </div>
                         <div class="card-body card-block">
-                            <form id="pond_form" name="pond_form" action="g2_management.php" method="post" enctype="multipart/form-data" class="form-horizontal" onSubmit="return check_filed(this)">
+                            <form id="pond_form" name="pond_form" action="g2_management.php" method="post" enctype="multipart/form-data" class="form-horizontal">
                             <div class="row form-group">
-                                <div class="col col-md-3">
-                                    <label for="selected_disease" class=" form-control-label">疾病風險</label>
-                                </div>
-                                <div class="col col-md-9">
-                                    <select name="selected_disease" id="selected_disease" class="form-control" multiple>
-                                        <option value="肥胖症">肥胖症</option>
-                                        <option value="第二型糖尿病">第二型糖尿病</option>
-                                        <option value="高血壓">高血壓</option>
-                                        <option value="高血脂">高血脂</option>
-                                        <option value="高尿酸血症">高尿酸血症</option>
-                                        <option value="冠狀動脈疾病">冠狀動脈疾病</option>
-                                        <option value="心房顫動">心房顫動</option>
-                                        <option value="腦中風">腦中風</option>
-                                        <option value="靜脈曲張">靜脈曲張</option>
-                                        <option value="晚發型阿茲海默症">晚發型阿茲海默症</option>
-                                        <option value="帕金森氏症">帕金森氏症</option>
-                                        <option value="退化性關節炎">退化性關節炎</option>
-                                        <option value="骨質疏鬆">骨質疏鬆</option>
-                                        <option value="肌少症">肌少症</option>
-                                        <option value="子宮內膜異位症">子宮內膜異位症</option>
-                                        <option value="子宮肌瘤">子宮肌瘤</option>
-                                        <option value="多囊性卵巢症候群">多囊性卵巢症候群</option>
-                                        <option value="女性尿道感染">女性尿道感染</option>
-                                        <option value="類風濕性關節炎">類風濕性關節炎</option>
-                                        <option value="紅斑性狼瘡">紅斑性狼瘡</option>
-                                        <option value="自體免疫甲狀腺疾病">自體免疫甲狀腺疾病</option>
-                                        <option value="僵直性脊椎炎">僵直性脊椎炎</option>
-                                        <option value="肝硬化">肝硬化</option>
-                                        <option value="脂肪肝">脂肪肝</option>
-                                        <option value="膽石症">膽石症</option>
-                                        <option value="消化性潰瘍">消化性潰瘍</option>
-                                        <option value="大腸息肉症">大腸息肉症</option>
-                                        <option value="胰臟炎">胰臟炎</option>
-                                        <option value="白內障">白內障</option>
-                                        <option value="青光眼">青光眼</option>
-                                        <option value="黃斑部病變">黃斑部病變</option>
-                                        <option value="高度近視">高度近視</option>
-                                        <option value="憂鬱症">憂鬱症</option>
-                                        <option value="躁鬱症">躁鬱症</option>
-                                        <option value="思覺失調症">思覺失調症</option>
-                                        <option value="慢性阻塞性肺病">慢性阻塞性肺病</option>
-                                        <option value="攝護腺肥大">攝護腺肥大</option>
-                                        <option value="腎結石">腎結石</option>
-                                        <option value="腎衰竭">腎衰竭</option>
-                                        <option value="氣喘">氣喘</option>
-                                        <option value="過敏性鼻炎">過敏性鼻炎</option>
-                                        <option value="異位性皮膚炎">異位性皮膚炎</option>
-                                        <option value="乾癬">乾癬</option>
-                                        <option value="牙周病">牙周病</option>
-                                        <option value="口腔癌">口腔癌</option>
-                                        <option value="鼻咽癌">鼻咽癌</option>
-                                        <option value="食道癌">食道癌</option>
-                                        <option value="肺癌">肺癌</option>
-                                        <option value="胃癌">胃癌</option>
-                                        <option value="肝癌">肝癌</option>
-                                        <option value="大腸癌">大腸癌</option>
-                                        <option value="胰臟癌">胰臟癌</option>
-                                        <option value="乳癌">乳癌</option>
-                                        <option value="卵巢癌">卵巢癌</option>
-                                        <option value="子宮頸癌">子宮頸癌</option>
-                                        <option value="攝護腺癌">攝護腺癌</option>
-                                        <option value="膀胱癌">膀胱癌</option>
-                                        <option value="淋巴癌">淋巴癌</option>
-                                    </select>
-                                </div>
+                                <select multiple name="selected_disease" class="form-control">
+                                    <option value="肥胖症">肥胖症</option>
+                                    <option value="第二型糖尿病">第二型糖尿病</option>
+                                    <option value="高血壓">高血壓</option>
+                                    <option value="高血脂">高血脂</option>
+                                    <option value="高尿酸血症">高尿酸血症</option>
+                                    <option value="冠狀動脈疾病">冠狀動脈疾病</option>
+                                    <option value="心房顫動">心房顫動</option>
+                                    <option value="腦中風">腦中風</option>
+                                    <option value="靜脈曲張">靜脈曲張</option>
+                                    <option value="晚發型阿茲海默症">晚發型阿茲海默症</option>
+                                    <option value="帕金森氏症">帕金森氏症</option>
+                                    <option value="退化性關節炎">退化性關節炎</option>
+                                    <option value="骨質疏鬆">骨質疏鬆</option>
+                                    <option value="肌少症">肌少症</option>
+                                    <option value="子宮內膜異位症">子宮內膜異位症</option>
+                                    <option value="子宮肌瘤">子宮肌瘤</option>
+                                    <option value="多囊性卵巢症候群">多囊性卵巢症候群</option>
+                                    <option value="女性尿道感染">女性尿道感染</option>
+                                    <option value="類風濕性關節炎">類風濕性關節炎</option>
+                                    <option value="紅斑性狼瘡">紅斑性狼瘡</option>
+                                    <option value="自體免疫甲狀腺疾病">自體免疫甲狀腺疾病</option>
+                                    <option value="僵直性脊椎炎">僵直性脊椎炎</option>
+                                    <option value="肝硬化">肝硬化</option>
+                                    <option value="脂肪肝">脂肪肝</option>
+                                    <option value="膽石症">膽石症</option>
+                                    <option value="消化性潰瘍">消化性潰瘍</option>
+                                    <option value="大腸息肉症">大腸息肉症</option>
+                                    <option value="胰臟炎">胰臟炎</option>
+                                    <option value="白內障">白內障</option>
+                                    <option value="青光眼">青光眼</option>
+                                    <option value="黃斑部病變">黃斑部病變</option>
+                                    <option value="高度近視">高度近視</option>
+                                    <option value="憂鬱症">憂鬱症</option>
+                                    <option value="躁鬱症">躁鬱症</option>
+                                    <option value="思覺失調症">思覺失調症</option>
+                                    <option value="慢性阻塞性肺病">慢性阻塞性肺病</option>
+                                    <option value="攝護腺肥大">攝護腺肥大</option>
+                                    <option value="腎結石">腎結石</option>
+                                    <option value="腎衰竭">腎衰竭</option>
+                                    <option value="氣喘">氣喘</option>
+                                    <option value="過敏性鼻炎">過敏性鼻炎</option>
+                                    <option value="異位性皮膚炎">異位性皮膚炎</option>
+                                    <option value="乾癬">乾癬</option>
+                                    <option value="牙周病">牙周病</option>
+                                    <option value="口腔癌">口腔癌</option>
+                                    <option value="鼻咽癌">鼻咽癌</option>
+                                    <option value="食道癌">食道癌</option>
+                                    <option value="肺癌">肺癌</option>
+                                    <option value="胃癌">胃癌</option>
+                                    <option value="肝癌">肝癌</option>
+                                    <option value="大腸癌">大腸癌</option>
+                                    <option value="胰臟癌">胰臟癌</option>
+                                    <option value="乳癌">乳癌</option>
+                                    <option value="卵巢癌">卵巢癌</option>
+                                    <option value="子宮頸癌">子宮頸癌</option>
+                                    <option value="攝護腺癌">攝護腺癌</option>
+                                    <option value="膀胱癌">膀胱癌</option>
+                                    <option value="淋巴癌">淋巴癌</option>
+                                </select>
                                 <div class="row form-group">
                                     <div class="col col-md-3">
                                         <button type="submit" name="submit" id="submit" class="btn btn-primary btn-sm">Submit</button>
@@ -415,21 +410,6 @@ include 'check_login.php';
 <!-- Main JS-->
 <script src="js/main.js"></script>
 <!-- 檢查表單正確性  -->
-<script>
-    function check_filed(form){
-        if(form.title.value==""){
-            alert("你累了嗎，記得填寫主旨喔!!!");
-            eval("form['title'].focus()");
-            return false;
-        }else if(form.content.value==""){
-            alert("如果把心願放在心裡面，我是不知道你到底需要什麼的...\n記得填內容阿前輩!");
-            eval("form['content'].focus()");
-            return false;
-        }else{
-            return true;
-        }
-    }
-</script>
 
 </body>
 
