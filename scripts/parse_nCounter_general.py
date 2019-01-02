@@ -172,7 +172,7 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
     label_significance(x_pos[2], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c1t2"]["fold_change"], errors[1][2], ymax)
     label_significance(x_pos[3], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c2t1"]["fold_change"], errors[1][3], ymax)
     label_significance(x_pos[4], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c2t2"]["fold_change"], errors[1][4], ymax)
-    plt.savefig("reports/%s/%s/%s.png" % (user_id, report_uuid, gene), bbox_extra_artists=(lgd,), bbox_inches='tight')
+    fig.savefig("reports/%s/%s/%s.png" % (user_id, report_uuid, gene), bbox_extra_artists=(lgd,), bbox_inches='tight')
     plt.cla()
     plt.close(fig)
 
