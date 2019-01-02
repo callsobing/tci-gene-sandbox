@@ -146,7 +146,7 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
     fig, ax = plt.subplots()
     # plt.figure(figsize=(6, 7))
 
-    colors = "bgrcmykw"
+    colors = ["#1AA7AD", "#35BEC0", "#78C0E0", "#192BC2", "#150578"]
     plt.bar(x_pos, means, 1.0, color=colors, align='center', linewidth=0)
     plotline1, caplines1, barlinecols1 = ax.errorbar(x_pos, means, yerr=errors, lolims=True, ls='None', color='black', barsabove=True)
 
