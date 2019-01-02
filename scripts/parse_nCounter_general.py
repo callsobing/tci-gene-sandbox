@@ -149,7 +149,7 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
     colors = ["#3D3A4B", "#705D56", "#B19994", "#D3C0CD", "#E3DFFF"]
     plt.bar(x_pos, means, 1.0, color=colors, align='center', linewidth=0)
     plotline1, caplines1, barlinecols1 = ax.errorbar(x_pos, means, yerr=errors, lolims=True, ls='None', color='black', barsabove=True)
-    lgd = plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0., labels=labels)
+    # lgd = plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0., labels=labels)
 
     caplines1[0].set_marker('.')
     caplines1[2].set_marker('_')
@@ -163,7 +163,7 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
     ax.yaxis.set_ticks_position('left')
     ax.xaxis.set_ticks_position('bottom')
     plt.xticks(x_pos, labels, color='k', fontsize="x-large")
-    plt.xticks()
+    # plt.xticks()
     plt.yticks(fontsize="x-large")
     plt.gca(). spines['right'].set_visible(False)
     plt.gca().spines['top'].set_visible(False)
@@ -172,7 +172,7 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
     label_significance(x_pos[2], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c1t2"]["fold_change"], errors[1][2], ymax)
     label_significance(x_pos[3], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c2t1"]["fold_change"], errors[1][3], ymax)
     label_significance(x_pos[4], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c2t2"]["fold_change"], errors[1][4], ymax)
-    fig.savefig("reports/%s/%s/%s.png" % (user_id, report_uuid, gene), bbox_extra_artists=(lgd,), bbox_inches='tight')
+    fig.savefig("reports/%s/%s/%s.png" % (user_id, report_uuid, gene))
     plt.cla()
     plt.close(fig)
 
