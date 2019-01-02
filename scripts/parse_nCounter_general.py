@@ -76,19 +76,27 @@ def platform_score(gene_details_map):
                 continue
             gene_count += 1
             mock_mean = gene_details_map[gene]["mock"]["fold_change"]
-            cond1_mean = gene_details_map[gene]["cond1"]["fold_change"]
-            cond2_mean = gene_details_map[gene]["cond2"]["fold_change"]
-            score_sum += significance_score(mock_mean, cond1_mean) * expression_direction_score(1, cond1_mean)
-            score_sum += significance_score(mock_mean, cond2_mean) * expression_direction_score(1, cond2_mean)
+            c1t1_mean = gene_details_map[gene]["c1t1"]["fold_change"]
+            c1t2_mean = gene_details_map[gene]["c1t2"]["fold_change"]
+            c2t1_mean = gene_details_map[gene]["c2t1"]["fold_change"]
+            c2t2_mean = gene_details_map[gene]["c2t2"]["fold_change"]
+            score_sum += significance_score(mock_mean, c1t1_mean) * expression_direction_score(1, c1t1_mean)
+            score_sum += significance_score(mock_mean, c1t2_mean) * expression_direction_score(1, c1t2_mean)
+            score_sum += significance_score(mock_mean, c2t1_mean) * expression_direction_score(1, c2t1_mean)
+            score_sum += significance_score(mock_mean, c2t2_mean) * expression_direction_score(1, c2t2_mean)
         for gene in platforms[platform]['down']:
             if gene not in gene_details_map:
                 continue
             gene_count += 1
             mock_mean = gene_details_map[gene]["mock"]["fold_change"]
-            cond1_mean = gene_details_map[gene]["cond1"]["fold_change"]
-            cond2_mean = gene_details_map[gene]["cond2"]["fold_change"]
-            score_sum += significance_score(mock_mean, cond1_mean) * expression_direction_score(-1, cond1_mean)
-            score_sum += significance_score(mock_mean, cond2_mean) * expression_direction_score(-1, cond2_mean)
+            c1t1_mean = gene_details_map[gene]["c1t1"]["fold_change"]
+            c1t2_mean = gene_details_map[gene]["c1t2"]["fold_change"]
+            c2t1_mean = gene_details_map[gene]["c2t1"]["fold_change"]
+            c2t2_mean = gene_details_map[gene]["c2t2"]["fold_change"]
+            score_sum += significance_score(mock_mean, c1t1_mean) * expression_direction_score(1, c1t1_mean)
+            score_sum += significance_score(mock_mean, c1t2_mean) * expression_direction_score(1, c1t2_mean)
+            score_sum += significance_score(mock_mean, c2t1_mean) * expression_direction_score(1, c2t1_mean)
+            score_sum += significance_score(mock_mean, c2t2_mean) * expression_direction_score(1, c2t2_mean)
         if score_sum < 0:
             output_fh.write("%s\t0\n" % platform)
         else:
@@ -122,19 +130,23 @@ def label_significance(pos_in_fig, mean1, mean2, std, ymax):
 
 def plot_gene(gene_details_map, gene, user_id, report_uuid):
     mock_mean = average(gene_details_map[gene]["mock"]["fold_change"])
-    mean_6h1 = average(gene_details_map[gene]["cond1"]["fold_change"])
-    mean_6h2 = average(gene_details_map[gene]["cond2"]["fold_change"])
-    x_pos = (0.5, 1.5, 2.5)
-    means = (mock_mean, mean_6h1, mean_6h2)
-    errors = [[0, 0, 0], [gene_details_map[gene]["mock"]["std"]/2,
-              gene_details_map[gene]["cond1"]["std"]/2,
-              gene_details_map[gene]["cond2"]["std"]/2]]
+    mean_c1t1 = average(gene_details_map[gene]["c1t1"]["fold_change"])
+    mean_c1t2 = average(gene_details_map[gene]["c1t2"]["fold_change"])
+    mean_c2t1 = average(gene_details_map[gene]["c2t1"]["fold_change"])
+    mean_c2t2 = average(gene_details_map[gene]["c2t2"]["fold_change"])
+    x_pos = (0.5, 1.5, 2.5, 3.5, 4.5)
+    means = (mock_mean, mean_c1t1, mean_c1t2, mean_c2t1, mean_c2t2)
+    errors = [[0, 0, 0, 0, 0], [gene_details_map[gene]["mock"]["std"]/2,
+              gene_details_map[gene]["c1t1"]["std"]/2,
+              gene_details_map[gene]["c1t2"]["std"]/2,
+              gene_details_map[gene]["c2t1"]["std"]/2,
+              gene_details_map[gene]["c2t2"]["std"]/2]]
 
     labels = ('mock', 'cond1', 'cond2')
     fig, ax = plt.subplots()
     # plt.figure(figsize=(6, 7))
 
-    plt.bar(x_pos, means, 0.7, color='lightskyblue', align='center', linewidth=0)
+    plt.bar(x_pos, means, 1.0, color='lightskyblue', align='center', linewidth=0)
     plotline1, caplines1, barlinecols1 = ax.errorbar(x_pos, means, yerr=errors, lolims=True, ls='None', color='black', barsabove=True)
 
     caplines1[0].set_marker('.')
@@ -153,8 +165,10 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
     plt.gca(). spines['right'].set_visible(False)
     plt.gca().spines['top'].set_visible(False)
 
-    label_significance(x_pos[1], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["cond1"]["fold_change"], errors[1][1], ymax)
-    label_significance(x_pos[2], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["cond2"]["fold_change"], errors[1][2], ymax)
+    label_significance(x_pos[1], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c1t1"]["fold_change"], errors[1][1], ymax)
+    label_significance(x_pos[2], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c1t2"]["fold_change"], errors[1][2], ymax)
+    label_significance(x_pos[1], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c2t1"]["fold_change"], errors[1][3], ymax)
+    label_significance(x_pos[2], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c2t2"]["fold_change"], errors[1][4], ymax)
     plt.savefig("reports/%s/%s/%s.png" % (user_id, report_uuid, gene))
     plt.cla()
     plt.close(fig)
@@ -162,8 +176,10 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
 
 selected_sample_fh = open(samples_fh)
 mock_samples = []
-cond1_samples = []
-cond2_samples = []
+c1t1_samples = []
+c1t2_samples = []
+c2t1_samples = []
+c2t2_samples = []
 count = 0
 for line in selected_sample_fh:
     line = line.rstrip()
@@ -173,11 +189,19 @@ for line in selected_sample_fh:
         count += 1
         continue
     if count == 1:
-        cond1_samples = splitted
+        c1t1_samples = splitted
         count += 1
         continue
     if count == 2:
-        cond2_samples = splitted
+        c1t2_samples = splitted
+        count += 1
+        continue
+    if count == 3:
+        c2t1_samples = splitted
+        count += 1
+        continue
+    if count == 4:
+        c2t2_samples = splitted
         continue
 selected_sample_fh.close()
 
@@ -210,14 +234,10 @@ for gene_idx in range(len(gene_names)):
     gene_details_map[gene_names[gene_idx]] = \
         {
         "mock": {"fold_change": [1, 1, 1], "std": 0},
-        "cond1": {"fold_change": [], "std": 0.0},
-        "cond2": {"fold_change": [], "std": 0.0},
-        }
-    gene_details_map[gene_names[gene_idx]] = \
-        {
-            "mock": {"fold_change": [1, 1, 1], "std": 0},
-            "cond1": {"fold_change": [], "std": 0.0},
-            "cond2": {"fold_change": [], "std": 0.0}
+        "c1t1": {"fold_change": [], "std": 0.0},
+        "c1t2": {"fold_change": [], "std": 0.0},
+        "c2t1": {"fold_change": [], "std": 0.0},
+        "c2t2": {"fold_change": [], "std": 0.0}
         }
 
 for gene_idx in range(len(gene_names)):
@@ -226,15 +246,25 @@ for gene_idx in range(len(gene_names)):
         mock_idx = samples_idx[mock_id]
         mock_sum += float(expression_map[mock_id][gene_idx])
     mock_avg = mock_sum / float(len(mock_samples))
-    for cond1_sample in cond1_samples:
+    for cond1_sample in c1t1_samples:
         sample_idx = samples_idx[cond1_sample]
-        gene_details_map[gene_names[gene_idx]]["cond1"]["fold_change"].append(float(expression_map[cond1_sample][gene_idx]) / mock_avg)
-    gene_details_map[gene_names[gene_idx]]["cond1"]["std"] = np.std(gene_details_map[gene_names[gene_idx]]["cond1"]["fold_change"])
+        gene_details_map[gene_names[gene_idx]]["c1t1"]["fold_change"].append(float(expression_map[cond1_sample][gene_idx]) / mock_avg)
+    gene_details_map[gene_names[gene_idx]]["c1t1"]["std"] = np.std(gene_details_map[gene_names[gene_idx]]["c1t1"]["fold_change"])
 
-    for cond2_sample in cond2_samples:
+    for cond2_sample in c1t2_samples:
         sample_idx = samples_idx[cond2_sample]
-        gene_details_map[gene_names[gene_idx]]["cond2"]["fold_change"].append(float(expression_map[cond2_sample][gene_idx]) / mock_avg)
-    gene_details_map[gene_names[gene_idx]]["cond2"]["std"] = np.std(gene_details_map[gene_names[gene_idx]]["cond2"]["fold_change"])
+        gene_details_map[gene_names[gene_idx]]["c1t2"]["fold_change"].append(float(expression_map[cond2_sample][gene_idx]) / mock_avg)
+    gene_details_map[gene_names[gene_idx]]["c1t2"]["std"] = np.std(gene_details_map[gene_names[gene_idx]]["c1t2"]["fold_change"])
+
+    for cond1_sample in c2t1_samples:
+        sample_idx = samples_idx[cond1_sample]
+        gene_details_map[gene_names[gene_idx]]["c2t1"]["fold_change"].append(float(expression_map[cond1_sample][gene_idx]) / mock_avg)
+    gene_details_map[gene_names[gene_idx]]["c2t1"]["std"] = np.std(gene_details_map[gene_names[gene_idx]]["c2t1"]["fold_change"])
+
+    for cond2_sample in c2t2_samples:
+        sample_idx = samples_idx[cond2_sample]
+        gene_details_map[gene_names[gene_idx]]["c2t2"]["fold_change"].append(float(expression_map[cond2_sample][gene_idx]) / mock_avg)
+    gene_details_map[gene_names[gene_idx]]["c2t2"]["std"] = np.std(gene_details_map[gene_names[gene_idx]]["c2t2"]["fold_change"])
 
 # 這邊應該要新增一個資料夾叫做report專門存相關資料
 # report下面新開uuid的資料夾 - "/使用者名稱/uuid/"
