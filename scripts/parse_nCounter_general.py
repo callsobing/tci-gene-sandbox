@@ -93,10 +93,10 @@ def platform_score(gene_details_map):
             c1t2_mean = gene_details_map[gene]["c1t2"]["fold_change"]
             c2t1_mean = gene_details_map[gene]["c2t1"]["fold_change"]
             c2t2_mean = gene_details_map[gene]["c2t2"]["fold_change"]
-            score_sum += significance_score(mock_mean, c1t1_mean) * expression_direction_score(1, c1t1_mean)
-            score_sum += significance_score(mock_mean, c1t2_mean) * expression_direction_score(1, c1t2_mean)
-            score_sum += significance_score(mock_mean, c2t1_mean) * expression_direction_score(1, c2t1_mean)
-            score_sum += significance_score(mock_mean, c2t2_mean) * expression_direction_score(1, c2t2_mean)
+            score_sum += significance_score(mock_mean, c1t1_mean) * expression_direction_score(-1, c1t1_mean)
+            score_sum += significance_score(mock_mean, c1t2_mean) * expression_direction_score(-1, c1t2_mean)
+            score_sum += significance_score(mock_mean, c2t1_mean) * expression_direction_score(-1, c2t1_mean)
+            score_sum += significance_score(mock_mean, c2t2_mean) * expression_direction_score(-1, c2t2_mean)
         if score_sum < 0:
             output_fh.write("%s\t0\n" % platform)
         else:
