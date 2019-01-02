@@ -146,8 +146,9 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
     fig, ax = plt.subplots()
     # plt.figure(figsize=(6, 7))
 
+    colors = "bgrcmykw"
     plt.bar(x_pos, means, 1.0, color='lightskyblue', align='center', linewidth=0)
-    plotline1, caplines1, barlinecols1 = ax.errorbar(x_pos, means, yerr=errors, lolims=True, ls='None', color='black', barsabove=True)
+    plotline1, caplines1, barlinecols1 = ax.errorbar(x_pos, means, yerr=errors, lolims=True, ls='None', color=colors, barsabove=True)
 
     caplines1[0].set_marker('.')
     caplines1[2].set_marker('_')
@@ -167,8 +168,8 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
 
     label_significance(x_pos[1], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c1t1"]["fold_change"], errors[1][1], ymax)
     label_significance(x_pos[2], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c1t2"]["fold_change"], errors[1][2], ymax)
-    label_significance(x_pos[1], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c2t1"]["fold_change"], errors[1][3], ymax)
-    label_significance(x_pos[2], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c2t2"]["fold_change"], errors[1][4], ymax)
+    label_significance(x_pos[3], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c2t1"]["fold_change"], errors[1][3], ymax)
+    label_significance(x_pos[4], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c2t2"]["fold_change"], errors[1][4], ymax)
     plt.savefig("reports/%s/%s/%s.png" % (user_id, report_uuid, gene))
     plt.cla()
     plt.close(fig)
