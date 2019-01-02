@@ -147,8 +147,8 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
     # plt.figure(figsize=(6, 7))
 
     colors = ["#3D3A4B", "#705D56", "#B19994", "#D3C0CD", "#E3DFFF"]
-    plt.bar(x_pos, means, 1.0, color=colors, align='center', linewidth=0)
-    plotline1, caplines1, barlinecols1 = ax.errorbar(x_pos, means, yerr=errors, lolims=True, ls='None', color='black', barsabove=True, legend=labels)
+    plt.bar(x_pos, means, 1.0, color=colors, align='center', linewidth=0, legend=labels)
+    plotline1, caplines1, barlinecols1 = ax.errorbar(x_pos, means, yerr=errors, lolims=True, ls='None', color='black', barsabove=True)
     legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
 
     caplines1[0].set_marker('.')
@@ -162,7 +162,7 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
     plt.ylabel('Relative Expression Ratio', fontsize="x-large")
     ax.yaxis.set_ticks_position('left')
     ax.xaxis.set_ticks_position('bottom')
-    plt.xticks(x_pos, labels, color='k', fontsize="x-large")
+    # plt.xticks(x_pos, labels, color='k', fontsize="x-large")
     plt.yticks(fontsize="x-large")
     plt.gca(). spines['right'].set_visible(False)
     plt.gca().spines['top'].set_visible(False)
