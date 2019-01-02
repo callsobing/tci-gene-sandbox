@@ -148,7 +148,7 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
 
     colors = ["b", "g", "r", "c", "m"]
     plt.bar(x_pos, means, 1.0, color='lightskyblue', align='center', linewidth=0)
-    plotline1, caplines1, barlinecols1 = ax.errorbar(x_pos, means, yerr=errors, lolims=True, ls='None', color=colors, barsabove=True)
+    plotline1, caplines1, barlinecols1 = ax.errorbar(x_pos, means, yerr=errors, lolims=True, ls='None', color="black", barsabove=True)
 
     caplines1[0].set_marker('.')
     caplines1[2].set_marker('_')
