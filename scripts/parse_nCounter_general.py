@@ -144,7 +144,7 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
 
     labels = ('mock', 'c1t1', 'c1t2', 'c2t1', 'c2t2')
     fig, ax = plt.subplots()
-    # plt.figure(figsize=(6, 7))
+    plt.figure(figsize=(6, 7))
 
     colors = ["#3D3A4B", "#705D56", "#B19994", "#D3C0CD", "#E3DFFF"]
     plt.bar(x_pos, means, 1.0, color=colors, align='center', linewidth=0, label=labels)
