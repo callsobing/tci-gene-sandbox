@@ -165,7 +165,7 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
     ax.yaxis.set_ticks_position('left')
     ax.xaxis.set_ticks_position('bottom')
     # plt.xticks(x_pos, labels, color='k', fontsize="x-large")
-    # plt.xticks()
+    plt.xticks([])
     plt.yticks(fontsize="x-large")
     plt.gca(). spines['right'].set_visible(False)
     plt.gca().spines['top'].set_visible(False)
