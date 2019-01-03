@@ -187,7 +187,7 @@ def plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_
     # caplines5[0].set_markersize(0)
     # caplines5[2].set_markersize(15)
 
-    ymax = max([max(mock_means), max(c1t1_means), max(c1t2_means), max(c2t1_means), max(c2t2_means)]) + max([max(mock_errors[1]), max(c1t1_errors[1]), max(c1t2_errors[1]), max(c2t1_errors[1]), max(c2t2_errors[1])]) * 2
+    ymax = max([max(mock_means), max(c1t1_means), max(c1t2_means), max(c2t1_means), max(c2t2_means)]) + max([max(c1t1_errors[1]), max(c1t2_errors[1]), max(c2t1_errors[1]), max(c2t2_errors[1])]) * 2
     plt.ylim(0, ymax)
     plt.xlabel(gene, fontsize="x-large")
     plt.ylabel('Relative Expression Ratio', fontsize="x-large")
