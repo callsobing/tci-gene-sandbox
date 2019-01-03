@@ -121,7 +121,10 @@ def plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_
     c2t1_errors = [[], []]
     c2t2_errors = [[], []]
     N = len(platform_genes[platform_name])  # Number of genes
-    ind = np.arange(N)
+    xpos = np.arange(N)
+    ind = []
+    for i in xpos:
+        ind.append(xpos[i] + 0.5)
     width = 0.18  # the width of the bars
     for gene in platform_genes[platform_name]:
         gene_names.append(gene)
@@ -149,9 +152,6 @@ def plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_
 
         c2t2_errors = [0].append(0)
         c2t2_errors = [1].append(gene_details_map[gene]["c2t2"]["std"] / 2)
-    x_pos = []
-    for i in range(N):
-        x_pos.append()
     labels = ['控制組', sample_ids[0], sample_ids[1], sample_ids[2], sample_ids[3]]
     fig, ax = plt.subplots()
     # plt.figure(figsize=(6, 7))
@@ -200,10 +200,10 @@ def plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_
 
     for i in range(len(platform_genes[platform_name])):
         gene = platform_genes[platform_name]
-        label_significance(x_pos[i]+width, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c1t1"]["fold_change"], c1t1_errors[1][i], ymax)
-        label_significance(x_pos[i]+width*2, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c1t2"]["fold_change"], c1t2_errors[1][i], ymax)
-        label_significance(x_pos[i]+width*3, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c2t1"]["fold_change"], c2t1_errors[1][i], ymax)
-        label_significance(x_pos[i]+width*4, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c2t2"]["fold_change"], c2t2_errors[1][i], ymax)
+        label_significance(ind[i]+width, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c1t1"]["fold_change"], c1t1_errors[1][i], ymax)
+        label_significance(ind[i]+width*2, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c1t2"]["fold_change"], c1t2_errors[1][i], ymax)
+        label_significance(ind[i]+width*3, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c2t1"]["fold_change"], c2t1_errors[1][i], ymax)
+        label_significance(ind[i]+width*4, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c2t2"]["fold_change"], c2t2_errors[1][i], ymax)
     fig.savefig("reports/%s/%s/%s.png" % (user_id, report_uuid, platform_name), bbox_extra_artists=(lgd,), bbox_inches='tight')
     plt.cla()
     plt.close(fig)
