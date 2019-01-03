@@ -164,7 +164,6 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
     plt.ylabel('Relative Expression Ratio', fontsize="x-large")
     ax.yaxis.set_ticks_position('left')
     ax.xaxis.set_ticks_position('bottom')
-    ax.xaxis.set_visible(False)
     # plt.xticks(x_pos, labels, color='k', fontsize="x-large")
     # plt.xticks()
     plt.yticks(fontsize="x-large")
