@@ -128,7 +128,7 @@ def label_significance(pos_in_fig, mean1, mean2, std, ymax):
     plt.annotate("{:.2f}".format(average(mean2)), xy=(pos_in_fig - 0.12, average(mean2) - ymax * 0.05), fontsize="x-large")
 
 
-def plot_gene(gene_details_map, gene, user_id, report_uuid):
+def plot_gene(gene_details_map, gene, user_id, report_uuid, sample_ids):
     mock_mean = average(gene_details_map[gene]["mock"]["fold_change"])
     mean_c1t1 = average(gene_details_map[gene]["c1t1"]["fold_change"])
     mean_c1t2 = average(gene_details_map[gene]["c1t2"]["fold_change"])
@@ -142,7 +142,7 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
               gene_details_map[gene]["c2t1"]["std"]/2,
               gene_details_map[gene]["c2t2"]["std"]/2]]
 
-    labels = ['控制組', 'c1t1', 'c1t2', 'c2t1', 'c2t2']
+    labels = ['控制組', sample_ids[0], sample_ids[1], sample_ids[2], sample_ids[3]]
     fig, ax = plt.subplots()
     # plt.figure(figsize=(6, 7))
 
@@ -185,27 +185,31 @@ c1t1_samples = []
 c1t2_samples = []
 c2t1_samples = []
 c2t2_samples = []
+sample_identifiers = []
 count = 0
 for line in selected_sample_fh:
     line = line.rstrip()
     splitted = line.split("\t")
     if count == 0:
+        sample_identifiers = splitted
+        continue
+    if count == 1:
         mock_samples = splitted
         count += 1
         continue
-    if count == 1:
+    if count == 2:
         c1t1_samples = splitted
         count += 1
         continue
-    if count == 2:
+    if count == 3:
         c1t2_samples = splitted
         count += 1
         continue
-    if count == 3:
+    if count == 4:
         c2t1_samples = splitted
         count += 1
         continue
-    if count == 4:
+    if count == 5:
         c2t2_samples = splitted
         continue
 selected_sample_fh.close()
@@ -275,7 +279,7 @@ for gene_idx in range(len(gene_names)):
 # report下面新開uuid的資料夾 - "/使用者名稱/uuid/"
 if create_directory("reports/%s/%s/" % (user_id, report_uuid)):
     for gene_idx in range(len(gene_names)):
-        plot_gene(gene_details_map, gene_names[gene_idx], user_id, report_uuid)
+        plot_gene(gene_details_map, gene_names[gene_idx], user_id, report_uuid, sample_identifiers)
     platform_score(gene_details_map)
 else:
     print("Cannot create directory!!")
