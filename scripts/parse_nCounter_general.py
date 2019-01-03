@@ -192,6 +192,7 @@ for line in selected_sample_fh:
     splitted = line.split("\t")
     if count == 0:
         sample_identifiers = splitted
+        count += 1
         continue
     if count == 1:
         mock_samples = splitted
