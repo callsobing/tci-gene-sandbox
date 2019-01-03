@@ -354,6 +354,8 @@ include 'check_login.php';
                                     </div>
                                     <div class="card-body">
                                         <div class="custom-tab">
+                                            <input type="hidden" id="file_input" name="file_input" value="<?php echo($_POST["file_select"]) ?>">
+
                                             <nav>
                                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                                     <?php

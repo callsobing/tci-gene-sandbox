@@ -9,6 +9,8 @@
 $user_id = $_COOKIE['user'];
 $uuid = $_POST['uuid'];
 $description = $_POST['description'];
+$file_name = $_POST['file_select'];
+
 $output = fopen("reports/$user_id/$uuid/selected_figures.txt", "w");
 
 fwrite($output, $description."\n");
@@ -22,7 +24,8 @@ if (isset($_POST['gene']))
 }
 fclose($output);
 
-$command_inline = "sudo -u www-data python3.4 scripts/gen_pptx_ncounter.py $user_id $uuid";
+//$command_inline = "sudo -u www-data python3.4 scripts/gen_pptx_ncounter.py $user_id $uuid";
+$command_inline = "sudo -u www-data python3.4 scripts/gen_merged_figures.py \"$file_name\" reports/args_$uuid.txt $user_id $uuid";
 $command = exec($command_inline);
 
 $link = "reports/$user_id/$uuid/$uuid.pptx";
