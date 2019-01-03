@@ -139,20 +139,20 @@ def plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_
         c1t2_means.append(mean_c1t2)
         c2t1_means.append(mean_c2t1)
         c2t2_means.append(mean_c2t2)
-        mock_errors = [0].append(0)
-        mock_errors = [1].append(gene_details_map[gene]["mock"]["std"]/2)
+        mock_errors[0].append(0)
+        mock_errors[1].append(gene_details_map[gene]["mock"]["std"]/2)
 
-        c1t1_errors = [0].append(0)
-        c1t1_errors = [1].append(gene_details_map[gene]["c1t1"]["std"] / 2)
+        c1t1_errors[0].append(0)
+        c1t1_errors[1].append(gene_details_map[gene]["c1t1"]["std"] / 2)
 
-        c1t2_errors = [0].append(0)
-        c1t2_errors = [1].append(gene_details_map[gene]["c1t2"]["std"] / 2)
+        c1t2_errors[0].append(0)
+        c1t2_errors[1].append(gene_details_map[gene]["c1t2"]["std"] / 2)
 
-        c2t1_errors = [0].append(0)
-        c2t1_errors = [1].append(gene_details_map[gene]["c2t1"]["std"] / 2)
+        c2t1_errors[0].append(0)
+        c2t1_errors[1].append(gene_details_map[gene]["c2t1"]["std"] / 2)
 
-        c2t2_errors = [0].append(0)
-        c2t2_errors = [1].append(gene_details_map[gene]["c2t2"]["std"] / 2)
+        c2t2_errors[0].append(0)
+        c2t2_errors[1].append(gene_details_map[gene]["c2t2"]["std"] / 2)
     print(c1t1_errors)
     labels = ['控制組', sample_ids[0], sample_ids[1], sample_ids[2], sample_ids[3]]
     fig, ax = plt.subplots()
