@@ -142,7 +142,7 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
               gene_details_map[gene]["c2t1"]["std"]/2,
               gene_details_map[gene]["c2t2"]["std"]/2]]
 
-    labels = ('mock', 'c1t1', 'c1t2', 'c2t1', 'c2t2')
+    labels = ['mock', 'c1t1', 'c1t2', 'c2t1', 'c2t2']
     fig, ax = plt.subplots()
     # plt.figure(figsize=(6, 7))
 
