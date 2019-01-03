@@ -312,8 +312,5 @@ for gene_idx in range(len(gene_names)):
 
 # 這邊應該要新增一個資料夾叫做report專門存相關資料
 # report下面新開uuid的資料夾 - "/使用者名稱/uuid/"
-if create_directory("reports/%s/%s/" % (user_id, report_uuid)):
-    for platform_name in range(len(platform_genes)):
-        plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_identifiers)
-else:
-    print("Cannot create directory!!")
+for platform_name in range(len(platform_genes)):
+    plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_identifiers)
