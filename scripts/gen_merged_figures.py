@@ -128,7 +128,6 @@ def plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_
     ind = np.array(ind)
     width = 0.18  # the width of the bars
     for gene in platform_genes[platform_name]:
-        print(gene)
         gene_names.append(gene)
         mock_mean = average(gene_details_map[gene]["mock"]["fold_change"])
         mean_c1t1 = average(gene_details_map[gene]["c1t1"]["fold_change"])
@@ -154,6 +153,7 @@ def plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_
 
         c2t2_errors = [0].append(0)
         c2t2_errors = [1].append(gene_details_map[gene]["c2t2"]["std"] / 2)
+    print(c1t1_errors)
     labels = ['控制組', sample_ids[0], sample_ids[1], sample_ids[2], sample_ids[3]]
     fig, ax = plt.subplots()
     # plt.figure(figsize=(6, 7))
