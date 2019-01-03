@@ -105,7 +105,7 @@ def label_significance(pos_in_fig, mean1, mean2, std, ymax):
         # Annotate significance level
         plt.annotate(text, xy=(pos_in_fig - 0.05, average(mean2) + std + ymax * 0.005), fontsize="x-small")
         # Annotate Relative Expression ratio
-    plt.annotate("{:.2f}".format(average(mean2)), xy=(pos_in_fig, average(mean2) - ymax * 0.05), fontsize="x-small")
+    plt.annotate("{:.2f}".format(average(mean2)), xy=(pos_in_fig - 0.05, average(mean2) - ymax * 0.05), fontsize="x-small")
 
 
 def plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_ids):
