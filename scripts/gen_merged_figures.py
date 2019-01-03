@@ -168,25 +168,25 @@ def plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_
     plotline5, caplines5, barlinecols5 = ax.errorbar(ind + width * 4, c2t2_means, yerr=c2t2_errors, lolims=True, ls='None', color='black', barsabove=True)
     lgd = ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
 
-    # caplines2[0].set_marker('.')
-    # caplines2[2].set_marker('_')
-    # caplines2[0].set_markersize(0)
-    # caplines2[2].set_markersize(15)
-    #
-    # caplines3[0].set_marker('.')
-    # caplines3[2].set_marker('_')
-    # caplines3[0].set_markersize(0)
-    # caplines3[2].set_markersize(15)
-    #
-    # caplines4[0].set_marker('.')
-    # caplines4[2].set_marker('_')
-    # caplines4[0].set_markersize(0)
-    # caplines4[2].set_markersize(15)
-    #
-    # caplines5[0].set_marker('.')
-    # caplines5[2].set_marker('_')
-    # caplines5[0].set_markersize(0)
-    # caplines5[2].set_markersize(15)
+    caplines2[0].set_marker('.')
+    caplines2[2].set_marker('_')
+    caplines2[0].set_markersize(0)
+    caplines2[2].set_markersize(15)
+
+    caplines3[0].set_marker('.')
+    caplines3[2].set_marker('_')
+    caplines3[0].set_markersize(0)
+    caplines3[2].set_markersize(15)
+
+    caplines4[0].set_marker('.')
+    caplines4[2].set_marker('_')
+    caplines4[0].set_markersize(0)
+    caplines4[2].set_markersize(15)
+
+    caplines5[0].set_marker('.')
+    caplines5[2].set_marker('_')
+    caplines5[0].set_markersize(0)
+    caplines5[2].set_markersize(15)
 
     ymax = 1.5
 
