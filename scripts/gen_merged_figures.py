@@ -202,10 +202,8 @@ def plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_
     plt.gca().spines['top'].set_visible(False)
 
     for i in range(len(platform_genes[platform_name])):
-        gene = platform_genes[platform_name]
-        print(gene_details_map[gene])
-        label_significance(ind[i]+width, [1,1,1],
-                           gene_details_map[gene]["c1t1"]["fold_change"], c1t1_errors[1][i], ymax)
+        gene = platform_genes[platform_name][i]
+        label_significance(ind[i]+width, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c1t1"]["fold_change"], c1t1_errors[1][i], ymax)
         label_significance(ind[i]+width*2, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c1t2"]["fold_change"], c1t2_errors[1][i], ymax)
         label_significance(ind[i]+width*3, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c2t1"]["fold_change"], c2t1_errors[1][i], ymax)
         label_significance(ind[i]+width*4, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c2t2"]["fold_change"], c2t2_errors[1][i], ymax)
