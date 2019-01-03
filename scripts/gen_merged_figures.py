@@ -310,6 +310,7 @@ for gene_idx in range(len(gene_names)):
         gene_details_map[gene_names[gene_idx]]["c2t2"]["fold_change"].append(float(expression_map[cond2_sample][gene_idx]) / mock_avg)
     gene_details_map[gene_names[gene_idx]]["c2t2"]["std"] = np.std(gene_details_map[gene_names[gene_idx]]["c2t2"]["fold_change"])
 
+print(gene_details_map)
 # 這邊應該要新增一個資料夾叫做report專門存相關資料
 # report下面新開uuid的資料夾 - "/使用者名稱/uuid/"
 for platform_name in platform_genes:
