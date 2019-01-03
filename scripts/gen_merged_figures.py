@@ -128,6 +128,7 @@ def plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_
     ind = np.array(ind)
     width = 0.18  # the width of the bars
     for gene in platform_genes[platform_name]:
+        print(gene)
         gene_names.append(gene)
         mock_mean = average(gene_details_map[gene]["mock"]["fold_change"])
         mean_c1t1 = average(gene_details_map[gene]["c1t1"]["fold_change"])
@@ -203,7 +204,6 @@ def plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_
 
     for i in range(len(platform_genes[platform_name])):
         gene = platform_genes[platform_name][i]
-        print(c1t1_errors)
         label_significance(ind[i]+width, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c1t1"]["fold_change"], c1t1_errors[1][i], ymax)
         label_significance(ind[i]+width*2, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c1t2"]["fold_change"], c1t2_errors[1][i], ymax)
         label_significance(ind[i]+width*3, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c2t1"]["fold_change"], c2t1_errors[1][i], ymax)
