@@ -142,7 +142,7 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
               gene_details_map[gene]["c2t1"]["std"]/2,
               gene_details_map[gene]["c2t2"]["std"]/2]]
 
-    labels = ['mock', 'c1t1', 'c1t2', 'c2t1', 'c2t2c2t2c2t2c2t2c2t2c2t2c2t2']
+    labels = ['mock', 'c1t1', 'c1t2', 'c2t1', 'c2t2']
     fig, ax = plt.subplots()
     # plt.figure(figsize=(6, 7))
 
@@ -164,7 +164,8 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid):
     plt.ylabel('Relative Expression Ratio', fontsize="x-large")
     ax.yaxis.set_ticks_position('left')
     ax.xaxis.set_ticks_position('bottom')
-    plt.xticks(x_pos, labels, color='k', fontsize="x-large")
+    ax.xaxis.set_visible(False)
+    # plt.xticks(x_pos, labels, color='k', fontsize="x-large")
     # plt.xticks()
     plt.yticks(fontsize="x-large")
     plt.gca(). spines['right'].set_visible(False)
