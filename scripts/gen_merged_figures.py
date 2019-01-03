@@ -125,6 +125,7 @@ def plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_
     ind = []
     for i in xpos:
         ind.append(xpos[i] + 0.5)
+    ind = np.array(ind)
     width = 0.18  # the width of the bars
     for gene in platform_genes[platform_name]:
         gene_names.append(gene)
