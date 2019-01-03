@@ -127,6 +127,8 @@ def plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_
         ind.append(xpos[i] + 0.5)
     ind = np.array(ind)
     width = 0.18  # the width of the bars
+    fig, ax = plt.subplots()
+
     for gene in platform_genes[platform_name]:
         gene_names.append(gene)
         mock_mean = average(gene_details_map[gene]["mock"]["fold_change"])
@@ -134,34 +136,32 @@ def plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_
         mean_c1t2 = average(gene_details_map[gene]["c1t2"]["fold_change"])
         mean_c2t1 = average(gene_details_map[gene]["c2t1"]["fold_change"])
         mean_c2t2 = average(gene_details_map[gene]["c2t2"]["fold_change"])
+
         mock_means.append(mock_mean)
         c1t1_means.append(mean_c1t1)
         c1t2_means.append(mean_c1t2)
         c2t1_means.append(mean_c2t1)
         c2t2_means.append(mean_c2t2)
+
         mock_errors[0].append(0)
         mock_errors[1].append(gene_details_map[gene]["mock"]["std"]/2)
-
         c1t1_errors[0].append(0)
         c1t1_errors[1].append(gene_details_map[gene]["c1t1"]["std"] / 2)
-
         c1t2_errors[0].append(0)
         c1t2_errors[1].append(gene_details_map[gene]["c1t2"]["std"] / 2)
-
         c2t1_errors[0].append(0)
         c2t1_errors[1].append(gene_details_map[gene]["c2t1"]["std"] / 2)
-
         c2t2_errors[0].append(0)
         c2t2_errors[1].append(gene_details_map[gene]["c2t2"]["std"] / 2)
-    print(c1t1_errors)
+
     labels = ['控制組', sample_ids[0], sample_ids[1], sample_ids[2], sample_ids[3]]
-    fig, ax = plt.subplots()
-    # plt.figure(figsize=(6, 7))
+
     plt.bar(ind, mock_means, width, color="#3D3A4B", align='center', linewidth=0, label=labels[0])
     plt.bar(ind + width, c1t1_means, width, color="#705D56", align='center', linewidth=0, label=labels[1])
     plt.bar(ind + width * 2, c1t2_means, width, color="#B19994", align='center', linewidth=0, label=labels[2])
     plt.bar(ind + width * 3, c2t1_means, width, color="#D3C0CD", align='center', linewidth=0, label=labels[3])
     plt.bar(ind + width * 4, c2t2_means, width, color="#E3DFFF", align='center', linewidth=0, label=labels[4])
+
     plotline2, caplines2, barlinecols2 = ax.errorbar(ind + width, c1t1_means, yerr=c1t1_errors, lolims=True, ls='None', color='black', barsabove=True)
     plotline3, caplines3, barlinecols3 = ax.errorbar(ind + width * 2, c1t2_means, yerr=c1t2_errors, lolims=True, ls='None', color='black', barsabove=True)
     plotline4, caplines4, barlinecols4 = ax.errorbar(ind + width * 3, c2t1_means, yerr=c2t1_errors, lolims=True, ls='None', color='black', barsabove=True)
@@ -192,10 +192,11 @@ def plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_
 
     # ymax = max([max(mock_means), max(c1t1_means), max(c1t2_means), max(c2t1_means), max(c2t2_means)]) + max([max(c1t1_errors[1]), max(c1t2_errors[1]), max(c2t1_errors[1]), max(c2t2_errors[1])]) * 2
     plt.ylim(0, ymax)
-    plt.xlabel(gene, fontsize="x-large")
     plt.ylabel('Relative Expression Ratio', fontsize="x-large")
     ax.yaxis.set_ticks_position('left')
     ax.xaxis.set_ticks_position('bottom')
+    ax.set_xticks(ind + width)
+    ax.set_xticklabels(platform_genes[platform_name])
     # plt.xticks(x_pos, labels, color='k', fontsize="x-large")
     plt.xticks([])
     plt.yticks(fontsize="x-large")
