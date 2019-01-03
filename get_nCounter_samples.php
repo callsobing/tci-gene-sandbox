@@ -265,18 +265,21 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                                 <a class="nav-item nav-link active" id="custom-nav-1-tab" data-toggle="tab" href="#custom-nav-1" role="tab" aria-controls="custom-nav-1"
                                                    aria-selected="true">Mock</a>
                                                 <a class="nav-item nav-link" id="custom-nav-2-tab" data-toggle="tab" href="#custom-nav-2" role="tab" aria-controls="custom-nav-2"
-                                                   aria-selected="false">T1 - C1</a>
+                                                   aria-selected="false">C1 - T1</a>
                                                 <a class="nav-item nav-link" id="custom-nav-3-tab" data-toggle="tab" href="#custom-nav-3" role="tab" aria-controls="custom-nav-3"
-                                                   aria-selected="false">T1 - C2</a>
+                                                   aria-selected="false">C1 - T2</a>
                                                 <a class="nav-item nav-link" id="custom-nav-4-tab" data-toggle="tab" href="#custom-nav-4" role="tab" aria-controls="custom-nav-4"
-                                                   aria-selected="false">T2 - C1</a>
+                                                   aria-selected="false">C2 - T1</a>
                                                 <a class="nav-item nav-link" id="custom-nav-5-tab" data-toggle="tab" href="#custom-nav-5" role="tab" aria-controls="custom-nav-5"
-                                                   aria-selected="false">T2 - C2</a>
+                                                   aria-selected="false">C2 - T2</a>
 
                                             </div>
                                         </nav>
                                         <div class="tab-content pl-3 pt-2" id="nav-tabContent">
                                             <div class="tab-pane fade show active" id="custom-nav-1" role="tabpanel" aria-labelledby="custom-nav-1-tab">
+                                                <div class="col col-md-9">
+                                                    <input type="text" id="c1t1_name" name="c1t1_name" placeholder="請輸入c1t1名稱" class="form-control">
+                                                </div>
                                                 <div class="col col-md-9">
                                                     <div class="form-check">
                                                 <?php
@@ -298,6 +301,9 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                             </div>
                                             <div class="tab-pane fade" id="custom-nav-2" role="tabpanel" aria-labelledby="custom-nav-2-tab">
                                                 <div class="col col-md-9">
+                                                    <input type="text" id="c1t2_name" name="c1t2_name" placeholder="請輸入c1t2名稱" class="form-control">
+                                                </div>
+                                                <div class="col col-md-9">
                                                     <div class="form-check">
                                                         <?php
                                                         $file = fopen("data/nCounter_$uuid.txt", "r");
@@ -306,7 +312,7 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                                             ?>
                                                             <div>
                                                                 <label for="checkbox" class="form-check-label ">
-                                                                    <input type="checkbox" name="t1c1[]" value="<?php echo($items[0]); ?>" class="form-check-input"> <?php echo($items[0]); ?>
+                                                                    <input type="checkbox" name="c1t1[]" value="<?php echo($items[0]); ?>" class="form-check-input"> <?php echo($items[0]); ?>
                                                                 </label>
                                                             </div>
                                                             <?php
@@ -318,6 +324,9 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                             </div>
                                             <div class="tab-pane fade" id="custom-nav-3" role="tabpanel" aria-labelledby="custom-nav-3-tab">
                                                 <div class="col col-md-9">
+                                                    <input type="text" id="c2t1_name" name="c2t1_name" placeholder="請輸入c2t1名稱" class="form-control">
+                                                </div>
+                                                <div class="col col-md-9">
                                                     <div class="form-check">
                                                         <?php
                                                         $file = fopen("data/nCounter_$uuid.txt", "r");
@@ -326,7 +335,7 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                                             ?>
                                                             <div>
                                                                 <label for="checkbox" class="form-check-label ">
-                                                                    <input type="checkbox" name="t1c2[]" value="<?php echo($items[0]); ?>" class="form-check-input"> <?php echo($items[0]); ?>
+                                                                    <input type="checkbox" name="c1t2[]" value="<?php echo($items[0]); ?>" class="form-check-input"> <?php echo($items[0]); ?>
                                                                 </label>
                                                             </div>
                                                             <?php
@@ -338,6 +347,9 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                             </div>
                                             <div class="tab-pane fade" id="custom-nav-4" role="tabpanel" aria-labelledby="custom-nav-4-tab">
                                                 <div class="col col-md-9">
+                                                    <input type="text" id="c2t2_name" name="c2t2_name" placeholder="請輸入c2t2名稱" class="form-control">
+                                                </div>
+                                                <div class="col col-md-9">
                                                     <div class="form-check">
                                                         <?php
                                                         $file = fopen("data/nCounter_$uuid.txt", "r");
@@ -346,7 +358,7 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                                             ?>
                                                             <div>
                                                                 <label for="checkbox" class="form-check-label ">
-                                                                    <input type="checkbox" name="t2c1[]" value="<?php echo($items[0]); ?>" class="form-check-input"> <?php echo($items[0]); ?>
+                                                                    <input type="checkbox" name="c2t1[]" value="<?php echo($items[0]); ?>" class="form-check-input"> <?php echo($items[0]); ?>
                                                                 </label>
                                                             </div>
                                                             <?php
@@ -366,7 +378,7 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                                             ?>
                                                             <div>
                                                                 <label for="checkbox" class="form-check-label ">
-                                                                    <input type="checkbox" name="t2c2[]" value="<?php echo($items[0]); ?>" class="form-check-input"> <?php echo($items[0]); ?>
+                                                                    <input type="checkbox" name="c2t2[]" value="<?php echo($items[0]); ?>" class="form-check-input"> <?php echo($items[0]); ?>
                                                                 </label>
                                                             </div>
                                                             <?php
