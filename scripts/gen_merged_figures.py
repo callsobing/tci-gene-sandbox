@@ -198,9 +198,8 @@ def plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_
     ax.set_xticks(ind + width)
     ax.set_xticklabels(platform_genes[platform_name])
     # plt.xticks(x_pos, labels, color='k', fontsize="x-large")
-    plt.xticks([])
     plt.yticks(fontsize="x-large")
-    plt.gca(). spines['right'].set_visible(False)
+    plt.gca().spines['right'].set_visible(False)
     plt.gca().spines['top'].set_visible(False)
 
     for i in range(len(platform_genes[platform_name])):
