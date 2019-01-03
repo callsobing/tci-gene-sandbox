@@ -121,6 +121,7 @@ def plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_
     c2t1_errors = [[], []]
     c2t2_errors = [[], []]
     N = len(platform_genes[platform_name])  # Number of genes
+    ind = np.arange(N)
     width = 0.18  # the width of the bars
     for gene in platform_genes[platform_name]:
         gene_names.append(gene)
@@ -148,27 +149,22 @@ def plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_
 
         c2t2_errors = [0].append(0)
         c2t2_errors = [1].append(gene_details_map[gene]["c2t2"]["std"] / 2)
-
-    x_pos = (0.5, 1.5, 2.5, 3.5, 4.5)
+    x_pos = []
+    for i in range(N):
+        x_pos.append()
     labels = ['控制組', sample_ids[0], sample_ids[1], sample_ids[2], sample_ids[3]]
     fig, ax = plt.subplots()
     # plt.figure(figsize=(6, 7))
-    plt.bar(x_pos[0], mock_means, width, color="#3D3A4B", align='center', linewidth=0, label=labels[0])
-    plt.bar(x_pos[1], c1t1_means, width, color="#705D56", align='center', linewidth=0, label=labels[1])
-    plt.bar(x_pos[2], c1t2_means, width, color="#B19994", align='center', linewidth=0, label=labels[2])
-    plt.bar(x_pos[3], c2t1_means, width, color="#D3C0CD", align='center', linewidth=0, label=labels[3])
-    plt.bar(x_pos[4], c2t2_means, width, color="#E3DFFF", align='center', linewidth=0, label=labels[4])
-    plotline1, caplines1, barlinecols1 = ax.errorbar(x_pos[0], mock_means, yerr=mock_errors, lolims=True, ls='None', color='black', barsabove=True)
-    plotline2, caplines2, barlinecols2 = ax.errorbar(x_pos[0], c1t1_means, yerr=c1t1_errors, lolims=True, ls='None', color='black', barsabove=True)
-    plotline3, caplines3, barlinecols3 = ax.errorbar(x_pos[0], c1t2_means, yerr=c1t2_errors, lolims=True, ls='None', color='black', barsabove=True)
-    plotline4, caplines4, barlinecols4 = ax.errorbar(x_pos[0], c2t1_means, yerr=c2t1_errors, lolims=True, ls='None', color='black', barsabove=True)
-    plotline5, caplines5, barlinecols5 = ax.errorbar(x_pos[0], c2t2_means, yerr=c2t2_errors, lolims=True, ls='None', color='black', barsabove=True)
+    plt.bar(ind, mock_means, width, color="#3D3A4B", align='center', linewidth=0, label=labels[0])
+    plt.bar(ind + width, c1t1_means, width, color="#705D56", align='center', linewidth=0, label=labels[1])
+    plt.bar(ind + width * 2, c1t2_means, width, color="#B19994", align='center', linewidth=0, label=labels[2])
+    plt.bar(ind + width * 3, c2t1_means, width, color="#D3C0CD", align='center', linewidth=0, label=labels[3])
+    plt.bar(ind + width * 4, c2t2_means, width, color="#E3DFFF", align='center', linewidth=0, label=labels[4])
+    plotline2, caplines2, barlinecols2 = ax.errorbar(ind + width, c1t1_means, yerr=c1t1_errors, lolims=True, ls='None', color='black', barsabove=True)
+    plotline3, caplines3, barlinecols3 = ax.errorbar(ind + width * 2, c1t2_means, yerr=c1t2_errors, lolims=True, ls='None', color='black', barsabove=True)
+    plotline4, caplines4, barlinecols4 = ax.errorbar(ind + width * 3, c2t1_means, yerr=c2t1_errors, lolims=True, ls='None', color='black', barsabove=True)
+    plotline5, caplines5, barlinecols5 = ax.errorbar(ind + width * 4, c2t2_means, yerr=c2t2_errors, lolims=True, ls='None', color='black', barsabove=True)
     lgd = ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
-
-    caplines1[0].set_marker('.')
-    caplines1[2].set_marker('_')
-    caplines1[0].set_markersize(0)
-    caplines1[2].set_markersize(15)
 
     caplines2[0].set_marker('.')
     caplines2[2].set_marker('_')
@@ -312,5 +308,5 @@ for gene_idx in range(len(gene_names)):
 
 # 這邊應該要新增一個資料夾叫做report專門存相關資料
 # report下面新開uuid的資料夾 - "/使用者名稱/uuid/"
-for platform_name in range(len(platform_genes)):
+for platform_name in platform_genes:
     plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_identifiers)
