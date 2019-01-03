@@ -21,7 +21,7 @@ $file_name = $_POST['file_input'];
 $output = fopen("reports/args_$uuid.txt", "w");
 
 if(isset($_POST['c1t1_name']) && isset($_POST['c1t2_name']) && isset($_POST['c2t1_name']) && isset($_POST['c2t2_name'])){
-    fwrite($output, $_POST['c1t1_name']."\t".$_POST['c1t2_name']."\t".$_POST['c2t1_name']."\t".$_POST['c2t2_name']);
+    fwrite($output, $_POST['c1t1_name']."\t".$_POST['c1t2_name']."\t".$_POST['c2t1_name']."\t".$_POST['c2t2_name']."\n");
 } else{
     $url = $_SERVER['HTTP_REFERER'];
     echo ("<script> alert('You did not add proper condition identifiers!');document.location.href=\"$url?error=condition_name_not_added\";</script>");
