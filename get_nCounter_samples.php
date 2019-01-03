@@ -282,6 +282,9 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                         <div class="tab-content pl-3 pt-2" id="nav-tabContent">
                                             <div class="tab-pane fade show active" id="custom-nav-1" role="tabpanel" aria-labelledby="custom-nav-1-tab">
                                                 <div class="col col-md-9">
+                                                    <input type="text" id="c1t1_name" name="c1t1_name" placeholder="控制組" class="form-control" disabled>
+                                                </div>
+                                                <div class="col col-md-9">
                                                     <div class="form-check">
                                                 <?php
                                                 $file = fopen("data/nCounter_$uuid.txt", "r");
