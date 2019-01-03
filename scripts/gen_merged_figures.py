@@ -195,7 +195,7 @@ def plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_
     plt.ylabel('Relative Expression Ratio', fontsize="x-large")
     ax.yaxis.set_ticks_position('left')
     ax.xaxis.set_ticks_position('bottom')
-    ax.set_xticks(ind + width)
+    ax.set_xticks(ind + width * 2)
     ax.set_xticklabels(platform_genes[platform_name])
     # plt.xticks(x_pos, labels, color='k', fontsize="x-large")
     plt.yticks(fontsize="x-large")
