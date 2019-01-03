@@ -9,6 +9,10 @@ if($_GET['error'] == "sample_not_selected"){
     echo "<script type='text/javascript'>";
     echo "window.location.href='new_project.php?error=sample_not_selected'";
     echo "</script>";
+} elseif ($_GET['error'] == "condition_name_not_added"){
+    echo "<script type='text/javascript'>";
+    echo "window.location.href='new_project.php?error=condition_name_not_added'";
+    echo "</script>";
 }
 
 if (!file_exists($_POST["file_select"])){ # 檢查檔案存不存在

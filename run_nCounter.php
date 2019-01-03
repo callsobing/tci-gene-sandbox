@@ -20,6 +20,12 @@ $file_name = $_POST['file_input'];
 
 $output = fopen("reports/args_$uuid.txt", "w");
 
+if(isset($_POST['c1t1_name']) && isset($_POST['c1t2_name']) && isset($_POST['c2t1_name']) && isset($_POST['c2t2_name'])){
+    fwrite($output, $_POST['c1t1_name']."\t".$_POST['c1t2_name']."\t".$_POST['c2t1_name']."\t".$_POST['c2t2_name']);
+} else{
+    $url = $_SERVER['HTTP_REFERER'];
+    echo ("<script> alert('You did not add proper condition identifiers!');document.location.href=\"$url?error=condition_name_not_added\";</script>");
+}
 
 if (isset($_POST['mock']))
 {
@@ -37,14 +43,14 @@ if (isset($_POST['mock']))
     echo ("<script> alert('You did not select samples for mock!');document.location.href=\"$url?error=sample_not_selected\";</script>");
 }
 
-if (isset($_POST['t1c1']))
+if (isset($_POST['c1t1']))
 {
-    $i=count($_POST['t1c1']);
+    $i=count($_POST['c1t1']);
     for($j=0 ; $j<$i ; $j++){
         if($j == 0) {
-            fwrite($output, $_POST['t1c1'][$j]);
+            fwrite($output, $_POST['c1t1'][$j]);
         } else {
-            fwrite($output, "\t".$_POST['t1c1'][$j]);
+            fwrite($output, "\t".$_POST['c1t1'][$j]);
         }
     }
     fwrite($output, "\n");
@@ -53,14 +59,14 @@ if (isset($_POST['t1c1']))
     echo ("<script> alert('You did not select samples for condition1!');document.location.href=\"$url?error=sample_not_selected\";</script>");
 }
 
-if (isset($_POST['t1c2']))
+if (isset($_POST['c1t2']))
 {
-    $i=count($_POST['t1c2']);
+    $i=count($_POST['c1t2']);
     for($j=0 ; $j<$i ; $j++){
         if($j == 0) {
-            fwrite($output, $_POST['t1c2'][$j]);
+            fwrite($output, $_POST['c1t2'][$j]);
         } else {
-            fwrite($output, "\t".$_POST['t1c2'][$j]);
+            fwrite($output, "\t".$_POST['c1t2'][$j]);
         }
     }
     fwrite($output, "\n");
@@ -69,14 +75,14 @@ if (isset($_POST['t1c2']))
     echo ("<script> alert('You did not select samples for condition1!');document.location.href=\"$url?error=sample_not_selected\";</script>");
 }
 
-if (isset($_POST['t2c1']))
+if (isset($_POST['c2t1']))
 {
-    $i=count($_POST['t2c1']);
+    $i=count($_POST['c2t1']);
     for($j=0 ; $j<$i ; $j++){
         if($j == 0) {
-            fwrite($output, $_POST['t2c1'][$j]);
+            fwrite($output, $_POST['c2t1'][$j]);
         } else {
-            fwrite($output, "\t".$_POST['t2c1'][$j]);
+            fwrite($output, "\t".$_POST['c2t1'][$j]);
         }
     }
     fwrite($output, "\n");
@@ -85,14 +91,14 @@ if (isset($_POST['t2c1']))
     echo ("<script> alert('You did not select samples for condition2!');document.location.href=\"$url?error=sample_not_selected\";</script>");
 }
 
-if (isset($_POST['t2c2']))
+if (isset($_POST['c2t2']))
 {
-    $i=count($_POST['t2c2']);
+    $i=count($_POST['c2t2']);
     for($j=0 ; $j<$i ; $j++){
         if($j == 0) {
-            fwrite($output, $_POST['t2c2'][$j]);
+            fwrite($output, $_POST['c2t2'][$j]);
         } else {
-            fwrite($output, "\t".$_POST['t2c2'][$j]);
+            fwrite($output, "\t".$_POST['c2t2'][$j]);
         }
     }
     fwrite($output, "\n");
@@ -104,7 +110,7 @@ if (isset($_POST['t2c2']))
 fclose($output);
 
 # 只有在接收到各狀況的樣本集之後才可以執行
-if (isset($_POST['mock']) & isset($_POST['t1c1']) & isset($_POST['t1c2']) & isset($_POST['t2c1']) & isset($_POST['t2c2'])) {
+if (isset($_POST['mock']) & isset($_POST['c1t1']) & isset($_POST['c1t2']) & isset($_POST['c2t1']) & isset($_POST['c2t2'])) {
     echo("<img src='images/waiting.jpg' width='100%' height='100%'/>");
     ob_flush();
     flush();

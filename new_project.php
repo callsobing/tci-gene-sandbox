@@ -93,7 +93,13 @@ if(isset($_GET['error'])) {
         swal("你沒有選到samples噢!","請檢查你mock/cond1/cond2的選擇，<br>正確的選擇才會有正確的數據喲。","info");
     </script>
     <?php
-    }
+    }  if ($_GET['error'] == 'condition_name_not_added'){
+    ?>
+    <script>
+        swal("你沒有填寫樣本名稱噢!","請檢查你cond1/cond2的樣本名稱，<br>正確填寫樣本名稱才有正確的呈現結果喔。","info");
+    </script>
+    <?php
+}
 }
 ?>
     <div class="page-wrapper">
