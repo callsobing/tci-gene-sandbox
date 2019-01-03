@@ -282,9 +282,6 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                         <div class="tab-content pl-3 pt-2" id="nav-tabContent">
                                             <div class="tab-pane fade show active" id="custom-nav-1" role="tabpanel" aria-labelledby="custom-nav-1-tab">
                                                 <div class="col col-md-9">
-                                                    <input type="text" id="c1t1_name" name="c1t1_name" placeholder="請輸入c1t1名稱" class="form-control">
-                                                </div>
-                                                <div class="col col-md-9">
                                                     <div class="form-check">
                                                 <?php
                                                 $file = fopen("data/nCounter_$uuid.txt", "r");
@@ -305,7 +302,7 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                             </div>
                                             <div class="tab-pane fade" id="custom-nav-2" role="tabpanel" aria-labelledby="custom-nav-2-tab">
                                                 <div class="col col-md-9">
-                                                    <input type="text" id="c1t2_name" name="c1t2_name" placeholder="請輸入c1t2名稱" class="form-control">
+                                                    <input type="text" id="c1t1_name" name="c1t1_name" placeholder="請輸入c1t1名稱" class="form-control">
                                                 </div>
                                                 <div class="col col-md-9">
                                                     <div class="form-check">
@@ -328,7 +325,7 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                             </div>
                                             <div class="tab-pane fade" id="custom-nav-3" role="tabpanel" aria-labelledby="custom-nav-3-tab">
                                                 <div class="col col-md-9">
-                                                    <input type="text" id="c2t1_name" name="c2t1_name" placeholder="請輸入c2t1名稱" class="form-control">
+                                                    <input type="text" id="c1t2_name" name="c1t2_name" placeholder="請輸入c1t2名稱" class="form-control">
                                                 </div>
                                                 <div class="col col-md-9">
                                                     <div class="form-check">
@@ -351,7 +348,7 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                             </div>
                                             <div class="tab-pane fade" id="custom-nav-4" role="tabpanel" aria-labelledby="custom-nav-4-tab">
                                                 <div class="col col-md-9">
-                                                    <input type="text" id="c2t2_name" name="c2t2_name" placeholder="請輸入c2t2名稱" class="form-control">
+                                                    <input type="text" id="c2t1_name" name="c2t1_name" placeholder="請輸入c2t1名稱" class="form-control">
                                                 </div>
                                                 <div class="col col-md-9">
                                                     <div class="form-check">
@@ -373,6 +370,9 @@ $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py 
                                                 </div>
                                             </div>
                                             <div class="tab-pane fade" id="custom-nav-5" role="tabpanel" aria-labelledby="custom-nav-5-tab">
+                                                <div class="col col-md-9">
+                                                    <input type="text" id="c2t2_name" name="c2t2_name" placeholder="請輸入c2t2名稱" class="form-control">
+                                                </div>
                                                 <div class="col col-md-9">
                                                     <div class="form-check">
                                                         <?php
