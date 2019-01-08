@@ -341,6 +341,27 @@ for gene_idx in range(len(gene_names)):
         gene_details_map[gene_names[gene_idx]]["c2t2"]["fold_change"].append(float(expression_map[cond2_sample][gene_idx]) / mock_avg)
     gene_details_map[gene_names[gene_idx]]["c2t2"]["std"] = np.std(gene_details_map[gene_names[gene_idx]]["c2t2"]["fold_change"])
 
+file_fh = open("reports/%s/%s/selected_figures.txt" % (user_id, uuid), encoding="utf-8")
+
+first = True
+description = ""
+gene_platform_list = {}
+for line in file_fh:
+    line = line.rstrip()
+    if first:
+        description = line
+        first = False
+        continue
+file_fh.close()
+
+first_slide = prs.slides[0]
+for shape in first_slide.shapes:
+    if shape.has_text_frame:
+        if shape.text == "title":
+            shape.text = description
+        elif shape.text == "date":
+            shape.text = now
+
 # 這邊應該要新增一個資料夾叫做report專門存相關資料
 # report下面新開uuid的資料夾 - "/使用者名稱/uuid/"
 for platform_name in platform_genes:
@@ -359,7 +380,5 @@ for platform_name in platform_genes:
     left = Inches(2.4)
     height = Inches(3.5)
     pic = slide.shapes.add_picture("reports/%s/%s/%s.png" % (user_id, report_uuid, platform_map[platform_name]), left, top, height=height)
-file_fh.close()
 
 prs.save('reports/%s/%s/%s.pptx' % (user_id, report_uuid, report_uuid))
-file_fh.close()
