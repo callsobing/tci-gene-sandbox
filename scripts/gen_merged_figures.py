@@ -135,7 +135,7 @@ def label_significance(pos_in_fig, mean1, mean2, std, ymax, N):
         text = "*"
     if text:
         # Annotate significance level
-        plt.annotate(text, xy=(pos_in_fig - 0.05, average(mean2) + std + ymax * 0.005), fontsize=(15 - N*0.7))
+        plt.annotate(text, xy=(pos_in_fig, average(mean2) + std + ymax * 0.005), fontsize=(15 - N*0.7))
         # Annotate Relative Expression ratio
     # plt.annotate("{:.2f}".format(average(mean2)), xy=(pos_in_fig - 0.05, average(mean2) - ymax * 0.05), fontsize=12)
 
