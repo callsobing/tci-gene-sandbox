@@ -10,6 +10,11 @@ import os
 import sys
 plt.rcParams['font.sans-serif'] = ['SimHei']
 import datetime
+from pptx import Presentation
+from pptx.chart.data import ChartData
+from pptx.enum.chart import XL_CHART_TYPE
+from pptx.shapes.shapetree import SlideShapes
+from pptx.util import Inches
 
 now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
 prs = Presentation('data/pptx_template.pptx')
