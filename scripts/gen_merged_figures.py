@@ -209,7 +209,7 @@ def plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_
         label_significance(ind[i]+width*2, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c1t2"]["fold_change"], c1t2_errors[1][i], ymax)
         label_significance(ind[i]+width*3, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c2t1"]["fold_change"], c2t1_errors[1][i], ymax)
         label_significance(ind[i]+width*4, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c2t2"]["fold_change"], c2t2_errors[1][i], ymax)
-    file_name_path = os.path.normcase("reports/%s/%s/%s.png" % (user_id, report_uuid, str(platform_name.encode("utf-8"), encoding="utf-8")))
+    file_name_path = os.path.normcase("reports/%s/%s/%s.png" % (user_id, report_uuid, str(platform_name.encode("utf-8"), encoding="big5")))
     fig.savefig(file_name_path, bbox_extra_artists=(lgd,), bbox_inches='tight')
     plt.cla()
     plt.close(fig)
