@@ -338,7 +338,8 @@ for gene_idx in range(len(gene_names)):
             gene_details_map[gene_names[gene_idx]]["c1t1"]["fold_change"].append(float(expression_map[cond1_sample][gene_idx]) / mock_avg)
     gene_details_map[gene_names[gene_idx]]["c1t1"]["std"] = np.std(gene_details_map[gene_names[gene_idx]]["c1t1"]["fold_change"])
     if count > 1: # 如果超過兩個mock沒有超過threshold就丟棄這個gene
-        gene_details_map[gene_names[gene_idx]].pop("c1t1")
+        gene_details_map[gene_names[gene_idx]]["c1t1"]["fold_change"] = []
+        gene_details_map[gene_names[gene_idx]]["c1t1"]["std"] = 0.0
         continue
 
     count = 0
@@ -349,7 +350,8 @@ for gene_idx in range(len(gene_names)):
             gene_details_map[gene_names[gene_idx]]["c1t2"]["fold_change"].append(float(expression_map[cond2_sample][gene_idx]) / mock_avg)
     gene_details_map[gene_names[gene_idx]]["c1t2"]["std"] = np.std(gene_details_map[gene_names[gene_idx]]["c1t2"]["fold_change"])
     if count > 1:  # 如果超過兩個mock沒有超過threshold就丟棄這個gene
-        gene_details_map[gene_names[gene_idx]].pop("c1t2")
+        gene_details_map[gene_names[gene_idx]]["c1t2"]["fold_change"] = []
+        gene_details_map[gene_names[gene_idx]]["c1t2"]["std"] = 0.0
         continue
 
     count = 0
@@ -361,7 +363,8 @@ for gene_idx in range(len(gene_names)):
             gene_details_map[gene_names[gene_idx]]["c2t1"]["fold_change"].append(float(expression_map[cond1_sample][gene_idx]) / mock_avg)
     gene_details_map[gene_names[gene_idx]]["c2t1"]["std"] = np.std(gene_details_map[gene_names[gene_idx]]["c2t1"]["fold_change"])
     if count > 1:  # 如果超過兩個mock沒有超過threshold就丟棄這個gene
-        gene_details_map[gene_names[gene_idx]].pop("c2t1")
+        gene_details_map[gene_names[gene_idx]]["c2t1"]["fold_change"] = []
+        gene_details_map[gene_names[gene_idx]]["c2t1"]["std"] = 0.0
         continue
 
     count = 0
@@ -373,7 +376,8 @@ for gene_idx in range(len(gene_names)):
             gene_details_map[gene_names[gene_idx]]["c2t2"]["fold_change"].append(float(expression_map[cond2_sample][gene_idx]) / mock_avg)
     gene_details_map[gene_names[gene_idx]]["c2t2"]["std"] = np.std(gene_details_map[gene_names[gene_idx]]["c2t2"]["fold_change"])
     if count > 1:  # 如果超過兩個mock沒有超過threshold就丟棄這個gene
-        gene_details_map[gene_names[gene_idx]].pop("c2t2")
+        gene_details_map[gene_names[gene_idx]]["c2t2"]["fold_change"] = []
+        gene_details_map[gene_names[gene_idx]]["c2t2"]["std"] = 0.0
         continue
 
     count = 0
