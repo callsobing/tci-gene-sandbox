@@ -326,6 +326,7 @@ for gene_idx in range(len(gene_names)):
             continue
         mock_sum += float(expression_map[mock_id][gene_idx])
     if count > 1: # 如果超過兩個mock沒有超過threshold就丟棄這個gene
+        gene_details_map.pop(gene_names[gene_idx])
         continue
     mock_avg = mock_sum / float(len(mock_samples))
     for cond1_sample in c1t1_samples:
