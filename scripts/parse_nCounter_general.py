@@ -271,9 +271,8 @@ for cond1_sample in c1t1_samples:
     cond_total = 0
     for gene in neg_genes:
         gene_idx = gene_names.index(gene)
-        sample_idx = samples_idx[cond1_sample]
-        neg_sum += float(expression_map[sample_idx][gene_idx])
-        cond_total += float(expression_map[sample_idx][gene_idx])
+        neg_sum += float(expression_map[cond1_sample][gene_idx])
+        cond_total += float(expression_map[cond1_sample][gene_idx])
     cond1_avg.append(cond_total / len(neg_genes))
 cond2_avg = []
 for cond2_sample in c1t2_samples:
@@ -281,8 +280,8 @@ for cond2_sample in c1t2_samples:
     for gene in neg_genes:
         gene_idx = gene_names.index(gene)
         sample_idx = samples_idx[cond2_sample]
-        neg_sum += float(expression_map[sample_idx][gene_idx])
-        cond_total += float(expression_map[sample_idx][gene_idx])
+        neg_sum += float(expression_map[cond2_sample][gene_idx])
+        cond_total += float(expression_map[cond2_sample][gene_idx])
     cond2_avg.append(cond_total / len(neg_genes))
 cond3_avg = []
 for cond1_sample in c2t1_samples:
@@ -290,8 +289,8 @@ for cond1_sample in c2t1_samples:
     for gene in neg_genes:
         gene_idx = gene_names.index(gene)
         sample_idx = samples_idx[cond1_sample]
-        neg_sum += float(expression_map[sample_idx][gene_idx])
-        cond_total += float(expression_map[sample_idx][gene_idx])
+        neg_sum += float(expression_map[cond1_sample][gene_idx])
+        cond_total += float(expression_map[cond1_sample][gene_idx])
     cond3_avg.append(cond_total / len(neg_genes))
 cond4_avg = []
 for cond2_sample in c2t2_samples:
@@ -299,8 +298,8 @@ for cond2_sample in c2t2_samples:
     for gene in neg_genes:
         gene_idx = gene_names.index(gene)
         sample_idx = samples_idx[cond2_sample]
-        neg_sum += float(expression_map[sample_idx][gene_idx])
-        cond_total += float(expression_map[sample_idx][gene_idx])
+        neg_sum += float(expression_map[cond2_sample][gene_idx])
+        cond_total += float(expression_map[cond2_sample][gene_idx])
     cond4_avg.append(cond_total / len(neg_genes))
 all_avg = neg_sum / ((len(mock_samples) + len(c1t1_samples) + len(c1t2_samples) + len(c2t1_samples) + len(c2t2_samples)) * len(neg_genes))
 all_avgs.extend(mock_avg)
