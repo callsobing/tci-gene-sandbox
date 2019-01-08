@@ -28,7 +28,7 @@ $platforms = Array(
             Array("護胃"=> Array("up"=> ["SOD1","SOD2","GPX1"], "down"=> ["IL-1B","IL-6","IL-8"])),
             Array("護眼"=> Array("up"=> [], "down"=> ["VEGFA","CASP3","CASP8","IL-1B","IL-8","TNF-a"])),
             Array("抗黑色素生成"=> Array("up"=> [], "down"=> ["TYR","TYRP1","MC1R","MITF"])),
-            Array("膠原蛋白合成/組合/降解"=> Array("up"=> ["COL1A1","COL1A2","COL4A1","COL4A4","COL4A5","TIMP1","ELN","FBN1","LOX","HAS2","HAS3"], "down"=> ["MMP1","MMP9","MMP2"])),
+            Array("膠原蛋白合成-組合-降解"=> Array("up"=> ["COL1A1","COL1A2","COL4A1","COL4A4","COL4A5","TIMP1","ELN","FBN1","LOX","HAS2","HAS3"], "down"=> ["MMP1","MMP9","MMP2"])),
             Array("抗發炎"=> Array("up"=> ["IL-10","TGFB","IL4"], "down"=> ["IL-1B","IL-8","IL-6","IL-18","TNF-a","IL-16","IL23","IL12A","IFNG","IL3"])),
             Array("細胞凋亡"=> Array("up"=> [], "down"=> ["BCL-2","BAX","BCLXL","BAD","CASP9","AIFM1","EndoG"])),
             Array("心血管保健"=> Array("up"=> ["PTGIS","NOS3","PLAT","PROC"], "down"=> ["EDN1","VWF","F3","SERPINE1","PDGFC","FGF2","IGF2BP3","IGF1R","IL-8","IL-6","ICAM1","VCAM1","CASP8"])),
