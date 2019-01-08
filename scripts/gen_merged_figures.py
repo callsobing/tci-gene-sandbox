@@ -360,8 +360,8 @@ for platform_name in platform_genes:
     top = Inches(1.5)
     left = Inches(2.4)
     height = Inches(3.5)
-    pic = slide.shapes.add_picture("reports/%s/%s/%s.png" % (user_id, uuid, platform_map[platform_name]), left, top, height=height)
+    pic = slide.shapes.add_picture("reports/%s/%s/%s.png" % (user_id, report_uuid, platform_map[platform_name]), left, top, height=height)
 file_fh.close()
 
-prs.save('reports/%s/%s/%s.pptx' % (user_id, uuid, uuid))
+prs.save('reports/%s/%s/%s.pptx' % (user_id, report_uuid, report_uuid))
 file_fh.close()
