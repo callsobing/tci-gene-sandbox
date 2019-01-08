@@ -156,7 +156,7 @@ def plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_
     xpos = np.arange(N)
     ind = []
     for i in xpos:
-        ind.append(xpos[i] + 0.5)
+        ind.append(xpos[i] + 0.2)
     ind = np.array(ind)
     width = 0.18  # the width of the bars
     fig, ax = plt.subplots()
