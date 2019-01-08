@@ -137,7 +137,7 @@ def label_significance(pos_in_fig, mean1, mean2, std, ymax):
         # Annotate significance level
         plt.annotate(text, xy=(pos_in_fig - 0.05, average(mean2) + std + ymax * 0.005), fontsize=12)
         # Annotate Relative Expression ratio
-    plt.annotate("{:.2f}".format(average(mean2)), xy=(pos_in_fig - 0.05, average(mean2) - ymax * 0.05), fontsize=12)
+    # plt.annotate("{:.2f}".format(average(mean2)), xy=(pos_in_fig - 0.05, average(mean2) - ymax * 0.05), fontsize=12)
 
 
 def plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_ids):
@@ -203,22 +203,22 @@ def plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_
     caplines2[0].set_marker('.')
     caplines2[2].set_marker('_')
     caplines2[0].set_markersize(0)
-    caplines2[2].set_markersize(15)
+    caplines2[2].set_markersize(15 - N)
 
     caplines3[0].set_marker('.')
     caplines3[2].set_marker('_')
     caplines3[0].set_markersize(0)
-    caplines3[2].set_markersize(15)
+    caplines3[2].set_markersize(15 - N)
 
     caplines4[0].set_marker('.')
     caplines4[2].set_marker('_')
     caplines4[0].set_markersize(0)
-    caplines4[2].set_markersize(15)
+    caplines4[2].set_markersize(15 - N)
 
     caplines5[0].set_marker('.')
     caplines5[2].set_marker('_')
     caplines5[0].set_markersize(0)
-    caplines5[2].set_markersize(15)
+    caplines5[2].set_markersize(15 - N)
 
     ymax = max([max(mock_means), max(c1t1_means), max(c1t2_means), max(c2t1_means), max(c2t2_means)]) + max([max(c1t1_errors[1]), max(c1t2_errors[1]), max(c2t1_errors[1]), max(c2t2_errors[1])]) * 2
     plt.ylim(0, ymax)
