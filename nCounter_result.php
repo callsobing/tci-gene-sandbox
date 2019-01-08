@@ -453,6 +453,7 @@ include 'check_login.php';
                                     </div>
                                     <input type="hidden" name="uuid" value="<?php echo($uuid); ?>">
                                     <input type="hidden" name="description" value="<?php echo($description); ?>">
+                                    <input type="hidden" name="file_select" value="<?php echo($file_name); ?>">
                                     </div>
                                     <div class="col-md-12">
                                         <br>
