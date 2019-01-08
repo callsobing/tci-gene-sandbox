@@ -334,6 +334,7 @@ for gene_idx in range(len(gene_names)):
     for cond1_sample in c1t1_samples:
         sample_idx = samples_idx[cond1_sample]
         if float(expression_map[cond1_sample][gene_idx]) < threshold:
+            print("%f\t%f" % (float(expression_map[cond1_sample][gene_idx]), threshold))
             count += 1
             gene_details_map[gene_names[gene_idx]]["c1t1"]["fold_change"].append(float(expression_map[cond1_sample][gene_idx]) / mock_avg)
     gene_details_map[gene_names[gene_idx]]["c1t1"]["std"] = np.std(gene_details_map[gene_names[gene_idx]]["c1t1"]["fold_change"])
