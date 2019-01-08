@@ -26,10 +26,11 @@ fclose($output);
 
 //$command_inline = "sudo -u www-data python3.4 scripts/gen_pptx_ncounter.py $user_id $uuid";
 echo("sudo -u www-data python3.4 scripts/gen_merged_figures.py \"$file_name\" reports/args_$uuid.txt $user_id $uuid");
-$command_inline = "sudo -u www-data python3.4 scripts/gen_merged_figures.py \"$file_name\" reports/args_$uuid.txt $user_id $uuid";
+$command_inline = "python3.4 scripts/gen_merged_figures.py \"$file_name\" reports/args_$uuid.txt $user_id $uuid";
 
 $command = exec($command_inline);
 echo($command);
+
 //
 //$link = "reports/$user_id/$uuid/$uuid.pptx";
 //echo "<script type='text/javascript'>";
