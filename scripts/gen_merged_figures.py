@@ -90,7 +90,10 @@ platform_map = {
 }
 
 def significance_score(mean1, mean2):
-    (statistic, pvalue) = stats.ttest_ind(mean1, mean2)
+    try:
+        (statistic, pvalue) = stats.ttest_ind(mean1, mean2)
+    except:
+        pvalue = 1
     if pvalue < 0.001:
         return 3.
     elif pvalue < 0.01:
@@ -125,7 +128,10 @@ def create_directory(directory_path):
 
 
 def label_significance(pos_in_fig, mean1, mean2, std, ymax, N):
-    (statistic, pvalue) = stats.ttest_ind(mean1, mean2)
+    try:
+        (statistic, pvalue) = stats.ttest_ind(mean1, mean2)
+    except:
+        pvalue = 1
     text = ""
     if pvalue < 0.001:
         text = "***"
