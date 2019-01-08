@@ -27,7 +27,6 @@ fclose($output);
 $command_inline = "sudo -u www-data python3.4 scripts/gen_merged_figures.py \"$file_name\" reports/args_$uuid.txt $user_id $uuid 2>&1";
 
 $command = exec($command_inline, $output);
-var_dump($output);
 
 
 $link = "reports/$user_id/$uuid/$uuid.pptx";
