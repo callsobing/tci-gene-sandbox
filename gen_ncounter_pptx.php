@@ -29,7 +29,7 @@ echo("sudo -u www-data python3.4 scripts/gen_merged_figures.py \"$file_name\" re
 $command_inline = "sudo -u www-data python3.4 scripts/gen_merged_figures.py \"$file_name\" reports/args_$uuid.txt $user_id $uuid";
 
 $command = exec($command_inline, $output);
-echo($output);
+var_dump($output);
 echo("End")
 
 //
