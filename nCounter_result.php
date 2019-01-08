@@ -400,20 +400,27 @@ include 'check_login.php';
                                                             <?php
                                                             if(!empty($value['up'])){
                                                                 foreach ($value['up'] as &$gene) {
-                                                            ?>
-                                                            <tr class="tr-shadow">
-                                                                <td>
-                                                                    <label for="checkbox" class="form-check-label ">
-                                                                        <input type="checkbox" name="gene[]" value="<?php echo($gene.'###'.$key); ?>" class="form-check-input">
-                                                                    </label>
-                                                                </td>
-                                                                <td><img src="reports/<?php echo($user); ?>/<?php echo($uuid); ?>/<?php echo($gene); ?>.png" width="100%"></td>
-                                                                <td><?php echo($gene) ?></td>
-                                                                <td>
-                                                                    <span class="badge badge-success">提高</span>
-                                                                </td>
-                                                            </tr>
-                                                            <?php
+                                                                    if(file_exists("reports/$user/$uuid/$gene.png")) {
+                                                                        ?>
+                                                                        <tr class="tr-shadow">
+                                                                            <td>
+                                                                                <label for="checkbox"
+                                                                                       class="form-check-label ">
+                                                                                    <input type="checkbox" name="gene[]"
+                                                                                           value="<?php echo($gene . '###' . $key); ?>"
+                                                                                           class="form-check-input">
+                                                                                </label>
+                                                                            </td>
+                                                                            <td>
+                                                                                <img src="reports/<?php echo($user); ?>/<?php echo($uuid); ?>/<?php echo($gene); ?>.png"
+                                                                                     width="100%"></td>
+                                                                            <td><?php echo($gene) ?></td>
+                                                                            <td>
+                                                                                <span class="badge badge-success">提高</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <?php
+                                                                    }
                                                                 }
                                                             }
                                                             ?>
@@ -421,20 +428,27 @@ include 'check_login.php';
                                                             <?php
                                                             if(!empty($value['down'])){
                                                                 foreach ($value['down'] as &$gene) {
-                                                                    ?>
-                                                                    <tr class="tr-shadow">
-                                                                        <td>
-                                                                            <label for="checkbox" class="form-check-label ">
-                                                                                <input type="checkbox" name="gene[]" value="<?php echo($gene.'###'.$key); ?>" class="form-check-input">
-                                                                            </label>
-                                                                        </td>
-                                                                        <td><img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/<?php echo($gene) ?>.png" width="100%"></td>
-                                                                        <td><?php echo($gene) ?></td>
-                                                                        <td>
-                                                                            <span class="badge badge-danger">降低</span>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <?php
+                                                                    if(file_exists("reports/$user/$uuid/$gene.png")) {
+                                                                        ?>
+                                                                        <tr class="tr-shadow">
+                                                                            <td>
+                                                                                <label for="checkbox"
+                                                                                       class="form-check-label ">
+                                                                                    <input type="checkbox" name="gene[]"
+                                                                                           value="<?php echo($gene . '###' . $key); ?>"
+                                                                                           class="form-check-input">
+                                                                                </label>
+                                                                            </td>
+                                                                            <td>
+                                                                                <img src="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/<?php echo($gene) ?>.png"
+                                                                                     width="100%"></td>
+                                                                            <td><?php echo($gene) ?></td>
+                                                                            <td>
+                                                                                <span class="badge badge-danger">降低</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <?php
+                                                                    }
                                                                 }
                                                             }
                                                             ?>
