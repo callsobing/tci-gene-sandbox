@@ -25,17 +25,16 @@ if (isset($_POST['gene']))
 fclose($output);
 
 //$command_inline = "sudo -u www-data python3.4 scripts/gen_pptx_ncounter.py $user_id $uuid";
-echo("sudo -u www-data python3.4 scripts/gen_merged_figures.py \"$file_name\" reports/args_$uuid.txt $user_id $uuid");
 $command_inline = "sudo -u www-data python3.4 scripts/gen_merged_figures.py \"$file_name\" reports/args_$uuid.txt $user_id $uuid 2>&1";
 
-exec("PYTHONIOENCODING=utf-8");
 $command = exec($command_inline, $output);
+var_dump($output);
 
-
-$link = "reports/$user_id/$uuid/$uuid.pptx";
-echo "<script type='text/javascript'>";
-echo "window.location.href='$link'";
-echo "</script>";
-echo "window.open('', '_self', ''); window.close();";
+//
+//$link = "reports/$user_id/$uuid/$uuid.pptx";
+//echo "<script type='text/javascript'>";
+//echo "window.location.href='$link'";
+//echo "</script>";
+//echo "window.open('', '_self', ''); window.close();";
 
 ?>
