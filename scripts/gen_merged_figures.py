@@ -341,7 +341,7 @@ for gene_idx in range(len(gene_names)):
         gene_details_map[gene_names[gene_idx]]["c2t2"]["fold_change"].append(float(expression_map[cond2_sample][gene_idx]) / mock_avg)
     gene_details_map[gene_names[gene_idx]]["c2t2"]["std"] = np.std(gene_details_map[gene_names[gene_idx]]["c2t2"]["fold_change"])
 
-file_fh = open("reports/%s/%s/selected_figures.txt" % (user_id, uuid), encoding="utf-8")
+file_fh = open("reports/%s/%s/selected_figures.txt" % (user_id, report_uuid), encoding="utf-8")
 
 first = True
 description = ""
