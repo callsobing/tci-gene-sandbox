@@ -9,6 +9,10 @@ from scipy import stats
 import os
 import sys
 plt.rcParams['font.sans-serif'] = ['SimHei']
+import datetime
+
+now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+prs = Presentation('data/pptx_template.pptx')
 
 
 file_name = sys.argv[1]
@@ -126,9 +130,9 @@ def label_significance(pos_in_fig, mean1, mean2, std, ymax):
         text = "*"
     if text:
         # Annotate significance level
-        plt.annotate(text, xy=(pos_in_fig - 0.05, average(mean2) + std + ymax * 0.005), fontsize="x-small")
+        plt.annotate(text, xy=(pos_in_fig - 0.05, average(mean2) + std + ymax * 0.005), fontsize=12)
         # Annotate Relative Expression ratio
-    plt.annotate("{:.2f}".format(average(mean2)), xy=(pos_in_fig - 0.05, average(mean2) - ymax * 0.05), fontsize="x-small")
+    plt.annotate("{:.2f}".format(average(mean2)), xy=(pos_in_fig - 0.05, average(mean2) - ymax * 0.05), fontsize=12)
 
 
 def plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_ids):
@@ -338,3 +342,21 @@ for gene_idx in range(len(gene_names)):
 # report下面新開uuid的資料夾 - "/使用者名稱/uuid/"
 for platform_name in platform_genes:
     plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_identifiers)
+    # 新增slide
+    bullet_slide_layout = prs.slide_layouts[1]
+    slide = prs.slides.add_slide(bullet_slide_layout)
+
+    shapes = slide.shapes
+    title_shape = shapes.title
+    body_shape = shapes.placeholders[1]
+
+    title_shape.text = platform_name
+
+    top = Inches(1.5)
+    left = Inches(2.4)
+    height = Inches(3.5)
+    pic = slide.shapes.add_picture("reports/%s/%s/%s.png" % (user_id, uuid, platform_map[platform_name]), left, top, height=height)
+file_fh.close()
+
+prs.save('reports/%s/%s/%s.pptx' % (user_id, uuid, uuid))
+file_fh.close()
