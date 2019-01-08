@@ -15,6 +15,8 @@ samples_fh = sys.argv[2]
 user_id = sys.argv[3]
 report_uuid = sys.argv[4]
 
+neg_genes = ["NEG_A", "NEG_B", "NEG_C", "NEG_D", "NEG_E", "NEG_F", "NEG_G", "NEG_H"]
+
 platforms = {
             "抗氧化": {"up": ["SOD1","SOD2","GPX1","CAT"], "down": []},
             "抗老": {"up": ["CCT2","CCT5","CCT6A","CCT7","CCT8","Pink1","Parkin","Atg1","Atg8","SIRT1","FOXO","NADSYN","MRPS5","Ubl-5","SOD3"], "down": ["PARP1","PARP2"]},
@@ -250,11 +252,76 @@ for gene_idx in range(len(gene_names)):
         "c2t2": {"fold_change": [], "std": 0.0}
         }
 
+# 建立background數值
+
+neg_sum = 0
+mock_avg = []
+all_avgs = []
+all_std = 0
+for mock_id in mock_samples:
+    mock_total = 0
+    for gene in neg_genes:
+        gene_idx = gene_names.index(gene)
+        mock_idx = samples_idx[mock_id]
+        neg_sum += float(expression_map[mock_id][gene_idx])
+        mock_total += float(expression_map[mock_id][gene_idx])
+    mock_avg.append(mock_total / len(neg_genes))
+cond1_avg = []
+for cond1_sample in c1t1_samples:
+    cond_total = 0
+    for gene in neg_genes:
+        gene_idx = gene_names.index(gene)
+        sample_idx = samples_idx[cond1_sample]
+        neg_sum += float(expression_map[sample_idx][gene_idx])
+        cond_total += float(expression_map[sample_idx][gene_idx])
+    cond1_avg.append(cond_total / len(neg_genes))
+cond2_avg = []
+for cond2_sample in c1t2_samples:
+    cond_total = 0
+    for gene in neg_genes:
+        gene_idx = gene_names.index(gene)
+        sample_idx = samples_idx[cond2_sample]
+        neg_sum += float(expression_map[sample_idx][gene_idx])
+        cond_total += float(expression_map[sample_idx][gene_idx])
+    cond2_avg.append(cond_total / len(neg_genes))
+cond3_avg = []
+for cond1_sample in c2t1_samples:
+    cond_total = 0
+    for gene in neg_genes:
+        gene_idx = gene_names.index(gene)
+        sample_idx = samples_idx[cond1_sample]
+        neg_sum += float(expression_map[sample_idx][gene_idx])
+        cond_total += float(expression_map[sample_idx][gene_idx])
+    cond3_avg.append(cond_total / len(neg_genes))
+cond4_avg = []
+for cond2_sample in c2t2_samples:
+    cond_total = 0
+    for gene in neg_genes:
+        gene_idx = gene_names.index(gene)
+        sample_idx = samples_idx[cond2_sample]
+        neg_sum += float(expression_map[sample_idx][gene_idx])
+        cond_total += float(expression_map[sample_idx][gene_idx])
+    cond4_avg.append(cond_total / len(neg_genes))
+all_avg = neg_sum / ((len(mock_samples) + len(c1t1_samples) + len(c1t2_samples) + len(c2t1_samples) + len(c2t2_samples)) * len(neg_genes))
+all_avgs.extend(mock_avg)
+all_avgs.extend(cond1_avg)
+all_avgs.extend(cond2_avg)
+all_avgs.extend(cond3_avg)
+all_avgs.extend(cond4_avg)
+all_std = np.std(all_avgs)
+threshold = all_avg + 2 * all_std
+
 for gene_idx in range(len(gene_names)):
     mock_sum = 0
+    count = 0
     for mock_id in mock_samples:
         mock_idx = samples_idx[mock_id]
+        if float(expression_map[mock_id][gene_idx]) < threshold:
+            count += 1
+            continue
         mock_sum += float(expression_map[mock_id][gene_idx])
+    if count > 1: # 如果超過兩個mock沒有超過threshold就丟棄這個gene
+        continue
     mock_avg = mock_sum / float(len(mock_samples))
     for cond1_sample in c1t1_samples:
         sample_idx = samples_idx[cond1_sample]
@@ -280,7 +347,8 @@ for gene_idx in range(len(gene_names)):
 # report下面新開uuid的資料夾 - "/使用者名稱/uuid/"
 if create_directory("reports/%s/%s/" % (user_id, report_uuid)):
     for gene_idx in range(len(gene_names)):
-        plot_gene(gene_details_map, gene_names[gene_idx], user_id, report_uuid, sample_identifiers)
+        if gene_names[gene_idx] in gene_details_map:
+            plot_gene(gene_details_map, gene_names[gene_idx], user_id, report_uuid, sample_identifiers)
     platform_score(gene_details_map)
 else:
     print("Cannot create directory!!")
