@@ -179,7 +179,7 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid, sample_ids):
     plt.close(fig)
 
 
-selected_sample_fh = open(samples_fh)
+selected_sample_fh = open(samples_fh, encoding="utf-8")
 mock_samples = []
 c1t1_samples = []
 c1t2_samples = []
