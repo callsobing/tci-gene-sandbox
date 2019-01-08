@@ -9,11 +9,7 @@ from scipy import stats
 import os
 import sys
 plt.rcParams['font.sans-serif'] = ['SimHei']
-import codecs
-sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
-import importlib
-importlib.reload(sys)
-sys.setdefaultencoding("utf-8")
+
 
 file_name = sys.argv[1]
 samples_fh = sys.argv[2]
