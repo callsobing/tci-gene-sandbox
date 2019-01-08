@@ -124,7 +124,7 @@ def create_directory(directory_path):
         return False
 
 
-def label_significance(pos_in_fig, mean1, mean2, std, ymax):
+def label_significance(pos_in_fig, mean1, mean2, std, ymax, N):
     (statistic, pvalue) = stats.ttest_ind(mean1, mean2)
     text = ""
     if pvalue < 0.001:
@@ -135,7 +135,7 @@ def label_significance(pos_in_fig, mean1, mean2, std, ymax):
         text = "*"
     if text:
         # Annotate significance level
-        plt.annotate(text, xy=(pos_in_fig - 0.05, average(mean2) + std + ymax * 0.005), fontsize=12)
+        plt.annotate(text, xy=(pos_in_fig - 0.05, average(mean2) + std + ymax * 0.005), fontsize=(15 - N))
         # Annotate Relative Expression ratio
     # plt.annotate("{:.2f}".format(average(mean2)), xy=(pos_in_fig - 0.05, average(mean2) - ymax * 0.05), fontsize=12)
 
@@ -234,10 +234,10 @@ def plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_
 
     for i in range(len(platform_genes[platform_name])):
         gene = platform_genes[platform_name][i]
-        label_significance(ind[i]+width, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c1t1"]["fold_change"], c1t1_errors[1][i], ymax)
-        label_significance(ind[i]+width*2, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c1t2"]["fold_change"], c1t2_errors[1][i], ymax)
-        label_significance(ind[i]+width*3, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c2t1"]["fold_change"], c2t1_errors[1][i], ymax)
-        label_significance(ind[i]+width*4, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c2t2"]["fold_change"], c2t2_errors[1][i], ymax)
+        label_significance(ind[i]+width, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c1t1"]["fold_change"], c1t1_errors[1][i], ymax, N)
+        label_significance(ind[i]+width*2, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c1t2"]["fold_change"], c1t2_errors[1][i], ymax, N)
+        label_significance(ind[i]+width*3, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c2t1"]["fold_change"], c2t1_errors[1][i], ymax, N)
+        label_significance(ind[i]+width*4, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c2t2"]["fold_change"], c2t2_errors[1][i], ymax, N)
     file_name_path = os.path.normcase("reports/%s/%s/%s.png" % (user_id, report_uuid, platform_map[platform_name]))
     fig.savefig(file_name_path, bbox_extra_artists=(lgd,), bbox_inches='tight')
     plt.cla()
