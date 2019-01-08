@@ -43,6 +43,8 @@ for line in file_fh:
     platform_genes[platform].append(gene)
 file_fh.close()
 
+neg_genes = ["NEG_A", "NEG_B", "NEG_C", "NEG_D", "NEG_E", "NEG_F", "NEG_G", "NEG_H"]
+
 platforms = {
             "抗氧化": {"up": ["SOD1","SOD2","GPX1","CAT"], "down": []},
             "抗老": {"up": ["CCT2","CCT5","CCT6A","CCT7","CCT8","Pink1","Parkin","Atg1","Atg8","SIRT1","FOXO","NADSYN","MRPS5","Ubl-5","SOD3"], "down": ["PARP1","PARP2"]},
