@@ -42,7 +42,10 @@ platforms = {
 
 
 def significance_score(mean1, mean2):
-    (statistic, pvalue) = stats.ttest_ind(mean1, mean2)
+    try:
+        (statistic, pvalue) = stats.ttest_ind(mean1, mean2)
+    except:
+        pvalue = 1
     if pvalue < 0.001:
         return 3.
     elif pvalue < 0.01:
