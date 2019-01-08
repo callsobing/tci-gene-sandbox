@@ -57,6 +57,28 @@ platforms = {
             "免疫活化與分化": {"up": [], "down": ["CD40","ERBB2","LIF","MALT1","NCK1","PAF1","DYNLL2","GRK5","PSMD4","RDH10","RELB","SCARF1","TNFSF14","ABR","IL13","IL4R","IL5RA","RELA"]}
             }
 
+platform_map = {
+            "抗氧化": "platform1",
+            "抗老": "platform2",
+            "DNA修復":  "platform3",
+            "免疫":  "platform4",
+            "護胃":  "platform5",
+            "護眼":  "platform6",
+            "抗黑色素生成":  "platform7",
+            "膠原蛋白合成-組合-降解":  "platform8",
+            "抗發炎":  "platform9",
+            "細胞凋亡":  "platform10",
+            "心血管保健":  "platform11",
+            "晝夜節律":  "platform12",
+            "LPS模擬體內發炎":  "platform13",
+            "非酒精性肝損傷":  "platform14",
+            "皮膚角質保濕":  "platform15",
+            "脂肪肝":  "platform16",
+            "提升HDL":  "platform17",
+            "健髮平台":  "platform18",
+            "端粒酶活性平台":  "platform19",
+            "免疫活化與分化":  "platform20"
+}
 
 def significance_score(mean1, mean2):
     (statistic, pvalue) = stats.ttest_ind(mean1, mean2)
@@ -209,7 +231,7 @@ def plot_platform(gene_details_map, platform_name, user_id, report_uuid, sample_
         label_significance(ind[i]+width*2, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c1t2"]["fold_change"], c1t2_errors[1][i], ymax)
         label_significance(ind[i]+width*3, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c2t1"]["fold_change"], c2t1_errors[1][i], ymax)
         label_significance(ind[i]+width*4, gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c2t2"]["fold_change"], c2t2_errors[1][i], ymax)
-    file_name_path = os.path.normcase("reports/%s/%s/%s.png" % (user_id, report_uuid, platform_name))
+    file_name_path = os.path.normcase("reports/%s/%s/%s.png" % (user_id, report_uuid, platform_map[platform_name]))
     fig.savefig(file_name_path, bbox_extra_artists=(lgd,), bbox_inches='tight')
     plt.cla()
     plt.close(fig)
