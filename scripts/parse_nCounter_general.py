@@ -137,20 +137,23 @@ def label_significance(pos_in_fig, mean1, mean2, std, ymax):
 
 
 def plot_gene(gene_details_map, gene, user_id, report_uuid, sample_ids):
-    mock_mean = average(gene_details_map[gene]["mock"]["fold_change"])
-    mean_c1t1 = average(gene_details_map[gene]["c1t1"]["fold_change"])
-    mean_c1t2 = average(gene_details_map[gene]["c1t2"]["fold_change"])
-    mean_c2t1 = average(gene_details_map[gene]["c2t1"]["fold_change"])
-    mean_c2t2 = average(gene_details_map[gene]["c2t2"]["fold_change"])
-    x_pos = (0.5, 1.5, 2.5, 3.5, 4.5)
-    means = (mock_mean, mean_c1t1, mean_c1t2, mean_c2t1, mean_c2t2)
-    errors = [[0, 0, 0, 0, 0], [gene_details_map[gene]["mock"]["std"]/2,
-              gene_details_map[gene]["c1t1"]["std"]/2,
-              gene_details_map[gene]["c1t2"]["std"]/2,
-              gene_details_map[gene]["c2t1"]["std"]/2,
-              gene_details_map[gene]["c2t2"]["std"]/2]]
+    sample_set_list = ["c1t1", "c1t2", "c2t1", "c2t2"]
+    sample_id_mapping = {"c1t1": sample_ids[0], "c1t2": sample_ids[1], "c2t1": sample_ids[2], "c2t2": sample_ids[3]}
+    xpos_anchor = 0.5
+    x_pos = [0.5]
+    means = [gene_details_map[gene]["mock"]["fold_change"]]
+    errors = [[0], [gene_details_map[gene]["mock"]["std"]/2]]
+    labels = ['控制組']
+    for sample_set in sample_set_list:
+        if not gene_details_map[gene_names[gene_idx]][sample_set]:
+            continue
+        means.append(gene_details_map[gene][sample_set]["fold_change"])
+        xpos_anchor += 1
+        x_pos.append(xpos_anchor)
+        errors[0].append(0)
+        errors[1].append(gene_details_map[gene][sample_set]["std"]/2)
+        labels.append(sample_id_mapping[sample_set])
 
-    labels = ['控制組', sample_ids[0], sample_ids[1], sample_ids[2], sample_ids[3]]
     fig, ax = plt.subplots()
     # plt.figure(figsize=(6, 7))
 
@@ -178,10 +181,12 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid, sample_ids):
     plt.gca(). spines['right'].set_visible(False)
     plt.gca().spines['top'].set_visible(False)
 
-    label_significance(x_pos[1], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c1t1"]["fold_change"], errors[1][1], ymax)
-    label_significance(x_pos[2], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c1t2"]["fold_change"], errors[1][2], ymax)
-    label_significance(x_pos[3], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c2t1"]["fold_change"], errors[1][3], ymax)
-    label_significance(x_pos[4], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene]["c2t2"]["fold_change"], errors[1][4], ymax)
+    count = 0
+    for sample_set in sample_set_list:
+        if not gene_details_map[gene_names[gene_idx]][sample_set]:
+            continue
+        count += 1
+        label_significance(x_pos[count], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene][sample_set]["fold_change"], errors[1][count], ymax)
     fig.savefig("reports/%s/%s/%s.png" % (user_id, report_uuid, gene), bbox_extra_artists=(lgd,), bbox_inches='tight')
     plt.cla()
     plt.close(fig)
