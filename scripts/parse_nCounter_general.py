@@ -138,9 +138,11 @@ def label_significance(pos_in_fig, mean1, mean2, std, ymax):
 
 def plot_gene(gene_details_map, gene, user_id, report_uuid, sample_ids):
     sample_set_list = ["c1t1", "c1t2", "c2t1", "c2t2"]
-    sample_id_mapping = {"c1t1": sample_ids[0], "c1t2": sample_ids[1], "c2t1": sample_ids[2], "c2t2": sample_ids[3]}
+    sample_id_mapping = {"c1t1": "#705D56", "c1t2": "#B19994", "c2t1": "#D3C0CD", "c2t2": "#E3DFFF"}
+    sample_color_mapping = {"c1t1": sample_ids[0], "c1t2": sample_ids[1], "c2t1": sample_ids[2], "c2t2": sample_ids[3]}
     xpos_anchor = 0.5
     x_pos = [0.5]
+    colors = ["#3D3A4B"]
     means = [gene_details_map[gene]["mock"]["fold_change"]]
     errors = [[0], [gene_details_map[gene]["mock"]["std"]/2]]
     labels = ['控制組']
@@ -153,11 +155,11 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid, sample_ids):
         errors[0].append(0)
         errors[1].append(gene_details_map[gene][sample_set]["std"]/2)
         labels.append(sample_id_mapping[sample_set])
+        colors.append(sample_color_mapping[sample_set])
 
     fig, ax = plt.subplots()
     # plt.figure(figsize=(6, 7))
 
-    colors = ["#3D3A4B", "#705D56", "#B19994", "#D3C0CD", "#E3DFFF"]
     for i in range(len(means)):
         plt.bar(x_pos[i], means[i], 1.0, color=colors[i], align='center', linewidth=0, label=labels[i])
     # plt.bar(x_pos, means, 1.0, color=colors, align='center', linewidth=0, label=labels)
