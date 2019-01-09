@@ -323,63 +323,7 @@ for gene_idx in range(len(gene_names)):
         "c2t2": {"fold_change": [], "std": 0.0}
         }
 
-
-neg_sum = 0
-mock_avg = []
-all_avgs = []
-all_std = 0
-for mock_id in mock_samples:
-    mock_total = 0
-    for gene in neg_genes:
-        gene_idx = gene_names.index(gene)
-        mock_idx = samples_idx[mock_id]
-        neg_sum += float(expression_map[mock_id][gene_idx])
-        mock_total += float(expression_map[mock_id][gene_idx])
-    mock_avg.append(mock_total / len(neg_genes))
-cond1_avg = []
-for cond1_sample in c1t1_samples:
-    cond_total = 0
-    for gene in neg_genes:
-        gene_idx = gene_names.index(gene)
-        neg_sum += float(expression_map[cond1_sample][gene_idx])
-        cond_total += float(expression_map[cond1_sample][gene_idx])
-    cond1_avg.append(cond_total / len(neg_genes))
-cond2_avg = []
-for cond2_sample in c1t2_samples:
-    cond_total = 0
-    for gene in neg_genes:
-        gene_idx = gene_names.index(gene)
-        sample_idx = samples_idx[cond2_sample]
-        neg_sum += float(expression_map[cond2_sample][gene_idx])
-        cond_total += float(expression_map[cond2_sample][gene_idx])
-    cond2_avg.append(cond_total / len(neg_genes))
-cond3_avg = []
-for cond1_sample in c2t1_samples:
-    cond_total = 0
-    for gene in neg_genes:
-        gene_idx = gene_names.index(gene)
-        sample_idx = samples_idx[cond1_sample]
-        neg_sum += float(expression_map[cond1_sample][gene_idx])
-        cond_total += float(expression_map[cond1_sample][gene_idx])
-    cond3_avg.append(cond_total / len(neg_genes))
-cond4_avg = []
-for cond2_sample in c2t2_samples:
-    cond_total = 0
-    for gene in neg_genes:
-        gene_idx = gene_names.index(gene)
-        sample_idx = samples_idx[cond2_sample]
-        neg_sum += float(expression_map[cond2_sample][gene_idx])
-        cond_total += float(expression_map[cond2_sample][gene_idx])
-    cond4_avg.append(cond_total / len(neg_genes))
-all_avg = neg_sum / ((len(mock_samples) + len(c1t1_samples) + len(c1t2_samples) + len(c2t1_samples) + len(c2t2_samples)) * len(neg_genes))
-all_avgs.extend(mock_avg)
-all_avgs.extend(cond1_avg)
-all_avgs.extend(cond2_avg)
-all_avgs.extend(cond3_avg)
-all_avgs.extend(cond4_avg)
-all_std = np.std(all_avgs)
-threshold = all_avg + 2 * all_std
-
+threshold = 20.0001
 
 for gene_idx in range(len(gene_names)):
     mock_sum = 0
