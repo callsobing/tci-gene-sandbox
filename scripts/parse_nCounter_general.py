@@ -143,13 +143,13 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid, sample_ids):
     xpos_anchor = 0.5
     x_pos = [0.5]
     colors = ["#3D3A4B"]
-    means = [gene_details_map[gene]["mock"]["fold_change"]]
+    means = [float(gene_details_map[gene]["mock"]["fold_change"])]
     errors = [[0], [gene_details_map[gene]["mock"]["std"]/2]]
     labels = ['控制組']
     for sample_set in sample_set_list:
         if not gene_details_map[gene_names[gene_idx]][sample_set]:
             continue
-        means.append(gene_details_map[gene][sample_set]["fold_change"])
+        means.append(float(gene_details_map[gene][sample_set]["fold_change"]))
         xpos_anchor += 1
         x_pos.append(xpos_anchor)
         errors[0].append(0)
