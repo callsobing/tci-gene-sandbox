@@ -185,7 +185,7 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid, sample_ids):
 
     count = 0
     for sample_set in sample_set_list:
-        if not gene_details_map[gene_names[gene_idx]][sample_set]:
+        if len(gene_details_map[gene][sample_set]["fold_change"]) < 1:
             continue
         count += 1
         label_significance(x_pos[count], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene][sample_set]["fold_change"], errors[1][count], ymax)
