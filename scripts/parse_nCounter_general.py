@@ -138,8 +138,8 @@ def label_significance(pos_in_fig, mean1, mean2, std, ymax):
 
 def plot_gene(gene_details_map, gene, user_id, report_uuid, sample_ids):
     sample_set_list = ["c1t1", "c1t2", "c2t1", "c2t2"]
-    sample_id_mapping = {"c1t1": "#705D56", "c1t2": "#B19994", "c2t1": "#D3C0CD", "c2t2": "#E3DFFF"}
-    sample_color_mapping = {"c1t1": sample_ids[0], "c1t2": sample_ids[1], "c2t1": sample_ids[2], "c2t2": sample_ids[3]}
+    sample_color_mapping = {"c1t1": "#705D56", "c1t2": "#B19994", "c2t1": "#D3C0CD", "c2t2": "#E3DFFF"}
+    sample_id_mapping = {"c1t1": sample_ids[0], "c1t2": sample_ids[1], "c2t1": sample_ids[2], "c2t2": sample_ids[3]}
     xpos_anchor = 0.5
     x_pos = [0.5]
     colors = ["#3D3A4B"]
