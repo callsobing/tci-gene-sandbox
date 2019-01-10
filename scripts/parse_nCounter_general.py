@@ -147,7 +147,7 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid, sample_ids):
     errors = [[0], [gene_details_map[gene]["mock"]["std"]/2]]
     labels = ['控制組']
     for sample_set in sample_set_list:
-        if not gene_details_map[gene_names[gene_idx]][sample_set]:
+        if len(gene_details_map[gene_names[gene_idx]][sample_set]) < 1:
             print(gene_details_map[gene_names[gene_idx]][sample_set])
             continue
         means.append(average(gene_details_map[gene][sample_set]["fold_change"]))
