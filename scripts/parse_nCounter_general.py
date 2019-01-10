@@ -266,7 +266,7 @@ for gene_idx in range(len(gene_names)):
         "c2t2": {"fold_change": [], "std": 0.0}
         }
 
-threshold = 100.0001
+threshold = 20.0001
 
 for gene_idx in range(len(gene_names)):
     mock_sum = 0
