@@ -161,7 +161,6 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid, sample_ids):
     # plt.figure(figsize=(6, 7))
 
     for i in range(len(means)):
-        print(means[i])
         plt.bar(x_pos[i], means[i], 1.0, color=colors[i], align='center', linewidth=0, label=labels[i])
     # plt.bar(x_pos, means, 1.0, color=colors, align='center', linewidth=0, label=labels)
     plotline1, caplines1, barlinecols1 = ax.errorbar(x_pos, means, yerr=errors, lolims=True, ls='None', color='black', barsabove=True)
