@@ -148,7 +148,7 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid, sample_ids):
     labels = ['控制組']
     for sample_set in sample_set_list:
         if len(gene_details_map[gene_names[gene_idx]][sample_set]) < 1:
-            print(gene_details_map[gene_names[gene_idx]][sample_set])
+            print("Skipppp")
             continue
         means.append(average(gene_details_map[gene][sample_set]["fold_change"]))
         xpos_anchor += 1
