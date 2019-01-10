@@ -161,7 +161,6 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid, sample_ids):
     # plt.figure(figsize=(6, 7))
 
     for i in range(len(means)):
-        print("pos_len:%s\tmeans_len:%s\tlabel_len:%s" % (len(x_pos), len(means), len(labels)))
         plt.bar(x_pos[i], means[i], 1.0, color=colors[i], align='center', linewidth=0, label=labels[i])
     # plt.bar(x_pos, means, 1.0, color=colors, align='center', linewidth=0, label=labels)
     plotline1, caplines1, barlinecols1 = ax.errorbar(x_pos, means, yerr=errors, lolims=True, ls='None', color='black', barsabove=True)
@@ -192,6 +191,7 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid, sample_ids):
         label_significance(x_pos[count], gene_details_map[gene]["mock"]["fold_change"], gene_details_map[gene][sample_set]["fold_change"], errors[1][count], ymax)
     fig.savefig("reports/%s/%s/%s.png" % (user_id, report_uuid, gene), bbox_extra_artists=(lgd,), bbox_inches='tight')
     plt.cla()
+    plt.clf()
     plt.close(fig)
 
 
