@@ -277,7 +277,7 @@ for gene_idx in range(len(gene_names)):
             count += 1
             continue
         mock_sum += float(expression_map[mock_id][gene_idx])
-    if count == 2:  # 如果剛好兩個mock沒有超過threshold就丟棄這個gene
+    if count == 2 or mock_sum == 0:  # 如果剛好兩個mock沒有超過threshold就丟棄這個gene
         gene_details_map.pop(gene_names[gene_idx])
         continue
     count = 0
