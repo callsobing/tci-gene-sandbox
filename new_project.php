@@ -300,7 +300,7 @@ if(isset($_GET['error'])) {
                                                 <?php
                                                 while($row = mysql_fetch_array($result))
                                                 {
-                                                    $file_name = $row['name'];
+                                                    $file_name = $row['name'].preg_replace("#", "%23");
                                                     echo("<option value=\"$target_dir$file_name\">$file_name</option>");
                                                 }
                                                 ?>
