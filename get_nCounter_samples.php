@@ -15,7 +15,7 @@ if($_GET['error'] == "sample_not_selected"){
     echo "</script>";
 }
 
-if (!file_exists(str_replace("%23", "#", $_POST["file_select"]))){ # 檢查檔案存不存在
+if (!file_exists($_POST["file_select"])){ # 檢查檔案存不存在
     echo($_POST["file_select"]);
     echo(str_replace("%23", "#", $_POST["file_select"]));
     die;
@@ -37,7 +37,7 @@ if (!file_exists(str_replace("%23", "#", $_POST["file_select"]))){ # 檢查檔�
     echo "</script>";
 }
 
-$file_name = str_replace("%23", "#", $_POST["file_select"]);
+$file_name = $_POST["file_select"];
 $uuid = uniqid();
 $command = shell_exec("sudo -u www-data python3.4 scripts/nCounter_selection.py '".$file_name."' '".$uuid."'");
 
