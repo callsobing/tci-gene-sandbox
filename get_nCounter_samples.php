@@ -16,12 +16,9 @@ if($_GET['error'] == "sample_not_selected"){
 }
 
 if (!file_exists($_POST["file_select"])){ # 檢查檔案存不存在
-    echo($_POST["file_select"]);
-    echo(str_replace("%23", "#", $_POST["file_select"]));
-    die;
-//    echo "<script type='text/javascript'>";
-//    echo "window.location.href='new_project.php?error=file_not_exist'";
-//    echo "</script>";
+    echo "<script type='text/javascript'>";
+    echo "window.location.href='new_project.php?error=file_not_exist'";
+    echo "</script>";
 } elseif (mime_content_type($_POST["file_select"]) == 'text/plain'){ #如果是文字檔就檢查格式
     $file = fopen($_POST["file_select"], "r");
     $line = fgets($file);
