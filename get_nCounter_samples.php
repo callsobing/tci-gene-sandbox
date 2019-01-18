@@ -17,6 +17,7 @@ if($_GET['error'] == "sample_not_selected"){
 
 if (!file_exists($_POST["file_select"])){ # 檢查檔案存不存在
     echo($_POST["file_select"]);
+    die;
 //    echo "<script type='text/javascript'>";
 //    echo "window.location.href='new_project.php?error=file_not_exist'";
 //    echo "</script>";
