@@ -33,7 +33,7 @@ platforms = {
             "LPS模擬體內發炎": {"up": ["NOS3"], "down": ["ICAM1","VCAM1","IL-8"]},
             "非酒精性肝損傷": {"up": ["UNG","OGG1","MPG","APEX1","ERCC1","ERCC6","XPA","XRCC1","XRCC5","MSH2","MLH1","MSH6","SOD1","SOD2","GPX1","CAT"], "down": []},
             "皮膚角質保濕": {"up": ["Tgm1","Krt1","Keratin 10","Keratin 14","AQP3","FLG-F","SMPD1","GBA","HAS2","HAS3"], "down": []},
-            "脂肪肝": {"up": ["PPAR-g","PPAR-a"], "down": ["SREBP-1c (SREBF1)","SCD1 (SCD)","ACC (ACACA)"]},
+            "脂肪肝": {"up": ["PPAR-a"], "down": ["PPAR-g","SREBP-1c (SREBF1)","SCD1 (SCD)","ACC (ACACA)"]},
             "提升HDL": {"up": ["CETP","SCARB1","apoA-I (APA1)","LDLR","ABCA1"], "down": []},
             "健髮平台": {"up": ["KROX20","SCF","VEGFA","IGF1"], "down": ["SRD5A1","SRD5A2","AR","TGFB","BDNF"]},
             "端粒酶活性平台": {"up": ["TERT","TERC","RTEL1"], "down": []},
