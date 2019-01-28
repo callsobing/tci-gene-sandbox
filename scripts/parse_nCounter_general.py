@@ -124,10 +124,10 @@ def platform_xlsx(gene_details_map, sample_identifiers):
         ws.write(row_offset, 12, sample_identifiers[3])
         ws.write(row_offset, 13, sample_identifiers[4])
         ws.write(row_offset, 15, "TTEST")
-        ws.write(row_offset, 16, sample_identifiers[1])
-        ws.write(row_offset, 17, sample_identifiers[2])
-        ws.write(row_offset, 18, sample_identifiers[3])
-        ws.write(row_offset, 19, sample_identifiers[4])
+        ws.write(row_offset, 16, sample_identifiers[0])
+        ws.write(row_offset, 17, sample_identifiers[1])
+        ws.write(row_offset, 18, sample_identifiers[2])
+        ws.write(row_offset, 19, sample_identifiers[3])
         row_offset += 1
         for gene in platforms[platform]['up']:
             if gene not in gene_details_map:
