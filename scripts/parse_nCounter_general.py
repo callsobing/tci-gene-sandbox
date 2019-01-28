@@ -139,11 +139,11 @@ def platform_xlsx(gene_details_map, sample_identifiers):
             c1t2_mean = gene_details_map[gene]["c1t2"]["fold_change"]
             c2t1_mean = gene_details_map[gene]["c2t1"]["fold_change"]
             c2t2_mean = gene_details_map[gene]["c2t2"]["fold_change"]
-            ws.write(row_offset + gene_count, 2, str(gene_details_map[gene]["mock"]["fold_change"]))
-            ws.write(row_offset + gene_count, 3, str(gene_details_map[gene]["c1t1"]["fold_change"]))
-            ws.write(row_offset + gene_count, 4, str(gene_details_map[gene]["c1t2"]["fold_change"]))
-            ws.write(row_offset + gene_count, 5, str(gene_details_map[gene]["c2t1"]["fold_change"]))
-            ws.write(row_offset + gene_count, 6, str(gene_details_map[gene]["c2t2"]["fold_change"]))
+            ws.write(row_offset + gene_count, 2, average(gene_details_map[gene]["mock"]["fold_change"]))
+            ws.write(row_offset + gene_count, 3, average(gene_details_map[gene]["c1t1"]["fold_change"]))
+            ws.write(row_offset + gene_count, 4, average(gene_details_map[gene]["c1t2"]["fold_change"]))
+            ws.write(row_offset + gene_count, 5, average(gene_details_map[gene]["c2t1"]["fold_change"]))
+            ws.write(row_offset + gene_count, 6, average(gene_details_map[gene]["c2t2"]["fold_change"]))
             ws.write(row_offset + gene_count, 8, gene, style)
             ws.write(row_offset + gene_count, 9,  str(gene_details_map[gene]["mock"]["std"]))
             ws.write(row_offset + gene_count, 10, str(gene_details_map[gene]["c1t1"]["std"]))
@@ -178,11 +178,11 @@ def platform_xlsx(gene_details_map, sample_identifiers):
             c1t2_mean = gene_details_map[gene]["c1t2"]["fold_change"]
             c2t1_mean = gene_details_map[gene]["c2t1"]["fold_change"]
             c2t2_mean = gene_details_map[gene]["c2t2"]["fold_change"]
-            ws.write(row_offset + gene_count, 2, str(gene_details_map[gene]["mock"]["fold_change"]))
-            ws.write(row_offset + gene_count, 3, str(gene_details_map[gene]["c1t1"]["fold_change"]))
-            ws.write(row_offset + gene_count, 4, str(gene_details_map[gene]["c1t2"]["fold_change"]))
-            ws.write(row_offset + gene_count, 5, str(gene_details_map[gene]["c2t1"]["fold_change"]))
-            ws.write(row_offset + gene_count, 6, str(gene_details_map[gene]["c2t2"]["fold_change"]))
+            ws.write(row_offset + gene_count, 2, average(gene_details_map[gene]["mock"]["fold_change"]))
+            ws.write(row_offset + gene_count, 3, average(gene_details_map[gene]["c1t1"]["fold_change"]))
+            ws.write(row_offset + gene_count, 4, average(gene_details_map[gene]["c1t2"]["fold_change"]))
+            ws.write(row_offset + gene_count, 5, average(gene_details_map[gene]["c2t1"]["fold_change"]))
+            ws.write(row_offset + gene_count, 6, average(gene_details_map[gene]["c2t2"]["fold_change"]))
             ws.write(row_offset + gene_count, 8, gene, style)
             ws.write(row_offset + gene_count, 9, str(gene_details_map[gene]["mock"]["std"]))
             ws.write(row_offset + gene_count, 10, str(gene_details_map[gene]["c1t1"]["std"]))
