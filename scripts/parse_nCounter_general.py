@@ -209,7 +209,7 @@ def platform_xlsx(gene_details_map, sample_identifiers):
             gene_count += 1
         ws.write_merge(row_offset, row_offset + gene_count, 0, 0, platform)
         row_offset += gene_count
-    wb.save("reports/%s/%s/output.xlsx" % (user_id, report_uuid))
+    wb.save("reports/%s/%s/output.xls" % (user_id, report_uuid))
 
 
 def create_directory(directory_path):
