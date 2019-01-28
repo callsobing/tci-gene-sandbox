@@ -207,7 +207,10 @@ def platform_xlsx(gene_details_map, sample_identifiers):
             except:
                 ws.write(row_offset + gene_count, 19, "na")
             gene_count += 1
-        ws.write_merge(row_offset, row_offset + gene_count, 0, 0, platform)
+        if row_offset + gene_count - 1 <= row_offset:
+            ws.write_merge(row_offset, row_offset, 0, 0, platform)
+        else:
+            ws.write_merge(row_offset, row_offset + gene_count - 1, 0, 0, platform)
         row_offset += gene_count
     wb.save("reports/%s/%s/output.xls" % (user_id, report_uuid))
 
