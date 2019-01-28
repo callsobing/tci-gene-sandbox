@@ -183,7 +183,7 @@ def platform_xlsx(gene_details_map, sample_identifiers):
             ws.write(row_offset + gene_count, 18, str(stats.ttest_ind(mock_mean, c2t1_mean)[0]))
             ws.write(row_offset + gene_count, 19, str(stats.ttest_ind(mock_mean, c2t2_mean)[0]))
             gene_count += 1
-        ws.write_merge(row_offset, 0, row_offset + gene_count, 0, platform)
+        ws.write_merge(row_offset, row_offset + gene_count, 0, 0, platform)
         row_offset += gene_count
     wb.save("reports/%s/%s/output.xlsx" % (user_id, report_uuid))
 
