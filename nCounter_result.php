@@ -473,11 +473,11 @@ include 'check_login.php';
                                         <br>
                                         <center><button type="submit" class="btn btn-primary btn-sm">產生報告模板</button>
                                             <button type="reset" class="btn btn-danger btn-sm">重新選擇</button>
-                                            <button type="button" class="btn btn-primary btn-sm" href="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/output.xls">下載Excel資料</button>
                                         </center>
                                         <br>
                                     </div>
                                 </form>
+                            <center><button type="button" class="btn btn-primary btn-sm" href="reports/<?php echo($user) ?>/<?php echo($uuid) ?>/output.xls">下載Excel資料</button></center>
                             </div>
                         </div>
                         <!-- /# column -->
