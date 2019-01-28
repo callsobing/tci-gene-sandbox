@@ -152,19 +152,19 @@ def platform_xlsx(gene_details_map, sample_identifiers):
             ws.write(row_offset + gene_count, 13, str(gene_details_map[gene]["c2t2"]["std"]))
             ws.write(row_offset + gene_count, 15, gene, style)
             try:
-                ws.write(row_offset + gene_count, 16, str(stats.ttest_ind(mock_mean, c1t1_mean)[0]))
+                ws.write(row_offset + gene_count, 16, str(stats.ttest_ind(mock_mean, c1t1_mean)[1]))
             except:
                 ws.write(row_offset + gene_count, 16, "na")
             try:
-                ws.write(row_offset + gene_count, 17, str(stats.ttest_ind(mock_mean, c1t2_mean)[0]))
+                ws.write(row_offset + gene_count, 17, str(stats.ttest_ind(mock_mean, c1t2_mean)[1]))
             except:
                 ws.write(row_offset + gene_count, 17, "na")
             try:
-                ws.write(row_offset + gene_count, 18, str(stats.ttest_ind(mock_mean, c2t1_mean)[0]))
+                ws.write(row_offset + gene_count, 18, str(stats.ttest_ind(mock_mean, c2t1_mean)[1]))
             except:
                 ws.write(row_offset + gene_count, 18, "na")
             try:
-                ws.write(row_offset + gene_count, 19, str(stats.ttest_ind(mock_mean, c2t2_mean)[0]))
+                ws.write(row_offset + gene_count, 19, str(stats.ttest_ind(mock_mean, c2t2_mean)[1]))
             except:
                 ws.write(row_offset + gene_count, 19, "na")
             gene_count += 1
@@ -191,19 +191,19 @@ def platform_xlsx(gene_details_map, sample_identifiers):
             ws.write(row_offset + gene_count, 13, str(gene_details_map[gene]["c2t2"]["std"]))
             ws.write(row_offset + gene_count, 15, gene, style)
             try:
-                ws.write(row_offset + gene_count, 16, str(stats.ttest_ind(mock_mean, c1t1_mean)[0]))
+                ws.write(row_offset + gene_count, 16, str(stats.ttest_ind(mock_mean, c1t1_mean)[1]))
             except:
                 ws.write(row_offset + gene_count, 16, "na")
             try:
-                ws.write(row_offset + gene_count, 17, str(stats.ttest_ind(mock_mean, c1t2_mean)[0]))
+                ws.write(row_offset + gene_count, 17, str(stats.ttest_ind(mock_mean, c1t2_mean)[1]))
             except:
                 ws.write(row_offset + gene_count, 17, "na")
             try:
-                ws.write(row_offset + gene_count, 18, str(stats.ttest_ind(mock_mean, c2t1_mean)[0]))
+                ws.write(row_offset + gene_count, 18, str(stats.ttest_ind(mock_mean, c2t1_mean)[1]))
             except:
                 ws.write(row_offset + gene_count, 18, "na")
             try:
-                ws.write(row_offset + gene_count, 19, str(stats.ttest_ind(mock_mean, c2t2_mean)[0]))
+                ws.write(row_offset + gene_count, 19, str(stats.ttest_ind(mock_mean, c2t2_mean)[1]))
             except:
                 ws.write(row_offset + gene_count, 19, "na")
             gene_count += 1
