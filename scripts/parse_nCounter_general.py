@@ -8,15 +8,10 @@ import numpy as np
 from scipy import stats
 import os
 import sys
+import xlwt
+
 plt.rcParams['font.sans-serif'] = ['SimHei']
-
-file_name = sys.argv[1]
-samples_fh = sys.argv[2]
-user_id = sys.argv[3]
-report_uuid = sys.argv[4]
-
 neg_genes = ["NEG_A", "NEG_B", "NEG_C", "NEG_D", "NEG_E", "NEG_F", "NEG_G", "NEG_H"]
-
 platforms = {
             "抗氧化": {"up": ["SOD1","SOD2","GPX1","CAT"], "down": []},
             "抗老": {"up": ["CCT2","CCT5","CCT6A","CCT7","CCT8","Pink1","Parkin","Atg1","Atg8","SIRT1","FOXO","NADSYN","MRPS5","Ubl-5","SOD3"], "down": ["PARP1","PARP2"]},
@@ -105,8 +100,92 @@ def platform_score(gene_details_map):
         if score_sum < 0:
             output_fh.write("%s\t0\n" % platform)
         else:
-            output_fh.write("%s\t%.2f\n" % (platform, (score_sum * 100 /( gene_count * 15))))
+            output_fh.write("%s\t%.2f\n" % (platform, (score_sum * 100 / (gene_count * 15))))
     output_fh.close()
+
+
+def platform_xlsx(gene_details_map, sample_identifiers):
+    wb = xlwt.Workbook(encoding="utf-8")
+    ws = wb.add_sheet('Processed Data')
+
+    row_offset = 0
+    for platform in platforms:
+        gene_count = 0
+        ws.write(row_offset, 1, "AVG")
+        ws.write(row_offset, 2, sample_identifiers[0])
+        ws.write(row_offset, 3, sample_identifiers[1])
+        ws.write(row_offset, 4, sample_identifiers[2])
+        ws.write(row_offset, 5, sample_identifiers[3])
+        ws.write(row_offset, 6, sample_identifiers[4])
+        ws.write(row_offset, 8, "STD")
+        ws.write(row_offset, 9, sample_identifiers[0])
+        ws.write(row_offset, 10, sample_identifiers[1])
+        ws.write(row_offset, 11, sample_identifiers[2])
+        ws.write(row_offset, 12, sample_identifiers[3])
+        ws.write(row_offset, 13, sample_identifiers[4])
+        ws.write(row_offset, 15, "TTEST")
+        ws.write(row_offset, 16, sample_identifiers[1])
+        ws.write(row_offset, 17, sample_identifiers[2])
+        ws.write(row_offset, 18, sample_identifiers[3])
+        ws.write(row_offset, 19, sample_identifiers[4])
+        row_offset += 1
+        for gene in platforms[platform]['up']:
+            if gene not in gene_details_map:
+                continue
+            style = xlwt.easyxf('font: colour green, bold True;')
+            ws.write(row_offset + gene_count, 1, gene, style)
+            mock_mean = gene_details_map[gene]["mock"]["fold_change"]
+            c1t1_mean = gene_details_map[gene]["c1t1"]["fold_change"]
+            c1t2_mean = gene_details_map[gene]["c1t2"]["fold_change"]
+            c2t1_mean = gene_details_map[gene]["c2t1"]["fold_change"]
+            c2t2_mean = gene_details_map[gene]["c2t2"]["fold_change"]
+            ws.write(row_offset, 2, gene_details_map[gene]["mock"]["fold_change"])
+            ws.write(row_offset, 3, gene_details_map[gene]["c1t1"]["fold_change"])
+            ws.write(row_offset, 4, gene_details_map[gene]["c1t2"]["fold_change"])
+            ws.write(row_offset, 5, gene_details_map[gene]["c2t1"]["fold_change"])
+            ws.write(row_offset, 6, gene_details_map[gene]["c2t2"]["fold_change"])
+            ws.write(row_offset + gene_count, 8, gene, style)
+            ws.write(row_offset, 9, gene_details_map[gene]["mock"]["std"])
+            ws.write(row_offset, 10, gene_details_map[gene]["c1t1"]["std"])
+            ws.write(row_offset, 11, gene_details_map[gene]["c1t2"]["std"])
+            ws.write(row_offset, 12, gene_details_map[gene]["c2t1"]["std"])
+            ws.write(row_offset, 13, gene_details_map[gene]["c2t2"]["std"])
+            ws.write(row_offset + gene_count, 15, gene, style)
+            ws.write(row_offset, 16, stats.ttest_ind(mock_mean, c1t1_mean))
+            ws.write(row_offset, 17, stats.ttest_ind(mock_mean, c1t2_mean))
+            ws.write(row_offset, 18, stats.ttest_ind(mock_mean, c2t1_mean))
+            ws.write(row_offset, 19, stats.ttest_ind(mock_mean, c2t2_mean))
+            gene_count += 1
+        for gene in platforms[platform]['down']:
+            if gene not in gene_details_map:
+                continue
+            style = xlwt.easyxf('font: colour red, bold True;')
+            ws.write(row_offset + gene_count, 1, gene, style)
+            mock_mean = gene_details_map[gene]["mock"]["fold_change"]
+            c1t1_mean = gene_details_map[gene]["c1t1"]["fold_change"]
+            c1t2_mean = gene_details_map[gene]["c1t2"]["fold_change"]
+            c2t1_mean = gene_details_map[gene]["c2t1"]["fold_change"]
+            c2t2_mean = gene_details_map[gene]["c2t2"]["fold_change"]
+            ws.write(row_offset, 2, gene_details_map[gene]["mock"]["fold_change"])
+            ws.write(row_offset, 3, gene_details_map[gene]["c1t1"]["fold_change"])
+            ws.write(row_offset, 4, gene_details_map[gene]["c1t2"]["fold_change"])
+            ws.write(row_offset, 5, gene_details_map[gene]["c2t1"]["fold_change"])
+            ws.write(row_offset, 6, gene_details_map[gene]["c2t2"]["fold_change"])
+            ws.write(row_offset + gene_count, 8, gene, style)
+            ws.write(row_offset, 9, gene_details_map[gene]["mock"]["std"])
+            ws.write(row_offset, 10, gene_details_map[gene]["c1t1"]["std"])
+            ws.write(row_offset, 11, gene_details_map[gene]["c1t2"]["std"])
+            ws.write(row_offset, 12, gene_details_map[gene]["c2t1"]["std"])
+            ws.write(row_offset, 13, gene_details_map[gene]["c2t2"]["std"])
+            ws.write(row_offset + gene_count, 15, gene, style)
+            ws.write(row_offset, 16, stats.ttest_ind(mock_mean, c1t1_mean))
+            ws.write(row_offset, 17, stats.ttest_ind(mock_mean, c1t2_mean))
+            ws.write(row_offset, 18, stats.ttest_ind(mock_mean, c2t1_mean))
+            ws.write(row_offset, 19, stats.ttest_ind(mock_mean, c2t2_mean))
+            gene_count += 1
+        ws.write_merge(row_offset, 0, row_offset + gene_count, 0, platform)
+        row_offset += gene_count
+    wb.save("reports/%s/%s/output.xlsx" % (user_id, report_uuid))
 
 
 def create_directory(directory_path):
@@ -194,6 +273,11 @@ def plot_gene(gene_details_map, gene, user_id, report_uuid, sample_ids):
     plt.clf()
     plt.close(fig)
 
+
+file_name = sys.argv[1]
+samples_fh = sys.argv[2]
+user_id = sys.argv[3]
+report_uuid = sys.argv[4]
 
 selected_sample_fh = open(samples_fh, encoding="utf-8")
 mock_samples = []
@@ -338,5 +422,6 @@ if create_directory("reports/%s/%s/" % (user_id, report_uuid)):
         if gene_names[gene_idx] in gene_details_map:
             plot_gene(gene_details_map, gene_names[gene_idx], user_id, report_uuid, sample_identifiers)
     platform_score(gene_details_map)
+    platform_xlsx(gene_details_map, sample_identifiers)
 else:
     print("Cannot create directory!!")
