@@ -424,9 +424,10 @@ if(isset($_GET['deleted'])) {
     function confirm_click()
     {
         if(confirm("請問是否刪除專案？")){
-            window.location.href = "http://www.google.com";
+            window.location.replace("http://www.google.com");
+
         } else{
-            window.location.href = "http://www.yahoo.com";
+            window.location.replace("http://www.yahoo.com");
         }
     }
 
