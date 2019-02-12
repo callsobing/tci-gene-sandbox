@@ -327,6 +327,7 @@ if(isset($_GET['error'])) {
                                             <th>專案敘述</th>
                                             <th>關聯資料</th>
                                             <th>建立時間</th>
+                                            <th>刪除專案</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -361,6 +362,7 @@ if(isset($_GET['error'])) {
                                             echo("<td><font color='black'>$description</font></td>");
                                             echo("<td><font color='black'><a href='$file_name'>$file_basename</a> </font></td>");
                                             echo("<td><font color='black'>$date</font></td></tr>");
+                                            echo("<td><font color='black'><a href='delete_project.php?uuid=$uuid' onclick=\"return confirm('確認刪除專案 $description ?');\">刪除</a> </font></td>");
                                         }
                                         ?>
                                         </tbody>
