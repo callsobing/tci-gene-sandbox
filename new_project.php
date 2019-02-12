@@ -99,7 +99,15 @@ if(isset($_GET['error'])) {
         swal("你沒有填寫樣本名稱噢!","請檢查你cond1/cond2的樣本名稱，<br>正確填寫樣本名稱才有正確的呈現結果喔。","info");
     </script>
     <?php
+    }
 }
+if(isset($_GET['deleted'])) {
+    $deleted_uuid =$_GET['deleted'];
+    ?>
+    <script>
+    swal("你的專案 $deleted_uuid 已刪除！","info");
+    </script>
+<?php
 }
 ?>
     <div class="page-wrapper">
@@ -362,7 +370,7 @@ if(isset($_GET['error'])) {
                                             echo("<td><font color='black'>$description</font></td>");
                                             echo("<td><font color='black'><a href='$file_name'>$file_basename</a> </font></td>");
                                             echo("<td><font color='black'>$date</font></td>");
-                                            echo("<td><font color='black'><a href='delete_project.php?uuid=$uuid' onclick=\"return confirm('確認刪除專案 $description ?');\">刪除</a> </font></td></tr>");
+                                            echo("<td><font color='black'><a href='delete_project.php?uuid=$uuid' onclick=\"return confirm('確認刪除專案 $description ?')\">刪除</a> </font></td></tr>");
                                         }
                                         ?>
                                         </tbody>

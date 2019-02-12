@@ -27,6 +27,11 @@ mysql_select_db($dbname);
 
 $result = mysql_query($sql) or die('MySQL query error');
 
+$url = "new_project.php";
+echo "<script type='text/javascript'>";
+echo "window.location.href='$url?deleted=$uuid'";
+echo "</script>";
+
 ?>
 
 
