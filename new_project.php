@@ -370,7 +370,9 @@ if(isset($_GET['deleted'])) {
                                             echo("<td><font color='black'>$description</font></td>");
                                             echo("<td><font color='black'><a href='$file_name'>$file_basename</a> </font></td>");
                                             echo("<td><font color='black'>$date</font></td>");
-                                            echo("<td><font color='black'><a href='delete_project.php?uuid=$uuid' onclick=\"return confirm('確認刪除專案 $description ?')\">刪除</a> </font></td></tr>");
+                                            ?>
+                                            <td><font color='black'><a href='delete_project.php?uuid=$uuid' onclick="return confirm('確認刪除專案 <?php echo($description); ?> ?');">刪除</a></font></td></tr>
+                                            <?php
                                         }
                                         ?>
                                         </tbody>
