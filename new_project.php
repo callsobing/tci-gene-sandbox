@@ -371,7 +371,7 @@ if(isset($_GET['deleted'])) {
                                             echo("<td><font color='black'><a href='$file_name'>$file_basename</a> </font></td>");
                                             echo("<td><font color='black'>$date</font></td>");
                                             ?>
-                                            <td><button onclick='confirm_click("<?php echo($uuid); ?>")'>刪除</button></td></tr>
+                                            <td><button onclick='confirm_click("<?php echo($uuid); ?>", "<?php echo($description); ?>")'>刪除</button></td></tr>
                                             <?php
                                         }
                                         ?>
@@ -423,7 +423,7 @@ if(isset($_GET['deleted'])) {
     <script>
     function confirm_click()
     {
-        if(confirm("請問是否刪除專案？")){
+        if(confirm("請問是否刪除 ".concat(arguments[0], "(", arguments[1], ")"))){
             window.location.replace("delete_project.php?uuid=".concat(arguments[0]));
         }
     }
