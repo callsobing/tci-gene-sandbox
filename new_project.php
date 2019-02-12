@@ -420,12 +420,12 @@ if(isset($_GET['deleted'])) {
     <script src="vendor/chartjs/Chart.bundle.min.js"></script>
     <script src="vendor/select2/select2.min.js">
     </script>
-    <script type="text/javascript">
-    function confirm_click(uuid)
+    <script>
+    function confirm_click()
     {
-        if(confirm("請問是否刪除 ".concat(uuid, " 專案？"))){
+        if(confirm("請問是否刪除 ".concat(arguments[0], " 專案？"))){
             document.href.location = "http://www.google.com";
-        }else{
+        } else{
             document.href.location = "http://www.yahoo.com";
         }
     }
