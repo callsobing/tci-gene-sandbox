@@ -371,7 +371,7 @@ if(isset($_GET['deleted'])) {
                                             echo("<td><font color='black'><a href='$file_name'>$file_basename</a> </font></td>");
                                             echo("<td><font color='black'>$date</font></td>");
                                             ?>
-                                            <span onclick="return confirm('請確認刪除 <?php echo($description); ?> 專案。');"><a href="http://www.google.com"><i class="icon-remove-sign">DELETE</i></a></span>
+                                            <span onclick="return confirm_click();">刪除</span>
                                             <?php
                                         }
                                         ?>
@@ -421,9 +421,13 @@ if(isset($_GET['deleted'])) {
     <script src="vendor/select2/select2.min.js">
     </script>
     <script type="text/javascript">
-        function confirm_click(uuid)
+        function confirm_click()
         {
-            return confirm("請再次確認是否刪除 uuid?");
+            if(confirm("請問是否刪除 ". arguments[0] . " 專案？")){
+                document.href.location = "http://www.google.com";
+            }else{
+                document.href.location = "http://www.yahoo.com";
+            }
         }
 
     </script>
