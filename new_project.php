@@ -371,7 +371,7 @@ if(isset($_GET['deleted'])) {
                                             echo("<td><font color='black'><a href='$file_name'>$file_basename</a> </font></td>");
                                             echo("<td><font color='black'>$date</font></td>");
                                             ?>
-                                            <td><button onclick='confirm_click(<?php echo($uuid); ?>)'>刪除</button></td></tr>
+                                            <td><button onclick='confirm_click("<?php echo($uuid); ?>")'>刪除</button></td></tr>
                                             <?php
                                         }
                                         ?>
