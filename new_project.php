@@ -423,7 +423,7 @@ if(isset($_GET['deleted'])) {
     <script>
     function confirm_click()
     {
-        if(confirm("請問是否刪除專案？"))){
+        if(confirm("請問是否刪除專案？")){
             document.href.location = "http://www.google.com";
         } else{
             document.href.location = "http://www.yahoo.com";
