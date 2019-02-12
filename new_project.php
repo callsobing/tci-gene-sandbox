@@ -371,7 +371,7 @@ if(isset($_GET['deleted'])) {
                                             echo("<td><font color='black'><a href='$file_name'>$file_basename</a> </font></td>");
                                             echo("<td><font color='black'>$date</font></td>");
                                             ?>
-                                            <td><font color='black'><a href='delete_project.php?uuid=$uuid' onclick="return confirm('確認刪除專案 <?php echo($description); ?> ?');">刪除</a></font></td></tr>
+                                            <span onclick="return confirm('請確認刪除 <?php echo($description); ?> 專案。');"><a href="http://www.google.com"><i class="icon-remove-sign">DELETE</i></a></span>
                                             <?php
                                         }
                                         ?>
@@ -419,6 +419,13 @@ if(isset($_GET['deleted'])) {
     <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
     <script src="vendor/chartjs/Chart.bundle.min.js"></script>
     <script src="vendor/select2/select2.min.js">
+    </script>
+    <script type="text/javascript">
+        function confirm_click(uuid)
+        {
+            return confirm("請再次確認是否刪除 uuid?");
+        }
+
     </script>
 
     <!-- Main JS-->
