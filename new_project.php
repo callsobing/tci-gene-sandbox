@@ -361,8 +361,8 @@ if(isset($_GET['error'])) {
                                             echo("</td>");
                                             echo("<td><font color='black'>$description</font></td>");
                                             echo("<td><font color='black'><a href='$file_name'>$file_basename</a> </font></td>");
-                                            echo("<td><font color='black'>$date</font></td></tr>");
-                                            echo("<td><font color='black'><a href='delete_project.php?uuid=$uuid' onclick=\"return confirm('確認刪除專案 $description ?');\">刪除</a> </font></td>");
+                                            echo("<td><font color='black'>$date</font></td>");
+                                            echo("<td><font color='black'><a href='delete_project.php?uuid=$uuid' onclick=\"return confirm('確認刪除專案 $description ?');\">刪除</a> </font></td></tr>");
                                         }
                                         ?>
                                         </tbody>
