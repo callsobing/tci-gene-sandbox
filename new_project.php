@@ -371,7 +371,7 @@ if(isset($_GET['deleted'])) {
                                             echo("<td><font color='black'><a href='$file_name'>$file_basename</a> </font></td>");
                                             echo("<td><font color='black'>$date</font></td>");
                                             ?>
-                                            <td><button onclick='confirm_click(<?php echo($uuid); ?>)'>刪除</button></td></tr>
+                                            <td><button onclick='confirm_click()'>刪除</button></td></tr>
                                             <?php
                                         }
                                         ?>
@@ -423,7 +423,7 @@ if(isset($_GET['deleted'])) {
     <script>
     function confirm_click()
     {
-        if(confirm("請問是否刪除 ".concat(arguments[0], " 專案？"))){
+        if(confirm("請問是否刪除專案？"))){
             document.href.location = "http://www.google.com";
         } else{
             document.href.location = "http://www.yahoo.com";
