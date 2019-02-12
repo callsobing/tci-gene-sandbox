@@ -105,7 +105,7 @@ if(isset($_GET['deleted'])) {
     $deleted_uuid =$_GET['deleted'];
     ?>
     <script>
-    swal("你的專案 $deleted_uuid 已刪除！","info");
+    swal("你的專案 <?php echo($deleted_uuid); ?>", "已刪除！","info");
     </script>
 <?php
 }
